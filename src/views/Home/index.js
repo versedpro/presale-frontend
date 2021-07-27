@@ -20,6 +20,7 @@ import SectionHeader from "./Component/SectionHeader";
 import SectionAbout from "./Component/SectionAbout";
 import SectionMission from "./Component/SectionMission";
 import SectionExchange from "./Component/SectionExchange";
+import SectionRoadmap from "./Component/SectionRoadmap/index";
 
 
 
@@ -123,6 +124,7 @@ const Home = (props) => {
                 <SectionAbout></SectionAbout>
                 <SectionMission></SectionMission>                 
                 <SectionExchange></SectionExchange>
+                <SectionRoadmap></SectionRoadmap>
 
                 </div>
             </Fragment>
