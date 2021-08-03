@@ -336,6 +336,16 @@ div.presale_progress > div > div:nth-child(3) {
     font-weight: 100;
     line-height: 2;
 }
+.mission_item .item_content .textCrss {
+    font-size: 20px;
+}
+.spaceBetween {
+    justify-content: space-between;
+}
+.textGreen {
+    color: #16b8b8;
+    font-size: 14px;
+}
 
 @media only screen and (max-width:768px){
     .mission_section .mission_item{
