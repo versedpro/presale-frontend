@@ -12,6 +12,10 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from 'classnames';
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
+import styled from "styled-components";
+
+import "react-step-progress-bar/styles.css";
+import { ProgressBar, Step } from "react-step-progress-bar";
 
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
 import M from '../../../assets/images/crosswise/m.png';
@@ -22,9 +26,60 @@ import Twitter from '../../../assets/images/crosswise/twitter.png'
 import MLight from '../../../assets/images/crosswise/m-light.png';
 import PaperplaneLight from '../../../assets/images/crosswise/paperplane-light.png';
 import GitLight from '../../../assets/images/crosswise/git-light.png';
-import TwitterLight from '../../../assets/images/crosswise/twitter-light.png'
+import TwitterLight from '../../../assets/images/crosswise/twitter-light.png';
 
-import Planet8 from '../../../assets/images/crosswise/planet-8.png'
+import Planet8 from '../../../assets/images/crosswise/planet-8.png';
+
+const Oval = styled.div`
+  width: 16px;
+  height: 16px;
+  margin: 0 111px 0 0;
+  background-color: #ffffff;
+  border-radius: 50%;
+`;
+
+const Section = styled.div`
+  div.presale_progress > div > div:nth-child(2) {
+    left: ${ props => props.softCap }% !important;
+  }
+`;
+
+const CombinedShape = styled.div`
+  width: 86px;
+  height: 38px;
+  /* margin: 15px 40px 0 92px; */
+  padding: 10px 16px;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.4), -4px -4px 8px 0 rgba(224, 224, 255, 0.04), 0 1px 1px 0 rgba(9, 13, 20, 0.4);
+  border: solid 1px rgba(43, 43, 43, 0.5);
+  background-image: linear-gradient(117deg, rgba(245, 247, 250, 0.12), rgba(43, 43, 43, 0.5) 52%, rgba(245, 247, 250, 0) 100%);
+
+  ::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(43, 43, 43, 0.5) transparent;
+  }
+`;
+
+const PresaleTextTip = styled.div`
+  width: 54px;
+  height: 16px;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: -0.4px;
+  color: #ffffff;
+`;
+
 const SectionHeader = (props) => {
    
   const [sideMenu, setsideMenu] = useState(false);
@@ -33,13 +88,17 @@ const SectionHeader = (props) => {
   const expandCollapseMenu = () => {
     setsideMenu(!sideMenu)
     //console.log(this.state.sideMenu);
- }
- const { isDark, toggleTheme } = useContext(ThemeContext)
- console.log("dark", isDark);
+  }
+
+  const { isDark, toggleTheme } = useContext(ThemeContext)
+
+  // represents softcap amount
+  // This should be updated with softcap of presale
+  const [softCap, setSoftCap] = useState(40)
   
     return (
         
-          <section className="header_section" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
+          <Section className="header_section" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}} softCap={ softCap }>
             <Container>
               <Row>
                     <div className="col-lg-7 col-md-12">
@@ -179,7 +238,42 @@ const SectionHeader = (props) => {
                                   <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;1,500,000 CRSS</span></div>
                               </div>
                               
-                              
+                              <div className="presale_progress">
+                                <ProgressBar
+                                  percent={ softCap }
+                                  fillBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+                                >
+                                  <Step transition="scale">
+                                    {() => (
+                                      <Oval
+                                        width="30"
+                                      />
+                                    )}
+                                  </Step>
+                                  <Step transition="scale">
+                                    {() => (
+                                      <Oval
+                                        width="30"
+                                      />
+                                    )}
+                                  </Step>
+                                  <Step transition="scale">
+                                    {() => (
+                                      <Oval
+                                        width="30"
+                                      />
+                                    )}
+                                  </Step>
+                                </ProgressBar>
+                                <Row>
+                                  <CombinedShape className="soft-cap">
+                                    <PresaleTextTip className="presale-text-cap">Soft Cap</PresaleTextTip>
+                                  </CombinedShape>
+                                  <CombinedShape className="hard-cap">
+                                    <PresaleTextTip className="presale-text-cap">Hard Cap</PresaleTextTip>
+                                  </CombinedShape>
+                                </Row>
+                              </div>
                             </div>
                         </div>
                       </Row>
@@ -188,7 +282,7 @@ const SectionHeader = (props) => {
                     <img src={Planet8} className="planet8_img shadow"/>
               </Row>
             </Container>
-          </section>
+          </Section>
         );
 }
 
