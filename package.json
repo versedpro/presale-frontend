@@ -1,5 +1,5 @@
 {
-  "name": "figmo",
+  "name": "crosswise-presale",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +11,8 @@
     "@walletconnect/client": "^1.4.1",
     "@walletconnect/qrcode-modal": "^1.4.1",
     "@walletconnect/web3-provider": "^1.4.1",
-    "node-sass": "^6.0.1",
+    "html-react-parser": "^1.2.7",
+    "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-accessible-accordion": "^3.3.4",
     "react-chrono": "^1.10.1",

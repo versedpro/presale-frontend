@@ -54,7 +54,6 @@ const CombinedShape = styled.div`
   box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.4), -4px -4px 8px 0 rgba(224, 224, 255, 0.04), 0 1px 1px 0 rgba(9, 13, 20, 0.4);
   border: solid 1px rgba(43, 43, 43, 0.5);
   background-image: linear-gradient(117deg, rgba(245, 247, 250, 0.12), rgba(43, 43, 43, 0.5) 52%, rgba(245, 247, 250, 0) 100%);
-
   ::after {
     content: " ";
     position: absolute;
