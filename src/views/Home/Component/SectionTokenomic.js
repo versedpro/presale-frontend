@@ -65,6 +65,14 @@ const SectionTokenomic = (props) => {
             </div>
             <div className="item_content">
               <h1>Tokenomics</h1>
+              <div className="row spaceBetween mb-4">
+                <div className="textCrss">
+                  <h4>CRSS</h4>
+                </div>
+                <div className="textGreen">
+                  ▲ 13.19%
+                </div>
+              </div>
               <p>
                 Following a long period of research and analyzation we started developing Crosswise. Combining developers with the needed amount of experience and entrepreneurs with the right long-term vision we have developed a next level DEX.
               </p>
