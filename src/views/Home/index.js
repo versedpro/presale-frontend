@@ -20,10 +20,10 @@ import SectionHeader from "./Component/SectionHeader";
 import SectionAbout from "./Component/SectionAbout";
 import SectionMission from "./Component/SectionMission";
 import SectionExchange from "./Component/SectionExchange";
-import SectionRoadmap from "./Component/SectionRoadmap/index";
-import SectionTokenomic from "./Component/SectionTokenomic";
-
-
+import SectionTeamwork from "./Component/SectionTeamwork";
+import SectionNews from "./Component/SectionNews";
+import SectionHelp from "./Component/SectionHelp";
+import SectionFooter from "./Component/SectionFooter";
 
 const Home = (props) => {
    
@@ -121,13 +121,14 @@ const Home = (props) => {
                   {/* <!-- nav header ends --> */}
 
                 </header>
-                <SectionHeader></SectionHeader>
-                <SectionAbout></SectionAbout>
-                <SectionMission></SectionMission>                 
-                <SectionExchange></SectionExchange>
-                <SectionRoadmap></SectionRoadmap>
-                <SectionTokenomic />
-
+                  <SectionHeader></SectionHeader>
+                  <SectionAbout></SectionAbout>
+                  <SectionMission></SectionMission>                 
+                  <SectionExchange></SectionExchange>
+                  <SectionTeamwork></SectionTeamwork>
+                  <SectionNews></SectionNews>
+                  <SectionHelp></SectionHelp>
+                  <SectionFooter></SectionFooter>
                 </div>
             </Fragment>
         );
