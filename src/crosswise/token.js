@@ -18,7 +18,7 @@ export const checkAllowance = async(owner, spender) => {
 
 export const getUserDetail = async (address) => {
     const result = await presaleContract.contract.methods.userDetail(address).call();
-    return new web3.utils.toBN(result);
+    return result;
 }
 
 export const getAmountUnlocked = async (address) => new web3.utils.toBN(await presaleContract.contract.methods.unlockedToken(address).call());
@@ -29,9 +29,6 @@ export const Approve = async (spender, amount, address) => {
     return result;
 }
 
+export const deposit = async (amount, address) => await presaleContract.contract.methods.deposit(amount).send({ from: address });
 
-export const tokenGetBalance = async (address) => {
-    
-}
-
-
+export const withdrawToken = async (amount, address) => await presaleContract.contract.methods.withdrawToken(amount).send({ from: address });
