@@ -44,7 +44,7 @@ const emptyContract = {
 export {
     networkId,
     tokenContract,
-    stakingContract,
+    presaleContract,
     controlledTokenContract,
     emptyContract
 }
