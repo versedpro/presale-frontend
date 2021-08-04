@@ -78,7 +78,6 @@ const SectionHeader = (props) => {
   
   const expandCollapseMenu = () => {
     setsideMenu(!sideMenu)
-    //console.log(this.state.sideMenu);
   }
 
   const { isDark, toggleTheme } = useContext(ThemeContext)
@@ -96,7 +95,7 @@ const SectionHeader = (props) => {
             <Row>
               <div className="header_section_left">
                 <h1>Crosswise Next-Generation Decentralised Exchanged</h1>
-                <p class="desc">Uniting stability, usability security and vision. Building a decentralised Exchange Ecosystem Cross-blockchain</p>
+                <p className="desc">Uniting stability, usability security and vision. Building a decentralised Exchange Ecosystem Cross-blockchain</p>
                 <div className="button_group">
                   <a className="btn btn_primary">White Paper</a>
                   <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
@@ -107,25 +106,25 @@ const SectionHeader = (props) => {
                         <p>Check our social:</p>
                     </div>
                     <div className="social_links">
-                      <ul class="list-group list-group-horizontal">
-                        <a href="#" class="list-group-item list-group-item-action">
+                      <ul className="list-group list-group-horizontal">
+                        <a href="#" className="list-group-item list-group-item-action">
                           {isDark? (<img src={M} alt="m.png"/>):
                           (<img src={MLight} alt="m.png"/>)
                           }
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action">
+                        <a href="#" className="list-group-item list-group-item-action">
                           {
                             isDark? (<img src={Paperplane} alt="paperplane.png"/>):
                             (<img src={PaperplaneLight} alt="paperplane.png"/>)
                           }
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action">
+                        <a href="#" className="list-group-item list-group-item-action">
                           {
                             isDark? (<img src={Git} alt="git.png"/>):
                             (<img src={GitLight} alt="git.png"/>)
                           }
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action">
+                        <a href="#" className="list-group-item list-group-item-action">
                           {
                             isDark? (<img src={Twitter} alt="twitter.png"/>):
                             (<img src={TwitterLight} alt="twitter.png"/>)
@@ -145,45 +144,45 @@ const SectionHeader = (props) => {
                   <h5>Pre-Sale Ends In</h5>
 
                   <div className="presale_counter">
-                    <div class="count_el">
-                      <div class="count_el_digits">
+                    <div className="count_el">
+                      <div className="count_el_digits">
                         <h3>09</h3>              
                       </div>
-                      <div class="count_el_text">
+                      <div className="count_el_text">
                         <p>DAY</p>
                       </div>
                     </div>
 
-                    <div class="count_el">
-                      <div class="count_el_digits">
+                    <div className="count_el">
+                      <div className="count_el_digits">
                         <h3>11</h3>              
                       </div>
-                      <div class="count_el_text">
+                      <div className="count_el_text">
                         <p>HOUR</p>
                       </div>
                     </div>
 
-                    <div class="count_el">
-                      <div class="count_el_digits">
+                    <div className="count_el">
+                      <div className="count_el_digits">
                         <h3>03</h3>              
                       </div>
-                      <div class="count_el_text">
+                      <div className="count_el_text">
                         <p>MIN</p>
                       </div>
                     </div>
 
-                    <div class="count_el">
-                      <div class="count_el_digits">
+                    <div className="count_el">
+                      <div className="count_el_digits">
                         <h3>48</h3>              
                       </div>
-                      <div class="count_el_text">
+                      <div className="count_el_text">
                         <p>SEC</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="presale_info">
-                    <div class="presale_info_rectangle">
+                    <div className="presale_info_rectangle">
                       <p>
                         Token price
                       </p>
@@ -192,7 +191,7 @@ const SectionHeader = (props) => {
                       </h6>
                     </div>
 
-                    <div class="presale_info_rectangle">
+                    <div className="presale_info_rectangle">
                       <p>
                         Soft Cap
                       </p>
@@ -201,7 +200,7 @@ const SectionHeader = (props) => {
                       </h6>
                     </div>
 
-                    <div class="presale_info_rectangle">
+                    <div className="presale_info_rectangle">
                       <p>
                         Hard Cap
                       </p>
@@ -210,7 +209,7 @@ const SectionHeader = (props) => {
                       </h6>
                     </div>
 
-                    <div class="presale_info_rectangle">
+                    <div className="presale_info_rectangle">
                       <p>
                         Max purchase
                       </p>

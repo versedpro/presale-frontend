@@ -21,9 +21,7 @@ class Layout extends Component {
         this.expandCollapseMenu = this.expandCollapseMenu.bind(this);
     }
     expandCollapseMenu = () => {
-        console.log(this.state.sideMenu);
         this.setState({ sideMenu: !this.state.sideMenu });
-        //console.log(this.state.sideMenu);
     }
     
 

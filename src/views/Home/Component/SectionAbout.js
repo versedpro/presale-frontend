@@ -26,10 +26,8 @@ const SectionAbout = (props) => {
   
   const expandCollapseMenu = () => {
     setsideMenu(!sideMenu)
-    //console.log(this.state.sideMenu);
  }
  const { isDark, toggleTheme } = useContext(ThemeContext)
- console.log("dark", isDark);
   
     return (
         
