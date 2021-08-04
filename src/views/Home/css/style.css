@@ -19,7 +19,7 @@
 
 .presale-info {
     width: 565px;
-    height: 645px;
+    height: 670px;
     padding: 48px 47px 40px 48px;
     margin: auto;
     border-radius: 12px;
@@ -141,6 +141,15 @@
 
 .section-presale {
     height: calc(100vh - 68px);
+}
+
+.claim-button {
+    margin-top: 30px;
+    float: right;
+}
+
+.section-presale .presale_info {
+    margin-top: 20px;
 }
 
 .header_section{

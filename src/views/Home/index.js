@@ -21,7 +21,6 @@ import SectionHelp from "./Component/SectionHelp";
 import SectionFooter from "./Component/SectionFooter";
 import SectionRoadmap from "./Component/SectionRoadmap/index";
 import SectionTokenomic from "./Component/SectionTokenomic";
-import ModalBuyTokens from "./Component/ModalBuyTokens";
 import SectionPresale from "./Component/SectionPresale";
 
 const Home = (props) => {

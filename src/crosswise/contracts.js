@@ -2,39 +2,32 @@ import { web3 } from './web3';
 import config from '../config';
 import official_pools from '../config/prizepools'
 
-import presaleContractABI from './abis/Presale.json';
-import tokenAbi from './abis/CRSSToken.json';
+import presaleContractJSON from './abis/Presale.json';
+import tokenJSON from './abis/CRSSToken.json';
 import prizePoolAbi from './abis/PrizePool.json';
 import multipleWinnersAbi from './abis/MultipleWinners.json';
 
 const networkId = config.networkId;
 
 const tokenContractAddress = config.contractAddress.crssToken[networkId];
-const ITokenContract = new web3.eth.Contract(tokenAbi, tokenContractAddress);
+const ITokenContract = new web3.eth.Contract(tokenJSON.abi, tokenContractAddress);
 
 const presaleContractAddress = config.contractAddress.presale[networkId];
-const IPresaleContractAddress = new web3.eth.Contract(presaleContractABI, presaleContractAddress);
-
-const ControlledTokenContractAddress = config.contractAddress.ControlledToken[networkId];
+const IPresaleContractAddress = new web3.eth.Contract(presaleContractJSON.abi, presaleContractAddress);
 
 const emptyAddress = config.contractAddress.emptyAddress[networkId]
 
 const tokenContract = {
     address: tokenContractAddress,
-    abi: tokenAbi,
+    abi: tokenJSON.abi,
     contract: ITokenContract,
     decimals: 18
 };
 
 const presaleContract = {
     address: presaleContractAddress,
-    abi: presaleContractABI,
+    abi: presaleContractJSON.abi,
     contract: IPresaleContractAddress,
-}
-
-
-const controlledTokenContract = {
-    address: ControlledTokenContractAddress
 }
 
 const emptyContract = {
@@ -45,6 +38,5 @@ export {
     networkId,
     tokenContract,
     presaleContract,
-    controlledTokenContract,
     emptyContract
 }
