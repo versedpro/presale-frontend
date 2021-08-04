@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { stakingContract, tokenContract } from './contracts'
+import { presaleContract, tokenContract } from './contracts'
 import {callMethod, bnDivdedByDecimals} from './utils'
 import { web3 } from './web3'
 
