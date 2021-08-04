@@ -22,12 +22,11 @@ import SectionFooter from "./Component/SectionFooter";
 import SectionRoadmap from "./Component/SectionRoadmap/index";
 import SectionTokenomic from "./Component/SectionTokenomic";
 import ModalBuyTokens from "./Component/ModalBuyTokens";
+import SectionPresale from "./Component/SectionPresale";
 
 const Home = (props) => {
    
-  const [sideMenu, setsideMenu] = useState(false);
-  const [sideMenuIndex, setsideMenuIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false)
+  const [showPresaleInfo, setShowPresaleInfo] = useState(false)
   const dispatch = useDispatch();
   const address = useSelector(state => state.authUser.address);
 
@@ -77,13 +76,6 @@ const Home = (props) => {
       NotificationManager.warning('Please install MetaMask!');
       return;
     }
-    // if (window.ethereum.networkVersion !== config.networkId) {
-    //     if (config.networkId === '56')
-    //         NotificationManager.warning('Please select bse main net to proceed!');
-    //     else if (config.networkId === '97')
-    //         NotificationManager.warning('Please select bsetest to proceed!');
-    //     return;
-    // }
     if (window.ethereum.selectedAddress !== null) {
       dispatch(setAddress(window.ethereum.selectedAddress));
       NotificationManager.warning('MetaMask was already connected.');
@@ -104,10 +96,10 @@ const Home = (props) => {
     return temp.slice(0, 4) + '...' + temp.slice(39, 42);
   }
   
-  const expandCollapseMenu = () => {
-    setsideMenu(!sideMenu)
-  }
   const { isDark, toggleTheme } = useContext(ThemeContext)
+
+  const showPresale = () => setShowPresaleInfo(true)
+  const showHome = () => setShowPresaleInfo(false)
   
   return (
     <Fragment>
@@ -127,8 +119,7 @@ const Home = (props) => {
                 
                 </a>
                 {/* <!-- Toggler/collapsibe Button --> */}
-                <button className="navbar-toggler" type="button" data-toggle="collapse"
-                  data-target="#collapsibleNavbar">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                   <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
                 </button>
 
@@ -190,7 +181,12 @@ const Home = (props) => {
                           </div>
                         </li>
                         <li className="nav-item">
-                          <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens>
+                          {/* <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens> */}
+                          {showPresaleInfo ? (
+                            <button onClick={showHome} className="btn btn_primary buy-token-button">Go Back</button>
+                          ) : (
+                            <button onClick={showPresale} className="btn btn_primary buy-token-button">Buy Tokens</button>
+                          )}
                         </li>
                       </>
                     )}
@@ -198,21 +194,23 @@ const Home = (props) => {
                 </div>
             </div>
           </nav>
-
-          
-          {/* <!-- nav header ends --> */}
-
         </header>
-        <SectionHeader></SectionHeader>
-        <SectionAbout></SectionAbout>
-        <SectionMission></SectionMission>                 
-        <SectionExchange></SectionExchange>
-        <SectionRoadmap></SectionRoadmap>
-        <SectionTeamwork></SectionTeamwork>
-        <SectionTokenomic />
-        <SectionNews></SectionNews>
-        <SectionHelp></SectionHelp>
-        <SectionFooter></SectionFooter>
+        {showPresaleInfo? (
+          <SectionPresale></SectionPresale>
+        ): (
+          <>
+            <SectionHeader></SectionHeader>
+            <SectionAbout></SectionAbout>
+            <SectionMission></SectionMission>                 
+            <SectionExchange></SectionExchange>
+            <SectionRoadmap></SectionRoadmap>
+            <SectionTeamwork></SectionTeamwork>
+            <SectionTokenomic />
+            <SectionNews></SectionNews>
+            <SectionHelp></SectionHelp>
+            <SectionFooter></SectionFooter>
+          </>
+        )}
       </div>
     </Fragment>
   );
