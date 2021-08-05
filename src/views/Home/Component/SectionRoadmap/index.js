@@ -17,8 +17,8 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  .css-ci1l8p-TimelineMain {
+  
+  #timeline-main-wrapper > div {
     margin-bottom: 3rem;
   }
 
@@ -83,7 +83,6 @@ const Content = styled.div`
 
   ul.timeline-horz-container {
       padding-inline-start: 0;
-      margin-bottom: 3rem;
   }
 `;
 

@@ -6,16 +6,12 @@ import { Row, Col } from 'reactstrap';
 import BigNumber from 'bignumber.js';
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
-import styled from "styled-components";
 import "react-step-progress-bar/styles.css";
 import { useForm } from "react-hook-form";
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import { web3 } from "../../../crosswise/web3";
 import { getUserDetail, getAmountUnlocked, deposit, withdrawToken } from "../../../crosswise/token";
-
-const Section = styled.div`
-`;
 
 const SectionHeader = (props) => {
   const address = useSelector(state => state.authUser.address);
@@ -63,8 +59,7 @@ const SectionHeader = (props) => {
   }
 
   return (
-      
-    <Section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
+    <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
       <Container>
         <Row>
           <div className="presale-info">
@@ -75,7 +70,7 @@ const SectionHeader = (props) => {
             <form onSubmit={handleSubmit(buyTokens)}>
               <p>Amount</p>
               <div className="input-group">
-                <input {...register('amount', { pattern: /\d+/ })} className="form-control buy-token-amount" value={amountToDeposit} onChange={event => setAmountToDeposit(event.target.value)} />
+                <input {...register('amount', { required: true, pattern: /\d+/ })} className="form-control buy-token-amount" value={amountToDeposit} onChange={event => setAmountToDeposit(event.target.value)} />
                 <div className="input-group-append">
                   <span className="input-group-text buy-token-currency">
                     <p>USD</p>
@@ -83,7 +78,7 @@ const SectionHeader = (props) => {
                   </span>
                 </div>
               </div>
-              {errors.amount && <p style={{ color: "red" }}>Please enter number for amount.</p>}
+              {errors.amount && <p style={{ color: "red" }}>Please enter amount you desire for amount.</p>}
               <div className="buy-tokens">
                 <p>All transactions are private and secure</p>
                 <button className="btn btn_primary" type="submit">Buy Tokens</button>
@@ -122,7 +117,7 @@ const SectionHeader = (props) => {
           <img src={Planet8} className="planet8_img shadow"/>
         </Row>
       </Container>
-    </Section>
+    </section>
   );
 }
 
