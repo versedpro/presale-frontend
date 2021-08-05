@@ -1,11 +1,8 @@
 import { web3 } from './web3';
 import config from '../config';
-import official_pools from '../config/prizepools'
 
 import presaleContractJSON from './abis/Presale.json';
 import tokenJSON from './abis/CRSSToken.json';
-import prizePoolAbi from './abis/PrizePool.json';
-import multipleWinnersAbi from './abis/MultipleWinners.json';
 
 const networkId = config.networkId;
 
