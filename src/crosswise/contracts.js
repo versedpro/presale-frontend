@@ -12,8 +12,6 @@ const ITokenContract = new web3.eth.Contract(tokenJSON.abi, tokenContractAddress
 const presaleContractAddress = config.contractAddress.presale[networkId];
 const IPresaleContractAddress = new web3.eth.Contract(presaleContractJSON.abi, presaleContractAddress);
 
-const emptyAddress = config.contractAddress.emptyAddress[networkId]
-
 const tokenContract = {
     address: tokenContractAddress,
     abi: tokenJSON.abi,
@@ -27,13 +25,8 @@ const presaleContract = {
     contract: IPresaleContractAddress,
 }
 
-const emptyContract = {
-    address: emptyAddress
-}
-
 export {
     networkId,
     tokenContract,
-    presaleContract,
-    emptyContract
+    presaleContract
 }

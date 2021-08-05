@@ -49,7 +49,9 @@ const Pie = ({ isDark, data, labels, hole, radius, strokeWidth }) => {
 			viewBox={ `0 0 ${ diameter } ${ diameter }`}
 			xmlns="http://www.w3.org/2000/svg"
 			version="1.1"
-			overflow="inherit"
+			style={{
+				overflow: "unset"
+			}}
 		>
 			<defs>
 				{ids.map((_id, _index) => {
