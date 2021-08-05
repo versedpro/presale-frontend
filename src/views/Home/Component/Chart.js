@@ -49,6 +49,7 @@ const Pie = ({ isDark, data, labels, hole, radius, strokeWidth }) => {
 			viewBox={ `0 0 ${ diameter } ${ diameter }`}
 			xmlns="http://www.w3.org/2000/svg"
 			version="1.1"
+			overflow="inherit"
 		>
 			<defs>
 				{ids.map((_id, _index) => {
@@ -68,9 +69,9 @@ const Pie = ({ isDark, data, labels, hole, radius, strokeWidth }) => {
 			</defs>
 			{fids.map((_fid, _index) => {
 				return (<filter id={_fid} key={_index}>
-          <feDropShadow dx="2" dy="2" stdDeviation="24px" flood-color="rgba(9, 13, 20, 0.4)" opacity="0.4"/>
-          <feDropShadow dx="-1" dy="-1" stdDeviation="8px" flood-color="rgba(224, 224, 255, 0.4)" opacity="0.4"/>
-          <feDropShadow dx="0" dy="1" stdDeviation="1px" flood-color="rgba(9, 13, 20, 0.06)" opacity="0.06"/>
+          <feDropShadow dx="2" dy="2" stdDeviation="24" flood-color="rgba(9, 13, 20, 0.4)" opacity="0.4"/>
+          <feDropShadow dx="-1" dy="-1" stdDeviation="8" flood-color="rgba(224, 224, 255, 0.04)" opacity="0.04"/>
+          <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="rgba(9, 13, 20, 0.4)" opacity="0.4"/>
 				</filter>)
 			})}
 			{data.map((slice, sliceIndex) => {

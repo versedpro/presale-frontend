@@ -14025,11 +14025,6 @@ simple-get@^2.7.0:
     once "^1.3.1"
     simple-concat "^1.0.0"
 
-simple-react-validator@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.npmjs.org/simple-react-validator/-/simple-react-validator-1.6.1.tgz#c8d551639b7e6f4e829122299cf5eb2a31fce6ef"
-  integrity sha512-jguG7UlulRRBPZEyRroShUpRpV9cC5VjA4WnVGRzZgjqbQGr/twq4LLjqxt5QiSnJZE415gnbXH4oqWR2Ggmaw==
-
 simple-swizzle@^0.2.2:
   version "0.2.2"
   resolved "https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
