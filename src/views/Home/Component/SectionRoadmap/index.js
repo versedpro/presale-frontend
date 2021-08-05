@@ -83,6 +83,7 @@ const Content = styled.div`
 
   ul.timeline-horz-container {
       padding-inline-start: 0;
+      margin-bottom: 3rem;
   }
 `;
 
