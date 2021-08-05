@@ -69,7 +69,7 @@ const Content = styled.div`
     display: none;
   }
 
-  .css-16u30nb-TimelineControlContainer {
+  div[mode="HORIZONTAL"]{
     display: none;
   }
 
