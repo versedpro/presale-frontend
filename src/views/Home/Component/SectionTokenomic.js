@@ -65,12 +65,14 @@ const SectionTokenomic = (props) => {
             </div>
             <div className="item_content">
               <h1>Tokenomics</h1>
-              <div className="row spaceBetween mb-4">
-                <div className="textCrss">
-                  <h4>CRSS</h4>
-                </div>
-                <div className="textGreen">
-                  ▲ 13.19%
+              <div className="col">
+                <div className="row spaceBetween mb-4">
+                  <div className="textCrss">
+                    <h4>CRSS</h4>
+                  </div>
+                  <div className="textGreen">
+                    ▲ 13.19%
+                  </div>
                 </div>
               </div>
               <p>
