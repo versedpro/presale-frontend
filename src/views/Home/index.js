@@ -107,7 +107,7 @@ const Home = (props) => {
         <header className="nav_wrapper">
 
           {/** nav header starts */}
-          <nav className="navbar navbar-expand-lg navbar-default shadow-sm">
+          <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
             {/* <!-- Brand --> */}
             <div className="container">
               <a className="navbar-brand">

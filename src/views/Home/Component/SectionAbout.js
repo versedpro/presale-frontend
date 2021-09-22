@@ -39,8 +39,10 @@ const SectionAbout = (props) => {
                         <h1>About Crosswise</h1>
                     </div>
                     <div class="desc">
-                        <p>We are building the Next-Gen Cross-Chain DEX Exchanges (DEX) allow users to exchange and trade digital currencies directly on the Blockchain. But thats just a part of it Crosswise is combining stability, usability, security and vision to create an advanced platform cross-chain to empower users to do everything connected to crypto:
-    trade, earn, invest, analyse and learn We have worked on a whole set of new and exciting features that we combined with already existing, industry-leading components to create an exciting, future-proof platform. What are you waiting for?</p>
+                        <p><b>Next-Gen Cross-Chain DEX Exchanges (DEX) enables users for a seamless experience in DEFI. </b> 
+DEX is a Platform as a service for the exchange and trade of digital currencies directly on the Blockchain. 
+Crosswise is combining stability, usability, security, and vision to create an advanced Interoperable platform. Cross-Chain (Interoperability) lets users interact blockchain-based assets with non-custodial/ custodial wallets in user-friendly, secure, and premium trading tools. 
+</p>
                     </div>
                   </div>
                 </Row>
@@ -51,7 +53,7 @@ const SectionAbout = (props) => {
                             <img src={Thumb} />
                         </div>
                         <div>
-                            <h6>STABILITY</h6>
+                            <h6>MuiltiChain</h6>
                         </div>
                       </div>
 
@@ -60,7 +62,7 @@ const SectionAbout = (props) => {
                             <img src={Icon2} />
                         </div>
                         <div>
-                            <h6>VISION</h6>
+                            <h6>User Friendly</h6>
                         </div>
                       </div>
 
@@ -69,7 +71,7 @@ const SectionAbout = (props) => {
                             <img src={Icon3} />
                         </div>
                         <div>
-                            <h6>USABILITY</h6>
+                            <h6>Gasless Mode</h6>
                         </div>
                       </div>
 
@@ -78,7 +80,7 @@ const SectionAbout = (props) => {
                             <img src={Icon1} />
                         </div>
                         <div>
-                            <h6>SECURITY</h6>
+                            <h6>Trader Tools</h6>
                         </div>
                       </div>
                   </div>

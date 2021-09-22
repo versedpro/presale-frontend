@@ -25,14 +25,20 @@ const SectionMission = (props) => {
                         </div>
                         <div className="item_content">
                             <h1>Why CrossWise?</h1>
-                            <p>Being daily users of DEFI products we have discovered a severe lack of Usability. Many platforms don’t offer any overview about your portfolio, are lacking the needed stability of their own coin or have extremely limited functionality.  Therefore many of those projects fail as they are not offering the level of overall level needed.</p>
+                            <p>DeFi is relatively very new but packed with untapped utility. Platform Functionality, Portfolio Tracking, Trading Tools & Native Coin stability are fundamentals of success for our DEX. Fine-tuning in areas important for traders is a fundamental responsibility for Crosswise. </p>
                         </div>
                     </div>
 
                     <div className="mission_item reverse">
                     <div className="item_content">
-                            <h1>Our Mission</h1>
-                            <p>We wanted to offer a platform, that combines all needed aspectsand features to create a stable and thriving platform. Something that will appeal to retail investors, but also professional traders.</p>
+                            <h1>Platform Features</h1>
+                            <p>- Interoperable Swap Exchange</p>
+                            <p>- Advanced Exchange</p>
+                            <p>- Order Books</p>
+                            <p>- Analytics</p>
+                            <p>- Price Chart</p>
+                            <p>- Account Stats</p>
+                            <p>- Referral Affiliate Commissions</p>
                         </div>
                         <div className="item_img">
                             <img src={Img2} />
@@ -43,8 +49,16 @@ const SectionMission = (props) => {
                             <img src={Img3} />
                         </div>
                         <div className="item_content">
-                            <h1>Work Company</h1>
-                            <p>Following a long period of research and analyzation we starteddeveloping Crosswise. Combining developers with the needed amount of experience and entrepreneurs with the right long-term vision we have developed a next level DEX.</p>
+                            <h1>Dex Mechanics</h1>
+                            <p>- Tokens: CRSS, XCRSS</p>
+                            <p>- Emissions</p>
+                            <p>- Gasless Mode</p>
+                            <p>- Voting Options</p>
+                            <p>- Subgraph: The Graph</p>
+                            <p>- Price Oracle with Chainlink</p>
+                            <p>- Anti-Whale Protection</p>
+                            <p>- Anti-Bot Protection</p>
+                            <p>- Farms at release</p>
                         </div>
                     </div>
                 </Row>

@@ -85,8 +85,8 @@ const SectionExchange = (props) => {
                                         <div class="card-img-overlay p-3">
                                         </div>
                                         <div class="photo_content">
-                                            <h6>ICO/IDO Launchpad</h6>
-                                            <p>Following a long period of research and analyzation we started developing Crosswise.</p>
+                                            <h6>Launchpad</h6>
+                                            <p>Crosswise features an Incubation & launchpad program to help budding entrepreneurs launch their projects on Crosswise dex. This will help the teams with funding, marketing, and reaching a new user-base for their Apps & dApps on our multi-chain ecosystem.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -99,8 +99,8 @@ const SectionExchange = (props) => {
                                             
                                         </div>
                                         <div class="photo_content">
-                                            <h6>Commissions from liquidity</h6>
-                                            <p>Following a long period of research and analyzation we started developing Crosswise.</p>
+                                            <h6>Technology </h6>
+                                            <p>Crosswise platform is capable of handling peak user loads during both trading hours & IDO hours. Our state-of-the-art IT infrastructure provides users with the best security, compatibility, uptime, premium tools & bridges for the future of multi-chain capabilities, with a premium customer support & ticketing system to solve user grievances asap</p>
                                         </div>
                                     </div>
                                 </li>
@@ -111,8 +111,8 @@ const SectionExchange = (props) => {
                                         <div class="card-img-overlay p-3">
                                         </div>
                                         <div class="photo_content">
-                                            <h6>Low market-competitive fees</h6>
-                                            <p>Following a long period of research and analyzation we started developing Crosswise.</p>
+                                            <h6>User Experience & Tools</h6>
+                                            <p>Crosswise is tightly integrated with useful tools such as Order Book, Analytics, Explore, Price Charts, Account stats, Affiliate Areas with a neat UI for seamless trading experience. Users can also track their earnings from various incentive programs the project may add as seen fit along the entire product life cycle</p>
                                         </div>
                                     </div>
                                 </li>

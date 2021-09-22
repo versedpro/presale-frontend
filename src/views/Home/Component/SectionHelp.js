@@ -13,20 +13,20 @@ const questionsAnswers = [
     {
       question: "What is Crosswise?",
       answer:
-        "<p>Crosswise...</p>",
+        "<p>The next-gen cross-blockchain AMM (Automatic Market Maker) and DAPP (Decentralized Application) focused on creating a DEX(Decentralized Exchange) build on Binance Smart Chain with Polygon and many more to follow.</p>",
     },
     {
-      question: "What cryptocurrencies can I use to purchase?",
+      question: "What are the fees for Users?",
       answer:
-        "<p>Once CRSS period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa.</p>",
+        "<p>0.2% fee is taken on every trade on Simple swap & 0.3% fee is taken on every trade on Advanced DEX with tools such as limit orders. </p>",
     },
     {
-      question: "How can I participate in the CRSS Token sale?",
-      answer: `<p>How can I participate in the CRSS Token sale?</p>`,
+      question: "How much reward is compounded for users?",
+      answer: `<p>..................</p>`,
     },
     {
-      question: "How do I benefit from the CRSS Token?",
-      answer: `<p>How do I benefit from the CRSS Token?</p>`,
+      question: "What is the token Sales &  distribution schedule & timeline for Investors?",
+      answer: `<p>..................</p>`,
     }
   ];
 
@@ -46,10 +46,10 @@ const SectionHelp = (props) => {
               </div>
               <div className="help_section_right">
                 <div className="title">
-                  <h1>We're Here To Help</h1>
+                  <h1>Right of Questionnaire - Join Our Community </h1>
                 </div>
                 <div className="desc">
-                  <p>Following a long period of research and analyzation we started developing Crosswise. Combining developers with the needed amount of experience and entrepreneurs with the right long-term vision we have developed a next level DEX.</p>
+                  <p>Crosswise aims to provide the best seamless trading experience for our users. With the state of art multi-chain technology, trading tools, and ability to handle peak loads. We encourage our users & investors to join our community for more news & updates regarding the project. </p>
                 </div>
                 
                 

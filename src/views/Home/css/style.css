@@ -488,7 +488,7 @@ div.presale_progress > div > div:nth-child(3) {
 .mission_item .item_content p{
     font-size: 16px;
     font-weight: 100;
-    line-height: 2;
+    line-height: 1.8;
 }
 .mission_item .item_content .textCrss {
     font-size: 20px;
