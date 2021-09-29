@@ -187,6 +187,9 @@
 .header_section .button_group .btn_pitchdeck{
     margin-left: 24px;
 }
+.header_section .button_group .btn_whitelisted{
+    margin-left: 24px;
+}
 .header_section .button_group{
     display:flex;
 }

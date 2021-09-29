@@ -14,11 +14,13 @@ import M from '../../../assets/images/crosswise/m.png';
 import Paperplane from '../../../assets/images/crosswise/paperplane.png';
 import Git from '../../../assets/images/crosswise/git.png';
 import Twitter from '../../../assets/images/crosswise/twitter.png'
+import Discord from '../../../assets/images/crosswise/discord.png'
 
 import MLight from '../../../assets/images/crosswise/m-light.png';
 import PaperplaneLight from '../../../assets/images/crosswise/paperplane-light.png';
 import GitLight from '../../../assets/images/crosswise/git-light.png';
 import TwitterLight from '../../../assets/images/crosswise/twitter-light.png';
+import DiscordLight from '../../../assets/images/crosswise/discord-light.png'
 
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 
@@ -99,6 +101,7 @@ const SectionHeader = (props) => {
                 <div className="button_group">
                   <a className="btn btn_primary">White Paper</a>
                   <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
+                  <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
                 </div>
                 <div className="col-12 text-center">
                   <div className="dapp_bar shadow">
@@ -107,24 +110,30 @@ const SectionHeader = (props) => {
                     </div>
                     <div className="social_links">
                       <ul className="list-group list-group-horizontal">
-                        <a href="#" className="list-group-item list-group-item-action">
+                      <a href=" https://discord.gg/rDvKpqsq" target="_blank" className="list-group-item list-group-item-action">
+                          {
+                            isDark? (<img src={Discord} alt="discord.png"/>):
+                            (<img src={DiscordLight} alt="discord.png"/>)
+                          }
+                        </a>
+                        <a href="https://crosswise.medium.com/" target="_blank" className="list-group-item list-group-item-action">
                           {isDark? (<img src={M} alt="m.png"/>):
                           (<img src={MLight} alt="m.png"/>)
                           }
                         </a>
-                        <a href="#" className="list-group-item list-group-item-action">
+                        <a href="https://t.me/crosswise" target="_blank" className="list-group-item list-group-item-action">
                           {
                             isDark? (<img src={Paperplane} alt="paperplane.png"/>):
                             (<img src={PaperplaneLight} alt="paperplane.png"/>)
                           }
                         </a>
-                        <a href="#" className="list-group-item list-group-item-action">
+                        <a href="https://github.com/crosswise-finance" target="_blank" className="list-group-item list-group-item-action">
                           {
                             isDark? (<img src={Git} alt="git.png"/>):
                             (<img src={GitLight} alt="git.png"/>)
                           }
                         </a>
-                        <a href="#" className="list-group-item list-group-item-action">
+                        <a href="https://twitter.com/crosswisefi" target="_blank" className="list-group-item list-group-item-action">
                           {
                             isDark? (<img src={Twitter} alt="twitter.png"/>):
                             (<img src={TwitterLight} alt="twitter.png"/>)

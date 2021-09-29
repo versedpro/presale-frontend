@@ -20,32 +20,31 @@ const SectionFooter = (props) => {
                       <img src="assets/images/logo-light-theme-2.png" class="nav_logo" id="crosswise_logo"/>
                     }
                     <div className="footer_bar_connections">
-                        <div className="bar_item">
+                        {/* <div className="bar_item">
                           {
                             isDark? (<img src="assets/images/location.png"  />):
                             <img src="assets/images/location-light.png"/>
                           } 
                         <span class="item">United States</span>
-                        </div>
+                        </div> */}
 
                         <div className="bar_item">
                           {
                             isDark? (<img src="assets/images/message.png"  />):
                             <img src="assets/images/message-light.png"/>
                           } 
-                        <span class="item">English(United States)</span>
+                        <span class="item">Language change to English</span>
                         </div>
                     </div>
                   </div>
                   <div className="footer_bar_links">
                     <div className="group_links">
                       <div className="title">
-                        DOWNLOAD
+                        Media
                       </div>
                       <div class="links">
-                          <a className="link-item">White paper</a>
-                          <a className="link-item">Pitchbook</a>
-                          <a className="link-item">Gitbook</a>
+                          <a className="link-item">Litepaper</a>
+                          <a className="link-item">Pitchdeck</a>
                       </div>
                     </div>
                     <div className="group_links">
@@ -53,10 +52,8 @@ const SectionFooter = (props) => {
                         LEARN
                       </div>
                       <div class="links">
-                          <a className="link-item">About</a>
-                          <a className="link-item">Help</a>
-                          <a className="link-item">Support</a>
-                          <a className="link-item">Privacy & terms</a>
+                          <a className="link-item" href="https://crosswise.gitbook.io/crosswise/" target="_blank">Gitbook</a>
+                          <a className="link-item" href="https://intercom.help/crosswise-f/en" target="_blank">Support </a>
                       </div>
                     </div>
                     <div className="group_links">
@@ -64,18 +61,19 @@ const SectionFooter = (props) => {
                         FOLLOW
                       </div>
                       <div class="links">
-                          <a className="link-item">Telegram</a>
-                          <a className="link-item">Twitter</a>
-                          <a className="link-item">Medium</a>
-                          <a className="link-item">Github</a>
+                      <a className="link-item" href="https://t.me/crosswise" target="_blank">Telegram</a>
+                      <a className="link-item" href="https://discord.gg/rDvKpqsq" target="_blank" >Discord</a>
+                          <a className="link-item" href="https://twitter.com/crosswisefi" target="_blank">Twitter</a>
+                          <a className="link-item" href="https://crosswise.medium.com/" target="_blank">Medium</a>
+                          <a className="link-item" href="https://www.instagram.com/crosswisedefi/" target="_blank" >Instagram</a>
                       </div>
                     </div>
 
                   </div>
               </div>
               <div className="copyright">
-                <div class="made_by">made by &nbsp;<p> roobinium.io</p></div>
-                <div class="copyrightyear">© 2021 CrossWise</div>
+                {/* <div class="made_by">made by &nbsp;<p> roobinium.io</p></div> */}
+                <div class="copyrightyear">© 2021 Crosswise, a SublimeMinds Brand</div>
               </div>
             </Container>
           </section>

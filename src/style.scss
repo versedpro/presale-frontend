@@ -170,12 +170,16 @@ button.navbar-toggler:focus {
 }
 
 .nav_wrapper .navbar .nav-item .nav-link {
-  font-size: 16px;
+  font-size: 12px;
   line-height: 16px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   color: #141029;
   font-weight: 600;
+}
+
+.navbar{
+  padding: 20px 0px 20px 0px!important;
 }
 
 .nav_wrapper .navbar .nav-item .input-group {

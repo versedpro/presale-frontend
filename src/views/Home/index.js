@@ -126,15 +126,21 @@ const Home = (props) => {
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul className="navbar-nav">
                     <li className="nav-item">
-                      <a className="nav-link" href=""><span>Crossdocs</span></a>
+                      <a className="nav-link" href=""><span>About Crosswise</span></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="blog.html"><span>Blog</span></a>
+                      <a className="nav-link" href="blog.html"><span>Tokenomics </span></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href=""><span>GitHub</span></a>
+                      <a className="nav-link" href=""><span>Roadmap </span></a>
                     </li>
-                    <li className="nav-item ml-md-4">
+                    <li className="nav-item">
+                      <a className="nav-link" href=""><span>Team  </span></a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href=""><span>Socials  </span></a>
+                    </li>
+                    {/* <li className="nav-item ml-md-4">
                       <a className="nav-link">
                         <div className="input-group">
                           <div className="input-group-prepend">
@@ -143,7 +149,7 @@ const Home = (props) => {
                           <input type="text" className="form-control" placeholder="search" />
                         </div>
                       </a>
-                    </li>
+                    </li> */}
                     <li className="nav-item dropdown" id="profile_dropdown">
                       <a className="nav-link dropdown-toggle py-0" href="#" id="navbar_Dropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -189,6 +195,9 @@ const Home = (props) => {
                         </li>
                       </>
                     )}
+                     <li className="nav-item">
+                        <a className="nav-link btn btn_signIN btn_primary" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
+                      </li>
                   </ul>
                 </div>
             </div>
