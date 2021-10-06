@@ -4,7 +4,7 @@ import { Container , Input} from 'reactstrap';
 import { Row, Col } from 'reactstrap';
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
-
+import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
 
 const SectionFooter = (props) => {
 
@@ -43,7 +43,7 @@ const SectionFooter = (props) => {
                         Media
                       </div>
                       <div class="links">
-                          <a className="link-item">Litepaper</a>
+                          <a className="link-item" href={pdf} target="_blank">Litepaper</a>
                           <a className="link-item">Pitchdeck</a>
                       </div>
                     </div>

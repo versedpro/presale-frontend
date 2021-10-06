@@ -23,6 +23,7 @@ import TwitterLight from '../../../assets/images/crosswise/twitter-light.png';
 import DiscordLight from '../../../assets/images/crosswise/discord-light.png'
 
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
+import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf';
 
 const Oval = styled.div`
   width: 16px;
@@ -99,7 +100,7 @@ const SectionHeader = (props) => {
                 <h1>Next Gen Multi-Chain Dex With In-Built Trading Tools & Rewards</h1>
                 <p className="desc">CrossWise takes the trading experience on DEX to another level by tight security, friendly UI, Cross-Chain, Verified Listings & the right tools, tightly integrated for the trade.</p>
                 <div className="button_group">
-                  <a className="btn btn_primary">White Paper</a>
+                  <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
                   <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
                   <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
                 </div>

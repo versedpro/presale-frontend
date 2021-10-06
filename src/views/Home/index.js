@@ -19,9 +19,14 @@ import SectionTeamwork from "./Component/SectionTeamwork";
 import SectionNews from "./Component/SectionNews";
 import SectionHelp from "./Component/SectionHelp";
 import SectionFooter from "./Component/SectionFooter";
-import SectionRoadmap from "./Component/SectionRoadmap/index";
+// import SectionRoadmap from "./Component/SectionRoadmap/index";
+import SectionRoadmapV2 from "./Component/SectionRoadmapV2";
 import SectionTokenomic from "./Component/SectionTokenomic";
+import SectionTokenomicV2 from "./Component/SectionTokenomicV2";
 import SectionPresale from "./Component/SectionPresale";
+import SectionCrosswiseFeature from "./Component/SectionCrosswiseFeatures";
+import SectionPresaleBottom from "./Component/SectionPresaleBottom";
+import SectionFees from "./Component/SectionFees";
 
 const Home = (props) => {
    
@@ -207,16 +212,21 @@ const Home = (props) => {
           <SectionPresale></SectionPresale>
         ): (
           <>
-            <SectionHeader></SectionHeader>
-            <SectionAbout></SectionAbout>
-            <SectionMission></SectionMission>                 
-            <SectionExchange></SectionExchange>
-            <SectionRoadmap></SectionRoadmap>
-            <SectionTeamwork></SectionTeamwork>
-            <SectionTokenomic />
-            <SectionNews></SectionNews>
-            <SectionHelp></SectionHelp>
-            <SectionFooter></SectionFooter>
+            <SectionHeader/>
+            <SectionAbout/>
+            <SectionMission/>
+            {/* <SectionExchange></SectionExchange> */}
+            <SectionCrosswiseFeature/>
+            {/* <SectionRoadmap></SectionRoadmap> */}
+            <SectionRoadmapV2/>
+            <SectionTeamwork/>
+            {/* <SectionTokenomic /> */}
+            <SectionTokenomicV2/>
+            <SectionPresaleBottom />
+            <SectionFees/>
+            <SectionNews/>
+            <SectionHelp/>
+            <SectionFooter/>
           </>
         )}
       </div>

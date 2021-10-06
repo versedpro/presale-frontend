@@ -12,6 +12,10 @@ import Img4 from '../../../assets/images/crosswise/content-img-12.png';
 import Img5 from '../../../assets/images/crosswise/content-img-13.png';
 import Img6 from '../../../assets/images/crosswise/image-6.png';
 
+import FeatImg1 from '../../../assets/images/crosswise/feature/img_crosswise_f_1.png';
+import FeatImg2 from '../../../assets/images/crosswise/feature/img_crosswise_f_2.png';
+import FeatImg3 from '../../../assets/images/crosswise/feature/img_crosswise_f_3.png';
+
 const SectionExchange = (props) => {
 
     const { isDark, toggleTheme } = useContext(ThemeContext)
@@ -66,16 +70,15 @@ const SectionExchange = (props) => {
     ]
       };
     return (
-        
           <section className="exchange_section">
             <Container>
                 <Row>
                     <div className="title">
-                        <h1>Exchange CrossWise</h1>
+                        <h1>Crosswise Features</h1>
                     </div>
                 </Row>
                 
-               <div className="exchange_slider">
+               {/* <div className="exchange_slider">
                 <div className="gallery_images">
                     <ul>
                         <Slider {...settings}>
@@ -120,9 +123,46 @@ const SectionExchange = (props) => {
                             </Slider>
                         </ul>
                     </div>
-              </div>
+              </div> */}
                
-                
+              <div className="features_group">
+                  <div className="features_item">
+                    <div className="features_item_icon">
+                        <img src={FeatImg1} />
+                    </div>
+                    <div className="features_title">
+                        <h5>Launchpad</h5>
+                    </div>
+                    <div className="features_desc">
+                    Crosswise features an Incubation & launchpad program to help budding entrepreneurs launch their projects on Crosswise dex. This will help the teams with funding, marketing, and reaching a new user-base for their Apps & dApps on our multi-chain ecosystem.
+                    </div>
+                  </div>
+
+                  <div className="features_item">
+                    <div className="features_item_icon">
+                        <img src={FeatImg1} />
+                    </div>
+                    <div className="features_title">
+                        <h5>Launchpad</h5>
+                    </div>
+                    <div className="features_desc">
+                    Crosswise features an Incubation & launchpad program to help budding entrepreneurs launch their projects on Crosswise dex. This will help the teams with funding, marketing, and reaching a new user-base for their Apps & dApps on our multi-chain ecosystem.
+                    </div>
+                  </div>
+
+                  <div className="features_item">
+                    <div className="features_item_icon">
+                        <img src={FeatImg1} />
+                    </div>
+                    <div className="features_title">
+                        <h5>Launchpad</h5>
+                    </div>
+                    <div className="features_desc">
+                        Crosswise features an Incubation & launchpad program to help budding entrepreneurs launch their projects on Crosswise dex. This will help the teams with funding, marketing, and reaching a new user-base for their Apps & dApps on our multi-chain ecosystem.
+                    </div>
+                  </div>
+
+              </div>
             </Container>
           </section>
         );

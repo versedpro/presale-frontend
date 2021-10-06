@@ -15,9 +15,10 @@ import { ThemeContext } from "../../../contexts/ThemeContext";
 
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
 import Thumb from '../../../assets/images/crosswise/thumb.png';
-import Icon1 from '../../../assets/images/crosswise/icon-1.png';
-import Icon2 from '../../../assets/images/crosswise/icon-2.png';
-import Icon3 from '../../../assets/images/crosswise/icon-3.png';
+import Icon1 from '../../../assets/images/crosswise/multi-server.png';
+import Icon2 from '../../../assets/images/crosswise/user-friendly.png';
+import Icon3 from '../../../assets/images/crosswise/casless-mode.png';
+import Icon4 from '../../../assets/images/crosswise/trade-tools.png';
 
 const SectionAbout = (props) => {
    
@@ -48,7 +49,7 @@ Crosswise is combining stability, usability, security, and vision to create an a
                 </Row>
                 <Row>
                   <div className="features">
-                      <div className="feature_rectangle">
+                      {/* <div className="feature_rectangle">
                         <div className="rectangle_icon">
                             <img src={Thumb} />
                         </div>
@@ -81,6 +82,41 @@ Crosswise is combining stability, usability, security, and vision to create an a
                         </div>
                         <div>
                             <h6>Trader Tools</h6>
+                        </div>
+                      </div> */}
+                      <div className="feature_item">
+                        <div className="feature_item_icon">
+                          <img src={Icon1} />
+                        </div>
+                        <div className="desc">
+                          <h6>MultiChain</h6>
+                        </div>
+                      </div>
+
+                      <div className="feature_item">
+                        <div className="feature_item_icon">
+                          <img src={Icon2} />
+                        </div>
+                        <div className="desc">
+                          <h6>User Friendly</h6>
+                        </div>
+                      </div>
+
+                      <div className="feature_item">
+                        <div className="feature_item_icon">
+                          <img src={Icon3} />
+                        </div>
+                        <div className="desc">
+                          <h6>Gasless Mode</h6>
+                        </div>
+                      </div>
+
+                      <div className="feature_item">
+                        <div className="feature_item_icon">
+                          <img src={Icon4} />
+                        </div>
+                        <div className="desc">
+                          <h6>Trader Tools</h6>
                         </div>
                       </div>
                   </div>
