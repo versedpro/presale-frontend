@@ -87,7 +87,7 @@ const SectionHeader = (props) => {
 
   // represents softcap amount
   // This should be updated with softcap of presale
-  const [softCap, setSoftCap] = useState(40)
+  const [softCap, setSoftCap] = useState(0)
   const [counter, setCounter] = useState(0);
   
   const [second, setSecond] = useState('00');
@@ -262,7 +262,7 @@ const SectionHeader = (props) => {
                         Token price
                       </p>
                       <h6>
-                        1 CRSS = 0.3-0.4USD
+                        1 CRSS = 0.2-0.3USD
                       </h6>
                     </div>
 
@@ -271,7 +271,7 @@ const SectionHeader = (props) => {
                         Soft Cap
                       </p>
                       <h6>
-                        200,000 CRSS
+                        200,000 BUSD
                       </h6>
                     </div>
 
@@ -280,7 +280,7 @@ const SectionHeader = (props) => {
                         Hard Cap
                       </p>
                       <h6>
-                        500,000 CRSS
+                        500,000 BUSD
                       </h6>
                     </div>
 
@@ -292,12 +292,27 @@ const SectionHeader = (props) => {
                         25,000 BUSD
                       </h6>
                     </div>
-
+                    <div className="presale_info_rectangle">
+                      <p>
+                        Min purchase
+                      </p>
+                      <h6>
+                        250 BUSD
+                      </h6>
+                    </div>
+                    <div className="presale_info_rectangle long_width">
+                      <h6>
+                        Stage 1 = 1 Million CRSS @ 0.2 BUSD
+                      </h6>
+                      <h6>
+                        Stage 2 = 1 Million CRSS @ 0.3 BUSD
+                      </h6>
+                    </div>
                   </div>
 
                   <div className="presale_tips">
-                      <div className="tips_item"><p>Raise- </p> <span>&nbsp;&nbsp;200,000 CRSS</span></div>
-                      <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;500,000 CRSS</span></div>
+                      <div className="tips_item"><p>Raised- </p> <span>&nbsp;&nbsp;0 BUSD</span></div>
+                      <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;500,000 BUSD</span></div>
                   </div>
                   
                   <div className="presale_progress">
