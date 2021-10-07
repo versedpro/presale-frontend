@@ -103,7 +103,7 @@ const SectionHeader = (props) => {
       const utcNow = currentTime - currentTimezoneOffset * 60 * 1000;
       console.log("utcNow", utcNow);
 
-      const presaleTime = new Date(2021, 9, 18, 15, 0, 0).getTime();
+      const presaleTime = new Date(2021, 9, 27, 15, 0, 0).getTime();
       console.log("presaleTime",  presaleTime)
       const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
       console.log("presaleTimezoneOffset", presaleTimezoneOffset)
