@@ -40,7 +40,7 @@ const SectionHelp = (props) => {
     const { isDark, toggleTheme } = useContext(ThemeContext)
     return (
         
-          <section className="help_section">
+          <section className="help_section" id="help">
             <Container>
               <div class="help_section_group">
               <div className="help_section_left">

@@ -32,7 +32,7 @@ const SectionAbout = (props) => {
   
     return (
         
-          <section className="about_section">
+          <section className="about_section" id="about">
             <Container>
               <Row>
                   <div className="about_section_sub">

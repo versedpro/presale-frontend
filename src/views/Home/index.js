@@ -115,7 +115,7 @@ const Home = (props) => {
           <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
             {/* <!-- Brand --> */}
             <div className="container">
-              <a className="navbar-brand">
+              <a className="navbar-brand" href="/">
                 {
                   isDark? (<img src="assets/images/logo@3x.png" className="nav_logo" id="crosswise_logo"/>):
                   <img src="assets/images/logo-light-theme-2.png" className="nav_logo" id="crosswise_logo"/>
@@ -131,19 +131,19 @@ const Home = (props) => {
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul className="navbar-nav">
                     <li className="nav-item">
-                      <a className="nav-link" href=""><span>About Crosswise</span></a>
+                      <a className="nav-link" href="#about"><span>About Crosswise</span></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="blog.html"><span>Tokenomics </span></a>
+                      <a className="nav-link" href="#tokenomic"><span>Tokenomics </span></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href=""><span>Roadmap </span></a>
+                      <a className="nav-link" href="#roadmap"><span>Roadmap </span></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href=""><span>Team  </span></a>
+                      <a className="nav-link" href="#team"><span>Team</span></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href=""><span>Socials  </span></a>
+                      <a className="nav-link" href="#help"><span>Socials</span></a>
                     </li>
                     {/* <li className="nav-item ml-md-4">
                       <a className="nav-link">
@@ -224,7 +224,7 @@ const Home = (props) => {
             <SectionTokenomicV2/>
             <SectionPresaleBottom />
             <SectionFees/>
-            <SectionNews/>
+            {/* <SectionNews/> */}
             <SectionHelp/>
             <SectionFooter/>
           </>

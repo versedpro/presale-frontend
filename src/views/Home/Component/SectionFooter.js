@@ -33,7 +33,7 @@ const SectionFooter = (props) => {
                             isDark? (<img src="assets/images/message.png"  />):
                             <img src="assets/images/message-light.png"/>
                           } 
-                        <span class="item">Language change to English</span>
+                        <span class="item">Language Selector</span>
                         </div>
                     </div>
                   </div>

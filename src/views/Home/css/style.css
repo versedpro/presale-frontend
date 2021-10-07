@@ -234,10 +234,10 @@
     background-image: linear-gradient(145deg, #ffffff, #fafbfc 52%, #f5f7fa);
 }
 .header_section .header_section_right .header_presale_board{
-    width: 353px;
+    width: 383px;
     height: 512px;
     /* margin: 0 0 41px 122px; */
-    padding: 24px 23px 24px 24px;
+    padding: 24px 11px 24px 11px;
     border-radius: 12px;
     -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
@@ -258,7 +258,7 @@
   border-radius: 12px;
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px);
-  box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.4), -4px -4px 8px 0 rgba(224, 224, 255, 0.04), 0 1px 1px 0 rgba(9, 13, 20, 0.4);
+  box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.4), -4px -4px 8px 0 rgba(158, 158, 165, 0.04), 0 1px 1px 0 rgba(9, 13, 20, 0.4);
   border: solid 1px rgba(245, 247, 250, 0.06);
   background-image: linear-gradient(135deg, rgba(245, 247, 250, 0.12), rgba(245, 247, 250, 0.06) 52%, rgba(245, 247, 250, 0));
   text-align: center;
@@ -266,7 +266,8 @@
 
 .header_section_right .presale_counter  {
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding-top:15px;
 }
 
 .header_section_right .header_presale_board p {
@@ -279,7 +280,7 @@
     justify-content: space-between;
 }
 .header_section_right .presale_info_rectangle {
-    width: 140px;
+    width: 172px;
     height: 76px;
     /* margin: 24px 25px 24px 0; */
     margin-top: 24px;
@@ -894,12 +895,14 @@ div.presale_progress > div > div:nth-child(3) {
     position: absolute;
     top: 24px;
     left: 90px;
+    cursor: pointer;
+    z-index:100;
 }
 .teamwork_section .gallery_images .gallery_photo .photo_content {
     padding: 0px 24px;
 }
 .teamwork_section .gallery_photo.shadow{
-    height: 360px;
+    height: 484px;
     border-radius: 12px;
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px);

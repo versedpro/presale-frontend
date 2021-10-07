@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState, useContext } from "react";
+import React, { Component, Fragment, useState, useContext, useEffect } from "react";
 import { Container , Input} from 'reactstrap';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
@@ -88,7 +88,72 @@ const SectionHeader = (props) => {
   // represents softcap amount
   // This should be updated with softcap of presale
   const [softCap, setSoftCap] = useState(40)
+  const [counter, setCounter] = useState(0);
   
+  const [second, setSecond] = useState('00');
+  const [minute, setMinute] = useState('00');
+  const [day, setDay] = useState('00');
+  const [hour, setHour] = useState('00');
+
+  useEffect(() => {
+      const currentTime = Date.now();
+      console.log("currentTime", currentTime);
+      const currentTimezoneOffset = (new Date()).getTimezoneOffset();
+      console.log("currentTimezoneOffset", currentTimezoneOffset)
+      const utcNow = currentTime - currentTimezoneOffset * 60 * 1000;
+      console.log("utcNow", utcNow);
+
+      const presaleTime = new Date(2021, 9, 18, 15, 0, 0).getTime();
+      console.log("presaleTime",  presaleTime)
+      const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
+      console.log("presaleTimezoneOffset", presaleTimezoneOffset)
+      const utcPresaleTime = presaleTime - presaleTimezoneOffset * 60 * 1000;
+      console.log("utcPresaleTime", utcPresaleTime)
+
+      const timeStamp = utcPresaleTime - utcNow - 120 * 60 * 1000;
+      console.log("timestamp", timeStamp);
+      if(counter > 0 )return;
+      // get timestamp
+      // 18.10.2021 3PM CET UTC + 2(+120)
+      setCounter(Math.floor(timeStamp/1000));
+  })
+
+  useEffect(()=> {
+  
+    const intervalId = setInterval(() => {
+      const dayCounter = Math.floor(counter / (60 * 60 * 24));
+      const hourCounter = Math.floor((counter / (60 * 60)) % 24);
+      const minuteCounter = Math.floor((counter / 60) % 60);
+      const secondCounter = counter % 60;
+  
+      const computedDay   = String(dayCounter).length === 1 ? `0${dayCounter}`: dayCounter;
+      const computedHour   = String(hourCounter).length === 1 ? `0${hourCounter}`: hourCounter;
+      const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}`: secondCounter;
+      const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
+      // console.log("type",  typeof(computedSecond));
+      
+      setDay(computedDay.toString());
+      setHour(computedHour.toString());
+      setSecond(computedSecond.toString());
+      setMinute(computedMinute.toString());
+      // console.log("counter tuype", typeof(counter));
+      if(counter === 0){
+        setDay('00');
+        setMinute('00');
+        setHour('00');
+        setSecond('00');
+        clearInterval(intervalId);
+        return;
+      }
+      if(counter > 0){
+        setCounter(counter - 1);
+      }
+      
+    }, 1000)
+     // console.log(counter)
+  return () => clearInterval(intervalId);
+  })
+
   return (
       
     <Section className="header_section" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}} softCap={ softCap }>
@@ -102,7 +167,7 @@ const SectionHeader = (props) => {
                 <div className="button_group">
                   <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
                   <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
-                  <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
+                  <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
                 </div>
                 <div className="col-12 text-center">
                   <div className="dapp_bar shadow">
@@ -151,12 +216,12 @@ const SectionHeader = (props) => {
             <Row>
               <div className="header_section_right">
                 <div className="header_presale_board">
-                  <h5>Pre-Sale Ends In</h5>
+                  <h5>Pre-Sale Starts In</h5>
 
                   <div className="presale_counter">
                     <div className="count_el">
                       <div className="count_el_digits">
-                        <h3>09</h3>              
+                        <h3>{day}</h3>              
                       </div>
                       <div className="count_el_text">
                         <p>DAY</p>
@@ -165,7 +230,7 @@ const SectionHeader = (props) => {
 
                     <div className="count_el">
                       <div className="count_el_digits">
-                        <h3>11</h3>              
+                        <h3>{hour}</h3>              
                       </div>
                       <div className="count_el_text">
                         <p>HOUR</p>
@@ -174,7 +239,7 @@ const SectionHeader = (props) => {
 
                     <div className="count_el">
                       <div className="count_el_digits">
-                        <h3>03</h3>              
+                        <h3>{minute}</h3>              
                       </div>
                       <div className="count_el_text">
                         <p>MIN</p>
@@ -183,7 +248,7 @@ const SectionHeader = (props) => {
 
                     <div className="count_el">
                       <div className="count_el_digits">
-                        <h3>48</h3>              
+                        <h3>{second}</h3>              
                       </div>
                       <div className="count_el_text">
                         <p>SEC</p>
@@ -197,7 +262,7 @@ const SectionHeader = (props) => {
                         Token price
                       </p>
                       <h6>
-                        1 CRSS = 1 USD
+                        1 CRSS = 0.3-0.4USD
                       </h6>
                     </div>
 
@@ -206,7 +271,7 @@ const SectionHeader = (props) => {
                         Soft Cap
                       </p>
                       <h6>
-                        250.000 CRSS
+                        200,000 CRSS
                       </h6>
                     </div>
 
@@ -215,7 +280,7 @@ const SectionHeader = (props) => {
                         Hard Cap
                       </p>
                       <h6>
-                        1,500,000 CRSS
+                        500,000 CRSS
                       </h6>
                     </div>
 
@@ -224,15 +289,15 @@ const SectionHeader = (props) => {
                         Max purchase
                       </p>
                       <h6>
-                        25,000 CRSS
+                        25,000 BUSD
                       </h6>
                     </div>
 
                   </div>
 
                   <div className="presale_tips">
-                      <div className="tips_item"><p>Raise- </p> <span>&nbsp;&nbsp;1164 CRSS</span></div>
-                      <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;1,500,000 CRSS</span></div>
+                      <div className="tips_item"><p>Raise- </p> <span>&nbsp;&nbsp;200,000 CRSS</span></div>
+                      <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;500,000 CRSS</span></div>
                   </div>
                   
                   <div className="presale_progress">

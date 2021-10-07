@@ -76,11 +76,11 @@ const SectionTeamwork = (props) => {
       };
     return (
         
-          <section className="teamwork_section">
+          <section className="teamwork_section" id="team">
             <Container>
                 <Row>
                     <div className="title">
-                        <h1>Our Team Works For You</h1>
+                        <h1>Team</h1>
                     </div>
                 </Row>
                 
@@ -94,17 +94,17 @@ const SectionTeamwork = (props) => {
                                         {/* <img class="card-img-top" src={} /> */}
                                         <img class="user_img_top" src={User2} />
                                         {
-                                            isDark? (<img class="linkedin_img_icon" src={linkedinBlackIcon} />):
-                                                    (<img class="linkedin_img_icon" src={linkedinLightIcon} />)
+                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/fbeeg/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
+                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/fbeeg/" target="_blank"><img  src={linkedinLightIcon} /> </a>)
                                         }
                                         <div class="card-img-overlay p-3">
                                         </div>
                                         <div class="photo_content">
-                                            <h6>Alexander Bychkov</h6>
-                                            <p>Chief executive officer</p>
+                                            <h6>Frederic Beeg</h6>
+                                            <p>CEO/Founder</p>
                                         </div>
                                         <div class="photo_description">
-                                            <p>With over 25 years of experience in payments and e-commerce, Alexander has an extensive background in driving profitable growth.</p>
+                                            <p>Focused on building crypto & e-commerce platforms. Living on Koh Phangan, Thailand & Canggu, Bali, Indonesia. Built an industry-leading digital marketplace for video game distribution, created successful brands on Amazon</p>
                                         </div>
                                     </div>
                                 </li>
@@ -114,17 +114,17 @@ const SectionTeamwork = (props) => {
                                         {/* <img class="card-img-top" src={} /> */}
                                         <img class="user_img_top" src={User3} />
                                         {
-                                            isDark? (<img class="linkedin_img_icon" src={linkedinBlackIcon} />):
-                                                    (<img class="linkedin_img_icon" src={linkedinLightIcon} />)
+                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/dino-dzizic-189a54191/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
+                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/dino-dzizic-189a54191/" target="_blank"><img  src={linkedinLightIcon} /></a>)
                                         }
                                         <div class="card-img-overlay p-3">
                                         </div>
                                         <div class="photo_content">
-                                            <h6>Sonny Singh</h6>
+                                            <h6>Dino Dzizic</h6>
                                             <p>Chief technology officer</p>
                                         </div>
                                         <div class="photo_description">
-                                            <p>Sonny was the first VP of Sales at Jumio and previously was at InMage Systems (acquired by Microsoft) and Niku.</p>
+                                            <p>Defi/Dapp/NFT specialist & Passionate in blockchain industry with 5+ years experience and Bachelor's Degree in software engineering.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -134,17 +134,17 @@ const SectionTeamwork = (props) => {
                                         {/* <img class="card-img-top" src={} /> */}
                                         <img class="user_img_top" src={User4} />
                                         {
-                                            isDark? (<img class="linkedin_img_icon" src={linkedinBlackIcon} />):
-                                                    (<img class="linkedin_img_icon" src={linkedinLightIcon} />)
+                                            isDark? (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinBlackIcon} /></a>):
+                                                    (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinLightIcon} /></a>)
                                         }
                                         <div class="card-img-overlay p-3">
                                         </div>
                                         <div class="photo_content">
-                                            <h6>Misha Karpenko</h6>
-                                            <p>Compiliance officer</p>
+                                            <h6>Gregory Khine</h6>
+                                            <p>Chief operating officer</p>
                                         </div>
                                         <div class="photo_description">
-                                            <p>Misha has over 20 years of experience building software systems in the financial and communications industries.</p>
+                                            <p> </p>
                                         </div>
                                     </div>
                                 </li>
@@ -154,17 +154,17 @@ const SectionTeamwork = (props) => {
                                         {/* <img class="card-img-top" src={} /> */}
                                         <img class="user_img_top" src={User1} />
                                         {
-                                            isDark? (<img class="linkedin_img_icon" src={linkedinBlackIcon} />):
-                                                    (<img class="linkedin_img_icon" src={linkedinLightIcon} />)
+                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/leon-jin-7013011b9/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
+                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/leon-jin-7013011b9/" target="_blank"><img  src={linkedinLightIcon} /></a>)
                                         }
                                         <div class="card-img-overlay p-3">
                                         </div>
                                         <div class="photo_content">
-                                            <h6>Alena Grace</h6>
-                                            <p>Merchant e-Solutions</p>
+                                            <h6>Leon Jin</h6>
+                                            <p>Lead Developer</p>
                                         </div>
                                         <div class="photo_description">
-                                            <p>With 17 years of experience as a legal executive (including 8 years for a Fortune 100 company and 9 years in private practice).</p>
+                                            <p>For recent years, Leon is focusing on developing blockchain projects having a deep knowledge of blockchain technologies, specifically in constructing the decentralized application, fork & customizing the existing secure smart contracts, implementing trending methods like yield farming, new proof methods and etc.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -174,17 +174,17 @@ const SectionTeamwork = (props) => {
                                         {/* <img class="card-img-top" src={} /> */}
                                         <img class="user_img_top" src={User5} />
                                         {
-                                            isDark? (<img class="linkedin_img_icon" src={linkedinBlackIcon} />):
-                                                    (<img class="linkedin_img_icon" src={linkedinLightIcon} />)
+                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/james-gao-49461a217/" target="_blank"><img src={linkedinBlackIcon} /></a>):
+                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/james-gao-49461a217/" target="_blank"><img src={linkedinLightIcon} /></a>)
                                         }
                                         <div class="card-img-overlay p-3">
                                         </div>
                                         <div class="photo_content">
-                                            <h6>Sam Nilson</h6>
-                                            <p>Compiliance officer</p>
+                                            <h6>James Gao</h6>
+                                            <p>Lead Developer</p>
                                         </div>
                                         <div class="photo_description">
-                                            <p>Misha has over 20 years of experience building software systems in the financial and communications industries.</p>
+                                            <p>James is honored with a bachelor's degree in the computer science under a robust educational background. Strong points are deep knowledge of software engineering and its implementation to the work.</p>
                                         </div>
                                     </div>
                                 </li>
