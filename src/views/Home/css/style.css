@@ -159,6 +159,7 @@
 }
 .header_section{
     padding-top: 120px;
+    padding-bottom: 50px;
 }
 .header_section_left, .header_section_right{
     z-index:1;
@@ -235,7 +236,7 @@
 }
 .header_section .header_section_right .header_presale_board{
     width: 383px;
-    height: 725px;
+    height: 750px;
     /* margin: 0 0 41px 122px; */
     padding: 24px 11px 24px 11px;
     border-radius: 12px;
@@ -293,6 +294,7 @@
 }
 .header_section_right .presale_info_rectangle.long_width{
     width: 100% !important;
+    height: 102px !important;
 }
 .light-theme .header_section_right .presale_info_rectangle {
     box-shadow: none;
@@ -360,7 +362,7 @@ div.presale_progress > div > div:nth-child(3) {
 }
 
 .soft-cap {
-    margin: 15px 45px 0 87px;
+    margin: 15px 150px 0 50px;
 }
 
 .hard-cap {
@@ -380,7 +382,7 @@ div.presale_progress > div > div:nth-child(3) {
 }
 
 .light-theme .soft-cap::after, .light-theme .hard-cap::after {
-    border-color: transparent transparent #fafbfc transparent;
+    border-color: transparent transparent white transparent;
 }
 
 .light-theme .presale-text-cap {
@@ -711,6 +713,48 @@ div.presale_progress > div > div:nth-child(3) {
 .roadmap_section_v2 .see_full_roadmap{
     padding-top: 50px;
 }
+
+.roadmap_section_v2 .see_full_roadmap_section{
+    max-width: 1000px;
+    display:flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-evenly;
+}
+.see_full_roadmap_section .roadmap_item{
+    width: 380px;
+    margin: 25px 10px;
+    /* box-shadow: 0px 4px 15px rgb(0 0 0 / 10%);
+    border-radius: 15px;
+    background-color: #282a2e; */
+    position:relative;
+}
+.roadmap_item .photo_content {
+    padding: 20px 0px;
+}
+.roadmap_item .gallery_photo{
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 10%);
+    border-radius: 15px;
+    background-color: #282a2e;
+}
+.light-theme .see_full_roadmap_section .roadmap_item .gallery_photo{
+    background-color: #f5f7fa;
+}
+.roadmap_item .tokenImage{
+    position: absolute;
+    left: 80px;
+}
+.roadmap_item .space_img{
+    margin-top: 242px;
+}
+@media only screen and (max-width:830px){
+    .roadmap_item .tokenImage{
+       display:none;
+    }
+    .roadmap_item .space_img{
+        margin-top:0px;
+    }
+}
 /*********** Tokenomic v2 ***********/
 .tokenomic_section {
     background-color: #282A2E;
@@ -960,7 +1004,7 @@ div.presale_progress > div > div:nth-child(3) {
 }
 .s_diagram.size_md{
     justify-content: space-between;
-    width: 600px;
+    width: 800px;
     align-items: baseline;
     margin:auto;
 }

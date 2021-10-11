@@ -150,6 +150,12 @@ const SectionPresaleBottom = (props) => {
                             <h6 className="item_desc pt-30">Price at <b>0.3 USD</b></h6>
                             <h6 className="item_desc">1M Tokens = 300K USD</h6>
                         </div>
+                        <img src={arrow1} />
+                        <div className="stage_item">
+                            <div className="item_title">Stage 3</div>
+                            <h6 className="item_desc pt-30">Price at <b>0.6 USD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 600K USD</h6>
+                        </div>
                     </div>
 
 
@@ -164,6 +170,12 @@ const SectionPresaleBottom = (props) => {
                             <div className="item_title">Stage 2</div>
                             <h6 className="item_desc pt-30">Price at <b>0.3 USD</b></h6>
                             <h6 className="item_desc">1M Tokens = 300K USD</h6>
+                        </div>
+                        <img src={arrow2} className="mt-30"/>
+                        <div className="stage_item mt-30">
+                            <div className="item_title">Stage 3</div>
+                            <h6 className="item_desc pt-30">Price at <b>0.6 USD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 600K USD</h6>
                         </div>
                     </div>
                     <div className="stage_step">

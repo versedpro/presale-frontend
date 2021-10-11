@@ -54,10 +54,11 @@ const CombinedShape = styled.div`
     position: absolute;
     bottom: 100%;  /* At the top of the tooltip */
     left: 50%;
-    margin-left: -8px;
+    margin-left: -13px;
     border-width: 8px;
     border-style: solid;
-    border-color: transparent transparent rgba(43, 43, 43, 0.5) transparent;
+    // border-color: transparent transparent rgba(43, 43, 43, 0.5) transparent;
+    border-color: transparent transparent rgb(71 73 77) transparent;
   }
 `;
 
@@ -97,21 +98,21 @@ const SectionHeader = (props) => {
 
   useEffect(() => {
       const currentTime = Date.now();
-      console.log("currentTime", currentTime);
+     // console.log("currentTime", currentTime);
       const currentTimezoneOffset = (new Date()).getTimezoneOffset();
-      console.log("currentTimezoneOffset", currentTimezoneOffset)
+      // console.log("currentTimezoneOffset", currentTimezoneOffset)
       const utcNow = currentTime - currentTimezoneOffset * 60 * 1000;
-      console.log("utcNow", utcNow);
+      // console.log("utcNow", utcNow);
 
       const presaleTime = new Date(2021, 9, 27, 15, 0, 0).getTime();
-      console.log("presaleTime",  presaleTime)
+      // console.log("presaleTime",  presaleTime)
       const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
-      console.log("presaleTimezoneOffset", presaleTimezoneOffset)
+      // console.log("presaleTimezoneOffset", presaleTimezoneOffset)
       const utcPresaleTime = presaleTime - presaleTimezoneOffset * 60 * 1000;
-      console.log("utcPresaleTime", utcPresaleTime)
+      // console.log("utcPresaleTime", utcPresaleTime)
 
       const timeStamp = utcPresaleTime - utcNow - 120 * 60 * 1000;
-      console.log("timestamp", timeStamp);
+      // console.log("timestamp", timeStamp);
       if(counter > 0 )return;
       // get timestamp
       // 18.10.2021 3PM CET UTC + 2(+120)
@@ -307,12 +308,15 @@ const SectionHeader = (props) => {
                       <h6>
                         Stage 2 = 1 Million CRSS @ 0.3 BUSD
                       </h6>
+                      <h6>
+                        Stage 3 = 1 Million CRSS @ 0.6 BUSD
+                      </h6>
                     </div>
                   </div>
 
                   <div className="presale_tips">
                       <div className="tips_item"><p>Raised- </p> <span>&nbsp;&nbsp;0 BUSD</span></div>
-                      <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;500,000 BUSD</span></div>
+                      <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
                   </div>
                   
                   <div className="presale_progress">
@@ -344,7 +348,8 @@ const SectionHeader = (props) => {
                     </ProgressBar>
                     <Row>
                       <CombinedShape className="soft-cap">
-                        <PresaleTextTip className="presale-text-cap">Soft Cap</PresaleTextTip>
+                        <PresaleTextTip className="presale-text-cap">
+                          Soft Cap</PresaleTextTip>
                       </CombinedShape>
                       <CombinedShape className="hard-cap">
                         <PresaleTextTip className="presale-text-cap">Hard Cap</PresaleTextTip>
