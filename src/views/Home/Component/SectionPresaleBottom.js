@@ -181,7 +181,7 @@ const SectionPresaleBottom = (props) => {
                     <div className="stage_step">
                         <div className="step_item b_green">
                             <img src={stepImg1} />
-                            <div className="step_desc">Total of 500k USD Hard Cap, 200k Soft Cap to reach</div>
+                            <div className="step_desc">Total of 1.1 Million USD Hard Cap, 200k Soft Cap to reach</div>
                         </div>
                         <div className="step_item">
                             <img src={stepImg2} />
@@ -193,11 +193,11 @@ const SectionPresaleBottom = (props) => {
                         </div>
                         <div className="step_item">
                             <img src={stepImg2} />
-                            <div className="step_desc">Total of max 2 Million coins (4% of Max supply)</div>
+                            <div className="step_desc">Total of max 3 Million coins (6% of Max supply)</div>
                         </div>
                         <div className="step_item b_green">
                             <img src={stepImg1} />
-                            <div className="step_desc">Base price 0.5 USD after presale</div>
+                            <div className="step_desc">Base price 0.75 USD after presale</div>
                         </div>
                         <div className="step_item">
                             <img src={stepImg2} />

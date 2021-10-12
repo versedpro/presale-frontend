@@ -263,7 +263,7 @@ const SectionHeader = (props) => {
                         Token price
                       </p>
                       <h6>
-                        1 CRSS = 0.2-0.3USD
+                        1 CRSS = 0.2-0.6USD
                       </h6>
                     </div>
 
@@ -281,7 +281,7 @@ const SectionHeader = (props) => {
                         Hard Cap
                       </p>
                       <h6>
-                        500,000 BUSD
+                        1,000,000 BUSD
                       </h6>
                     </div>
 
