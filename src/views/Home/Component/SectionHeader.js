@@ -281,7 +281,7 @@ const SectionHeader = (props) => {
                         Hard Cap
                       </p>
                       <h6>
-                        1,000,000 BUSD
+                        1,100,000 BUSD
                       </h6>
                     </div>
 
