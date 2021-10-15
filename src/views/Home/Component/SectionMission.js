@@ -31,6 +31,8 @@ import Dex7 from '../../../assets/images/crosswise/dex/dex-mech-04.png';
 import Dex8 from '../../../assets/images/crosswise/dex/dex-mech_1.png';
 import Dex9 from '../../../assets/images/crosswise/dex/dex-mech-02.png';
 
+import pointerImg from '../../../assets/images/crosswise/pointer.png';
+
 const SectionMission = (props) => {
 
     const { isDark, toggleTheme } = useContext(ThemeContext)
@@ -53,7 +55,7 @@ const SectionMission = (props) => {
                     <div className="title">
                         <h1>Platform Features</h1>
                     </div>
-                    <div class="" data-title="Hypertext Markup Language">HTML</div>
+                    {/* <div class="" data-title="Hypertext Markup Language">HTML</div> */}
                     <div className="feature_item_group">
                         <div className="feature_item ">
                             <div className="feature_item_icon tooltip expand" data-title="A seamless way of swapping tokens. Swap Exchange uses automated liquidity pools to execute your swap in an instant.">
@@ -63,6 +65,7 @@ const SectionMission = (props) => {
                             <div className="desc">
                              <h6>Interoperability Swap Exchange</h6>
                             </div>
+                            <img src={pointerImg} className="vert-move" />
                         </div>
 
                         <div className="feature_item">

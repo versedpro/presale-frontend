@@ -343,6 +343,7 @@
     .header_section_right{
         margin:auto;
     }
+    
 }
 
 @media only screen and (max-width: 550px) {
@@ -532,7 +533,26 @@ div.presale_progress > div > div:nth-child(3) {
 .mission_section .feature_item_group .feature_item{
     padding-top:40px;
     margin: 20px;
+    position: relative;
 }
+
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+    position:absolute;
+    right: -50px;
+    top: 65%;
+    z-index: 999999;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
 .mission_section .launchpad_features{
     width: 100%;
 }
