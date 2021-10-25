@@ -10,9 +10,11 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <Provider store={configureStore()}>
    <ThemeContextProvider>
+   <RefreshContextProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
+    </RefreshContextProvider>
    </ThemeContextProvider>
   </Provider>,
   document.getElementById('root')

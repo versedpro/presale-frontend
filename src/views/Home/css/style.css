@@ -46,9 +46,9 @@
 }
 
 .presale-info .rectangle {
-    width: 140px;
+    width: 220px;
     height: 76px;
-    margin: 15px;
+    /* margin: 15px 0px; */
     padding: 12px 10px 12px 10px;
     border-radius: 12px;
     -webkit-backdrop-filter: blur(40px);
@@ -150,6 +150,8 @@
 
 .section-presale .presale_info {
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header_section{
@@ -179,22 +181,29 @@
 .header_section .header_section_left .button_group{
     padding-top: 15px;
     padding-bottom: 56px;
+    flex-wrap: wrap;
 }
 .header_section .btn_primary {
     padding: 10px 20px;
     width: max-content !important;
+    margin-top: 10px;
 }
 
-.header_section .button_group .btn_pitchdeck{
+/* .header_section .button_group .btn_pitchdeck{
     margin-left: 24px;
 }
 .header_section .button_group .btn_whitelisted{
     margin-left: 24px;
 }
+.header_section .button_group .btn_audit{
+    margin-left: 24px;
+} */
 .header_section .button_group{
     display:flex;
+    justify-content: space-between;
+    padding-right:100px;
 }
-.btn_primary.btn_pitchdeck {
+.btn_primary.btn_pitchdeck, .btn_primary.btn_audit {
     background-image: linear-gradient(
 100deg
 , rgba(245, 247, 250, 0.12), rgba(245, 247, 250, 0.06) 52%, rgba(245, 247, 250, 0)) !important;
@@ -327,6 +336,11 @@
     left: 48%;
     top:100px;
 }
+@media only screen and (max-width: 975px){
+    .header_section_right{
+        margin:auto;
+    }
+}
 
 @media only screen and (max-width:768px){
     .header_section_left{
@@ -340,10 +354,16 @@
         right: -350px !important;
         left: unset;
     }
-    .header_section_right{
-        margin:auto;
+    .header_section .button_group{
+        padding-right: 0px;
     }
-    
+}
+
+@media only screen and (max-width: 725px){
+    .header_section .button_group .btn_audit{
+        margin-left: 0px;
+        margin-top:10px;
+    }
 }
 
 @media only screen and (max-width: 550px) {

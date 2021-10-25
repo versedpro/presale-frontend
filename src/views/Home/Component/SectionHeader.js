@@ -1,29 +1,30 @@
-import React, { Component, Fragment, useState, useContext, useEffect } from "react";
-import { Container , Input} from 'reactstrap';
+import React, { Component, Fragment, useState, useContext, useEffect } from "react"
+import { Container , Input} from 'reactstrap'
 import 'react-accessible-accordion/dist/fancy-example.css';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap'
 import '../css/style.css'
-import { ThemeContext } from "../../../contexts/ThemeContext";
-import styled from "styled-components";
+import { ThemeContext } from "../../../contexts/ThemeContext"
+import styled from "styled-components"
 
-import "react-step-progress-bar/styles.css";
-import { ProgressBar, Step } from "react-step-progress-bar";
+import "react-step-progress-bar/styles.css"
+import { ProgressBar, Step } from "react-step-progress-bar"
 
-import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
-import M from '../../../assets/images/crosswise/m.png';
-import Paperplane from '../../../assets/images/crosswise/paperplane.png';
-import Git from '../../../assets/images/crosswise/git.png';
+import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png'
+import M from '../../../assets/images/crosswise/m.png'
+import Paperplane from '../../../assets/images/crosswise/paperplane.png'
+import Git from '../../../assets/images/crosswise/git.png'
 import Twitter from '../../../assets/images/crosswise/twitter.png'
 import Discord from '../../../assets/images/crosswise/discord.png'
 
-import MLight from '../../../assets/images/crosswise/m-light.png';
-import PaperplaneLight from '../../../assets/images/crosswise/paperplane-light.png';
-import GitLight from '../../../assets/images/crosswise/git-light.png';
-import TwitterLight from '../../../assets/images/crosswise/twitter-light.png';
+import MLight from '../../../assets/images/crosswise/m-light.png'
+import PaperplaneLight from '../../../assets/images/crosswise/paperplane-light.png'
+import GitLight from '../../../assets/images/crosswise/git-light.png'
+import TwitterLight from '../../../assets/images/crosswise/twitter-light.png'
 import DiscordLight from '../../../assets/images/crosswise/discord-light.png'
 
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
-import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf';
+import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
+import audit_pdf from '../../../assets/images/crosswise/audit/Crosswise_Token_Full_Smart_Contract_Security_Audit.pdf'
 
 const Oval = styled.div`
   width: 16px;
@@ -169,6 +170,7 @@ const SectionHeader = (props) => {
                   <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
                   <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
                   <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
+                  <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">Audit Techrate</a>
                 </div>
                 <div className="col-12 text-center">
                   <div className="dapp_bar shadow">

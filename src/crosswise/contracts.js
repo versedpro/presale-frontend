@@ -3,6 +3,7 @@ import config from '../config';
 
 import presaleContractJSON from './abis/Presale.json';
 import tokenJSON from './abis/CRSSToken.json';
+import busdJSON from './abis/BUSDToken.json'
 
 const networkId = config.networkId;
 
@@ -11,6 +12,9 @@ const ITokenContract = new web3.eth.Contract(tokenJSON.abi, tokenContractAddress
 
 const presaleContractAddress = config.contractAddress.presale[networkId];
 const IPresaleContractAddress = new web3.eth.Contract(presaleContractJSON.abi, presaleContractAddress);
+
+const busdContractAddress = config.contractAddress.busd[networkId];
+const IBusdContractAddress = new web3.eth.Contract(busdJSON, busdContractAddress);
 
 const tokenContract = {
     address: tokenContractAddress,
@@ -25,8 +29,16 @@ const presaleContract = {
     contract: IPresaleContractAddress,
 }
 
+const busdContract = {
+    address: busdContractAddress,
+    abi: busdJSON,
+    contract: IBusdContractAddress,
+    decimals: 18
+}
+
 export {
     networkId,
     tokenContract,
-    presaleContract
+    presaleContract,
+    busdContract
 }

@@ -27,21 +27,21 @@ const SectionPresaleBottom = (props) => {
 
   useEffect(() => {
       const currentTime = Date.now();
-      console.log("currentTime", currentTime);
+      // console.log("currentTime", currentTime);
       const currentTimezoneOffset = (new Date()).getTimezoneOffset();
-      console.log("currentTimezoneOffset", currentTimezoneOffset)
+      // console.log("currentTimezoneOffset", currentTimezoneOffset)
       const utcNow = currentTime - currentTimezoneOffset * 60 * 1000;
-      console.log("utcNow", utcNow);
+      // console.log("utcNow", utcNow);
 
       const presaleTime = new Date(2021, 9, 27, 15, 0, 0).getTime();
-      console.log("presaleTime",  presaleTime)
+      // console.log("presaleTime",  presaleTime)
       const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
-      console.log("presaleTimezoneOffset", presaleTimezoneOffset)
+      // console.log("presaleTimezoneOffset", presaleTimezoneOffset)
       const utcPresaleTime = presaleTime - presaleTimezoneOffset * 60 * 1000;
-      console.log("utcPresaleTime", utcPresaleTime)
+      // console.log("utcPresaleTime", utcPresaleTime)
 
       const timeStamp = utcPresaleTime - utcNow - 120 * 60 * 1000;
-      console.log("timestamp", timeStamp);
+      // console.log("timestamp", timeStamp);
       if(counter > 0 )return;
       // get timestamp
       // 18.10.2021 3PM CET UTC + 2(+120)

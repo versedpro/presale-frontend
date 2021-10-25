@@ -9,12 +9,16 @@ const web3Provider = process.env.REACT_APP_NETWORK_ID === '56'
     networkId: process.env.REACT_APP_NETWORK_ID,
     contractAddress: {
       crssToken: {
-        56:'',
-        97:'0x68C8fFd07EAA55b1faA7e0016016C372E381B2d2'
+        56:'0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1',
+        97:'0xA98D21C3D61A7EB9Dd3BE9C9a1132Abb7c7Be2Dd'
       },
       presale: {
-        56: '',
-        97: '0x178cc6C22b9699D262a1511106D46F77D6bEAeAE'
+        56: '0xAd3f5A4526fbEd82A865d1BaeF14153488f86487',
+        97: '0xB824C16fcbDc74f98691E67644f492780e1BDB61'
+      },
+      busd: {
+        56: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+        97: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee'
       }
     }
   }

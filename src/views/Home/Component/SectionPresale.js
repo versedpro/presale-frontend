@@ -4,6 +4,7 @@ import { Container } from 'reactstrap';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Row, Col } from 'reactstrap';
 import BigNumber from 'bignumber.js';
+import useRefresh from '../../../redux/useRefresh'
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
 import "react-step-progress-bar/styles.css";
@@ -11,7 +12,9 @@ import { useForm } from "react-hook-form";
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import { web3 } from "../../../crosswise/web3";
-import { getUserDetail, getAmountUnlocked, deposit, withdrawToken } from "../../../crosswise/token";
+import { getUserDetail, getAmountUnlocked, deposit, withdrawToken, checkAllowanceBusd, ApproveBusd } from "../../../crosswise/token";
+
+
 
 const SectionHeader = (props) => {
   const address = useSelector(state => state.authUser.address);
@@ -21,7 +24,7 @@ const SectionHeader = (props) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  const { fastRefresh } = useRefresh()
   const [amountToDeposit, setAmountToDeposit] = useState();
 
   const [totalRewardAmount, setTotalRewardAmount] = useState(new BigNumber(0));
@@ -29,21 +32,35 @@ const SectionHeader = (props) => {
   const [depositTime, setDepositTime] = useState();
   const [depositAmount, setDepositAmount] = useState(new BigNumber(0));
   const [unlockedAmount, setUnlockedAmount] = useState(new BigNumber(0));
+  const [crssAllowrance, setCrssAllowrance] = useState(web3.utils.toBN(0));
 
   useEffect(() => {
      loadUserDetail();
-  }, [address]);
+  }, [address, fastRefresh]);
 
   const loadUserDetail = useCallback(async () => {
     const result = await getUserDetail(address);
+    const tokenAllowrance = await checkAllowanceBusd(address);
+    console.log("tokenAllowrance", tokenAllowrance.toString());
+    setCrssAllowrance(tokenAllowrance);
+    // console.log("tokenAllowrance ", tokenAllowrance);
+    console.log("tokenallowrance1", crssAllowrance.toString());
+    
     setTotalRewardAmount(web3.utils.fromWei(web3.utils.toBN(result.totalRewardAmount)));
     setWithdrawAmount(web3.utils.fromWei(web3.utils.toBN(result.withdrawAmount)));
-    setDepositTime(new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(result.depositTime));
+    setDepositTime(new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(result.depositTime * 1000));
+    console.log(result.depositTime)
     setDepositAmount(web3.utils.fromWei(web3.utils.toBN(result.depositAmount)));
-
+    // setCrssAllowrance(web3.utils.fromWei())
     const amountUnlocked = await getAmountUnlocked(address);
     setUnlockedAmount(web3.utils.fromWei(amountUnlocked));
   });
+
+  const approveTokens = async () => {
+    console.log("approve token");
+    const result = ApproveBusd(address);
+    console.log(result);
+  }
 
   const buyTokens = async () => {
     try {
@@ -67,7 +84,7 @@ const SectionHeader = (props) => {
             <div className="wallet-address" style={{ marginBottom: "20px" }}>
               <span>{address}</span>
             </div>
-            <form onSubmit={handleSubmit(buyTokens)}>
+            <form onSubmit={ (crssAllowrance > web3.utils.toBN(100))? handleSubmit(buyTokens): handleSubmit(approveTokens)}>
               <p>Amount</p>
               <div className="input-group">
                 <input {...register('amount', { required: true, pattern: /\d+/ })} className="form-control buy-token-amount" value={amountToDeposit} onChange={event => setAmountToDeposit(event.target.value)} />
@@ -78,41 +95,54 @@ const SectionHeader = (props) => {
                   </span>
                 </div>
               </div>
-              {errors.amount && <p style={{ color: "red" }}>Please enter amount you desire for amount.</p>}
+              {
+                 crssAllowrance.toString() !== "0" ? (errors.amount && <p style={{ color: "red" }}>Please enter amount you desire for amount.</p>):
+                 (<p></p>)
+              }
+              
               <div className="buy-tokens">
                 <p>All transactions are private and secure</p>
-                <button className="btn btn_primary" type="submit">Buy Tokens</button>
+                  {
+                    crssAllowrance.toString() === "0" ?(  <button className="btn btn_primary" onClick={approveTokens}>
+                    Approve Contract </button>):
+                    (
+                      <button className="btn btn_primary" type="submit">
+                        Buy Tokens
+                      </button>
+                    )
+                  }
+                  
               </div>
             </form>
-            <Row className="presale_info">
-              <Col className="rectangle">
+            <div className="presale_info">
+              <div className="rectangle">
                 <p>Total Reward Amount</p>
-                <h6>{totalRewardAmount.toString()}</h6>
-              </Col>
-              <Col className="rectangle">
+                <h6>{ parseFloat(totalRewardAmount.toString()).toFixed(2)}</h6>
+              </div>
+              <div className="rectangle">
                 <p>Withdraw Amount</p>
-                <h6>{withdrawAmount.toString()}</h6>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="rectangle">
+                <h6>{ parseFloat(withdrawAmount.toString()).toFixed(2)}</h6>
+              </div>
+            </div>
+            <div class="presale_info">
+              <div className="rectangle">
                 <p>Deposit Amount</p>
-                <h6>{depositAmount.toString()} USD</h6>
-              </Col>
-              <Col className="rectangle">
+                <h6>{parseFloat(depositAmount.toString()).toFixed(2)} USD</h6>
+              </div>
+              <div className="rectangle">
                 <p>Deposit Time</p>
                 <h6>{depositTime}</h6>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="rectangle">
+              </div>
+            </div>
+            <div className="presale_info">
+              <div className="rectangle">
                 <p>Unlocked Token Amount</p>
-                <h6>{unlockedAmount.toString()}</h6>
-              </Col>
-              <Col>
+                <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)}</h6>
+              </div>
+              <div>
                 <button className="btn btn_primary claim-button" onClick={claimToken}>Claim</button>
-              </Col>
-            </Row>
+              </div>
+            </div>
           </div>
           <img src={Planet8} className="planet8_img shadow"/>
         </Row>
