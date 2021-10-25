@@ -12,7 +12,7 @@ import { useForm } from "react-hook-form";
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import { web3 } from "../../../crosswise/web3";
-import { getUserDetail, getAmountUnlocked, deposit, withdrawToken, checkAllowanceBusd, ApproveBusd } from "../../../crosswise/token";
+import { getUserDetail, getAmountUnlocked, deposit, withdrawToken, checkAllowanceBusd, ApproveBusd, checkWhitelistMember } from "../../../crosswise/token";
 
 
 
@@ -57,12 +57,15 @@ const SectionHeader = (props) => {
   });
 
   const approveTokens = async () => {
-    console.log("approve token");
     const result = ApproveBusd(address);
-    console.log(result);
   }
 
   const buyTokens = async () => {
+    const checkWhitelist = await checkWhitelistMember(address);
+    if(!checkWhitelist){
+      alert("Before buying tokens, You must be added as a whitelist member. You can see 'Get Whitelisted' button at the header");
+      return;
+    }
     try {
       const result = await deposit(web3.utils.toWei(amountToDeposit), address);
     } catch (error) {

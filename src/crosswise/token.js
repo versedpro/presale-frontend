@@ -25,6 +25,11 @@ export const getUserDetail = async (address) => {
 
 export const getAmountUnlocked = async (address) => new web3.utils.toBN(await presaleContract.contract.methods.unlockedToken(address).call());
 
+export const checkWhitelistMember = async (address) => {
+    const result = await presaleContract.contract.methods.whitelist(address).call();
+    return result;
+}
+
 //Setters
 export const ApproveBusd = async (address) => {
     const spender = presaleContract.address;
