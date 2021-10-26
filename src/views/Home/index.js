@@ -78,6 +78,7 @@ const Home = (props) => {
     }
     if (typeof window.ethereum === 'undefined') {
       NotificationManager.warning('Please install MetaMask!');
+      alert("Please install MetaMask!");
       return;
     }
     if (window.ethereum.selectedAddress !== null) {

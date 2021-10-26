@@ -28,21 +28,16 @@ const SectionPresaleBottom = (props) => {
   useEffect(() => {
       const currentTime = Date.now();
       // console.log("currentTime", currentTime);
-      const currentTimezoneOffset = (new Date()).getTimezoneOffset();
-      // console.log("currentTimezoneOffset", currentTimezoneOffset)
-      const utcNow = currentTime - currentTimezoneOffset * 60 * 1000;
-      // console.log("utcNow", utcNow);
-
-      const presaleTime = new Date(2021, 9, 27, 15, 0, 0).getTime();
+          const presaleTime = new Date(2021, 9, 27, 12, 0, 0).getTime();
       // console.log("presaleTime",  presaleTime)
       const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
-      // console.log("presaleTimezoneOffset", presaleTimezoneOffset)
+      //  console.log("presaleTimezoneOffset1", presaleTimezoneOffset)
       const utcPresaleTime = presaleTime - presaleTimezoneOffset * 60 * 1000;
       // console.log("utcPresaleTime", utcPresaleTime)
 
-      const timeStamp = utcPresaleTime - utcNow - 120 * 60 * 1000;
+      const timeStamp = utcPresaleTime - currentTime;
       // console.log("timestamp", timeStamp);
-      if(counter > 0 )return;
+      if(counter > 0 ) return;
       // get timestamp
       // 18.10.2021 3PM CET UTC + 2(+120)
       setCounter(Math.floor(timeStamp/1000));
@@ -52,6 +47,7 @@ const SectionPresaleBottom = (props) => {
   
     const intervalId = setInterval(() => {
       const dayCounter = Math.floor(counter / (60 * 60 * 24));
+      
       const hourCounter = Math.floor((counter / (60 * 60)) % 24);
       const minuteCounter = Math.floor((counter / 60) % 60);
       const secondCounter = counter % 60;

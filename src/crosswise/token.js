@@ -30,6 +30,11 @@ export const checkWhitelistMember = async (address) => {
     return result;
 }
 
+export const getPresaleTokenPrice = async () => {
+    const result = await presaleContract.contract.methods.tokenPrice().call();
+    return result;
+}
+
 //Setters
 export const ApproveBusd = async (address) => {
     const spender = presaleContract.address;

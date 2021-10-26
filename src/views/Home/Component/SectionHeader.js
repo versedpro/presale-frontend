@@ -5,9 +5,11 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext"
 import styled from "styled-components"
-
+import useRefresh from '../../../redux/useRefresh'
 import "react-step-progress-bar/styles.css"
 import { ProgressBar, Step } from "react-step-progress-bar"
+import { web3 } from "../../../crosswise/web3";
+import { getPresaleTokenPrice } from "../../../crosswise/token";
 
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png'
 import M from '../../../assets/images/crosswise/m.png'
@@ -86,7 +88,7 @@ const SectionHeader = (props) => {
   }
 
   const { isDark, toggleTheme } = useContext(ThemeContext)
-
+  const { fastRefresh } = useRefresh()
   // represents softcap amount
   // This should be updated with softcap of presale
   const [softCap, setSoftCap] = useState(0)
@@ -97,22 +99,26 @@ const SectionHeader = (props) => {
   const [day, setDay] = useState('00');
   const [hour, setHour] = useState('00');
 
+  const [tokenPrice, setTokenPrice] = useState(web3.utils.toBN(0));
+  useEffect(() => {
+    const fetchDataFromContract = async () => {
+      setTokenPrice(await getPresaleTokenPrice());
+      console.log(parseFloat(web3.utils.fromWei(tokenPrice.toString())));
+    }
+    fetchDataFromContract()
+  }, [fastRefresh])
+
   useEffect(() => {
       const currentTime = Date.now();
      // console.log("currentTime", currentTime);
-      const currentTimezoneOffset = (new Date()).getTimezoneOffset();
-      // console.log("currentTimezoneOffset", currentTimezoneOffset)
-      const utcNow = currentTime - currentTimezoneOffset * 60 * 1000;
-      // console.log("utcNow", utcNow);
-
-      const presaleTime = new Date(2021, 9, 27, 15, 0, 0).getTime();
+      const presaleTime = new Date(2021, 9, 27, 12, 0, 0).getTime();
       // console.log("presaleTime",  presaleTime)
       const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
       // console.log("presaleTimezoneOffset", presaleTimezoneOffset)
       const utcPresaleTime = presaleTime - presaleTimezoneOffset * 60 * 1000;
       // console.log("utcPresaleTime", utcPresaleTime)
 
-      const timeStamp = utcPresaleTime - utcNow - 120 * 60 * 1000;
+      const timeStamp = utcPresaleTime - currentTime;
       // console.log("timestamp", timeStamp);
       if(counter > 0 )return;
       // get timestamp
