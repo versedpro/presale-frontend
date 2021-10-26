@@ -4,6 +4,7 @@ const web3Provider = process.env.REACT_APP_NETWORK_ID === '56'
   ? process.env.REACT_APP_BSC_WEB3_PROVIDER
   : process.env.REACT_APP_BSC_TEST_WEB3_PROVIDER
 
+  // console.log(process.env.REACT_APP_NETWORK_ID)
   const config = {
     web3Provider: web3Provider,
     networkId: process.env.REACT_APP_NETWORK_ID,

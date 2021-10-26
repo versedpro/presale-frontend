@@ -40,10 +40,7 @@ const SectionAbout = (props) => {
                         <h1>About Crosswise</h1>
                     </div>
                     <div class="desc">
-                        <p><b>Next-Gen Cross-Chain DEX Exchanges (DEX) enables users for a seamless experience in DEFI. </b> 
-DEX is a Platform as a service for the exchange and trade of digital currencies directly on the Blockchain. 
-Crosswise is combining stability, usability, security, and vision to create an advanced Interoperable platform. Cross-Chain (Interoperability) lets users interact blockchain-based assets with non-custodial/ custodial wallets in user-friendly, secure, and premium trading tools. 
-</p>
+                        <p>Next-gen cross-chain Decentralized Exchange (DEX) building a seamless DeFi user experience. Crosswise bridges the gap between centralized and decentralized exchanges, aiming to bring together the best of both worlds. Crosswise is committed to it's users and brings back customers service and support to the DeFi space.</p>
                     </div>
                   </div>
                 </Row>
@@ -89,7 +86,7 @@ Crosswise is combining stability, usability, security, and vision to create an a
                           <img src={Icon1} />
                         </div>
                         <div className="desc">
-                          <h6>MultiChain</h6>
+                          <h6>Cross-Chain</h6>
                         </div>
                       </div>
 
@@ -116,7 +113,8 @@ Crosswise is combining stability, usability, security, and vision to create an a
                           <img src={Icon4} />
                         </div>
                         <div className="desc">
-                          <h6>Trader Tools</h6>
+                          <h6>Trading Tools
+</h6>
                         </div>
                       </div>
                   </div>

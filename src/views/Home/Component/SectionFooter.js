@@ -28,13 +28,13 @@ const SectionFooter = (props) => {
                         <span class="item">United States</span>
                         </div> */}
 
-                        <div className="bar_item">
+                        {/* <div className="bar_item">
                           {
                             isDark? (<img src="assets/images/message.png"  />):
                             <img src="assets/images/message-light.png"/>
                           } 
                         <span class="item">English (US/UK)</span>
-                        </div>
+                        </div> */}
                     </div>
                   </div>
                   <div className="footer_bar_links">

@@ -128,29 +128,29 @@ const SectionPresaleBottom = (props) => {
                     </div>
                 </Row>
                 <div className="presale_info">
-                    <div className="info_desc pt-50">Max amount per Wallet</div>
+                    <div className="info_desc pt-50">Max Amount Per Wallet</div>
                     <div className="info_desc t_b pt-30">25,000 BUSD</div>
                     <div className="info_desc pt-50">Vesting</div>
-                    <div className="info_desc t_b pt-30">5 months linearlly</div>
+                    <div className="info_desc t_b pt-30">5 months linearly</div>
                 </div>
                 <div className="presale_stages">
                     <div className="s_diagram size_md">
                         <div className="stage_item">
                             <div className="item_title">Stage 1</div>
-                            <h6 className="item_desc pt-30">Price at <b>0.2 USD</b></h6>
-                            <h6 className="item_desc">1M Tokens = 200K USD</h6>
+                            <h6 className="item_desc pt-30">Price <b>0.2 BUSD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 200K BUSD</h6>
                         </div>
                         <img src={arrow1} />
                         <div className="stage_item">
                             <div className="item_title">Stage 2</div>
-                            <h6 className="item_desc pt-30">Price at <b>0.3 USD</b></h6>
-                            <h6 className="item_desc">1M Tokens = 300K USD</h6>
+                            <h6 className="item_desc pt-30">Price <b>0.3 BUSD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 300K BUSD</h6>
                         </div>
                         <img src={arrow1} />
                         <div className="stage_item">
                             <div className="item_title">Stage 3</div>
-                            <h6 className="item_desc pt-30">Price at <b>0.6 USD</b></h6>
-                            <h6 className="item_desc">1M Tokens = 600K USD</h6>
+                            <h6 className="item_desc pt-30">Price <b>0.6 BUSD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 600K BUSD</h6>
                         </div>
                     </div>
 
@@ -158,53 +158,53 @@ const SectionPresaleBottom = (props) => {
                     <div className="s_diagram size_sm">
                         <div className="stage_item">
                             <div className="item_title">Stage 1</div>
-                            <h6 className="item_desc  pt-30">Price at <b>0.2 USD</b></h6>
-                            <h6 className="item_desc">1M Tokens = 200K USD</h6>
+                            <h6 className="item_desc  pt-30">Price <b>0.2 BUSD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 200K BUSD</h6>
                         </div>
                         <img src={arrow2} className="mt-30"/>
                         <div className="stage_item mt-30">
                             <div className="item_title">Stage 2</div>
-                            <h6 className="item_desc pt-30">Price at <b>0.3 USD</b></h6>
-                            <h6 className="item_desc">1M Tokens = 300K USD</h6>
+                            <h6 className="item_desc pt-30">Price <b>0.3 BUSD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 300K BUSD</h6>
                         </div>
                         <img src={arrow2} className="mt-30"/>
                         <div className="stage_item mt-30">
                             <div className="item_title">Stage 3</div>
-                            <h6 className="item_desc pt-30">Price at <b>0.6 USD</b></h6>
-                            <h6 className="item_desc">1M Tokens = 600K USD</h6>
+                            <h6 className="item_desc pt-30">Price <b>0.6 BUSD</b></h6>
+                            <h6 className="item_desc">1M Tokens = 600K BUSD</h6>
                         </div>
                     </div>
                     <div className="stage_step">
                         <div className="step_item b_green">
                             <img src={stepImg1} />
-                            <div className="step_desc">Total of 1.1 Million USD Hard Cap, 200k Soft Cap to reach</div>
+                            <div className="step_desc">Total of 1.1 million BUSD hard cap, 200K soft cap</div>
                         </div>
                         <div className="step_item">
                             <img src={stepImg2} />
-                            <div className="step_desc">70% of Presale Amount for Dev/Marketing</div>
+                            <div className="step_desc">70% of presale amount for development and marketing</div>
                         </div>
                         <div className="step_item b_green">
                             <img src={stepImg1} />
-                            <div className="step_desc">30% for initial liquidity of CRSS BNB, CRSS BUSD on DEX</div>
+                            <div className="step_desc">30% for initial CRSS/BNB and CRSS/BUSD liquidity</div>
                         </div>
                         <div className="step_item">
                             <img src={stepImg2} />
-                            <div className="step_desc">Total of max 3 Million coins (6% of Max supply)</div>
+                            <div className="step_desc">Maximum total of 3 million tokens at pre-sale (6% of max supply)</div>
                         </div>
                         <div className="step_item b_green">
                             <img src={stepImg1} />
-                            <div className="step_desc">Base price 0.75 USD after presale</div>
+                            <div className="step_desc">Base price 0.75 BUSD after pre-sale</div>
                         </div>
                         <div className="step_item">
                             <img src={stepImg2} />
-                            <div className="step_desc">Min buy 250 BUSD</div>
+                            <div className="step_desc">Minimum buy 250 BUSD</div>
                         </div>
                     </div>
                 </div>
 
 
                 <div className="see_full_roadmap">
-                   <button className="btn btn_primary m-auto p-15" href="#">Get Whitelisted</button>
+                   <a className="btn btn_primary btn_whitelisted m-auto p-15 maxContent"  href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
                 </div>
             </Container>
           </section>

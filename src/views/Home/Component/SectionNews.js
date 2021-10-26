@@ -74,23 +74,23 @@ const SectionNews = (props) => {
         
           <section className="news_section">
             <Container>    
-            <div class="row">
-                <div class="col-md-6 my-auto">
-                    <h1 class="mb-md-0 mb-4">Medium News</h1>
+            <div className="row">
+                <div className="col-md-6 my-auto">
+                    <h1 className="mb-md-0 mb-4">Medium News</h1>
                 </div>
-                <div class="col-md-6 my-auto ml-auto d-md-block d-none">
-                    <a id="readmore_article" href="#" class="btn btn_primary btn_readmore ml-auto">Read More</a>
+                <div className="col-md-6 my-auto ml-auto d-md-block d-none">
+                    <a id="readmore_article" href="#" className="btn btn_primary btn_readmore ml-auto">Read More</a>
                 </div>
 			</div>
 
-            <div class="latest_blog d-md-block d-none">
-						<div class="row">
-							<div class="col-xl-8 col-lg-7">
-								<img src={ContentImg1} alt="content-img-9.png" class="w-100 blog_bimg " />
+            <div className="latest_blog d-md-block d-none">
+						<div className="row">
+							<div className="col-xl-8 col-lg-7">
+								<img src={ContentImg1} alt="content-img-9.png" className="w-100 blog_bimg " />
 							</div>
-							<div class="col-xl-4 col-lg-5">
-								<div class="blog_details">
-									<h5 class="blog_type">TRENDS <span>1 days ago</span></h5>
+							<div className="col-xl-4 col-lg-5">
+								<div className="blog_details">
+									<h5 className="blog_type">TRENDS <span>1 days ago</span></h5>
 
 									<a href="#" ><h3>Fast and flexible
 										observability with 
@@ -100,9 +100,9 @@ const SectionNews = (props) => {
 									<p>The first cross-blockchain AMM (Automatic Money Creation) and DAPP (Decenterlized
 										Application) focused on creating Dex (Decenterlized Exchange) for Etherium..</p>
 
-									<div class="heart_reply">
-										<img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" class="heart-logo" />
-										<img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" class="reply-logo" />
+									<div className="heart_reply">
+										<img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" className="heart-logo" />
+										<img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" className="reply-logo" />
 									</div>	
 
 								</div>
@@ -112,10 +112,10 @@ const SectionNews = (props) => {
 					</div>
 
 
-                    <div class="blogs_slider">
+                    <div className="blogs_slider">
                     <ul>
                         <Slider {...settings}>
-							<li class="d-md-none">
+							<li className="d-md-none">
 								<div class="card blog_card">
 									<img class="card-img-top" src={ContentImg1} alt="content-img-9.png" />
 									<div class="card-body">

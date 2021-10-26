@@ -15,23 +15,20 @@ import tel_icon from '../../../assets/images/crosswise/social/telegram.png';
 
 const questionsAnswers = [
     {
-      question: "What is Crosswise?",
+      question: "What is crosswise?",
       answer:
-        "<p>The next-gen cross-blockchain AMM (Automatic Market Maker) and DAPP (Decentralized Application) focused on creating a DEX(Decentralized Exchange) build on Binance Smart Chain with Polygon and many more to follow.</p>",
+        "<p>A next-gen cross-chain Automated Market Maker (AMM) based Decentralized Exchange (DEX). Crosswise aims to bridge the user experience gap between traditional centralized exchanges and their decentralized counterparts.</p>",
     },
     {
-      question: "What cryptocurrencies can I use to purchase?",
+      question: "How can I purchase CRSS token?",
       answer:
-        "<p>Once CRSS period is launched, You can purchased Token with Ethereum, Bitcoin or Litecoin.</p>",
+        "<p>During the pre-sale, you will only be able to purchase CRSS using BUSD on Binance Smart Chain. Once crosswise DEX is launched, you will be able to swap BUSD, BNB, ETH, BTC, LTC and others against CRSS.</p>",
     },
     {
-      question: "How can I participate in teh CRSS Token sale?",
-      answer: `<p>..................</p>`,
-    },
-    {
-      question: "How do I benefit from the CRSS Token?",
-      answer: `<p>..................</p>`,
+      question: "How can I participate in the CRSS token pre-sale?",
+      answer: `<p>Click on "Get Whitelisted" in the top menu. This will take you through the KYC process, after which the wallet address will get approved. Please use a MetaMask wallet and ensure you have added Binance Smart Chain network. You will then need to click buy and perform your transaction once the sale opens.</p>`,
     }
+    
   ];
 
 

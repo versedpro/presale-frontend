@@ -14,7 +14,7 @@
 
 .buy-token-button {
     height: 40px;
-    margin: 0 5px;
+    /* margin: 0 5px; */
 }
 
 .presale-info {
@@ -1564,4 +1564,35 @@ img.vert-move {
   /******* Mobile responsive ********/
   .pRelative{
       position: relative;
+  }
+
+  .highlight.active{
+      color: #07f0b2;
+  }
+
+  .notification{
+      background: #07f0b2;
+      color: black;
+      text-align: center;
+      position:absolute;
+      z-index: 9999;
+      width: 100%;
+      font-size: 13px;
+      display:block;
+      animation: fade-out 10s;
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .inactive{
+      display:none;
+  }
+  .btn.maxContent{
+      width: max-content;
   }

@@ -41,15 +41,15 @@ const SectionHeader = (props) => {
   const loadUserDetail = useCallback(async () => {
     const result = await getUserDetail(address);
     const tokenAllowrance = await checkAllowanceBusd(address);
-    console.log("tokenAllowrance", tokenAllowrance.toString());
+    // console.log("tokenAllowrance", tokenAllowrance.toString());
     setCrssAllowrance(tokenAllowrance);
     // console.log("tokenAllowrance ", tokenAllowrance);
-    console.log("tokenallowrance1", crssAllowrance.toString());
+    // console.log("tokenallowrance1", crssAllowrance.toString());
     
     setTotalRewardAmount(web3.utils.fromWei(web3.utils.toBN(result.totalRewardAmount)));
     setWithdrawAmount(web3.utils.fromWei(web3.utils.toBN(result.withdrawAmount)));
     setDepositTime(new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(result.depositTime * 1000));
-    console.log(result.depositTime)
+    // console.log(result.depositTime)
     setDepositAmount(web3.utils.fromWei(web3.utils.toBN(result.depositAmount)));
     // setCrssAllowrance(web3.utils.fromWei())
     const amountUnlocked = await getAmountUnlocked(address);

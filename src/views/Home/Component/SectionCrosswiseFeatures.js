@@ -35,10 +35,10 @@ const SectionCrosswiseFeatures = (props) => {
                         <img src={FeatImg1} />
                     </div>
                     <div className="features_title">
-                        <h6>Launchpad</h6>
+                        <h6>Launchpad & Incubator</h6>
                     </div>
                     <div className="features_desc">
-                    Crosswise features an Incubation & launchpad program to help budding entrepreneurs launch their projects on Crosswise dex. This will help the teams with funding, marketing, and reaching a new user-base for their Apps & dApps on our multi-chain ecosystem.
+                    Crosswise features a launchpad coupled with an incubation program to help budding entrepreneurs launch on crosswise DEX. Support will include funding, marketing, networking, as well as technical assistance to help projects deploy to our multi-chain ecosystem.
                     </div>
                   </div>
 
@@ -47,10 +47,10 @@ const SectionCrosswiseFeatures = (props) => {
                         <img src={FeatImg2} />
                     </div>
                     <div className="features_title">
-                        <h6>Technology</h6>
+                        <h6>Solid Infrastructure</h6>
                     </div>
                     <div className="features_desc">
-                    Crosswise platform is capable of handling peak user loads during both trading hours & IDO hours. Our state-of-the-art IT infrastructure provides users with the best security, compatibility, uptime, premium tools & bridges for the future of multi-chain capabilities, with a premium customer support & ticketing system to solve user grievances asap. 
+                    Crosswise platform is capable of handling high user loads, during both peak trading and IDO hours. Our state-of-the-art IT infrastructure provides users with the best security, uptime, and premium tools built for a multi-chain environment.
                     </div>
                   </div>
 
@@ -59,10 +59,10 @@ const SectionCrosswiseFeatures = (props) => {
                         <img src={FeatImg3} />
                     </div>
                     <div className="features_title">
-                        <h6>User Experience & Tools</h6>
+                        <h6>User-Friendly DEX</h6>
                     </div>
                     <div className="features_desc">
-                    Crosswise is tightly integrated with useful tools such as Order Book, Analytics, Explore, Price Charts, Account stats, Affiliate Areas with a neat UI for seamless trading experience. Users can also track their earnings from various incentive programs the project may add as seen fit along the entire product life cycle.
+                    Crosswise is tightly integrating tools such as an Order Book, Analytics, Explorer, Price Charts, Account Statistics, Affiliate Rewards with a friendly user interface for a next-gen DEX experience. We're also bringing back real support to the DEX space, to ensure accessibility and customer satisfaction.
                     </div>
                   </div>
 

@@ -46,8 +46,8 @@ const SectionMission = (props) => {
                             <img src={Img1} />
                         </div>
                         <div className="item_content">
-                            <h1>Why CrossWise?</h1>
-                            <p>DeFi is relatively very new but packed with untapped utility. Platform Functionality, Portfolio Tracking, Trading Tools & Native Coin stability are fundamentals of success for our DEX. Fine-tuning in areas important for traders is a fundamental responsibility for Crosswise. </p>
+                            <h1>Why Crosswise?</h1>
+                            <p>DeFi is relatively new and packed with untapped utility. Crosswise is extending DEX functionality, tightening security and vetting, adding trading and portfolio tracking tools, as well as bringing back customers support, to enhance the overall DEX experience. Our native CRSS token has been carefully designed with sustainability in mind, benefitting from ample deflationary mechanisms to ensure price stability.</p>
                         </div>
                     </div>
 
@@ -63,13 +63,13 @@ const SectionMission = (props) => {
                               
                             </div>
                             <div className="desc">
-                             <h6>Interoperability Swap Exchange</h6>
+                             <h6>Interoperable Swap Exchange</h6>
                             </div>
                             <img src={pointerImg} className="vert-move" />
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon tooltip expand" data-title="Advanced exchange arms you with tools to manage your limit buy orders. Stay over the edge with your trade strategies. ">
+                            <div className="feature_item_icon tooltip expand" data-title="Advanced exchange functions arm you with tools to set and manage limit orders, executing swaps at specific price levels, to optimize your trading strategy.">
                               <img src={Icon2} />
                             </div>
                             <div className="desc">
@@ -78,7 +78,7 @@ const SectionMission = (props) => {
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon tooltip expand" data-title="Track your activities using the orderbook. Find all your token trade/ swap data for Quickswap & Advanced Exchange orders until the block level. ">
+                            <div className="feature_item_icon tooltip expand" data-title="Track all your trades using the orderbook. Here you will find all your past and pending trades for both Quick Swap & Advanced Swap orders.">
                               <img src={Icon3} />
                             </div>
                             <div className="desc">
@@ -87,7 +87,7 @@ const SectionMission = (props) => {
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon tooltip expand" data-title="Keep track of global & personal data using the analytics dashboard. Trade Volume, Liquidity for your favorite tokens can be found here. ">
+                            <div className="feature_item_icon tooltip expand" data-title="Keep track of global as well as personal data using the analytics dashboard. Trade volume, liquidity, historical value of your LP  for your favorite tokens can be found here.">
                               <img src={Icon4} />
                             </div>
                             <div className="desc">
@@ -97,7 +97,7 @@ const SectionMission = (props) => {
                     
                 
                     <div className="feature_item">
-                        <div className="feature_item_icon tooltip expand" data-title="Take better decisions, track & monitor all coins & tokens traded on Crosswise. The Database for all asset values under your fingertips.">
+                        <div className="feature_item_icon tooltip expand" data-title="Crosswise uses it's own price charts. Get accurate live price data for all tokens traded on crosswise DEX.">
                           <img src={Icon5} />
                         </div>
                         <div className="desc">
@@ -106,20 +106,20 @@ const SectionMission = (props) => {
                     </div>
 
                     <div className="feature_item">
-                        <div className="feature_item_icon tooltip expand" data-title="Dive deeper into the numbers that matter. Personal account statistics lets you track assets with personal stats, historical movements of values, your personal wallet, pools & farms on the DEX.">
+                        <div className="feature_item_icon tooltip expand" data-title="Dive deeper into the numbers that matter. Personal account statistics allow you track your assets and see their historical evolution. Much like a portfolio tracker, it provides an overview of assets in your wallet as well as assets held in our pools and farms.">
                           <img src={Icon6} />
                         </div>
                         <div className="desc">
-                          <h6>Account Stats</h6>
+                          <h6>Account Statistics</h6>
                         </div>
                     </div>
 
                     <div className="feature_item">
-                        <div className="feature_item_icon tooltip expand" data-title="Share the platform with your friends, family & peers and earn 1% of the new users' lifetime earnings. A unique link will be given to all users to track their commissions.">
+                        <div className="feature_item_icon tooltip expand" data-title="Tell your friends about crosswise and earn 1% of the new users' lifetime earnings! A unique link will be given to all users to track their commissions.">
                           <img src={Icon7} />
                         </div>
                         <div className="desc">
-                          <h6>Referral Affiliate Commissions</h6>
+                          <h6>Lifetime Referral Commissions</h6>
                         </div>
                     </div>
                     </div>
@@ -145,7 +145,7 @@ const SectionMission = (props) => {
                               <img src={Lan2} />
                             </div>
                             <div className="desc">
-                             <h6>Native & Cross-Chain token Pools</h6>
+                             <h6>Native & Cross-Chain Token Pools</h6>
                             </div>
                         </div>
 
@@ -163,7 +163,7 @@ const SectionMission = (props) => {
                               <img src={Lan4} />
                             </div>
                             <div className="desc">
-                             <h6>Incubator Program for Ecosystem Growth & Development</h6>
+                             <h6>Incubation Program for Ecosystem Growth & Development</h6>
                             </div>
                         </div>
                     </div>
@@ -175,17 +175,17 @@ const SectionMission = (props) => {
                     </div>
                     <div className="feature_item_group">
                         <div className="feature_item">
-                            <div className="feature_item_icon">
+                            <div className="feature_item_icon tooltip expand" data-title="CRSS is our native token used for both rewards and governance, whilst XCRSS is our vesting token.
+">
                               <img src={Dex1} />
                             </div>
                             <div className="desc">
-                             <h6>Tokens: CRSS, XCRSS</h6>
+                             <h6>CRSS & XCRSS Tokens</h6>
                             </div>
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon tooltip expand" data-title="Emissions are how the platform operates. 8% of CRSS per block goes to the team/ dev wallet to help the team with operation on the DEX.
-">
+                            <div className="feature_item_icon tooltip expand" data-title="Crosswise uses a constant emission of 1 CRSS per block, and is capped to a max supply 50 million CRSS.">
                               <img src={Dex2} />
                             </div>
                             <div className="desc">
@@ -194,7 +194,7 @@ const SectionMission = (props) => {
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon tooltip expand" data-title="The Gasless mode allows users to trade without gas. Trade-in confidence without worrying about gas, we have got you covered.">
+                            <div className="feature_item_icon tooltip expand" data-title="Gasless Swap mode allows users to trade without having to pay for gas. Trade with confidence without worrying about transaction fees.">
                               <img src={Dex3} />
                             </div>
                             <div className="desc">
@@ -203,34 +203,34 @@ const SectionMission = (props) => {
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon tooltip expand" data-title="Your opinions matter. Add proposals & vote, the demand will be heard. The more coins you hold, the stronger your voting power is. Let's keep building the DEX together.">
+                            <div className="feature_item_icon tooltip expand" data-title="Your opinions matter. Add proposals and vote on protocol changes. We're building this DEX with our community!">
                               <img src={Dex4} />
                             </div>
                             <div className="desc">
-                             <h6>Voting Options</h6>
+                             <h6>Governance & Voting</h6>
                             </div>
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon tooltip expand" data-title="Makes indexing flawless. Our subgraph is powered by The Graph  for querying networks like Ethereum & IPFS. Open API subgraph makes data easily accessible for the internet.">
+                            <div className="feature_item_icon tooltip expand" data-title="Flawless indexing and up to date data. Our subgraph is powered by The Graph to query networks like Ethereum & IPFS. Our open subgraph API makes our data easily accessible.">
                               <img src={Dex5} />
                             </div>
                             <div className="desc">
-                             <h6>Subgraph: The Graph</h6>
+                             <h6>The Graph subgraph</h6>
                             </div>
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon">
+                            <div className="feature_item_icon tooltip expand" data-title="We're partnering with Chainlink and have implemented their price oracle to avoid flash loan attacks and any other price manipulation on crosswise.">
                               <img src={Dex6} />
                             </div>
                             <div className="desc">
-                             <h6>Price Oracle with Chainlink</h6>
+                             <h6>Chainlink Price Oracle</h6>
                             </div>
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon">
+                            <div className="feature_item_icon tooltip expand" data-title="CRSS token has anti-whale protection that limits transaction size as a proportion of total supply. Projects listing on crosswise also have the option to enable anti-whale protection for their tokens.">
                               <img src={Dex7} />
                             </div>
                             <div className="desc">
@@ -248,11 +248,11 @@ const SectionMission = (props) => {
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon">
+                            <div className="feature_item_icon tooltip expand" data-title="Crosswise will offer generous farming rewards from the start, with a 1.2 multiplier for the first 2 weeks.">
                               <img src={Dex9} />
                             </div>
                             <div className="desc">
-                             <h6>Farms at Release</h6>
+                             <h6>Farms & pools upon launch</h6>
                             </div>
                         </div>
                     </div>

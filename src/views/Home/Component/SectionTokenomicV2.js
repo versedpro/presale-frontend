@@ -46,22 +46,22 @@ const SectionTokenomicV2 = (props) => {
                         </div>
                       </div>
                       <div className="emission_rate">
-                        <h5 className="topic">Emission rate</h5>
+                        <h5 className="topic">Emission Rate</h5>
                         <div className="content">
-                          <h6>rate for 14 days</h6>
+                          <h6>first 14 days</h6>
                           <div className="special">
                             1.2
                           </div>
                         </div>
                         <div className="content">
-                          <h6>after</h6>
+                          <h6>after 14 days</h6>
                           <div className="special">
                             1
                           </div>
                         </div>
                       </div>
                       <div className="teamToken">
-                        <h5>No Team tokens <br />8% of emission going to Dev Wallet</h5>
+                        <h5>No Team Tokens <br />8% of emission goes to the Development Wallet</h5>
                       </div>
 
                     </div>
@@ -78,7 +78,7 @@ const SectionTokenomicV2 = (props) => {
                     </div>
                     <div className="token_desc">
                       <div className="desc">
-                        <b>50%</b> of the rewards given for liquidity farming in Farms and Pools are given in <b1>XCRSS</b1> token, which gets linearly vested into <b>CRSS</b> within 5 months whereas <b>20%</b> is unlocked every month.
+                        50% of rewards distributed for liquidity farming in farms and pools are paid out in XCRSS token, which is linearly vested into CRSS within 5 months, with 20% unlocked every 30 days.
                       </div>
                     </div>
                   </div>                  

@@ -76,12 +76,20 @@ const Home = (props) => {
 
       return;
     }
+    console.log(window.ethereum.chainId)
     if (typeof window.ethereum === 'undefined') {
       NotificationManager.warning('Please install MetaMask!');
       alert("Please install MetaMask!");
       return;
     }
+
+    if(window.ethereum.chainId !== '0x38'){
+      alert("Please choose the BSC mainnet!");
+      return;
+    }
+
     if (window.ethereum.selectedAddress !== null) {
+      
       dispatch(setAddress(window.ethereum.selectedAddress));
       NotificationManager.warning('MetaMask was already connected.');
       return;
@@ -109,9 +117,10 @@ const Home = (props) => {
   return (
     <Fragment>
       <div className={isDark? 'main_body': 'main_body light-theme'}>
-    
+        
         <header className="nav_wrapper">
-
+        <div className={address !== null? "inactive": "notification"}>MetaMask Wallet needed. Contact us at support@crosswise.finance in case you need to change your wallet address.
+</div>
           {/** nav header starts */}
           <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
             {/* <!-- Brand --> */}
@@ -191,6 +200,7 @@ const Home = (props) => {
                             <span>{minimum(address)}</span>
                           </div>
                         </li>
+                        
                         <li className="nav-item">
                           {/* <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens> */}
                           {showPresaleInfo ? (
@@ -200,8 +210,11 @@ const Home = (props) => {
                           )}
                         </li>
                       </>
-                    )}
-                     <li className="nav-item">
+                      )}
+                      <li className="nav-item">
+                          <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c">How-To Buy</a>
+                        </li>
+                      <li className="nav-item">
                         <a className="nav-link btn btn_signIN btn_primary" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
                       </li>
                   </ul>

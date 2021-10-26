@@ -103,7 +103,7 @@ const SectionHeader = (props) => {
   useEffect(() => {
     const fetchDataFromContract = async () => {
       setTokenPrice(await getPresaleTokenPrice());
-      console.log(parseFloat(web3.utils.fromWei(tokenPrice.toString())));
+      // console.log(parseFloat(web3.utils.fromWei(tokenPrice)));
     }
     fetchDataFromContract()
   }, [fastRefresh])
@@ -170,8 +170,8 @@ const SectionHeader = (props) => {
           <div className="col-lg-7 col-md-12">
             <Row>
               <div className="header_section_left">
-                <h1>Next Gen Multi-Chain Dex With In-Built Trading Tools & Rewards</h1>
-                <p className="desc">CrossWise takes the trading experience on DEX to another level by tight security, friendly UI, Cross-Chain, Verified Listings & the right tools, tightly integrated for the trade.</p>
+                <h1>Next Gen Cross-Chain DEX With Built-In Trading Tools & Rewards</h1>
+                <p className="desc">crosswise takes the trading experience on DEX to the next level with tighter security, a friendly interface, cross-chain transactions, gasless swaps, verified listings and the right tools, tightly integrated.</p>
                 <div className="button_group">
                   <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
                   <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
@@ -310,13 +310,13 @@ const SectionHeader = (props) => {
                       </h6>
                     </div>
                     <div className="presale_info_rectangle long_width">
-                      <h6>
+                      <h6 className={ parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.2 ? "highlight active": "" }>
                         Stage 1 = 1 Million CRSS @ 0.2 BUSD
                       </h6>
-                      <h6>
+                      <h6 className={ parseFloat(web3.utils.fromWei(tokenPrice)) > 0.2 && parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.3 ? "highlight active": "" }>
                         Stage 2 = 1 Million CRSS @ 0.3 BUSD
                       </h6>
-                      <h6>
+                      <h6 className={ parseFloat(web3.utils.fromWei(tokenPrice)) > 0.3 ? "highlight active": "" }>
                         Stage 3 = 1 Million CRSS @ 0.6 BUSD
                       </h6>
                     </div>
