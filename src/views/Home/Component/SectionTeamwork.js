@@ -121,7 +121,7 @@ const SectionTeamwork = (props) => {
                                         </div>
                                         <div className="photo_content">
                                             <h6>Dino Dzizic</h6>
-                                            <p>Chief technology officer</p>
+                                            <p>Chief Technology Officer</p>
                                         </div>
                                         <div className="photo_description">
                                             <p>Defi/Dapp/NFT specialist & Passionate in blockchain industry with 5+ years experience and Bachelor's Degree in software engineering.</p>
@@ -141,7 +141,7 @@ const SectionTeamwork = (props) => {
                                         </div>
                                         <div className="photo_content">
                                             <h6>Gregory Khine</h6>
-                                            <p>Chief operating officer</p>
+                                            <p>Chief Operating Officer</p>
                                         </div>
                                         <div className="photo_description">
                                             <p>Founded an award-winning web agency as well as popular online education resources in the late 90s. Greg fell down the crypto rabbit hole in 2015, and has since developed a particular interest in DeFi, both the technology and its transformative potential. He holds undergraduate and graduate degrees from the London School of Economics & Political Science.</p>

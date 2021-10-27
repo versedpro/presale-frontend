@@ -142,12 +142,12 @@ const SectionHeader = (props) => {
                 <p>Unlocked Token Amount</p>
                 <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)}</h6>
               </div>
-              <div>
+              
+            </div>
+            <div>
                 <button className="btn btn_primary claim-button" onClick={claimToken}>Claim</button>
               </div>
-            </div>
           </div>
-          <img src={Planet8} className="planet8_img shadow"/>
         </Row>
       </Container>
     </section>

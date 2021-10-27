@@ -26,7 +26,7 @@ const questionsAnswers = [
     },
     {
       question: "How can I participate in the CRSS token pre-sale?",
-      answer: `<p>Click on "Get Whitelisted" in the top menu. This will take you through the KYC process, after which the wallet address will get approved. Please use a MetaMask wallet and ensure you have added Binance Smart Chain network. You will then need to click buy and perform your transaction once the sale opens.</p>`,
+      answer: `<p>Click on "Get Whitelisted" in the top menu. This will take you through the KYC process, after which the wallet address will get approved. Please use a MetaMask wallet and ensure you have added Binance Smart Chain network. You will then need to click on :"Buy Tokens" in the top menu, and perform your transaction once the sale opens.</p>`,
     }
     
   ];
@@ -50,7 +50,7 @@ const SectionHelp = (props) => {
                   <h1>Join our community</h1>
                 </div>
                 <div className="desc">
-                  <p>Crosswise aims to provide the best seamless trading experience for our users. With the state of art multi-chain technology, trading tools, and ability to handle peak loads. We encourage our users & investors to join our community for more news & updates regarding the project. </p>
+                  <p>Crosswise is also a thriving community of DeFi enthusiasts! Join our growing community and stay up to date on the latest project developments.</p>
                 </div>
                 
                 <div className="social_link_btn">

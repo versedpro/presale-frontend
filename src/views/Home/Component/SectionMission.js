@@ -106,7 +106,7 @@ const SectionMission = (props) => {
                     </div>
 
                     <div className="feature_item">
-                        <div className="feature_item_icon tooltip expand" data-title="Dive deeper into the numbers that matter. Personal account statistics allow you track your assets and see their historical evolution. Much like a portfolio tracker, it provides an overview of assets in your wallet as well as assets held in our pools and farms.">
+                        <div className="feature_item_icon tooltip expand" data-title="Dive deeper into the numbers that matter. Personal account statistics allow you to track your assets and see their historical evolution. Much like a portfolio tracker, it provides an overview of assets in your wallet, as well as assets held in our pools and farms.">
                           <img src={Icon6} />
                         </div>
                         <div className="desc">
@@ -239,7 +239,7 @@ const SectionMission = (props) => {
                         </div>
 
                         <div className="feature_item">
-                            <div className="feature_item_icon">
+                            <div className="feature_item_icon tooltip expand" data-title="Crosswise uses virtual rates provided by the Chainlink price oracle, making front-running unprofitable. We also use a transaction limiter that is able to throttle bot activity.">
                               <img src={Dex8} />
                             </div>
                             <div className="desc">

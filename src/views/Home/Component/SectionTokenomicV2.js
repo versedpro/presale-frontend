@@ -61,7 +61,8 @@ const SectionTokenomicV2 = (props) => {
                         </div>
                       </div>
                       <div className="teamToken">
-                        <h5>No Team Tokens <br />8% of emission goes to the Development Wallet</h5>
+                        <h5>No Team Tokens</h5>
+                        <h6>8% of emission goes to the Development Wallet</h6>
                       </div>
 
                     </div>

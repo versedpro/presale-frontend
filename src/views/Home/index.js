@@ -165,7 +165,7 @@ const Home = (props) => {
                         </div>
                       </a>
                     </li> */}
-                    <li className="nav-item dropdown" id="profile_dropdown">
+                    {/* <li className="nav-item dropdown" id="profile_dropdown">
                       <a className="nav-link dropdown-toggle py-0" href="#" id="navbar_Dropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="assets/images/us-dollar@2x.png" className="rounded-circle" />
@@ -178,7 +178,7 @@ const Home = (props) => {
                           <img src="assets/images/us-dollar@2x.png" className="rounded-circle" />
                         </a>
                       </div>
-                    </li>
+                    </li> */}
 
                     <li className="nav-item">
                       <a className="navbar-brand theme-toggle" id="changeTheme" onClick={toggleTheme}>  
@@ -196,7 +196,7 @@ const Home = (props) => {
                     ) : (
                       <>
                         <li className="nav-item">
-                          <div className="nav-link connected-wallet">
+                          <div className="nav-link connected-wallet m-auto">
                             <span>{minimum(address)}</span>
                           </div>
                         </li>
@@ -204,9 +204,9 @@ const Home = (props) => {
                         <li className="nav-item">
                           {/* <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens> */}
                           {showPresaleInfo ? (
-                            <button onClick={showHome} className="btn btn_primary buy-token-button">Go Back</button>
+                            <button onClick={showHome} className="btn btn_primary buy-token-button btn_signIN">Go Back</button>
                           ) : (
-                            <button onClick={showPresale} className="btn btn_primary buy-token-button">Buy Tokens</button>
+                            <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN">Buy Tokens</button>
                           )}
                         </li>
                       </>

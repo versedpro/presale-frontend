@@ -164,7 +164,7 @@ const SectionRoadmapV2 = (props) => {
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
-                                                        <div className="content-text">Bookmark</div>
+                                                        <div className="content-text">Bookmarking</div>
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
@@ -172,7 +172,7 @@ const SectionRoadmapV2 = (props) => {
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
-                                                        <div className="content-text">Ramp Network</div>
+                                                        <div className="content-text">Release on Polygon</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -221,18 +221,10 @@ const SectionRoadmapV2 = (props) => {
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
                                                         <div className="content-text">IFFT style swaps using Chainlink Keepers</div>
-                                                    </div>
-                                                    <div className="content-desc">
-                                                        <img src={spinnerImg} />
-                                                        <div className="content-text">NFT marketplace</div>
-                                                    </div>
+                                                    </div>                                                    
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
                                                         <div className="content-text">Shareholder / Governance Token</div>
-                                                    </div>
-                                                    <div className="content-desc">
-                                                        <img src={spinnerImg} />
-                                                        <div className="content-text">Release on Avalanche</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -258,11 +250,11 @@ const SectionRoadmapV2 = (props) => {
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
-                                                        <div className="content-text">Skill-Based Game</div>
+                                                        <div className="content-text">NFT marketplace</div>
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
-                                                        <div className="content-text">Release on Avalanche</div>
+                                                        <div className="content-text">Skill-Based Game</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -425,7 +417,7 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
-                                        <div className="content-text">Bookmark / Notifications extended</div>
+                                        <div className="content-text">Bookmarking / Notifications extended</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
@@ -494,15 +486,7 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
-                                        <div className="content-text">NFT marketplace</div>
-                                    </div>
-                                    <div className="content-desc">
-                                        <img src={spinnerImg} />
                                         <div className="content-text">Shareholder /governance Token</div>
-                                    </div>
-                                    <div className="content-desc">
-                                        <img src={spinnerImg} />
-                                        <div className="content-text">Release on Avalanche</div>
                                     </div>
                                 </div>
                             </div>
@@ -525,6 +509,10 @@ const SectionRoadmapV2 = (props) => {
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
                                         <div className="content-text">Extended Chart Features</div>
+                                    </div>
+                                    <div className="content-desc">
+                                        <img src={spinnerImg} />
+                                        <div className="content-text">NFT marketplace</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
