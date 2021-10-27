@@ -141,7 +141,7 @@ const Home = (props) => {
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul className="navbar-nav">
                     <li className="nav-item">
-                      <a className="nav-link" href="#about"><span>About Crosswise</span></a>
+                      <a className="nav-link" href="#about"><span>About crosswise</span></a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#tokenomic"><span>Tokenomics </span></a>
@@ -212,7 +212,7 @@ const Home = (props) => {
                       </>
                       )}
                       <li className="nav-item">
-                          <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c">How-To Buy</a>
+                          <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c">How To Buy</a>
                         </li>
                       <li className="nav-item">
                         <a className="nav-link btn btn_signIN btn_primary" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>

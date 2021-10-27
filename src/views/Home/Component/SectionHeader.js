@@ -181,7 +181,7 @@ const SectionHeader = (props) => {
                 <div className="col-12 text-center">
                   <div className="dapp_bar shadow">
                     <div>
-                        <p>Check our social:</p>
+                        <p>Social Media</p>
                     </div>
                     <div className="social_links">
                       <ul className="list-group list-group-horizontal">
@@ -271,7 +271,7 @@ const SectionHeader = (props) => {
                         Token price
                       </p>
                       <h6>
-                        1 CRSS = 0.2-0.6USD
+                        1 CRSS=0.2-0.6BUSD
                       </h6>
                     </div>
 
@@ -295,7 +295,7 @@ const SectionHeader = (props) => {
 
                     <div className="presale_info_rectangle">
                       <p>
-                        Max purchase
+                      Max Purchase
                       </p>
                       <h6>
                         25,000 BUSD
@@ -303,7 +303,7 @@ const SectionHeader = (props) => {
                     </div>
                     <div className="presale_info_rectangle">
                       <p>
-                        Min purchase
+                        Min Purchase
                       </p>
                       <h6>
                         250 BUSD
@@ -323,8 +323,8 @@ const SectionHeader = (props) => {
                   </div>
 
                   <div className="presale_tips">
-                      <div className="tips_item"><p>Raised- </p> <span>&nbsp;&nbsp;0 BUSD</span></div>
-                      <div className="tips_item"><p>Target- </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
+                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;0 BUSD</span></div>
+                      <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
                   </div>
                   
                   <div className="presale_progress">

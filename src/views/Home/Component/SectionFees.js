@@ -65,7 +65,7 @@ const SectionFees = (props) => {
                   <div className="item_title">Instant Reward Claims</div>
                   <div className="item_content">
                     <div className="sub_desc">Farm and pool rewards are paid in <b className="textBlue">50%</b> CRSS and <b className="textBlue">50%</b> XCRSS, with XCRSS normally linearly vested within 5 months.</div>
-                    <div className="sub_desc">Users have the option to directly claim <b className="textBlue">100%</b> of the CRSS rewards, and burn <b className="textBlue">50%</b>  of their XCRSS earned for an instant pay out. This leads to only <b className="textBlue">75%</b>  of the total rewards being paid out in CRSS, thereby reducing the circulating supply.</div>
+                    <div className="sub_desc">Users have the option to instantly claim <b className="textBlue">100%</b> of the CRSS rewards, but burn <b className="textBlue">50%</b> of their XCRSS earned and convert the other <b className="textBlue">50%</b> to CRSS for an instant pay out. This leads to only <b className="textBlue">75%</b> of the total rewards being paid out in CRSS, reducing the circulating supply.</div>
                   </div>
                 </div>
                </div>
