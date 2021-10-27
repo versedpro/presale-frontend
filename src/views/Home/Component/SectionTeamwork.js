@@ -104,7 +104,7 @@ const SectionTeamwork = (props) => {
                                             <p>CEO/Founder</p>
                                         </div>
                                         <div className="photo_description">
-                                            <p>Focused on building crypto & e-commerce platforms. Living on Koh Phangan, Thailand & Canggu, Bali, Indonesia. Built an industry-leading digital marketplace for video game distribution, created successful brands on Amazon</p>
+                                            <p>Focused on building crypto and e-commerce platforms. Living on Koh Phangan, Thailand and Canggu, Bali, Indonesia. Built an industry-leading digital marketplace for video game distribution, and created several successful brands on Amazon.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -124,7 +124,7 @@ const SectionTeamwork = (props) => {
                                             <p>Chief Technology Officer</p>
                                         </div>
                                         <div className="photo_description">
-                                            <p>Defi/Dapp/NFT specialist & Passionate in blockchain industry with 5+ years experience and Bachelor's Degree in software engineering.</p>
+                                            <p>DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor degree in software engineering.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -164,7 +164,7 @@ const SectionTeamwork = (props) => {
                                             <p>Lead Developer</p>
                                         </div>
                                         <div className="photo_description">
-                                            <p>For recent years, Leon is focusing on developing blockchain projects having a deep knowledge of blockchain technologies, specifically in constructing the decentralized application, fork & customizing the existing secure smart contracts, implementing trending methods like yield farming, new proof methods and etc.</p>
+                                            <p>In recent years Leon has focused on developing blockchain projects. He has an in-depth understanding of blockchain technology, with a particular focus on building decentralized applications, yield farming methods, and new proof methods.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -184,7 +184,7 @@ const SectionTeamwork = (props) => {
                                             <p>Lead Developer</p>
                                         </div>
                                         <div className="photo_description">
-                                            <p>James is honored with a bachelor's degree in the computer science under a robust educational background. Strong points are deep knowledge of software engineering and its implementation to the work.</p>
+                                            <p>James holds a bachelor's degree in computer science and has a profound understanding of software engineering. He is a full stack developer who has contributed to several well-known DeFi projects.</p>
                                         </div>
                                     </div>
                                 </li>

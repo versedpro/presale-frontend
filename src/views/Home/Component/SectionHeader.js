@@ -176,7 +176,7 @@ const SectionHeader = (props) => {
                   <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
                   <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
                   <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
-                  <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">Audit Techrate</a>
+                  <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">Techrate Audit</a>
                 </div>
                 <div className="col-12 text-center">
                   <div className="dapp_bar shadow">
@@ -268,10 +268,10 @@ const SectionHeader = (props) => {
                   <div className="presale_info">
                     <div className="presale_info_rectangle">
                       <p>
-                        Token price
+                       Token Price
                       </p>
                       <h6>
-                        1 CRSS=0.2-0.6BUSD
+                        1 CRSS=0.2-0.6 BUSD
                       </h6>
                     </div>
 
