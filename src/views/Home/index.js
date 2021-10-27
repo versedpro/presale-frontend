@@ -192,7 +192,7 @@ const Home = (props) => {
                     {address === null ? (
 
                       <li className="nav-item">
-                        (isMobile? <></>:(<a className="nav-link btn btn_signIN btn_primary" onClick={onConnectClick}> Sign in</a>))
+                        <a className="nav-link btn btn_signIN btn_primary" onClick={onConnectClick}> Sign in</a>
                       </li>
                     ) : (
                       <>
