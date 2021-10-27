@@ -92,6 +92,7 @@ const SectionHeader = (props) => {
   // represents softcap amount
   // This should be updated with softcap of presale
   const [softCap, setSoftCap] = useState(0)
+  const [raised, setRaised] = useState(0);
   const [counter, setCounter] = useState(0);
   
   const [second, setSecond] = useState('00');
@@ -107,6 +108,7 @@ const SectionHeader = (props) => {
       const tempSoftCap = await getTotalDepositedAmount();
       console.log("tempSoftCap", tempSoftCap)
       const percent = parseFloat((web3.utils.fromWei(tempSoftCap)).toString()) / 1100000 * 100;
+      setRaised(web3.utils.fromWei(tempSoftCap));
       setSoftCap(percent);
     }
     fetchDataFromContract()
@@ -331,7 +333,7 @@ const SectionHeader = (props) => {
                   </div>
 
                   <div className="presale_tips">
-                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;0 BUSD</span></div>
+                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{ parseInt(raised)} BUSD</span></div>
                       <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
                   </div>
                   
