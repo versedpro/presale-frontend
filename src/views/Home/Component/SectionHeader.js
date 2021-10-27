@@ -9,7 +9,7 @@ import useRefresh from '../../../redux/useRefresh'
 import "react-step-progress-bar/styles.css"
 import { ProgressBar, Step } from "react-step-progress-bar"
 import { web3 } from "../../../crosswise/web3";
-import { getPresaleTokenPrice } from "../../../crosswise/token";
+import { getPresaleTokenPrice, getTotalDepositedAmount } from "../../../crosswise/token";
 
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png'
 import M from '../../../assets/images/crosswise/m.png'
@@ -104,6 +104,10 @@ const SectionHeader = (props) => {
     const fetchDataFromContract = async () => {
       setTokenPrice(await getPresaleTokenPrice());
       // console.log(parseFloat(web3.utils.fromWei(tokenPrice)));
+      const tempSoftCap = await getTotalDepositedAmount();
+      console.log("tempSoftCap", tempSoftCap)
+      const percent = parseFloat((web3.utils.fromWei(tempSoftCap)).toString()) / 1100000 * 100;
+      setSoftCap(percent);
     }
     fetchDataFromContract()
   }, [fastRefresh])

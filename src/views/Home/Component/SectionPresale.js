@@ -93,8 +93,8 @@ const SectionHeader = (props) => {
                 <input {...register('amount', { required: true, pattern: /\d+/ })} className="form-control buy-token-amount" value={amountToDeposit} onChange={event => setAmountToDeposit(event.target.value)} />
                 <div className="input-group-append">
                   <span className="input-group-text buy-token-currency">
-                    <p>USD</p>
-                    <img src="assets/images/us-dollar@2x.png" className="rounded-circle" style={{ width: "20px", height: "20px" }} />
+                    <p>BUSD</p>
+                    <img src="assets/images/busdsm.png" className="rounded-circle" style={{ width: "20px", height: "20px" }} />
                   </span>
                 </div>
               </div>
@@ -130,7 +130,7 @@ const SectionHeader = (props) => {
             <div class="presale_info">
               <div className="rectangle">
                 <p>Deposit Amount</p>
-                <h6>{parseFloat(depositAmount.toString()).toFixed(2)} USD</h6>
+                <h6>{parseFloat(depositAmount.toString()).toFixed(2)} BUSD</h6>
               </div>
               <div className="rectangle">
                 <p>Deposit Time</p>

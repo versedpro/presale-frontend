@@ -34,6 +34,10 @@ export const getPresaleTokenPrice = async () => {
     const result = await presaleContract.contract.methods.tokenPrice().call();
     return result;
 }
+export const getTotalDepositedAmount = async () => {
+    const result  = await presaleContract.contract.methods.totalDepositedBusdBalance().call();
+    return new web3.utils.toBN(result);
+}
 
 //Setters
 export const ApproveBusd = async (address) => {
