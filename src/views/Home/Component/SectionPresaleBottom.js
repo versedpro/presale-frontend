@@ -46,23 +46,27 @@ const SectionPresaleBottom = (props) => {
   useEffect(()=> {
   
     const intervalId = setInterval(() => {
-      const dayCounter = Math.floor(counter / (60 * 60 * 24));
+    //   const dayCounter = Math.floor(counter / (60 * 60 * 24));
       
-      const hourCounter = Math.floor((counter / (60 * 60)) % 24);
-      const minuteCounter = Math.floor((counter / 60) % 60);
-      const secondCounter = counter % 60;
+    //   const hourCounter = Math.floor((counter / (60 * 60)) % 24);
+    //   const minuteCounter = Math.floor((counter / 60) % 60);
+    //   const secondCounter = counter % 60;
   
-      const computedDay   = String(dayCounter).length === 1 ? `0${dayCounter}`: dayCounter;
-      const computedHour   = String(hourCounter).length === 1 ? `0${hourCounter}`: hourCounter;
-      const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}`: secondCounter;
-      const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
+    //   const computedDay   = String(dayCounter).length === 1 ? `0${dayCounter}`: dayCounter;
+    //   const computedHour   = String(hourCounter).length === 1 ? `0${hourCounter}`: hourCounter;
+    //   const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}`: secondCounter;
+    //   const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
       // console.log("type",  typeof(computedSecond));
       
-      setDay(computedDay.toString());
-      setHour(computedHour.toString());
-      setSecond(computedSecond.toString());
-      setMinute(computedMinute.toString());
+    //   setDay(computedDay.toString());
+    //   setHour(computedHour.toString());
+    //   setSecond(computedSecond.toString());
+    //   setMinute(computedMinute.toString());
       // console.log("counter tuype", typeof(counter));
+      setDay('00');
+      setMinute('00');
+      setHour('00');
+      setSecond('00');
       if(counter === 0){
         setDay('00');
         setMinute('00');
