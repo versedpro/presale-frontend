@@ -76,6 +76,7 @@ const Home = (props) => {
 
       return;
     }
+    
     console.log(window.ethereum.chainId)
     if (typeof window.ethereum === 'undefined') {
       NotificationManager.warning('Please install MetaMask!');
@@ -119,8 +120,7 @@ const Home = (props) => {
       <div className={isDark? 'main_body': 'main_body light-theme'}>
         
         <header className="nav_wrapper">
-        <div className={address !== null? "inactive": "notification"}>MetaMask Wallet needed. Contact us at support@crosswise.finance in case you need to change your wallet address.
-</div>
+        <div className={address !== null? "inactive": "notification"}>You are NOT able enter the pre-sale using a mobile device. Please make sure to use MetaMask wallet on a laptop or desktop PC or Mac.</div>
           {/** nav header starts */}
           <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
             {/* <!-- Brand --> */}
@@ -190,8 +190,9 @@ const Home = (props) => {
                     </li>
                     
                     {address === null ? (
+
                       <li className="nav-item">
-                        <a className="nav-link btn btn_signIN btn_primary" onClick={onConnectClick}> Sign in</a>
+                        (isMobile? <></>:(<a className="nav-link btn btn_signIN btn_primary" onClick={onConnectClick}> Sign in</a>))
                       </li>
                     ) : (
                       <>
