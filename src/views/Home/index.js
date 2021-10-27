@@ -28,12 +28,20 @@ import SectionCrosswiseFeature from "./Component/SectionCrosswiseFeatures";
 import SectionPresaleBottom from "./Component/SectionPresaleBottom";
 import SectionFees from "./Component/SectionFees";
 
+import remove from "../../assets/images/close1.png"
 const Home = (props) => {
    
   const [showPresaleInfo, setShowPresaleInfo] = useState(false)
+  const [showNotifiaction, setShowNotifiaction] = useState(true)
   const dispatch = useDispatch();
   const address = useSelector(state => state.authUser.address);
 
+  const removeNotification = () => {
+    console.log("origin", showNotifiaction)
+    setShowNotifiaction(false);
+    console.log("here")
+    console.log(showNotifiaction)
+  }
   const onConnectClick = async () => {
     if (isMobile) {
       // Check if connection is already established
@@ -115,12 +123,17 @@ const Home = (props) => {
   const showPresale = () => setShowPresaleInfo(true)
   const showHome = () => setShowPresaleInfo(false)
   
+
+
   return (
     <Fragment>
       <div className={isDark? 'main_body': 'main_body light-theme'}>
         
         <header className="nav_wrapper">
-        <div className={address !== null? "inactive": "notification"}>You are NOT able enter the pre-sale using a mobile device. Please make sure to use MetaMask wallet on a laptop or desktop PC or Mac.</div>
+        <div className={address !== null || !showNotifiaction? "inactive": "notification"}>
+          You are NOT able enter the pre-sale using a mobile device. Please make sure to use MetaMask wallet on a laptop or desktop PC or Mac.
+          <button className="removeBtn" onClick={removeNotification} style={{width:`15px`}}><img src={remove}/></button>
+        </div>
           {/** nav header starts */}
           <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
             {/* <!-- Brand --> */}

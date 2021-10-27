@@ -1579,7 +1579,6 @@ img.vert-move {
       width: 100%;
       font-size: 13px;
       display:block;
-      animation: fade-out 10s;
   }
 
   @keyframes fade-out {
@@ -1626,4 +1625,9 @@ img.vert-move {
     .wallet-address span{
         font-size: 14px;
     }
+  }
+  .removeBtn{
+      background:none;
+      border: 0px;
+      cursor: pointer;
   }
