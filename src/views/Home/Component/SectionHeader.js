@@ -27,7 +27,7 @@ import DiscordLight from '../../../assets/images/crosswise/discord-light.png'
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
 import audit_pdf from '../../../assets/images/crosswise/audit/Crosswise_Token_Full_Smart_Contract_Security_Audit.pdf'
-import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck.pdf'
+import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck_1.2.pdf'
 
 const Oval = styled.div`
   width: 16px;
