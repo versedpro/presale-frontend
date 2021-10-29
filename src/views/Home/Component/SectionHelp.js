@@ -50,7 +50,7 @@ const SectionHelp = (props) => {
                   <h1>Join our community</h1>
                 </div>
                 <div className="desc">
-                  <p>Crosswise is also a thriving community of DeFi enthusiasts! Join our growing community and stay up to date on the latest project developments.</p>
+                  <p>Crosswise is also a thriving community of DeFi enthusiasts! Join our growing community and stay up to date with the latest project developments.</p>
                 </div>
                 
                 <div className="social_link_btn">

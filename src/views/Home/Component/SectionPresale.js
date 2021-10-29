@@ -145,7 +145,8 @@ const SectionHeader = (props) => {
               
             </div>
             <div>
-                <button className="btn btn_primary claim-button" onClick={claimToken}>Claim</button>
+                <button className="btn btn_primary claim-button" onClick={claimToken}>Withdraw Tokens</button>
+                <h6>20% of tokens unlock every 30 days. Once unlocked, you can withdraw them to your wallet.</h6>
               </div>
           </div>
         </Row>
