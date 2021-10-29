@@ -174,7 +174,6 @@ const SectionHeader = (props) => {
   })
 
   return (
-      
     <Section className="header_section" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}} softCap={ softCap }>
       <Container>
         <Row className="pRelative">

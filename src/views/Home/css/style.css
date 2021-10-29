@@ -1631,3 +1631,9 @@ img.vert-move {
       border: 0px;
       cursor: pointer;
   }
+
+  .claim_section{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
