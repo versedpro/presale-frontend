@@ -5,6 +5,7 @@ import { Row, Col } from 'reactstrap';
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
 import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
+import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck.pdf'
 
 const SectionFooter = (props) => {
 
@@ -44,7 +45,7 @@ const SectionFooter = (props) => {
                       </div>
                       <div class="links">
                           <a className="link-item" href={pdf} target="_blank">Litepaper</a>
-                          <a className="link-item">Pitchdeck</a>
+                          <a className="link-item" href={pitchdeck} target="_blank">Pitchdeck</a>
                       </div>
                     </div>
                     <div className="group_links">

@@ -27,6 +27,7 @@ import DiscordLight from '../../../assets/images/crosswise/discord-light.png'
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
 import audit_pdf from '../../../assets/images/crosswise/audit/Crosswise_Token_Full_Smart_Contract_Security_Audit.pdf'
+import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck.pdf'
 
 const Oval = styled.div`
   width: 16px;
@@ -184,7 +185,7 @@ const SectionHeader = (props) => {
                 <p className="desc">crosswise takes the trading experience on DEX to the next level with tighter security, a friendly interface, cross-chain transactions, gasless swaps, verified listings and the right tools, tightly integrated.</p>
                 <div className="button_group">
                   <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
-                  <a className="btn btn_primary btn_pitchdeck">Pitchdeck</a>
+                  <a className="btn btn_primary btn_pitchdeck" href={pitchdeck} target="_blank">Pitchdeck</a>
                   <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
                   <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">Techrate Audit</a>
                 </div>
@@ -235,7 +236,7 @@ const SectionHeader = (props) => {
             <Row>
               <div className="header_section_right">
                 <div className="header_presale_board">
-                  <h5>Pre-Sale Starts In</h5>
+                  <h5>Pre-Sale Started</h5>
 
                   <div className="presale_counter">
                     <div className="count_el">
