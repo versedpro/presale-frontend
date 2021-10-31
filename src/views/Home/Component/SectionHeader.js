@@ -281,7 +281,7 @@ const SectionHeader = (props) => {
                        Token Price
                       </p>
                       <h5>
-                        1 CRSS=0.2-0.6 BUSD
+                        1 CRSS={web3.utils.fromWei(tokenPrice)} BUSD
                       </h5>
                     </div>
                     <div className="presale_info_rectangle">

@@ -83,7 +83,7 @@ const SectionHeader = (props) => {
       <Container>
         <Row>
           <div className="presale-wrap">
-          <div className="presale-info no-padding">
+          <div className="presale-info">
             <p>Wallet address</p>
             <div className="wallet-address" style={{ marginBottom: "20px" }}>
               <span>{address}</span>
