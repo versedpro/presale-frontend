@@ -41,7 +41,7 @@ const SectionFooter = (props) => {
                   <div className="footer_bar_links">
                     <div className="group_links">
                       <div className="title">
-                        Media
+                        MEDIA
                       </div>
                       <div class="links">
                           <a className="link-item" href={pdf} target="_blank">Litepaper</a>

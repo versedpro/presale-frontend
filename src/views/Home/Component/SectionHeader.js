@@ -276,15 +276,30 @@ const SectionHeader = (props) => {
                   </div>
 
                   <div className="presale_info">
-                    <div className="presale_info_rectangle">
+                    <div className="presale_info_rectangle token_price">
                       <p>
                        Token Price
                       </p>
-                      <h6>
+                      <h5>
                         1 CRSS=0.2-0.6 BUSD
+                      </h5>
+                    </div>
+                    <div className="presale_info_rectangle">
+                      <p>
+                        Min Purchase
+                      </p>
+                      <h6>
+                        250 BUSD
                       </h6>
                     </div>
-
+                    <div className="presale_info_rectangle">
+                      <p>
+                      Max Purchase
+                      </p>
+                      <h6>
+                        25,000 BUSD
+                      </h6>
+                    </div>
                     <div className="presale_info_rectangle">
                       <p>
                         Soft Cap
@@ -302,23 +317,6 @@ const SectionHeader = (props) => {
                         1,100,000 BUSD
                       </h6>
                     </div>
-
-                    <div className="presale_info_rectangle">
-                      <p>
-                      Max Purchase
-                      </p>
-                      <h6>
-                        25,000 BUSD
-                      </h6>
-                    </div>
-                    <div className="presale_info_rectangle">
-                      <p>
-                        Min Purchase
-                      </p>
-                      <h6>
-                        250 BUSD
-                      </h6>
-                    </div>
                     <div className="presale_info_rectangle long_width">
                       <h6 className={ parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.2 ? "highlight active": "" }>
                         Stage 1 = 1 Million CRSS @ 0.2 BUSD
@@ -333,7 +331,7 @@ const SectionHeader = (props) => {
                   </div>
 
                   <div className="presale_tips">
-                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{ parseInt(raised)} BUSD</span></div>
+                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{ parseInt(raised).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
                       <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
                   </div>
                   

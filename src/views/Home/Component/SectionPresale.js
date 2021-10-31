@@ -82,7 +82,8 @@ const SectionHeader = (props) => {
     <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
       <Container>
         <Row>
-          <div className="presale-info">
+          <div className="presale-wrap">
+          <div className="presale-info no-padding">
             <p>Wallet address</p>
             <div className="wallet-address" style={{ marginBottom: "20px" }}>
               <span>{address}</span>
@@ -117,17 +118,19 @@ const SectionHeader = (props) => {
                   
               </div>
             </form>
+          </div>
+          <div className="presale-info">
             <div className="presale_info">
-              <div className="rectangle">
-                <p>Total Reward Amount</p>
-                <h6>{ parseFloat(totalRewardAmount.toString()).toFixed(2)}</h6>
+                <div className="rectangle">
+                  <p>Total Reward Amount</p>
+                  <h6>{ parseFloat(totalRewardAmount.toString()).toFixed(2)}</h6>
+                </div>
+                <div className="rectangle">
+                  <p>Withdraw Amount</p>
+                  <h6>{ parseFloat(withdrawAmount.toString()).toFixed(2)}</h6>
+                </div>
               </div>
-              <div className="rectangle">
-                <p>Withdraw Amount</p>
-                <h6>{ parseFloat(withdrawAmount.toString()).toFixed(2)}</h6>
-              </div>
-            </div>
-            <div class="presale_info">
+              <div class="presale_info">
               <div className="rectangle">
                 <p>Deposit Amount</p>
                 <h6>{parseFloat(depositAmount.toString()).toFixed(2)} BUSD</h6>
@@ -148,7 +151,7 @@ const SectionHeader = (props) => {
               <button className="btn btn_primary claim-button" onClick={claimToken}>Withdraw Tokens</button>
               <p style={{padding: `10px`}}>20% of tokens unlock every 30 days. Once unlocked, you can withdraw them to your wallet.</p>
             </div>
-              
+          </div>
           </div>
         </Row>
       </Container>
