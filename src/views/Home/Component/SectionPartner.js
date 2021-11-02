@@ -16,7 +16,8 @@ import { ThemeContext } from "../../../contexts/ThemeContext";
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
 import Thumb from '../../../assets/images/crosswise/thumb.png';
 import Icon1 from '../../../assets/images/crosswise/partners/techrate.png';
-import Icon2 from '../../../assets/images/crosswise/user-friendly.png';
+import Icon2 from '../../../assets/images/crosswise/partners/chainlink.png';
+
 import Icon3 from '../../../assets/images/crosswise/casless-mode.png';
 import Icon4 from '../../../assets/images/crosswise/trade-tools.png';
 
@@ -39,9 +40,9 @@ const SectionPartner = (props) => {
                     <div className="title">
                         <h1>Technical Partners</h1>
                     </div>
-                    <div class="desc">
+                    {/* <div class="desc">
                         <p></p>
-                    </div>
+                    </div> */}
                   </div>
                 </Row>
                 <Row>
@@ -51,7 +52,6 @@ const SectionPartner = (props) => {
                           <img src={Icon1} />
                         </div>
                         <div className="desc">
-                          <h6>Cross-Chain</h6>
                         </div>
                       </div>
 
@@ -60,26 +60,24 @@ const SectionPartner = (props) => {
                           <img src={Icon2} />
                         </div>
                         <div className="desc">
-                          <h6>User Friendly</h6>
                         </div>
                       </div>
 
                       <div className="feature_item">
                         <div className="feature_item_icon">
-                          <img src={Icon3} />
+                          {/* <img src={Icon3} /> */}
                         </div>
                         <div className="desc">
-                          <h6>Gasless Mode</h6>
+                          {/* <h6>Gasless Mode</h6> */}
                         </div>
                       </div>
 
                       <div className="feature_item">
                         <div className="feature_item_icon">
-                          <img src={Icon4} />
+                          {/* <img src={Icon4} /> */}
                         </div>
                         <div className="desc">
-                          <h6>Trading Tools
-</h6>
+                          {/* <h6>Trading Tools</h6> */}
                         </div>
                       </div>
                   </div>
