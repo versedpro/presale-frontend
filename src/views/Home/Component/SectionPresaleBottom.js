@@ -91,7 +91,7 @@ const SectionPresaleBottom = (props) => {
                     <div className="title">
                         <h1>Presale</h1>
                     </div>  
-                    <div className="header_section_right m-auto">
+                    {/* <div className="header_section_right m-auto">
                         <div className="presale_counter">
                             <div className="count_el">
                                 <div className="count_el_digits">
@@ -129,7 +129,7 @@ const SectionPresaleBottom = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </Row>
                 <div className="presale_info">
                     <div className="info_desc pt-50">Max Amount Per Wallet</div>

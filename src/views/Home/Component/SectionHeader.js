@@ -237,7 +237,7 @@ const SectionHeader = (props) => {
                 <div className="header_presale_board">
                   <h5>Pre-Sale Started</h5>
 
-                  <div className="presale_counter">
+                  {/* <div className="presale_counter">
                     <div className="count_el">
                       <div className="count_el_digits">
                         <h3>{day}</h3>              
@@ -273,7 +273,7 @@ const SectionHeader = (props) => {
                         <p>SEC</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="presale_info">
                     <div className="presale_info_rectangle token_price">
@@ -281,7 +281,7 @@ const SectionHeader = (props) => {
                        Token Price
                       </p>
                       <h5>
-                        1 CRSS={web3.utils.fromWei(tokenPrice)} BUSD
+                        1 CRSS = {web3.utils.fromWei(tokenPrice)} BUSD
                       </h5>
                     </div>
                     <div className="presale_info_rectangle">
