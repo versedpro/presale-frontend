@@ -201,7 +201,7 @@ const SectionPresaleBottom = (props) => {
                         </div>
                         <div className="step_item">
                             <img src={stepImg2} />
-                            <div className="step_desc">Minimum buy 250 BUSD</div>
+                            <div className="step_desc">Minimum buy 1 BUSD</div>
                         </div>
                     </div>
                 </div>

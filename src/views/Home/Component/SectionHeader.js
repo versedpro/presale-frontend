@@ -289,7 +289,7 @@ const SectionHeader = (props) => {
                         Min Purchase
                       </p>
                       <h6>
-                        250 BUSD
+                        1 BUSD
                       </h6>
                     </div>
                     <div className="presale_info_rectangle">

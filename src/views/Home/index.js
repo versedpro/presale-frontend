@@ -27,6 +27,7 @@ import SectionPresale from "./Component/SectionPresale";
 import SectionCrosswiseFeature from "./Component/SectionCrosswiseFeatures";
 import SectionPresaleBottom from "./Component/SectionPresaleBottom";
 import SectionFees from "./Component/SectionFees";
+import SectionPartner from "./Component/SectionPartner";
 
 import remove from "../../assets/images/close1.png"
 const Home = (props) => {
@@ -140,6 +141,7 @@ const Home = (props) => {
             <div className="container">
               <a className="navbar-brand" href="/">
                 {
+                
                   isDark? (<img src="assets/images/logo@3x.png" className="nav_logo" id="crosswise_logo"/>):
                   <img src="assets/images/logo-light-theme-2.png" className="nav_logo" id="crosswise_logo"/>
                 }
@@ -245,6 +247,7 @@ const Home = (props) => {
         ): (
           <>
             <SectionHeader/>
+            {/* <SectionPartner /> */}
             <SectionAbout/>
             <SectionMission/>
             {/* <SectionExchange></SectionExchange> */}
