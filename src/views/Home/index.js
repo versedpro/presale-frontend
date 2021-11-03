@@ -247,7 +247,7 @@ const Home = (props) => {
         ): (
           <>
             <SectionHeader/>
-            {/* <SectionPartner /> */}
+            <SectionPartner />
             <SectionAbout/>
             <SectionMission/>
             {/* <SectionExchange></SectionExchange> */}

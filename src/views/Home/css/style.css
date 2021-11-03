@@ -1665,3 +1665,7 @@ img.vert-move {
     flex-direction: column;
     align-items: end;
   }
+
+  .light-theme .about_section.grey_background{
+      background-color: inherit;
+  }

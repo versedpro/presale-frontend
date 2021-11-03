@@ -18,8 +18,8 @@ import Thumb from '../../../assets/images/crosswise/thumb.png';
 import Icon1 from '../../../assets/images/crosswise/partners/techrate.png';
 import Icon2 from '../../../assets/images/crosswise/partners/chainlink.png';
 
-import Icon3 from '../../../assets/images/crosswise/casless-mode.png';
-import Icon4 from '../../../assets/images/crosswise/trade-tools.png';
+import Icon3 from '../../../assets/images/crosswise/partners/certik_1.png';
+import Icon4 from '../../../assets/images/crosswise/partners/biconomy.png';
 
 const SectionPartner = (props) => {
    
@@ -33,7 +33,7 @@ const SectionPartner = (props) => {
   
     return (
         
-          <section className="about_section" id="about">
+          <section className="about_section grey_background" id="about">
             <Container>
               <Row>
                   <div className="about_section_sub">
@@ -65,19 +65,18 @@ const SectionPartner = (props) => {
 
                       <div className="feature_item">
                         <div className="feature_item_icon">
-                          {/* <img src={Icon3} /> */}
+                          <img src={Icon3} />
                         </div>
                         <div className="desc">
-                          {/* <h6>Gasless Mode</h6> */}
                         </div>
                       </div>
 
                       <div className="feature_item">
                         <div className="feature_item_icon">
-                          {/* <img src={Icon4} /> */}
+                          <img src={Icon4} />
                         </div>
                         <div className="desc">
-                          {/* <h6>Trading Tools</h6> */}
+                          {/* <h6>Gasless Mode</h6> */}
                         </div>
                       </div>
                   </div>
