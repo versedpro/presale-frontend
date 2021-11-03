@@ -51,6 +51,10 @@
     z-index: 1;
 }
 
+.presale-info .title{
+    padding-bottom: 20px;
+}
+
 @media only screen and (max-width: 650px){
     .presale-info{
         margin: 20px 5px;
@@ -156,9 +160,9 @@
 }
 
 .buy-tokens, .claim-rewards {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .buy-tokens p, .claim-rewards p {
@@ -1650,6 +1654,9 @@ img.vert-move {
         flex-wrap: wrap;
         justify-content: center;
     }
+    .section-presale .presale-info.mobile{
+        height:auto;
+    }
     .presale-info .rectangle{
         margin: 5px 0px;
     }
@@ -1657,7 +1664,7 @@ img.vert-move {
         margin: 0px !important;
     }
     .buy-tokens, .claim-rewards{
-        justify-content: space-between;
+        justify-content: flex-end;
         margin-bottom:30px;
     }
     .wallet-address span{
@@ -1671,7 +1678,7 @@ img.vert-move {
   }
 
   .claim_section{
-    margin-top: 20px;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -1679,4 +1686,9 @@ img.vert-move {
 
   .light-theme .about_section.grey_background{
       background-color: #f9f9f9;
+  }
+
+  .presale-desc{
+      margin:auto;
+      padding:20px 50px;
   }

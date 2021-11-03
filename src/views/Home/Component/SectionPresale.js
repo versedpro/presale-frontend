@@ -87,7 +87,7 @@ const SectionHeader = (props) => {
           <div className="presale-wrap"> 
             
           <div className="presale-info">
-          <h5>Buy Tokens</h5>
+          <h5 className="title"> Buy Tokens</h5>
             <p>Wallet address</p>
             <div className="wallet-address" style={{ marginBottom: "20px" }}>
               <span>{address}</span>
@@ -109,7 +109,6 @@ const SectionHeader = (props) => {
               }
               
               <div className="buy-tokens">
-                <p>All transactions are private and secure</p>
                   {
                     crssAllowrance.toString() === "0" ?(  <button className="btn btn_primary" onClick={approveTokens}>
                     Approve Contract </button>):
@@ -123,8 +122,8 @@ const SectionHeader = (props) => {
               </div>
             </form>
           </div>
-          <div className="presale-info">
-           <h5>My Tokens</h5>
+          <div className="presale-info mobile">
+           <h5 className="title">My Tokens</h5>
             <div className="presale_info">
             
                 <div className="rectangle">
@@ -157,9 +156,11 @@ const SectionHeader = (props) => {
 
             <div className="claim_section">
               <button className="btn btn_primary claim-button" onClick={claimToken}>Withdraw Tokens</button>
-              <p style={{padding: `10px`}}>20% of tokens unlock every 30 days. Once unlocked, you can withdraw them to your wallet.</p>
             </div>
           </div>
+          </div>
+          <div className="presale-desc">
+            <p style={{fontSize: '14px'}}>All transactions are private and secure. 20% of tokens unlock every 30 days. Once unlocked, you can withdraw them to your wallet.</p>
           </div>
         </Row>
       </Container>
