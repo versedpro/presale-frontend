@@ -374,10 +374,6 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
-                                        <div className="content-text">Polygon Release Dev</div>
-                                    </div>
-                                    <div className="content-desc">
-                                        <img src={spinnerImg} />
                                         <div className="content-text">Anti Bot Features</div>
                                     </div>
                                     <div className="content-desc">
@@ -417,7 +413,7 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
-                                        <div className="content-text">Bookmarking / Notifications extended</div>
+                                        <div className="content-text">Bookmarking</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
@@ -429,7 +425,7 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
-                                        <div className="content-text">Front running deterrend</div>
+                                        <div className="content-text">Front-running deterrents</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
@@ -486,7 +482,7 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
-                                        <div className="content-text">Shareholder /governance Token</div>
+                                        <div className="content-text">Shareholder / Governance Token</div>
                                     </div>
                                 </div>
                             </div>
@@ -505,6 +501,10 @@ const SectionRoadmapV2 = (props) => {
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
                                         <div className="content-text">Release on Solana</div>
+                                    </div>
+                                    <div className="content-desc">
+                                        <img src={spinnerImg} />
+                                        <div className="content-text">Release on Polygon</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />

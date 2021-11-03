@@ -79,10 +79,12 @@ const SectionHeader = (props) => {
   }
 
   return (
-    <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
+    // <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
+    <section className="header_section section-presale">
+
       <Container>
         <Row>
-          <div className="presale-wrap">
+          <div className="presale-wrap"> 
             
           <div className="presale-info">
           <h5>Buy Tokens</h5>
@@ -131,18 +133,18 @@ const SectionHeader = (props) => {
                 </div>
                 <div className="rectangle">
                   <p>Total Received</p>
-                  <h6>{ parseFloat(totalRewardAmount.toString()).toFixed(2)}</h6>
+                  <h6>{ parseFloat(totalRewardAmount.toString()).toFixed(2)} CRSS</h6>
                 </div>
                
               </div>
               <div class="presale_info">
               <div className="rectangle">
                 <p>Unlocked Tokens</p>
-                <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)}</h6>
+                <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)} CRSS</h6>
               </div>
               <div className="rectangle">
-                  <p>Withdraw Amount</p>
-                  <h6>{ parseFloat(withdrawAmount.toString()).toFixed(2)}</h6>
+                  <p>Total Withdrawn</p>
+                  <h6>{ parseFloat(withdrawAmount.toString()).toFixed(2)} CRSS</h6>
                 </div>  
             </div>
 
