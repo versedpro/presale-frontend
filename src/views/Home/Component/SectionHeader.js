@@ -26,8 +26,9 @@ import DiscordLight from '../../../assets/images/crosswise/discord-light.png'
 
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
-import audit_pdf from '../../../assets/images/crosswise/audit/Crosswise_Token_Full_Smart_Contract_Security_Audit.pdf'
 import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck_1.2.pdf'
+
+const audit_pdf = 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf'
 
 const Oval = styled.div`
   width: 16px;
@@ -231,7 +232,7 @@ const SectionHeader = (props) => {
               </div>
             </Row>
           </div>
-          <div className="col-lg-5 col-md-12">
+          <div className="col-lg-5 col-md-12 pRelativeSecond">
             <Row>
               <div className="header_section_right">
                 <div className="header_presale_board">
@@ -376,7 +377,6 @@ const SectionHeader = (props) => {
               </div>
             </Row>
           </div>
-
           <img src={Planet8} className="planet8_img shadow"/>
         </Row>
       </Container>

@@ -124,7 +124,7 @@ const SectionTeamwork = (props) => {
                                             <p>Chief Technology Officer</p>
                                         </div>
                                         <div className="photo_description">
-                                            <p>DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor degree in software engineering.</p>
+                                            <p>DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor's degree in software engineering.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -134,8 +134,8 @@ const SectionTeamwork = (props) => {
                                         {/* <img class="card-img-top" src={} /> */}
                                         <img className="user_img_top" src={User4} />
                                         {
-                                            isDark? (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinBlackIcon} /></a>):
-                                                    (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinLightIcon} /></a>)
+                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/gregory-khine/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
+                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/gregory-khine/" target="_blank"><img  src={linkedinLightIcon} /></a>)
                                         }
                                         <div className="card-img-overlay p-3">
                                         </div>

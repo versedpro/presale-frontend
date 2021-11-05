@@ -135,7 +135,7 @@ const SectionPresaleBottom = (props) => {
                     <div className="info_desc pt-50">Max Amount Per Wallet</div>
                     <div className="info_desc t_b pt-30">25,000 BUSD</div>
                     <div className="info_desc pt-50">Vesting</div>
-                    <div className="info_desc t_b pt-30">5 months linearly</div>
+                    <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days</div>
                 </div>
                 <div className="presale_stages">
                     <div className="s_diagram size_md">

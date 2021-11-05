@@ -216,6 +216,10 @@ const SectionRoadmapV2 = (props) => {
                                                 <div className="photo_content">
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} />
+                                                        <div className="content-text">Release on Avalanche</div>
+                                                    </div>
+                                                    <div className="content-desc">
+                                                        <img src={spinnerImg} />
                                                         <div className="content-text">Crosswise Wallet</div>
                                                     </div>
                                                     <div className="content-desc">
