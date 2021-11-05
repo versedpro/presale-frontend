@@ -79,7 +79,8 @@ const SectionTokenomicV2 = (props) => {
                     </div>
                     <div className="token_desc">
                       <div className="desc">
-                        50% of rewards distributed for liquidity farming in farms and pools are paid out in XCRSS token, which is linearly vested into CRSS within 5 months, with 20% unlocked every 30 days.
+                        <p>Rewards Vesting</p>
+                        50% of rewards distributed in farms and pools are paid out in XCRSS token, which is linearly vested into CRSS within 5 months, with 20% unlocked every 30 days.
                       </div>
                     </div>
                   </div>                  

@@ -21,18 +21,18 @@ const SectionFees = (props) => {
                 </Row>
                <div className="fee_classification">
                 <div className="fee_item">
-                  <div className="item_title">Simple Swap</div>
+                  <div className="item_title">Quick Swap</div>
                   <div className="item_content">
                     <div className="sub_title">0.2%</div>
                     <div className="sub_desc">fee on every swap</div>
                     <div className="sub_title">0.17%</div>
-                    <div className="sub_desc">Returned to liquidity pools in the form of a reward for liquidity providers</div>
+                    <div className="sub_desc">Returned to liquidity pools and awarded to  liquidity providers</div>
                     <div className="sub_title">0.03%</div>
                     <div className="sub_desc">to treasury</div>
                   </div>
                 </div>
                 <div className="fee_item">
-                  <div className="item_title">Advanced</div>
+                  <div className="item_title">Advanced Swap</div>
                   <div className="item_content">
                     <div className="sub_title">0.3%</div>
                     <div className="sub_desc">fee on every swap</div>

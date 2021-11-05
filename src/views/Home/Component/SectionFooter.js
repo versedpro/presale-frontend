@@ -55,6 +55,7 @@ const SectionFooter = (props) => {
                       <div class="links">
                           <a className="link-item" href="https://crosswise.gitbook.io/crosswise/" target="_blank">Gitbook</a>
                           <a className="link-item" href="https://intercom.help/crosswise-f/en" target="_blank">Support </a>
+                          <a className="link-item" href="https://crosswise.notion.site/Crosswise-ICO-Affiliate-Program-221dc5555eb8422b8210c03c952d1673" target="_blank">Affiliate Program</a>
                       </div>
                     </div>
                     <div className="group_links">

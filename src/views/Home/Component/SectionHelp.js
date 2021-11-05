@@ -26,7 +26,7 @@ const questionsAnswers = [
     },
     {
       question: "How can I participate in the CRSS token pre-sale?",
-      answer: `<p>Click on "Get Whitelisted" in the top menu, complete the form, and wait for confirmation. Please use a MetaMask wallet and ensure you have added Binance Smart Chain network. You will then need to click on :"Buy Tokens" in the top menu, and perform your transaction once the sale opens.</p>`,
+      answer: `<p>Click on <a href='https://x9epe3je3fk.typeform.com/crosswise'>Get Whitelisted</a> in the top menu, complete the form, and wait for confirmation. Please use a MetaMask wallet and ensure you have added Binance Smart Chain network. Once confirmed, you can click on Buy Tokens and do your transaction. </p>`,
     }
     
   ];

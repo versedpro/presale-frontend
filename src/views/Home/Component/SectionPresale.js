@@ -94,7 +94,7 @@ const SectionHeader = (props) => {
             </div>
             <form onSubmit={ (crssAllowrance > web3.utils.toBN(100))? handleSubmit(buyTokens): handleSubmit(approveTokens)}>
               <p>Amount</p>
-              <div className="input-group">
+              <div className="input-group custom-address-section">
                 <input {...register('amount', { required: true, pattern: /\d+/ })} className="form-control buy-token-amount" value={amountToDeposit} onChange={event => setAmountToDeposit(event.target.value)} />
                 <div className="input-group-append">
                   <span className="input-group-text buy-token-currency">
@@ -104,7 +104,7 @@ const SectionHeader = (props) => {
                 </div>
               </div>
               {
-                 crssAllowrance.toString() !== "0" ? (errors.amount && <p style={{ color: "red" }}>Please enter amount you desire for amount.</p>):
+                 crssAllowrance.toString() !== "0" ? (errors.amount && <p style={{ color: "red" }}>Please enter the amount of BUSD you wish to invest.</p>):
                  (<p></p>)
               }
               
