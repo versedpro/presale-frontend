@@ -1,5 +1,5 @@
 import React, { Component, Fragment, useState, useContext, useEffect } from "react"
-import { Container , Input} from 'reactstrap'
+import { Container, Input } from 'reactstrap'
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap'
 import '../css/style.css'
@@ -28,7 +28,12 @@ import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
 import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck_1.2.pdf'
 
+import bscscanImg from '../../../assets/images/bscscan.png';
+
 const audit_pdf = 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf'
+
+const preSaleContract = `https://bscscan.com/address/0xad3f5a4526fbed82a865d1baef14153488f86487`
+const crssContract = `https://bscscan.com/address/0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1`
 
 const Oval = styled.div`
   width: 16px;
@@ -40,7 +45,7 @@ const Oval = styled.div`
 
 const Section = styled.div`
   div.presale_progress > div > div:nth-child(2) {
-    left: ${ props => props.softCap }% !important;
+    left: ${props => props.softCap}% !important;
   }
 `;
 
@@ -81,10 +86,10 @@ const PresaleTextTip = styled.div`
 `;
 
 const SectionHeader = (props) => {
-   
+
   const [sideMenu, setsideMenu] = useState(false);
   const [sideMenuIndex, setsideMenuIndex] = useState(0);
-  
+
   const expandCollapseMenu = () => {
     setsideMenu(!sideMenu)
   }
@@ -96,7 +101,7 @@ const SectionHeader = (props) => {
   const [softCap, setSoftCap] = useState(0)
   const [raised, setRaised] = useState(0);
   const [counter, setCounter] = useState(0);
-  
+
   const [second, setSecond] = useState('00');
   const [minute, setMinute] = useState('00');
   const [day, setDay] = useState('00');
@@ -117,37 +122,37 @@ const SectionHeader = (props) => {
   }, [fastRefresh])
 
   useEffect(() => {
-      const currentTime = Date.now();
-     // console.log("currentTime", currentTime);
-      const presaleTime = new Date(2021, 9, 27, 12, 0, 0).getTime();
-      // console.log("presaleTime",  presaleTime)
-      const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
-      // console.log("presaleTimezoneOffset", presaleTimezoneOffset)
-      const utcPresaleTime = presaleTime - presaleTimezoneOffset * 60 * 1000;
-      // console.log("utcPresaleTime", utcPresaleTime)
+    const currentTime = Date.now();
+    // console.log("currentTime", currentTime);
+    const presaleTime = new Date(2021, 9, 27, 12, 0, 0).getTime();
+    // console.log("presaleTime",  presaleTime)
+    const presaleTimezoneOffset = new Date(presaleTime).getTimezoneOffset();
+    // console.log("presaleTimezoneOffset", presaleTimezoneOffset)
+    const utcPresaleTime = presaleTime - presaleTimezoneOffset * 60 * 1000;
+    // console.log("utcPresaleTime", utcPresaleTime)
 
-      const timeStamp = utcPresaleTime - currentTime;
-      // console.log("timestamp", timeStamp);
-      if(counter > 0 )return;
-      // get timestamp
-      // 18.10.2021 3PM CET UTC + 2(+120)
-      setCounter(Math.floor(timeStamp/1000));
+    const timeStamp = utcPresaleTime - currentTime;
+    // console.log("timestamp", timeStamp);
+    if (counter > 0) return;
+    // get timestamp
+    // 18.10.2021 3PM CET UTC + 2(+120)
+    setCounter(Math.floor(timeStamp / 1000));
   })
 
-  useEffect(()=> {
-  
+  useEffect(() => {
+
     const intervalId = setInterval(() => {
       // const dayCounter = Math.floor(counter / (60 * 60 * 24));
       // const hourCounter = Math.floor((counter / (60 * 60)) % 24);
       // const minuteCounter = Math.floor((counter / 60) % 60);
       // const secondCounter = counter % 60;
-  
+
       // const computedDay   = String(dayCounter).length === 1 ? `0${dayCounter}`: dayCounter;
       // const computedHour   = String(hourCounter).length === 1 ? `0${hourCounter}`: hourCounter;
       // const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}`: secondCounter;
       // const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
       // console.log("type",  typeof(computedSecond));
-      
+
       // setDay(computedDay.toString());
       // setHour(computedHour.toString());
       // setSecond(computedSecond.toString());
@@ -157,7 +162,7 @@ const SectionHeader = (props) => {
       setHour('00');
       setSecond('00');
       // console.log("counter tuype", typeof(counter));
-      if(counter === 0){
+      if (counter === 0) {
         setDay('00');
         setMinute('00');
         setHour('00');
@@ -165,17 +170,17 @@ const SectionHeader = (props) => {
         clearInterval(intervalId);
         return;
       }
-      if(counter > 0){
+      if (counter > 0) {
         setCounter(counter - 1);
       }
-      
+
     }, 1000)
-     // console.log(counter)
-  return () => clearInterval(intervalId);
+    // console.log(counter)
+    return () => clearInterval(intervalId);
   })
 
   return (
-    <Section className="header_section" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}} softCap={ softCap }>
+    <Section className="header_section" style={isDark ? { backgroundImage: 'url(' + backgroundCloud + ')' } : {}} softCap={softCap}>
       <Container>
         <Row className="pRelative">
           <div className="col-lg-7 col-md-12">
@@ -187,42 +192,50 @@ const SectionHeader = (props) => {
                   <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
                   <a className="btn btn_primary btn_pitchdeck" href={pitchdeck} target="_blank">Pitchdeck</a>
                   <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
-                  <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">Techrate Audit</a>
+                  <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">TechRate Audit</a>
                 </div>
-                <div className="col-12 text-center">
+                <div className="contract_link">
+                  <h3 className="pr-5 m-0">Pre-Sale:</h3>
+                  <a className="btn btn_primary m-0" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale Contract</a>
+                </div>
+                <div className="contract_link">
+                  <h3 className="pr-5 m-0">CRSS:</h3>
+                  <a className="btn btn_primary m-0" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS Contract</a>
+                </div>
+                <div className="col-12 text-center social-icon">
                   <div className="dapp_bar shadow">
                     <div>
-                        <p>Social Media</p>
+                      <p>Social Media</p>
                     </div>
                     <div className="social_links">
                       <ul className="list-group list-group-horizontal">
-                      <a href=" https://discord.gg/rDvKpqsq" target="_blank" className="list-group-item list-group-item-action">
+                        <a href="https://discord.gg/4BuwxMz24J" target="_blank" className="list-group-item list-group-item-action">
                           {
-                            isDark? (<img src={Discord} alt="discord.png"/>):
-                            (<img src={DiscordLight} alt="discord.png"/>)
+                            isDark ? (<img src={Discord} alt="discord.png" />) :
+                              (<img src={DiscordLight} alt="discord.png" />)
                           }
                         </a>
                         <a href="https://crosswise.medium.com/" target="_blank" className="list-group-item list-group-item-action">
-                          {isDark? (<img src={M} alt="m.png"/>):
-                          (<img src={MLight} alt="m.png"/>)
+                          {isDark ? (<img src={M} alt="m.png" />) :
+                            (<img src={MLight} alt="m.png" />)
                           }
                         </a>
                         <a href="https://t.me/crosswise" target="_blank" className="list-group-item list-group-item-action">
                           {
-                            isDark? (<img src={Paperplane} alt="paperplane.png"/>):
-                            (<img src={PaperplaneLight} alt="paperplane.png"/>)
+                            isDark ? (<img src={Paperplane} alt="paperplane.png" />) :
+                              (<img src={PaperplaneLight} alt="paperplane.png" />)
                           }
                         </a>
                         <a href="https://github.com/crosswise-finance" target="_blank" className="list-group-item list-group-item-action">
                           {
-                            isDark? (<img src={Git} alt="git.png"/>):
-                            (<img src={GitLight} alt="git.png"/>)
+                            isDark ? (<img src={Git} alt="git.png" />) :
+                              (<img src={GitLight} alt="git.png" />)
                           }
                         </a>
                         <a href="https://twitter.com/crosswisefi" target="_blank" className="list-group-item list-group-item-action">
                           {
-                            isDark? (<img src={Twitter} alt="twitter.png"/>):
-                            (<img src={TwitterLight} alt="twitter.png"/>)
+                            isDark ? (<img src={Twitter} alt="twitter.png" />) :
+                              (<img src={TwitterLight} alt="twitter.png" />)
                           }
                         </a>
                       </ul>
@@ -236,7 +249,7 @@ const SectionHeader = (props) => {
             <Row>
               <div className="header_section_right">
                 <div className="header_presale_board">
-                  <h5>Pre-Sale Started</h5>
+                  <h5>Pre-Sale Live</h5>
 
                   {/* <div className="presale_counter">
                     <div className="count_el">
@@ -279,13 +292,13 @@ const SectionHeader = (props) => {
                   <div className="presale_info">
                     <div className="presale_info_rectangle token_price">
                       <p>
-                       Token Price
+                        Token Price
                       </p>
                       <h5>
                         1 CRSS = {web3.utils.fromWei(tokenPrice)} BUSD
                       </h5>
                     </div>
-                    <div className="presale_info_rectangle">
+                    <div className="presale_info_rectangle_left presale_info_rectangle">
                       <p>
                         Min Purchase
                       </p>
@@ -293,15 +306,15 @@ const SectionHeader = (props) => {
                         1 BUSD
                       </h6>
                     </div>
-                    <div className="presale_info_rectangle">
+                    <div className="presale_info_rectangle_right presale_info_rectangle">
                       <p>
-                      Max Purchase
+                        Max Purchase
                       </p>
                       <h6>
                         25,000 BUSD
                       </h6>
                     </div>
-                    <div className="presale_info_rectangle">
+                    <div className="presale_info_rectangle_left presale_info_rectangle">
                       <p>
                         Soft Cap
                       </p>
@@ -310,7 +323,7 @@ const SectionHeader = (props) => {
                       </h6>
                     </div>
 
-                    <div className="presale_info_rectangle">
+                    <div className="presale_info_rectangle_right presale_info_rectangle">
                       <p>
                         Hard Cap
                       </p>
@@ -319,26 +332,26 @@ const SectionHeader = (props) => {
                       </h6>
                     </div>
                     <div className="presale_info_rectangle long_width">
-                      <h6 className={ parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.2 ? "highlight active": "" }>
+                      <h6 className={parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.2 ? "highlight active" : ""}>
                         Stage 1 = 1 Million CRSS @ 0.2 BUSD
                       </h6>
-                      <h6 className={ parseFloat(web3.utils.fromWei(tokenPrice)) > 0.2 && parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.3 ? "highlight active": "" }>
+                      <h6 className={parseFloat(web3.utils.fromWei(tokenPrice)) > 0.2 && parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.3 ? "highlight active" : ""}>
                         Stage 2 = 1 Million CRSS @ 0.3 BUSD
                       </h6>
-                      <h6 className={ parseFloat(web3.utils.fromWei(tokenPrice)) > 0.3 ? "highlight active": "" }>
+                      <h6 className={parseFloat(web3.utils.fromWei(tokenPrice)) > 0.3 ? "highlight active" : ""}>
                         Stage 3 = 1 Million CRSS @ 0.6 BUSD
                       </h6>
                     </div>
                   </div>
 
                   <div className="presale_tips">
-                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{ parseInt(raised).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
-                      <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
+                    <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{parseInt(raised).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
+                    <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
                   </div>
-                  
+
                   <div className="presale_progress">
                     <ProgressBar
-                      percent={ softCap }
+                      percent={softCap}
                       fillBackground="linear-gradient(to right, #fefb72, #f0bb31)"
                     >
                       <Step transition="scale">
@@ -377,7 +390,7 @@ const SectionHeader = (props) => {
               </div>
             </Row>
           </div>
-          <img src={Planet8} className="planet8_img shadow"/>
+          <img src={Planet8} className="planet8_img shadow" />
         </Row>
       </Container>
     </Section>
