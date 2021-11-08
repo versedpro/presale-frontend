@@ -233,7 +233,8 @@
 
 .header_section .header_section_left .button_group {
     padding-top: 15px;
-    padding-bottom: 56px;
+    /* padding-bottom: 56px; */
+    padding-bottom: 1rem;
     flex-wrap: wrap;
 }
 
@@ -379,6 +380,34 @@
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+}
+
+.contract_link {
+    padding-top: 15px;
+    padding-bottom: 1rem;
+    /* padding-bottom: 56px; */
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+}
+
+.scan_img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.social-icon {
+    margin-top: 15px;
+}
+
+.presale_info_rectangle_left {
+    width: calc(50% - 2px) !important;
+    margin-right: 2px;
+}
+
+.presale_info_rectangle_right {
+    width: calc(50% - 2px) !important;
+    margin-left: 2px;
 }
 
 .header_section_right .header_presale_board .presale_tips {

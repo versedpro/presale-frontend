@@ -64,7 +64,7 @@ const SectionFooter = (props) => {
                       </div>
                       <div class="links">
                       <a className="link-item" href="https://t.me/crosswise" target="_blank">Telegram</a>
-                      <a className="link-item" href="https://discord.gg/rDvKpqsq" target="_blank" >Discord</a>
+                      <a className="link-item" href="https://discord.gg/4BuwxMz24J" target="_blank" >Discord</a>
                           <a className="link-item" href="https://twitter.com/crosswisefi" target="_blank">Twitter</a>
                           <a className="link-item" href="https://crosswise.medium.com/" target="_blank">Medium</a>
                           <a className="link-item" href="https://www.instagram.com/crosswisedefi/" target="_blank" >Instagram</a>

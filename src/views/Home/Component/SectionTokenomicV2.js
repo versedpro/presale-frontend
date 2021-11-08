@@ -62,7 +62,7 @@ const SectionTokenomicV2 = (props) => {
                       </div>
                       <div className="teamToken">
                         <h5>No Team Tokens</h5>
-                        <h6>8% of emission goes to the Development Wallet</h6>
+                        <h6>share of emission going to team wallet: <b className="textBlue">8%</b></h6>
                       </div>
 
                     </div>
@@ -79,8 +79,8 @@ const SectionTokenomicV2 = (props) => {
                     </div>
                     <div className="token_desc">
                       <div className="desc">
-                        <p>Rewards Vesting</p>
-                        50% of rewards distributed in farms and pools are paid out in XCRSS token, which is linearly vested into CRSS within 5 months, with 20% unlocked every 30 days.
+                        <h5>Rewards Vesting</h5>
+                        <h6><b className="textBlue">50%</b> of rewards distributed in farms and pools are paid out in XCRSS token, which is linearly vested into CRSS within 5 months, with <b className="textBlue">20%</b> unlocked every 30 days.</h6>
                       </div>
                     </div>
                   </div>                  
