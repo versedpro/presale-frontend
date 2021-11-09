@@ -10,7 +10,7 @@ const connectorNames = {
 }
 
 const POLLING_INTERVAL = 12000;
-const REACT_APP_CHAIN_ID = 97;
+const REACT_APP_CHAIN_ID = 56;
 const rpcUrl = getNodeUrl();
 const chainId = parseInt(REACT_APP_CHAIN_ID, 10);
 
