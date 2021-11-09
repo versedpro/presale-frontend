@@ -41,8 +41,8 @@ const useAuth = () => {
           dispatch(setNetworkId(connectorName));
           localStorage.setItem('connectorName', connectorName);
           activate(connector, async (err, result) => {
-            console.log(err);
-            console.log(result);
+            console.log("error", err);
+            console.log("result", result);
             let web3 = new Web3(window.ethereum)
             const accounts = await web3.eth.getAccounts()
             if (accounts.length > 0) {
