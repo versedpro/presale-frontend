@@ -11,9 +11,13 @@ import {
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
 import { connectorLocalStorageKey } from '@pancakeswap/uikit'
+import { toast } from 'react-toastify';
+
+import WalletConnect from "@walletconnect/client";
+import QRCodeModal from "@walletconnect/qrcode-modal";
+
 import { connectorsByName } from '../utils/web3React'
 import { setupNetwork } from '../utils/wallet'
-import { toast } from 'react-toastify';
 import { setAddress, setNetworkId } from '../redux/actions';
 
 const useAuth = () => {
@@ -23,33 +27,75 @@ const useAuth = () => {
   const login = useCallback(
     (connectorID) => {
       const connector = connectorsByName[connectorID]
-      if (connector) {
-        activate(connector, async (error) => {
-          if (error instanceof UnsupportedChainIdError) {
-            const hasSetup = await setupNetwork()
-            if (hasSetup) {
-              activate(connector)
-            }
-          } else {
-            window.localStorage.removeItem(connectorLocalStorageKey)
-            if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
-              toast.error('No provider was foundg');
-            } else if (
-              error instanceof UserRejectedRequestErrorInjected ||
-              error instanceof UserRejectedRequestErrorWalletConnect
-            ) {
-              if (connector instanceof WalletConnectConnector) {
-                const walletConnector = connector
-                walletConnector.walletConnectProvider = null
-              }
-              toast.error('Please authorize to access your account');
-            } else {
-              toast.error(error.message);
-            }
+
+      if(connectorID === "WalletConnect") {
+        // Create a connector
+        const connectorInfo = new WalletConnect({
+          bridge: "https://bridge.walletconnect.org", // Required
+          qrcodeModal: QRCodeModal,
+        });
+        console.log('my connector');
+        console.log(connector);
+        console.log('custom connector');
+        console.log(connectorInfo);
+        // Check if connection is already established
+        if (!connectorInfo.connected) {
+          // create new session
+          connectorInfo.createSession();
+        }
+        // Subscribe to connection events
+        connectorInfo.on("connect", (error, payload) => {
+          if (error) {
+            throw error;
           }
-        })
+          // Get provided accounts and chainId
+          const { accounts, chainId } = payload.params[0];
+          alert('connected');
+          console.log(accounts, chainId);
+        });
+        connectorInfo.on("session_update", (error, payload) => {
+          if (error) {
+            throw error;
+          }
+          // Get updated accounts and chainId
+          const { accounts, chainId } = payload.params[0];
+          console.log(accounts, chainId);
+        });
+        connectorInfo.on("disconnect", (error, payload) => {
+          if (error) {
+            throw error;
+          }
+          // Delete connector
+        });
       } else {
-        toast.error('The connector config is wrong');
+        if (connector) {
+          activate(connector, async (error) => {
+            if (error instanceof UnsupportedChainIdError) {
+              const hasSetup = await setupNetwork()
+              if (hasSetup) {
+                activate(connector)
+              }
+            } else {
+              window.localStorage.removeItem(connectorLocalStorageKey)
+              if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
+                toast.error('No provider was foundg');
+              } else if (
+                error instanceof UserRejectedRequestErrorInjected ||
+                error instanceof UserRejectedRequestErrorWalletConnect
+              ) {
+                if (connector instanceof WalletConnectConnector) {
+                  const walletConnector = connector
+                  walletConnector.walletConnectProvider = null
+                }
+                toast.error('Please authorize to access your account');
+              } else {
+                toast.error(error.message);
+              }
+            }
+          })
+        } else {
+          toast.error('The connector config is wrong');
+        }
       }
     },
     [activate, toast],
