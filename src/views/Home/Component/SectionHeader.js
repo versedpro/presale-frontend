@@ -113,7 +113,7 @@ const SectionHeader = (props) => {
       setTokenPrice(await getPresaleTokenPrice());
       // console.log(parseFloat(web3.utils.fromWei(tokenPrice)));
       const tempSoftCap = await getTotalDepositedAmount();
-      console.log("tempSoftCap", tempSoftCap)
+      // console.log("tempSoftCap", tempSoftCap)
       const percent = parseFloat((web3.utils.fromWei(tempSoftCap)).toString()) / 1100000 * 100;
       setRaised(web3.utils.fromWei(tempSoftCap));
       setSoftCap(percent);

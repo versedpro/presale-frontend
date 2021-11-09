@@ -13,7 +13,7 @@ export const setupNetwork = async () => {
     provider = await detectEthereumProvider();
   }
   if (provider) {
-    const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10);
+    const chainId = parseInt(process.env.REACT_APP_NETWORK_ID, 10);
     try {
       await provider.request({
         method: 'wallet_addEthereumChain',
@@ -27,13 +27,14 @@ export const setupNetwork = async () => {
               decimals: 18,
             },
             rpcUrls: nodes,
-            blockExplorerUrls: [`${BASE_BSC_SCAN_URL}/`],
+            blockExplorerUrls: [`${BASE_BSC_SCAN_URL[56]}/`],
           },
         ],
       });
       return true;
     } catch (error) {
-      console.error(error);
+      console.error('Failed to setup the network in Metamask:', error)
+      // console.error(error);
       return false;
     }
   } else {

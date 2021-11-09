@@ -1,7 +1,20 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useWeb3React } from '@web3-react/core';
+
+import { UnsupportedChainIdError } from '@web3-react/core'
+import { NoBscProviderError } from '@binance-chain/bsc-connector'
+import {
+  NoEthereumProviderError,
+  UserRejectedRequestError as UserRejectedRequestErrorInjected,
+} from '@web3-react/injected-connector'
+import {
+  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
+  WalletConnectConnector,
+} from '@web3-react/walletconnect-connector'
+
 import Web3 from 'web3';
+import { setupNetwork } from '../utils/wallet';
 import { toast } from 'react-toastify';
 
 import { connectorsByName } from '../utils/web3React';
@@ -35,14 +48,24 @@ const useAuth = () => {
 
   const login = useCallback(
     (connectorName) => {
+      console.log("connectorName...........")
+
       if (activate) {
         const connector = connectorsByName[connectorName];
         if (connector) {
           dispatch(setNetworkId(connectorName));
           localStorage.setItem('connectorName', connectorName);
-          activate(connector, async (err, result) => {
+          activate(connector, async (err) => {
+            console.log("hello world")
             console.log("error", err);
-            console.log("result", result);
+            if (err instanceof UnsupportedChainIdError) {
+              const hasSetup = await setupNetwork()
+              if (hasSetup) {
+                activate(connector)
+              }
+            }
+            // console.log("result", result);
+
             let web3 = new Web3(window.ethereum)
             const accounts = await web3.eth.getAccounts()
             if (accounts.length > 0) {
