@@ -18,7 +18,7 @@ console.log("chainId", chainId)
 const injected = new InjectedConnector({ supportedChainIds: chainId });
 
 const walletconnect = new WalletConnectConnector({
-  rpc: { chainId: rpcUrl },
+  rpc: { [chainId]: rpcUrl },
   bridge: 'https://bridge.walletconnect.org/',
   qrcode: true,
   pollingInterval: POLLING_INTERVAL,
