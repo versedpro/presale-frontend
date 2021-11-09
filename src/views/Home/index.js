@@ -1,17 +1,18 @@
-import React, { Component, Fragment, useState, useContext, useCallback } from "react";
+import React, { Component, Fragment, useState, useContext, useCallback, useEffect } from "react";
 import { Row } from 'reactstrap';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import "./css/style.css";
 import "../../assets/scss/index.scss";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { isMobile } from 'react-device-detect';
-import { NotificationManager } from 'react-notifications'
+// import { NotificationManager } from 'react-notifications'
+// import { useWeb3React } from '@web3-react/core';
+// import Web3 from 'web3'
 
 import useAuth from "../../widgets/useAuth";
 
 import { useDispatch, useSelector } from 'react-redux';
 // import { connector } from '../../crosswise/web3';
-import { setAddress, setNetworkId } from '../../redux/actions';
 
 // Components
 import SectionHeader from "./Component/SectionHeader";
@@ -40,8 +41,7 @@ const Home = () => {
   const [wallletOpen, setWallletOpen] = useState(false)
 
   const { login, logout } = useAuth()
-
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const address = useSelector(state => state.authUser.address)
 
   // const onConnectClick = async () => {

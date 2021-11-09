@@ -1,55 +1,56 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core';
-import { NoBscProviderError } from '@binance-chain/bsc-connector';
-import {
-  NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from '@web3-react/injected-connector';
-import {
-  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-  WalletConnectConnector,
-} from '@web3-react/walletconnect-connector';
+import { useWeb3React } from '@web3-react/core';
+import Web3 from 'web3';
 import { toast } from 'react-toastify';
 
-import { connectorLocalStorageKey } from '@pancakeswap/uikit';
 import { connectorsByName } from '../utils/web3React';
-import { setupNetwork } from '../utils/wallet';
-
-import { setNetworkId } from '../redux/actions';
-
+import { setAddress, setNetworkId } from '../redux/actions';
 
 const useAuth = () => {
-  const { activate, deactivate } = useWeb3React();
+
+  const [activatingConnector, setActivatingConnector] = useState()
+  const { connector, activate, deactivate, networkActive, networkError, activateNetwork } = useWeb3React()
+
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (activatingConnector && activatingConnector === connector) {
+      setActivatingConnector(undefined)
+    }
+  }, [activatingConnector, connector])
+
+  useEffect(async () => {
+    var connectorName = localStorage.getItem('connectorName');
+    if (connectorName) {
+      let web3 = new Web3(window.ethereum)
+      const accounts = await web3.eth.getAccounts()
+      if (accounts.length > 0) {
+        dispatch(setAddress(accounts[0]))
+      } else {
+        localStorage.removeItem('connectorName');
+      }
+    }
+  }, [])
+
   const login = useCallback(
-    (connectorID) => {
+    (connectorName) => {
       if (activate) {
-        const connector = connectorsByName[connectorID];
+        const connector = connectorsByName[connectorName];
         if (connector) {
-          dispatch(setNetworkId(connectorID));
-          activate(connector, async (error) => {
-            if (error instanceof UnsupportedChainIdError) {
-              const hasSetup = await setupNetwork();
-              if (hasSetup) {
-                activate(connector);
-              }
+          dispatch(setNetworkId(connectorName));
+          localStorage.setItem('connectorName', connectorName);
+          activate(connector, async (err, result) => {
+            console.log(err);
+            console.log(result);
+            let web3 = new Web3(window.ethereum)
+            const accounts = await web3.eth.getAccounts()
+            if (accounts.length > 0) {
+              dispatch(setAddress(accounts[0]))
             } else {
-              window.localStorage.removeItem(connectorLocalStorageKey);
-              if (
-                error instanceof NoEthereumProviderError ||
-                error instanceof NoBscProviderError
-              ) {
-                toast.error('No provider was found');
-              } else if (error instanceof UserRejectedRequestErrorInjected) {
-                if (connector instanceof WalletConnectConnector) {
-                  const walletConnector = connector;
-                  walletConnector.walletConnectProvider = null;
-                }
-                toast.error('Please authorize to access your account');
-              }
+              localStorage.removeItem('connectorName');
             }
-          });
+          })
         } else {
           toast.error('The connector config is wrong');
         }
@@ -60,22 +61,9 @@ const useAuth = () => {
 
   const logout = useCallback(() => {
     if (deactivate) {
+      dispatch(setAddress(null))
+      localStorage.removeItem('connectorName');
       deactivate();
-      dispatch({
-        type: 'SESSION_OUT',
-        payload: null,
-      });
-      sessionStorage.removeItem('signin');
-      sessionStorage.removeItem('token');
-      sessionStorage.removeItem('rememberMe');
-      localStorage.setItem('persistAccountOnReload', false);
-      // This localStorage key is set by @web3-react/walletconnect-connector
-      if (window.localStorage.getItem('walletconnect')) {
-        connectorsByName.walletconnect.close();
-        connectorsByName.walletconnect.walletConnectProvider = null;
-      }
-      window.localStorage.removeItem(connectorLocalStorageKey);
-      window.location.reload()
     }
   }, [deactivate, dispatch]);
 

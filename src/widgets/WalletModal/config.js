@@ -1,24 +1,28 @@
-import { ConnectorNames } from '@pancakeswap/uikit';
-
 import metaMaskIcon from '../../assets/images/metamask-icon.svg';
 import trueWalletIcon from '../../assets/images/truewallet-icon.svg';
 import walletConnectIcon from '../../assets/images/walletconnect-icon.svg';
+
+const connectorNames = {
+  Injected: 'Injected',
+  BSC: 'bsc',
+  WalletConnect: 'WalletConnect',
+}
 
 const connectors = [
   {
     title: 'MetaMask',
     icon: metaMaskIcon,
-    connectorId: ConnectorNames.Injected,
+    connectorId: connectorNames.Injected,
   },
   {
     title: 'TrustWallet',
     icon: trueWalletIcon,
-    connectorId: ConnectorNames.Injected,
+    connectorId: connectorNames.Injected,
   },
   {
     title: 'WalletConnect',
     icon: walletConnectIcon,
-    connectorId: ConnectorNames.WalletConnect,
+    connectorId: connectorNames.WalletConnect,
   },
 ];
 
