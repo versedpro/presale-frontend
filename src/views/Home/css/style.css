@@ -1711,6 +1711,55 @@ img.vert-move {
     color: #140129;
 }
 
+.react-responsive-modal-modal {
+    border: 1px solid;
+}
+
+.wallet-connect {
+    width: 2rem;
+}
+
+.react-responsive-modal-root {
+    z-index: 1050 !important;
+}
+
+
+/* .react-responsive-modal-container {
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    display: grid !important;
+    place-items: center !important;
+    transition: all 0.3s linear !important;
+    z-index: 9999 !important;
+} */
+
+.react-responsive-modal-modal {
+    width: 800px;
+    background: #0a0a0c !important;
+    padding: 50px !important;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.modalHeading {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.modalSlug {
+    color: #616161;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 @media only screen and (max-width:598px) {
     .footer_bar {
         flex-direction: column;

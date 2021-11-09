@@ -1,7 +1,7 @@
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
 import Web3 from 'web3';
-import config from '../config';
+import { config } from '../config';
 
 const providerUrl = config.web3Provider;
 const web3 = new Web3(window.ethereum || providerUrl);

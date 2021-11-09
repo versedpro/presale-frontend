@@ -2,21 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
+import { Web3ReactProvider } from '@web3-react/core';
 import { RefreshContextProvider } from './contexts/RefreshContext';
 import { ThemeContextProvider } from './contexts/ThemeContext'
 import { configureStore } from './redux/store';
 import reportWebVitals from './reportWebVitals';
+import { getLibrary } from './utils/web3React';
 
 ReactDOM.render(
-  <Provider store={configureStore()}>
-   <ThemeContextProvider>
-   <RefreshContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-    </RefreshContextProvider>
-   </ThemeContextProvider>
-  </Provider>,
+  <Web3ReactProvider getLibrary={getLibrary}>
+    <Provider store={configureStore()}>
+      <ThemeContextProvider>
+        <RefreshContextProvider>
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </RefreshContextProvider>
+      </ThemeContextProvider>
+    </Provider>
+  </Web3ReactProvider>,
   document.getElementById('root')
 );
 
