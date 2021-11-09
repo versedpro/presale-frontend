@@ -29,3 +29,20 @@ export const BASE_BSC_SCAN_URL = {
   56: 'https://bscscan.com',
   97: 'https://testnet.bscscan.com',
 };
+
+export const connectorNames = {
+  Injected: 'Injected',
+  BSC: 'bsc',
+  WalletConnect: 'WalletConnect',
+}
+
+export const REACT_APP_CHAIN_ID = 56;
+
+export const POLLING_INTERVAL = 12000
+
+export const REACT_APP_NODE_1 = "https://bsc-dataseed1.ninicoin.io"
+
+export const REACT_APP_NODE_2 = "https://bsc-dataseed1.defibit.io"
+
+export const REACT_APP_NODE_3 = "https://bsc-dataseed.binance.org"
+

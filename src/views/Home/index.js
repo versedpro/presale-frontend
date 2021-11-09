@@ -4,15 +4,13 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import "./css/style.css";
 import "../../assets/scss/index.scss";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { isMobile } from 'react-device-detect';
-// import { NotificationManager } from 'react-notifications'
-// import { useWeb3React } from '@web3-react/core';
-// import Web3 from 'web3'
+// import { isMobile } from 'react-device-detect';
+
+import useActiveWeb3React from '../../widgets/useActiveWeb3React'
 
 import useAuth from "../../widgets/useAuth";
 
 import { useDispatch, useSelector } from 'react-redux';
-// import { connector } from '../../crosswise/web3';
 
 // Components
 import SectionHeader from "./Component/SectionHeader";
@@ -34,81 +32,19 @@ import SectionFees from "./Component/SectionFees";
 import SectionPartner from "./Component/SectionPartner";
 
 import ConnectModal from "../../widgets/WalletModal/ConnectModal";
+import { setAddress, setNetworkId } from '../../redux/actions';
 
 const Home = () => {
 
+  const address = useSelector(state => state.authUser.address)
+  
+  const dispatch = useDispatch();
   const [showPresaleInfo, setShowPresaleInfo] = useState(false)
   const [wallletOpen, setWallletOpen] = useState(false)
 
+  const { account, chainId } = useActiveWeb3React()
+
   const { login, logout } = useAuth()
-  const dispatch = useDispatch()
-  const address = useSelector(state => state.authUser.address)
-
-  // const onConnectClick = async () => {
-  //   if (!connector.connected) {
-  //     // create new session
-  //     connector.createSession();
-  //   } else {
-  //     console.log(connector._accounts[0]);
-  //     console.log(connector._chainId.toString(10));
-  //   }
-
-  //   // Subscribe to connection events
-  //   connector.on("connect", (error, payload) => {
-  //     if (error) {
-  //       throw error;
-  //     }
-
-  //     // Get provided accounts and chainId
-  //     const { accounts, chainId } = payload.params[0];
-  //     dispatch(setAddress(accounts[0]));
-  //     dispatch(setNetworkId(chainId.toString(10)));
-  //   });
-
-  //   connector.on("session_update", (error, payload) => {
-  //     if (error) {
-  //       throw error;
-  //     }
-
-  //     // Get updated accounts and chainId
-  //     // const { accounts, chainId } = payload.params[0];
-  //   });
-
-  //   connector.on("disconnect", (error, payload) => {
-  //     if (error) {
-  //       throw error;
-  //     }
-
-  //     // Delete connector
-  //   });
-
-  //   // console.log(window.ethereum.chainId)
-  //   // if (typeof window.ethereum === 'undefined') {
-  //   //   NotificationManager.warning('Please install MetaMask!');
-  //   //   alert("Please install MetaMask!");
-  //   //   return;
-  //   // }
-
-  //   // if (window.ethereum.chainId !== '0x38') {
-  //   //   alert("Please choose the BSC mainnet!");
-  //   //   return;
-  //   // }
-
-  //   // if (window.ethereum.selectedAddress !== null) {
-
-  //   //   dispatch(setAddress(window.ethereum.selectedAddress));
-  //   //   NotificationManager.warning('MetaMask was already connected.');
-  //   //   return;
-  //   // }
-  //   // if (window.ethereum.selectedAddress === null) {
-  //   //   try {
-  //   //     console.log('try?')
-  //   //     await window.ethereum.request({ method: 'eth_requestAccounts' });
-  //   //   } catch (err) {
-  //   //     console.log('err :>> ', err);
-  //   //   }
-  //   // }
-  // };
 
   const minimum = (address) => {
     const temp = String(address);
@@ -123,6 +59,18 @@ const Home = () => {
   const onConnectHandle = () => {
     setWallletOpen(true);
   }
+
+  useEffect(() => {
+    if(account) {
+      dispatch(setAddress(account))
+    }
+  }, [account])
+  
+  useEffect(() => {
+    if(chainId) {
+      dispatch(setNetworkId(chainId))
+    }
+  }, [chainId])
 
   return (
     <Fragment>
