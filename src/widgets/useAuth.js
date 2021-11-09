@@ -58,6 +58,7 @@ const useAuth = () => {
           }
           // Get updated accounts and chainId
           const { accounts, chainId } = payload.params[0];
+          alert(accounts[0]);
           dispatch(setAddress(accounts[0]))
           dispatch(setNetworkId(chainId))
         });
@@ -65,6 +66,7 @@ const useAuth = () => {
           if (error) {
             throw error;
           }
+          alert('Disconnect');
           // Delete connector
           dispatch(setAddress(null))
           dispatch(setNetworkId(null))
