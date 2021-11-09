@@ -55,11 +55,13 @@ const useAuth = () => {
         if (connector) {
           dispatch(setNetworkId(connectorName));
           localStorage.setItem('connectorName', connectorName);
+          
           activate(connector, async (err) => {
             console.log("hello world")
             console.log("error", err);
             if (err instanceof UnsupportedChainIdError) {
               const hasSetup = await setupNetwork()
+              console.log("hasSetup", hasSetup)
               if (hasSetup) {
                 activate(connector)
               }
@@ -69,7 +71,7 @@ const useAuth = () => {
             let web3 = new Web3(window.ethereum)
             const accounts = await web3.eth.getAccounts()
             if (accounts.length > 0) {
-              dispatch(setAddress(accounts[0]))
+               dispatch(setAddress(accounts[0]))
             } else {
               localStorage.removeItem('connectorName');
             }

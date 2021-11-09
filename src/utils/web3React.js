@@ -10,20 +10,21 @@ const connectorNames = {
 }
 
 const POLLING_INTERVAL = 12000;
-const REACT_APP_CHAIN_ID = 56;
+const REACT_APP_CHAIN_ID = "56";
 const rpcUrl = getNodeUrl();
 const chainId = parseInt(REACT_APP_CHAIN_ID, 10);
+console.log("chainId", chainId)
 
-const injected = new InjectedConnector({ supportedChainIds: [chainId] });
+const injected = new InjectedConnector({ supportedChainIds: chainId });
 
 const walletconnect = new WalletConnectConnector({
-  rpc: { [chainId]: rpcUrl },
+  rpc: { chainId: rpcUrl },
   bridge: 'https://bridge.walletconnect.org/',
   qrcode: true,
   pollingInterval: POLLING_INTERVAL,
 });
 
-const bscConnector = new BscConnector({ supportedChainIds: [chainId] });
+const bscConnector = new BscConnector({ supportedChainIds: chainId });
 
 export const connectorsByName = {
   [connectorNames.Injected]: injected,
