@@ -28,16 +28,12 @@ const useAuth = () => {
     (connectorID) => {
       const connector = connectorsByName[connectorID]
 
-      if(connectorID === "WalletConnect") {
+      if (connectorID === "WalletConnect") {
         // Create a connector
         const connectorInfo = new WalletConnect({
           bridge: "https://bridge.walletconnect.org", // Required
           qrcodeModal: QRCodeModal,
         });
-        console.log('my connector');
-        console.log(connector);
-        console.log('custom connector');
-        console.log(connectorInfo);
         // Check if connection is already established
         if (!connectorInfo.connected) {
           // create new session
@@ -50,8 +46,9 @@ const useAuth = () => {
           }
           // Get provided accounts and chainId
           const { accounts, chainId } = payload.params[0];
-          alert('connected');
-          console.log(accounts, chainId);
+
+          dispatch(setAddress(accounts[0]))
+          dispatch(setNetworkId(chainId))
         });
         connectorInfo.on("session_update", (error, payload) => {
           if (error) {
@@ -59,13 +56,18 @@ const useAuth = () => {
           }
           // Get updated accounts and chainId
           const { accounts, chainId } = payload.params[0];
-          console.log(accounts, chainId);
+          dispatch(setAddress(accounts[0]))
+          dispatch(setNetworkId(chainId))
         });
         connectorInfo.on("disconnect", (error, payload) => {
           if (error) {
             throw error;
           }
           // Delete connector
+          dispatch(setAddress(null))
+          dispatch(setNetworkId(null))
+          deactivate()
+          window.localStorage.removeItem(connectorLocalStorageKey)
         });
       } else {
         if (connector) {
