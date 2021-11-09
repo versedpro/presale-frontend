@@ -27,9 +27,10 @@ const useAuth = () => {
   const login = useCallback(
     (connectorID) => {
       const connector = connectorsByName[connectorID]
-
+      alert(connectorID)
       if (connectorID === "WalletConnect") {
         // Create a connector
+        alert('create server')
         const connectorInfo = new WalletConnect({
           bridge: "https://bridge.walletconnect.org", // Required
           qrcodeModal: QRCodeModal,
@@ -37,6 +38,7 @@ const useAuth = () => {
         // Check if connection is already established
         if (!connectorInfo.connected) {
           // create new session
+          alert('create session')
           connectorInfo.createSession();
         }
         // Subscribe to connection events
