@@ -55,7 +55,7 @@ const SectionMission = (props) => {
                     <div className="title">
                         <h1>Platform Features</h1>
                     </div>
-                    {/* <div class="" data-title="Hypertext Markup Language">HTML</div> */}
+                    {/* <div className="" data-title="Hypertext Markup Language">HTML</div> */}
                     <div className="feature_item_group">
                         <div className="feature_item ">
                             <div className="feature_item_icon tooltip expand" data-title="A seamless way of swapping tokens. Swap Exchange uses automated liquidity pools to execute your swap in an instant.">

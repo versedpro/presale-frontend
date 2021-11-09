@@ -39,7 +39,7 @@ const SectionHelp = (props) => {
         
           <section className="help_section" id="help">
             <Container>
-              <div class="help_section_group">
+              <div className="help_section_group">
               <div className="help_section_left">
                 <Row>
                   <Accordion questionsAnswers={questionsAnswers} />

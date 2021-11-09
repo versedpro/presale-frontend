@@ -10,7 +10,7 @@ import { NotificationManager } from 'react-notifications'
 import useAuth from "../../widgets/useAuth";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { connector } from '../../crosswise/web3';
+// import { connector } from '../../crosswise/web3';
 import { setAddress, setNetworkId } from '../../redux/actions';
 
 // Components
@@ -34,13 +34,9 @@ import SectionPartner from "./Component/SectionPartner";
 
 import ConnectModal from "../../widgets/WalletModal/ConnectModal";
 
-import remove from "../../assets/images/close1.png"
-import walletIcon from "../../assets/images/wallet.svg"
-
-const Home = (props) => {
+const Home = () => {
 
   const [showPresaleInfo, setShowPresaleInfo] = useState(false)
-  const [showNotifiaction, setShowNotifiaction] = useState(true)
   const [wallletOpen, setWallletOpen] = useState(false)
 
   const { login, logout } = useAuth()
@@ -48,12 +44,6 @@ const Home = (props) => {
   // const dispatch = useDispatch()
   const address = useSelector(state => state.authUser.address)
 
-  const removeNotification = () => {
-    console.log("origin", showNotifiaction)
-    setShowNotifiaction(false)
-    console.log("here")
-    console.log(showNotifiaction)
-  }
   // const onConnectClick = async () => {
   //   if (!connector.connected) {
   //     // create new session
@@ -139,10 +129,6 @@ const Home = (props) => {
       <ConnectModal login={login} wallletOpen={wallletOpen} setWallletOpen={setWallletOpen} />
       <div className={isDark ? 'main_body' : 'main_body light-theme'}>
         <header className="nav_wrapper">
-          <div className={address !== null || !showNotifiaction ? "inactive" : "notification"}>
-            You are NOT able enter the pre-sale using a mobile device. Please make sure to use MetaMask wallet on a laptop or desktop PC or Mac.
-            <button className="removeBtn" onClick={removeNotification} style={{ width: `15px` }}><img src={remove} /></button>
-          </div>
           {/** nav header starts */}
           <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
             {/* <!-- Brand --> */}
@@ -215,9 +201,7 @@ const Home = (props) => {
                   {
                     address === null ?
                       (<li className="nav-item">
-                        <a className="nav-link btn btn_signIN btn_primary" onClick={onConnectHandle}>
-                          <img className="wallet-connect" src={walletIcon} />
-                        </a>
+                        <a className="nav-link btn btn_signIN btn_primary" onClick={onConnectHandle}>Connect</a>
                       </li>
                       ) : (
                         <>

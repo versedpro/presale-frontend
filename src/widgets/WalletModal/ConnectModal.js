@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Modal } from 'react-responsive-modal';
+import { isMobile } from 'react-device-detect';
 
 import "react-responsive-modal/styles.css";
 
@@ -20,10 +21,11 @@ const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
       center
       container={modalRef.current}
       closeIcon={<img src={modalCloseBtn} />}
+      className={'wallet-modal'}
     >
       <h1 className={'modalHeading'}>CONNECT WALLET</h1>
       <p className={'modalSlug'}>Connect with your favorite wallet.</p>
-      <div className="ModalBtnWrapper">
+      <div className={`ModalBtnWrapper`}>
         {config.map((entry, index) => (
           <WalletCard
             key={entry.title}

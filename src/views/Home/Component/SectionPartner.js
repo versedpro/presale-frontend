@@ -40,7 +40,7 @@ const SectionPartner = (props) => {
                     <div className="title">
                         <h1>Technical Partners</h1>
                     </div>
-                    {/* <div class="desc">
+                    {/* <div className="desc">
                         <p></p>
                     </div> */}
                   </div>

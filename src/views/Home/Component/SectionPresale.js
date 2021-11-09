@@ -136,7 +136,7 @@ const SectionHeader = (props) => {
                 </div>
                
               </div>
-              <div class="presale_info">
+              <div className="presale_info">
               <div className="rectangle">
                 <p>Unlocked Tokens</p>
                 <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)} CRSS</h6>

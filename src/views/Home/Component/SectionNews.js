@@ -116,17 +116,17 @@ const SectionNews = (props) => {
                     <ul>
                         <Slider {...settings}>
 							<li className="d-md-none">
-								<div class="card blog_card">
-									<img class="card-img-top" src={ContentImg1} alt="content-img-9.png" />
-									<div class="card-body">
-										<h5 class="blog_type">TRENDS <span>1 days ago</span></h5>
+								<div className="card blog_card">
+									<img className="card-img-top" src={ContentImg1} alt="content-img-9.png" />
+									<div className="card-body">
+										<h5 className="blog_type">TRENDS <span>1 days ago</span></h5>
 										<a href="#" ><h4>Fast and flexible observability with 
 											canonical log lines</h4></a>
 										<p>The first cross-blockchain AMM (Automatic Money Creation) and DAPP (Decenterlized
 											Application) focused on creating Dex (Decenterlized Exchange) for Etherium..</p>
-											<div class="heart_reply">
-                                                <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" class="heart-logo" />
-                                                <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" class="reply-logo" />
+											<div className="heart_reply">
+                                                <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" className="heart-logo" />
+                                                <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" className="reply-logo" />
 											</div>	
 									</div>
 									
@@ -134,15 +134,15 @@ const SectionNews = (props) => {
 							</li>
 
                             <li>
-								<div class="card blog_card">
-									<img class="card-img-top" src={ContentImg2} alt="content-img-8.png" />
-									<div class="card-body">
-										<h5 class="blog_type">TRENDS <span>1 days ago</span></h5>
+								<div className="card blog_card">
+									<img className="card-img-top" src={ContentImg2} alt="content-img-8.png" />
+									<div className="card-body">
+										<h5 className="blog_type">TRENDS <span>1 days ago</span></h5>
 										<a href="#" ><h4>Embiling Issuing is now open to all us businesses</h4></a>
 										<p>Embily Issuing is an API that allows you to create and control virtual and physical cards. Today we're opening access to all businesses in the US, so you can signup</p>
-										<div class="heart_reply">
-                                            <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" class="heart-logo" />
-                                            <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" class="reply-logo" />
+										<div className="heart_reply">
+                                            <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" className="heart-logo" />
+                                            <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" className="reply-logo" />
 										</div>	
 									</div>
 									
@@ -151,15 +151,15 @@ const SectionNews = (props) => {
 
                             
                             <li>
-								<div class="card blog_card">
-									<img class="card-img-top" src={ContentImg2} alt="content-img-8.png" />
-									<div class="card-body">
-										<h5 class="blog_type">TRENDS <span>1 days ago</span></h5>
+								<div className="card blog_card">
+									<img className="card-img-top" src={ContentImg2} alt="content-img-8.png" />
+									<div className="card-body">
+										<h5 className="blog_type">TRENDS <span>1 days ago</span></h5>
 										<a href="#" ><h4>Embiling Issuing is now open to all us businesses</h4></a>
 										<p>Embily Issuing is an API that allows you to create and control virtual and physical cards. Today we're opening access to all businesses in the US, so you can signup</p>
-										<div class="heart_reply">
-                                            <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" class="heart-logo" />
-                                            <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" class="reply-logo" />
+										<div className="heart_reply">
+                                            <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" className="heart-logo" />
+                                            <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" className="reply-logo" />
 										</div>	
 									</div>
 									
@@ -169,15 +169,15 @@ const SectionNews = (props) => {
 
                             
                             <li>
-								<div class="card blog_card">
-									<img class="card-img-top" src={ContentImg2} alt="content-img-8.png" />
-									<div class="card-body">
-										<h5 class="blog_type">TRENDS <span>1 days ago</span></h5>
+								<div className="card blog_card">
+									<img className="card-img-top" src={ContentImg2} alt="content-img-8.png" />
+									<div className="card-body">
+										<h5 className="blog_type">TRENDS <span>1 days ago</span></h5>
 										<a href="#" ><h4>Embiling Issuing is now open to all us businesses</h4></a>
 										<p>Embily Issuing is an API that allows you to create and control virtual and physical cards. Today we're opening access to all businesses in the US, so you can signup</p>
-										<div class="heart_reply">
-                                            <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" class="heart-logo" />
-                                            <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" class="reply-logo" />
+										<div className="heart_reply">
+                                            <img src={isDark? HeartImg: HeartImgWhite} alt="24-px-heart.png" className="heart-logo" />
+                                            <img src={isDark? ReplyBack: ReplyBackWhite} alt="reply-back.png" className="reply-logo" />
 										</div>	
 									</div>
 									

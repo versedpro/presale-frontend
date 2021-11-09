@@ -4,7 +4,7 @@ const WalletCard = ({ login, walletConfig, setWallletOpen }) => {
   const { title, icon } = walletConfig;
   return (
     <div
-      className="modalContent"
+      className="modalContent wallet-item"
       onClick={() => {
         login(walletConfig.connectorId);
         window.localStorage.setItem(

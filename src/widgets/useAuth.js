@@ -6,10 +6,10 @@ import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
 } from '@web3-react/injected-connector';
-// import {
-//   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-//   WalletConnectConnector,
-// } from '@web3-react/walletconnect-connector';
+import {
+  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
+  WalletConnectConnector,
+} from '@web3-react/walletconnect-connector';
 import { toast } from 'react-toastify';
 
 import { connectorLocalStorageKey } from '@pancakeswap/uikit';
@@ -42,10 +42,10 @@ const useAuth = () => {
               ) {
                 toast.error('No provider was found');
               } else if (error instanceof UserRejectedRequestErrorInjected) {
-                // if (connector instanceof WalletConnectConnector) {
-                //   const walletConnector = connector;
-                //   walletConnector.walletConnectProvider = null;
-                // }
+                if (connector instanceof WalletConnectConnector) {
+                  const walletConnector = connector;
+                  walletConnector.walletConnectProvider = null;
+                }
                 toast.error('Please authorize to access your account');
               }
             }

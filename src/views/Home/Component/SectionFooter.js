@@ -17,8 +17,8 @@ const SectionFooter = (props) => {
               <div className="footer_bar">
                   <div className="footer_bar_icon">
                     {
-                      isDark? (<img src="assets/images/logo@3x.png" class="nav_logo" id="crosswise_logo"/>):
-                      <img src="assets/images/logo-light-theme-2.png" class="nav_logo" id="crosswise_logo"/>
+                      isDark? (<img src="assets/images/logo@3x.png" className="nav_logo" id="crosswise_logo"/>):
+                      <img src="assets/images/logo-light-theme-2.png" className="nav_logo" id="crosswise_logo"/>
                     }
                     <div className="footer_bar_connections">
                         {/* <div className="bar_item">
@@ -26,7 +26,7 @@ const SectionFooter = (props) => {
                             isDark? (<img src="assets/images/location.png"  />):
                             <img src="assets/images/location-light.png"/>
                           } 
-                        <span class="item">United States</span>
+                        <span className="item">United States</span>
                         </div> */}
 
                         {/* <div className="bar_item">
@@ -34,7 +34,7 @@ const SectionFooter = (props) => {
                             isDark? (<img src="assets/images/message.png"  />):
                             <img src="assets/images/message-light.png"/>
                           } 
-                        <span class="item">English (US/UK)</span>
+                        <span className="item">English (US/UK)</span>
                         </div> */}
                     </div>
                   </div>
@@ -43,7 +43,7 @@ const SectionFooter = (props) => {
                       <div className="title">
                         MEDIA
                       </div>
-                      <div class="links">
+                      <div className="links">
                           <a className="link-item" href={pdf} target="_blank">Litepaper</a>
                           <a className="link-item" href={pitchdeck} target="_blank">Pitchdeck</a>
                       </div>
@@ -52,7 +52,7 @@ const SectionFooter = (props) => {
                       <div className="title">
                         LEARN
                       </div>
-                      <div class="links">
+                      <div className="links">
                           <a className="link-item" href="https://crosswise.gitbook.io/crosswise/" target="_blank">Gitbook</a>
                           <a className="link-item" href="https://intercom.help/crosswise-f/en" target="_blank">Support </a>
                           <a className="link-item" href="https://crosswise.notion.site/Crosswise-ICO-Affiliate-Program-221dc5555eb8422b8210c03c952d1673" target="_blank">Affiliate Program</a>
@@ -62,7 +62,7 @@ const SectionFooter = (props) => {
                       <div className="title">
                         FOLLOW
                       </div>
-                      <div class="links">
+                      <div className="links">
                       <a className="link-item" href="https://t.me/crosswise" target="_blank">Telegram</a>
                       <a className="link-item" href="https://discord.gg/4BuwxMz24J" target="_blank" >Discord</a>
                           <a className="link-item" href="https://twitter.com/crosswisefi" target="_blank">Twitter</a>
@@ -74,8 +74,8 @@ const SectionFooter = (props) => {
                   </div>
               </div>
               <div className="copyright">
-                {/* <div class="made_by">made by &nbsp;<p> roobinium.io</p></div> */}
-                <div class="copyrightyear">© 2021 Crosswise, a SublimeMinds Brand</div>
+                {/* <div className="made_by">made by &nbsp;<p> roobinium.io</p></div> */}
+                <div className="copyrightyear">© 2021 Crosswise, a SublimeMinds Brand</div>
               </div>
             </Container>
           </section>
