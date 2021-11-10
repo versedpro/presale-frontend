@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
 import { NoBscProviderError } from '@binance-chain/bsc-connector'
@@ -25,6 +25,7 @@ const useAuth = () => {
   const dispatch = useDispatch()
   const { chainId, activate, deactivate } = useWeb3React()
   const cookies = new Cookies();
+  const [walletcon, setWalletcon] = useState(null);
 
   const login = useCallback(
     (connectorID) => {
@@ -35,6 +36,7 @@ const useAuth = () => {
           bridge: "https://bridge.walletconnect.org", // Required
           qrcodeModal: QRCodeModal,
         });
+        setWalletcon(connectorInfo);
         // Check if connection is already established
         if (!connectorInfo.connected) {
           // create new session
@@ -63,12 +65,7 @@ const useAuth = () => {
           if (error) {
             throw error;
           }
-          alert('disconnect')
-          alert(payload);
-          console.log(payload);
           // Delete connector
-          connectorsByName.WalletConnect.close()
-          connectorsByName.WalletConnect.walletConnectProvider = null
           dispatch(setAddress(null))
           dispatch(setNetworkId(null))
           deactivate()
@@ -114,9 +111,7 @@ const useAuth = () => {
     deactivate()
     // This localStorage key is set by @web3-react/walletconnect-connector
     if (cookies.get('connectorID') === 'WalletConnect') {
-      alert('WalletConnect')
-      connectorsByName.WalletConnect.close()
-      connectorsByName.WalletConnect.walletConnectProvider = null
+      walletcon.killSession();
     }
     cookies.remove(connectorLocalStorageKey, { path: '/' });
     if (chainId) {
