@@ -4,7 +4,7 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import "./css/style.css";
 import "../../assets/scss/index.scss";
 import { ThemeContext } from "../../contexts/ThemeContext";
-// import { isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 import useActiveWeb3React from '../../widgets/useActiveWeb3React'
 
@@ -37,7 +37,7 @@ import { setAddress, setNetworkId } from '../../redux/actions';
 const Home = () => {
 
   const address = useSelector(state => state.authUser.address)
-  
+
   const dispatch = useDispatch();
   const [showPresaleInfo, setShowPresaleInfo] = useState(false)
   const [wallletOpen, setWallletOpen] = useState(false)
@@ -61,13 +61,13 @@ const Home = () => {
   }
 
   useEffect(() => {
-    if(account) {
+    if (account) {
       dispatch(setAddress(account))
     }
   }, [account])
-  
+
   useEffect(() => {
-    if(chainId) {
+    if (chainId) {
       dispatch(setNetworkId(chainId))
     }
   }, [chainId])
@@ -158,12 +158,14 @@ const Home = () => {
                               <span>{minimum(address)}</span>
                             </div>
                           </li>
-
-                          <li className="nav-item">
-                            <a className="nav-link btn btn_signIN btn_primary" onClick={logout}>
-                              Logout
-                            </a>
-                          </li>
+                          {
+                            !isMobile ? (<li className="nav-item">
+                              <a className="nav-link btn btn_signIN btn_primary" onClick={logout}>
+                                Logout
+                              </a>
+                            </li>) :
+                            (<></>)
+                          }
 
                           <li className="nav-item">
                             {/* <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens> */}
