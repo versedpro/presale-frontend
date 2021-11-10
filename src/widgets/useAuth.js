@@ -63,6 +63,9 @@ const useAuth = () => {
           if (error) {
             throw error;
           }
+          alert('disconnect')
+          alert(payload);
+          console.log(payload);
           // Delete connector
           connectorsByName.WalletConnect.close()
           connectorsByName.WalletConnect.walletConnectProvider = null
