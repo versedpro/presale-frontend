@@ -28,7 +28,7 @@ const useAuth = () => {
 
   const login = useCallback(
     (connectorID) => {
-      const connector = connectorsByName[connectorID]
+      cookies.set('connectorID', connectorID, { path: '/' });
       if (connectorID === "WalletConnect") {
         // Create a connector
         const connectorInfo = new WalletConnect({
@@ -70,6 +70,7 @@ const useAuth = () => {
           cookies.remove(connectorLocalStorageKey, { path: '/' });
         });
       } else {
+        const connector = connectorsByName[connectorID]
         if (connector) {
           activate(connector, async (error) => {
             if (error instanceof UnsupportedChainIdError) {
@@ -107,9 +108,10 @@ const useAuth = () => {
     dispatch(setAddress(null))
     deactivate()
     // This localStorage key is set by @web3-react/walletconnect-connector
-    if (window.localStorage.getItem('walletconnect')) {
-      connectorsByName.walletconnect.close()
-      connectorsByName.walletconnect.walletConnectProvider = null
+    if (cookies.get('connectorID') === 'WalletConnect') {
+      alert('WalletConnect')
+      connectorsByName.WalletConnect.close()
+      connectorsByName.WalletConnect.walletConnectProvider = null
     }
     cookies.remove(connectorLocalStorageKey, { path: '/' });
     if (chainId) {
