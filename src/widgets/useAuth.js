@@ -48,6 +48,9 @@ const useAuth = () => {
           }
           // Get provided accounts and chainId
           const { accounts, chainId } = payload.params[0];
+          
+          console.log("current session on");
+          console.log(accounts[0]);
           dispatch(setAddress(accounts[0]))
           dispatch(setNetworkId(chainId))
         });
@@ -55,6 +58,9 @@ const useAuth = () => {
           if (error) {
             throw error;
           }
+
+          console.log("session update");
+          console.log(accounts[0]);
           // Get updated accounts and chainId
           const { accounts, chainId } = payload.params[0];
           dispatch(setAddress(accounts[0]))
