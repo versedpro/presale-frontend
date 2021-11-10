@@ -36,12 +36,11 @@ const useAuth = () => {
           bridge: "https://bridge.walletconnect.org", // Required
           qrcodeModal: QRCodeModal,
         });
-        setWalletcon(connectorInfo);
         // Check if connection is already established
-        if (!connectorInfo.connected) {
+        // if (!connectorInfo.connected) {
           // create new session
           connectorInfo.createSession();
-        }
+        // }
         // Subscribe to connection events
         connectorInfo.on("connect", (error, payload) => {
           if (error) {
@@ -66,11 +65,13 @@ const useAuth = () => {
             throw error;
           }
           // Delete connector
+          connectorInfo.killSession();
           dispatch(setAddress(null))
           dispatch(setNetworkId(null))
           deactivate()
           cookies.remove(connectorLocalStorageKey, { path: '/' });
         });
+        setWalletcon(connectorInfo);
       } else {
         const connector = connectorsByName[connectorID]
         if (connector) {
@@ -111,11 +112,8 @@ const useAuth = () => {
     deactivate()
     // This localStorage key is set by @web3-react/walletconnect-connector
     if (cookies.get('connectorID') === 'WalletConnect') {
-      try {
+      if(walletcon) {
         walletcon.killSession();
-      } catch(err) {
-        alert("Error");
-        console.log(err)
       }
     }
     cookies.remove(connectorLocalStorageKey, { path: '/' });
