@@ -111,7 +111,12 @@ const useAuth = () => {
     deactivate()
     // This localStorage key is set by @web3-react/walletconnect-connector
     if (cookies.get('connectorID') === 'WalletConnect') {
-      walletcon.killSession();
+      try {
+        walletcon.killSession();
+      } catch(err) {
+        alert("Error");
+        console.log(err)
+      }
     }
     cookies.remove(connectorLocalStorageKey, { path: '/' });
     if (chainId) {
