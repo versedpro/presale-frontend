@@ -87,7 +87,7 @@ const SectionRoadmapV2 = (props) => {
                                 <Slider {...settings}>
                                         <li>
                                             <div className="gallery_photo shadow">
-                                                {/* <img class="card-img-top" src={Img6} /> */}
+                                                {/* <img className="card-img-top" src={Img6} /> */}
                                                 <div className="gradient-box">Q3/2021</div>
                                                 <div className="card-img-overlay p-3">
                                                 </div>

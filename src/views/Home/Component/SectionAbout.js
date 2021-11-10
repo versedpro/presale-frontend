@@ -39,7 +39,7 @@ const SectionAbout = (props) => {
                     <div className="title">
                         <h1>About Crosswise</h1>
                     </div>
-                    <div class="desc">
+                    <div className="desc">
                         <p>Next-gen cross-chain Decentralized Exchange (DEX) building a seamless DeFi user experience. Crosswise bridges the gap between centralized and decentralized exchanges, aiming to bring together the best of both worlds. Crosswise is committed to it's users and brings back customers service and support to the DeFi space.</p>
                     </div>
                   </div>

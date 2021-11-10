@@ -1,5 +1,5 @@
 import React from 'react'
-import {Collapse, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, UncontrolledDropdown} from "reactstrap";
+import {DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, UncontrolledDropdown} from "reactstrap";
 import globeImg from "../../assets/images/globe.png";
 
 const language = ['EN', 'US', 'UK']

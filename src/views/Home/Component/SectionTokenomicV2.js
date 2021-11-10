@@ -28,7 +28,7 @@ const SectionTokenomicV2 = (props) => {
                 <div className="tokenomic_content">
                   <div className="tokenomic_block">
                     <div className="token_avata_wrap">
-                      <img src={crss} class="tokenMainImg"/>
+                      <img src={crss} className="tokenMainImg"/>
                       <img src={crssAvatarImg} className="tokenAvatar" />
                       <div className="tokenName">
                         <img src={gradientCircle} />

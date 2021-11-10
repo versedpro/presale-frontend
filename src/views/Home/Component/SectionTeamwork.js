@@ -20,6 +20,7 @@ import User2 from '../../../assets/images/crosswise/user-2.png';
 import User3 from '../../../assets/images/crosswise/user-3.png';
 import User4 from '../../../assets/images/crosswise/user-4.png';
 import User5 from '../../../assets/images/crosswise/user-5.png';
+import User6 from '../../../assets/images/crosswise/user-6.png';
 
 const SectionTeamwork = (props) => {
 
@@ -91,7 +92,7 @@ const SectionTeamwork = (props) => {
 
                                 <li>
                                     <div className="gallery_photo shadow">
-                                        {/* <img class="card-img-top" src={} /> */}
+                                        {/* <img className="card-img-top" src={} /> */}
                                         <img className="user_img_top" src={User2} />
                                         {
                                             isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/fbeeg/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
@@ -111,7 +112,7 @@ const SectionTeamwork = (props) => {
 
                                 <li>
                                     <div className="gallery_photo shadow">
-                                        {/* <img class="card-img-top" src={} /> */}
+                                        {/* <img className="card-img-top" src={} /> */}
                                         <img className="user_img_top" src={User3} />
                                         {
                                             isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/dino-dzizic-189a54191/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
@@ -131,7 +132,7 @@ const SectionTeamwork = (props) => {
 
                                 <li>
                                     <div className="gallery_photo shadow">
-                                        {/* <img class="card-img-top" src={} /> */}
+                                        {/* <img className="card-img-top" src={} /> */}
                                         <img className="user_img_top" src={User4} />
                                         {
                                             isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/gregory-khine/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
@@ -151,7 +152,27 @@ const SectionTeamwork = (props) => {
 
                                 <li>
                                     <div className="gallery_photo shadow">
-                                        {/* <img class="card-img-top" src={} /> */}
+                                        {/* <img className="card-img-top" src={} /> */}
+                                        <img className="user_img_top" src={User6} />
+                                        {
+                                            isDark? (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinBlackIcon} /></a>):
+                                                    (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinLightIcon} /></a>)
+                                        }
+                                        <div className="card-img-overlay p-3">
+                                        </div>
+                                        <div className="photo_content">
+                                            <h6>Yehor Oshodin</h6>
+                                            <p>FrontEnd Lead</p>
+                                        </div>
+                                        <div className="photo_description">
+                                            <p>I always look to add my own magical touch to any new code that I write, and would like to mention that in the past I have worked alongside some very technically able individuals in the industry. I consider myself a real team player who understands the importance of teamwork, collaboration, and open communication. </p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div className="gallery_photo shadow">
+                                        {/* <img className="card-img-top" src={} /> */}
                                         <img className="user_img_top" src={User1} />
                                         {
                                             isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/leon-jin-7013011b9/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
@@ -171,7 +192,7 @@ const SectionTeamwork = (props) => {
 
                                 <li>
                                     <div className="gallery_photo shadow">
-                                        {/* <img class="card-img-top" src={} /> */}
+                                        {/* <img className="card-img-top" src={} /> */}
                                         <img className="user_img_top" src={User5} />
                                         {
                                             isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/james-gao-49461a217/" target="_blank"><img src={linkedinBlackIcon} /></a>):

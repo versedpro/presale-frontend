@@ -1,5 +1,5 @@
 import { web3 } from './web3';
-import config from '../config';
+import { config } from '../config';
 
 import presaleContractJSON from './abis/Presale.json';
 import tokenJSON from './abis/CRSSToken.json';
