@@ -37,10 +37,10 @@ const useAuth = () => {
           qrcodeModal: QRCodeModal,
         });
         // Check if connection is already established
-        // if (!connectorInfo.connected) {
+        if (!connectorInfo.connected) {
           // create new session
           connectorInfo.createSession();
-        // }
+        }
         // Subscribe to connection events
         connectorInfo.on("connect", (error, payload) => {
           if (error) {
