@@ -64,6 +64,8 @@ const useAuth = () => {
             throw error;
           }
           // Delete connector
+          connectorsByName.WalletConnect.close()
+          connectorsByName.WalletConnect.walletConnectProvider = null
           dispatch(setAddress(null))
           dispatch(setNetworkId(null))
           deactivate()
