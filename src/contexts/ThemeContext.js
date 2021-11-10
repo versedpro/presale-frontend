@@ -1,18 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import Cookies from 'universal-cookie';
 
 const CACHE_KEY = 'IS_DARK'
 
 const ThemeContext = React.createContext({ isDark: null, toggleTheme: () => null })
 
+
 const ThemeContextProvider = ({ children }) => {
+  
+  const cookies = new Cookies();
   const [isDark, setIsDark] = useState(() => {
-    const isDarkUserSetting = localStorage.getItem(CACHE_KEY)
+    const isDarkUserSetting = cookies.get(CACHE_KEY)
     return isDarkUserSetting ? JSON.parse(isDarkUserSetting) : false
   })
 
   const toggleTheme = () => {
     setIsDark((prevState) => {
-      localStorage.setItem(CACHE_KEY, JSON.stringify(!prevState))
+      cookies.set(CACHE_KEY, JSON.stringify(!prevState), { path: '/' });
       return !prevState
     })
   }

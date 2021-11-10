@@ -8,7 +8,7 @@ const connectorNames = {
   WalletConnect: 'WalletConnect',
 }
 
-const connectors = [
+export const desktopConnectors = [
   {
     title: 'MetaMask',
     icon: metaMaskIcon,
@@ -19,6 +19,9 @@ const connectors = [
     icon: trueWalletIcon,
     connectorId: connectorNames.Injected,
   },
+];
+
+export const mobileConnectors = [
   {
     title: 'WalletConnect',
     icon: walletConnectIcon,
@@ -26,5 +29,4 @@ const connectors = [
   },
 ];
 
-export default connectors;
 export const connectorLocalStorageKey = 'connectorId';

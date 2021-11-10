@@ -8,10 +8,10 @@ import modalCloseBtn from "../../assets/images/modalCloseBtn.svg"
 
 
 import WalletCard from './WalletCard';
-import config from './config';
+import { desktopConnectors, mobileConnectors } from './config';
 
 const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
-  
+
   const modalRef = useRef(null);
 
   return (
@@ -26,13 +26,21 @@ const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
       <h1 className={'modalHeading'}>CONNECT WALLET</h1>
       <p className={'modalSlug'}>Connect with your favorite wallet.</p>
       <div className={`ModalBtnWrapper`}>
-        {config.map((entry, index) => (
+        {isMobile ? mobileConnectors.map((entry, index) => (
           <WalletCard
             key={entry.title}
             login={login}
             walletConfig={entry}
             setWallletOpen={setWallletOpen}
-            mb={index < config.length - 1 ? '8px' : '0'}
+            mb={index < mobileConnectors.length - 1 ? '8px' : '0'}
+          />
+        )) : desktopConnectors.map((entry, index) => (
+          <WalletCard
+            key={entry.title}
+            login={login}
+            walletConfig={entry}
+            setWallletOpen={setWallletOpen}
+            mb={index < desktopConnectors.length - 1 ? '8px' : '0'}
           />
         ))}
       </div>

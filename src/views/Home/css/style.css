@@ -1765,6 +1765,11 @@ img.vert-move {
     .header_section_left {
         padding: 0;
     }
+    .ModalBtnWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .wallet-modal {

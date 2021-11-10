@@ -1,16 +1,19 @@
+import Cookies from 'universal-cookie';
 import { connectorLocalStorageKey } from './config';
 
 const WalletCard = ({ login, walletConfig, setWallletOpen }) => {
+
+  const cookies = new Cookies();
   const { title, icon } = walletConfig;
   return (
     <div
       className="modalContent wallet-item"
       onClick={() => {
         login(walletConfig.connectorId);
-        window.localStorage.setItem(
+        cookies.set(
           connectorLocalStorageKey,
           walletConfig.connectorId
-        );
+          , { path: '/' });
         setWallletOpen(false);
       }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}

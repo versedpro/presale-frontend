@@ -12,25 +12,25 @@ import {
 } from '@web3-react/walletconnect-connector'
 import { connectorLocalStorageKey } from '@pancakeswap/uikit'
 import { toast } from 'react-toastify';
-
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
+import Cookies from 'universal-cookie';
 
 import { connectorsByName } from '../utils/web3React'
 import { setupNetwork } from '../utils/wallet'
 import { setAddress, setNetworkId } from '../redux/actions';
 
+
 const useAuth = () => {
   const dispatch = useDispatch()
   const { chainId, activate, deactivate } = useWeb3React()
+  const cookies = new Cookies();
 
   const login = useCallback(
     (connectorID) => {
       const connector = connectorsByName[connectorID]
-      alert(connectorID)
       if (connectorID === "WalletConnect") {
         // Create a connector
-        alert('create server')
         const connectorInfo = new WalletConnect({
           bridge: "https://bridge.walletconnect.org", // Required
           qrcodeModal: QRCodeModal,
@@ -38,7 +38,6 @@ const useAuth = () => {
         // Check if connection is already established
         if (!connectorInfo.connected) {
           // create new session
-          alert('create session')
           connectorInfo.createSession();
         }
         // Subscribe to connection events
@@ -48,8 +47,6 @@ const useAuth = () => {
           }
           // Get provided accounts and chainId
           const { accounts, chainId } = payload.params[0];
-          alert('connected');
-          alert(accounts[0]);
           dispatch(setAddress(accounts[0]))
           dispatch(setNetworkId(chainId))
         });
@@ -59,7 +56,6 @@ const useAuth = () => {
           }
           // Get updated accounts and chainId
           const { accounts, chainId } = payload.params[0];
-          alert(accounts[0]);
           dispatch(setAddress(accounts[0]))
           dispatch(setNetworkId(chainId))
         });
@@ -67,12 +63,11 @@ const useAuth = () => {
           if (error) {
             throw error;
           }
-          alert('Disconnect');
           // Delete connector
           dispatch(setAddress(null))
           dispatch(setNetworkId(null))
           deactivate()
-          window.localStorage.removeItem(connectorLocalStorageKey)
+          cookies.remove(connectorLocalStorageKey, { path: '/' });
         });
       } else {
         if (connector) {
@@ -83,7 +78,7 @@ const useAuth = () => {
                 activate(connector)
               }
             } else {
-              window.localStorage.removeItem(connectorLocalStorageKey)
+              cookies.remove(connectorLocalStorageKey, { path: '/' });
               if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
                 toast.error('No provider was foundg');
               } else if (
@@ -116,7 +111,7 @@ const useAuth = () => {
       connectorsByName.walletconnect.close()
       connectorsByName.walletconnect.walletConnectProvider = null
     }
-    window.localStorage.removeItem(connectorLocalStorageKey)
+    cookies.remove(connectorLocalStorageKey, { path: '/' });
     if (chainId) {
       dispatch(setNetworkId(null))
     }
