@@ -1751,6 +1751,7 @@ img.vert-move {
         width: 800px !important;
     }
     .ModalBtnWrapper {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
