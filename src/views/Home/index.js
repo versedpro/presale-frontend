@@ -159,12 +159,11 @@ const Home = () => {
                             </div>
                           </li>
                           {
-                            !isMobile ? (<li className="nav-item">
+                            <li className="nav-item">
                               <a className="nav-link btn btn_signIN btn_primary" onClick={logout}>
                                 Logout
                               </a>
-                            </li>) :
-                            (<></>)
+                            </li>
                           }
 
                           <li className="nav-item">

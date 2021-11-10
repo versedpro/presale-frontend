@@ -1,8 +1,9 @@
 import BigNumber from 'bignumber.js'
 import { presaleContract, tokenContract, busdContract } from './contracts'
 import {callMethod, bnDivdedByDecimals} from './utils'
-import { web3 } from './web3'
+import { web3, Web3 } from './web3'
 import { ethers } from 'ethers'
+import WalletConnectProvider from "@walletconnect/web3-provider";
 
 //Getters
 export const getBalance = async (address) => {
@@ -40,9 +41,20 @@ export const getTotalDepositedAmount = async () => {
 }
 
 //Setters
-export const ApproveBusd = async (address) => {
+export const ApproveBusd = async (address, connector) => {
+    const provider = new WalletConnectProvider({
+        connector,
+        rpc: {
+            56: "https://bsc-dataseed1.binance.org/"
+        },
+        chainId: 56,
+        infuraId: "8a73bbe5d3264a4a92d9b1eab885ae3a"
+    });
+    await provider.enable();
+    const web3 = new Web3(provider);
     const spender = presaleContract.address;
-    const result = await busdContract.contract.methods.approve(spender, ethers.constants.MaxUint256).send({from: address})
+    const contract = new web3.eth.Contract(busdContract.abi, busdContract.address, {from: address});
+    const result = await contract.methods.approve(spender, ethers.constants.MaxUint256).send({from: address})
     return result;
 }
 

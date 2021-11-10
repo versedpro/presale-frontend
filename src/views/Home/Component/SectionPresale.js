@@ -14,7 +14,7 @@ import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import { web3 } from "../../../crosswise/web3";
 import { getUserDetail, getAmountUnlocked, deposit, withdrawToken, checkAllowanceBusd, ApproveBusd, checkWhitelistMember } from "../../../crosswise/token";
 
-
+import useAuth from "../../../widgets/useAuth";
 
 const SectionHeader = (props) => {
   const address = useSelector(state => state.authUser.address);
@@ -33,6 +33,8 @@ const SectionHeader = (props) => {
   const [depositAmount, setDepositAmount] = useState(new BigNumber(0));
   const [unlockedAmount, setUnlockedAmount] = useState(new BigNumber(0));
   const [crssAllowrance, setCrssAllowrance] = useState(web3.utils.toBN(0));
+
+  const { connector } = useAuth()
 
   useEffect(() => {
      loadUserDetail();
@@ -57,7 +59,7 @@ const SectionHeader = (props) => {
   });
 
   const approveTokens = async () => {
-    const result = ApproveBusd(address);
+    const result = ApproveBusd(address, connector);
   }
 
   const buyTokens = async () => {

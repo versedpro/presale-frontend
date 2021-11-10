@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux';
+import Web3 from 'web3';
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
 import { NoBscProviderError } from '@binance-chain/bsc-connector'
 import {
@@ -52,7 +53,7 @@ const useAuth = () => {
           
           // console.log("current session on");
           // console.log(accounts[0]);
-          dispatch(setAddress(accounts[0]))
+          dispatch(setAddress(Web3.utils.toChecksumAddress(accounts[0])))
           dispatch(setNetworkId(chainId))
         });
         connector.on("session_update", (error, payload) => {
@@ -64,7 +65,7 @@ const useAuth = () => {
           // console.log(accounts[0]);
           // Get updated accounts and chainId
           const { accounts, chainId } = payload.params[0];
-          dispatch(setAddress(accounts[0]))
+          dispatch(setAddress(Web3.utils.toChecksumAddress(accounts[0])))
           dispatch(setNetworkId(chainId))
         });
         connector.on("disconnect", (error, payload) => {
@@ -128,7 +129,7 @@ const useAuth = () => {
     }
   }, [deactivate, dispatch, chainId])
 
-  return { login, logout }
+  return { login, logout, connector }
 }
 
 export default useAuth
