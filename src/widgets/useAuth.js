@@ -25,24 +25,25 @@ const useAuth = () => {
   const dispatch = useDispatch()
   const { chainId, activate, deactivate } = useWeb3React()
   const cookies = new Cookies();
-  const [walletcon, setWalletcon] = useState(null);
+  const [connector, setConnector] = useState(null);
 
   const login = useCallback(
     (connectorID) => {
       cookies.set('connectorID', connectorID, { path: '/' });
       if (connectorID === "WalletConnect") {
         // Create a connector
-        const connectorInfo = new WalletConnect({
+        const connector = new WalletConnect({
           bridge: "https://bridge.walletconnect.org", // Required
           qrcodeModal: QRCodeModal,
         });
+        setConnector(connector);
         // Check if connection is already established
-        if (!connectorInfo.connected) {
+        if (!connector.connected) {
           // create new session
-          connectorInfo.createSession();
+          connector.createSession();
         }
         // Subscribe to connection events
-        connectorInfo.on("connect", (error, payload) => {
+        connector.on("connect", (error, payload) => {
           if (error) {
             throw error;
           }
@@ -51,7 +52,7 @@ const useAuth = () => {
           dispatch(setAddress(accounts[0]))
           dispatch(setNetworkId(chainId))
         });
-        connectorInfo.on("session_update", (error, payload) => {
+        connector.on("session_update", (error, payload) => {
           if (error) {
             throw error;
           }
@@ -60,18 +61,17 @@ const useAuth = () => {
           dispatch(setAddress(accounts[0]))
           dispatch(setNetworkId(chainId))
         });
-        connectorInfo.on("disconnect", (error, payload) => {
+        connector.on("disconnect", (error, payload) => {
           if (error) {
             throw error;
           }
           // Delete connector
-          connectorInfo.killSession();
+          connector.killSession();
           dispatch(setAddress(null))
           dispatch(setNetworkId(null))
           deactivate()
           cookies.remove(connectorLocalStorageKey, { path: '/' });
         });
-        setWalletcon(connectorInfo);
       } else {
         const connector = connectorsByName[connectorID]
         if (connector) {
@@ -112,8 +112,8 @@ const useAuth = () => {
     deactivate()
     // This localStorage key is set by @web3-react/walletconnect-connector
     if (cookies.get('connectorID') === 'WalletConnect') {
-      if(walletcon) {
-        walletcon.killSession();
+      if(connector) {
+        connector.killSession();
       }
     }
     cookies.remove(connectorLocalStorageKey, { path: '/' });
