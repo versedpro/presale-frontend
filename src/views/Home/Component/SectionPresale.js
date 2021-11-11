@@ -12,9 +12,15 @@ import { useForm } from "react-hook-form";
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import { web3 } from "../../../crosswise/web3";
-import { getUserDetail, getAmountUnlocked, deposit, withdrawToken, checkAllowanceBusd, ApproveBusd, checkWhitelistMember } from "../../../crosswise/token";
-
-
+import {
+  getUserDetail,
+  getAmountUnlocked,
+  deposit,
+  withdrawToken,
+  checkAllowanceBusd,
+  approveBusd,
+  checkWhitelistMember
+} from "../../../crosswise/token";
 
 const SectionHeader = (props) => {
   const address = useSelector(state => state.authUser.address);
@@ -57,7 +63,7 @@ const SectionHeader = (props) => {
   });
 
   const approveTokens = async () => {
-    const result = ApproveBusd(address);
+    await approveBusd(address);
   }
 
   const buyTokens = async () => {

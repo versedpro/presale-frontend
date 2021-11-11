@@ -33,8 +33,10 @@ import SectionPartner from "./Component/SectionPartner";
 
 import ConnectModal from "../../widgets/WalletModal/ConnectModal";
 import { setAddress, setNetworkId } from '../../redux/actions';
+import useEagerConnect from "../../widgets/useEagerConnect";
 
 const Home = () => {
+  useEagerConnect();
 
   const address = useSelector(state => state.authUser.address)
 
@@ -159,12 +161,11 @@ const Home = () => {
                             </div>
                           </li>
                           {
-                            !isMobile ? (<li className="nav-item">
+                            <li className="nav-item">
                               <a className="nav-link btn btn_signIN btn_primary" onClick={logout}>
                                 Logout
                               </a>
-                            </li>) :
-                            (<></>)
+                            </li>
                           }
 
                           <li className="nav-item">
@@ -179,7 +180,7 @@ const Home = () => {
                       )
                   }
                   <li className="nav-item">
-                    <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c">How To Buy</a>
+                    <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c" rel="noreferrer">How To Buy</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link btn btn_signIN btn_primary" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>

@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux';
+import Web3 from 'web3';
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
 import { NoBscProviderError } from '@binance-chain/bsc-connector'
 import {
@@ -10,7 +11,7 @@ import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
-import { connectorLocalStorageKey } from '@pancakeswap/uikit'
+import { connectorLocalStorageKey } from "./WalletModal/config";
 import { toast } from 'react-toastify';
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
@@ -20,27 +21,35 @@ import { connectorsByName } from '../utils/web3React'
 import { setupNetwork } from '../utils/wallet'
 import { setAddress, setNetworkId } from '../redux/actions';
 
+import { connector } from '../crosswise/web3';
 
 const useAuth = () => {
   const dispatch = useDispatch()
   const { chainId, activate, deactivate } = useWeb3React()
   const cookies = new Cookies();
-  const [connector, setConnector] = useState(null);
+  // const [connector, setConnector] = useState(null);
 
   const login = useCallback(
     (connectorID) => {
       cookies.set('connectorID', connectorID, { path: '/' });
       if (connectorID === "WalletConnect") {
         // Create a connector
-        const connector = new WalletConnect({
-          bridge: "https://bridge.walletconnect.org", // Required
-          qrcodeModal: QRCodeModal,
-        });
-        setConnector(connector);
+        // const connector = new WalletConnect({
+        //   bridge: "https://bridge.walletconnect.org", // Required
+        //   qrcodeModal: QRCodeModal,
+        // });
+        // setConnector(connector);
         // Check if connection is already established
         if (!connector.connected) {
           // create new session
-          connector.createSession();
+          connector.createSession({chainId: 56});
+        } else {
+          if (connector.accounts.length > 0) {
+            dispatch(setAddress(Web3.utils.toChecksumAddress(
+              connector.accounts[0]
+            )))
+          }
+          dispatch(setNetworkId(connector.chainId));
         }
         // Subscribe to connection events
         connector.on("connect", (error, payload) => {
@@ -52,7 +61,7 @@ const useAuth = () => {
           
           // console.log("current session on");
           // console.log(accounts[0]);
-          dispatch(setAddress(accounts[0]))
+          dispatch(setAddress(Web3.utils.toChecksumAddress(accounts[0])))
           dispatch(setNetworkId(chainId))
         });
         connector.on("session_update", (error, payload) => {
@@ -64,7 +73,7 @@ const useAuth = () => {
           // console.log(accounts[0]);
           // Get updated accounts and chainId
           const { accounts, chainId } = payload.params[0];
-          dispatch(setAddress(accounts[0]))
+          dispatch(setAddress(Web3.utils.toChecksumAddress(accounts[0])))
           dispatch(setNetworkId(chainId))
         });
         connector.on("disconnect", (error, payload) => {
