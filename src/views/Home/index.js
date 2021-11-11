@@ -190,7 +190,7 @@ const Home = () => {
             </div>
           </nav>
         </header>
-        {showPresaleInfo ? (
+        {address && showPresaleInfo ? (
           <SectionPresale></SectionPresale>
         ) : (
           <>
