@@ -22,6 +22,7 @@ import { setupNetwork } from '../utils/wallet'
 import { setAddress, setNetworkId } from '../redux/actions';
 
 import { connector } from '../crosswise/web3';
+import { REACT_APP_CHAIN_ID } from '../config';
 
 const useAuth = () => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ const useAuth = () => {
         // Check if connection is already established
         if (!connector.connected) {
           // create new session
-          connector.createSession({chainId: 56});
+          connector.createSession({chainId: REACT_APP_CHAIN_ID});
         } else {
           if (connector.accounts.length > 0) {
             dispatch(setAddress(Web3.utils.toChecksumAddress(
