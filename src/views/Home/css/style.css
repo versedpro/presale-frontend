@@ -1209,7 +1209,9 @@ img.vert-move {
 }
 
 .gallery_images .gallery_photo .user_img_top {
+    width: 144px;
     padding: 24px;
+    border-radius: 50%;
 }
 
 .gallery_images .gallery_photo .linkedin_img_icon {

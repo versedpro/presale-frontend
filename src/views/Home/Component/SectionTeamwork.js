@@ -1,5 +1,5 @@
 import React, { Component, Fragment, useState, useContext } from "react";
-import { Container , Input} from 'reactstrap';
+import { Container, Input } from 'reactstrap';
 
 import Slider from "react-slick";
 import 'react-accessible-accordion/dist/fancy-example.css';
@@ -15,12 +15,12 @@ import Img6 from '../../../assets/images/crosswise/image-6.png';
 import linkedinBlackIcon from '../../../assets/images/crosswise/linkedin-black-icon.png';
 import linkedinLightIcon from '../../../assets/images/crosswise/linkedin-white-icon.png';
 
-import User1 from '../../../assets/images/crosswise/user-1.png';
-import User2 from '../../../assets/images/crosswise/user-2.png';
-import User3 from '../../../assets/images/crosswise/user-3.png';
-import User4 from '../../../assets/images/crosswise/user-4.png';
-import User5 from '../../../assets/images/crosswise/user-5.png';
-import User6 from '../../../assets/images/crosswise/user-6.png';
+import Freddy from '../../../assets/images/crosswise/members/Freddy.png';
+import Greg from '../../../assets/images/crosswise/members/Greg.png';
+import Dino from '../../../assets/images/crosswise/members/Dino.jpg';
+import Yehor from '../../../assets/images/crosswise/members/Yehor.jpg';
+import Leon from '../../../assets/images/crosswise/members/Leon.jpg';
+import JamesGao from '../../../assets/images/crosswise/members/JamesGao.jpg';
 
 const SectionTeamwork = (props) => {
 
@@ -43,7 +43,7 @@ const SectionTeamwork = (props) => {
             breakpoint: 1200,
             settings: {
                 slidesToShow: 3,
-                dots:true
+                dots: true
             }
         },
 
@@ -60,7 +60,7 @@ const SectionTeamwork = (props) => {
             breakpoint: 768,
             settings: {
                 slidesToShow: 2,
-                
+
                 draggable: true,
                 dots: true
             }
@@ -73,30 +73,30 @@ const SectionTeamwork = (props) => {
                 dots: true
             }
         }
-    ]
-      };
+        ]
+    };
     return (
-        
-          <section className="teamwork_section" id="team">
+
+        <section className="teamwork_section" id="team">
             <Container>
                 <Row>
                     <div className="title">
                         <h1>Team</h1>
                     </div>
                 </Row>
-                
-               <div className="exchange_slider">
-                <div className="gallery_images">
-                    <ul>
-                        <Slider {...settings}>
+
+                <div className="exchange_slider">
+                    <div className="gallery_images">
+                        <ul>
+                            <Slider {...settings}>
 
                                 <li>
                                     <div className="gallery_photo shadow">
                                         {/* <img className="card-img-top" src={} /> */}
-                                        <img className="user_img_top" src={User2} />
+                                        <img className="user_img_top" src={Freddy} />
                                         {
-                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/fbeeg/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
-                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/fbeeg/" target="_blank"><img  src={linkedinLightIcon} /> </a>)
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/fbeeg/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/fbeeg/" target="_blank"><img src={linkedinLightIcon} /> </a>)
                                         }
                                         <div className="card-img-overlay p-3">
                                         </div>
@@ -113,30 +113,10 @@ const SectionTeamwork = (props) => {
                                 <li>
                                     <div className="gallery_photo shadow">
                                         {/* <img className="card-img-top" src={} /> */}
-                                        <img className="user_img_top" src={User3} />
+                                        <img className="user_img_top" src={Greg} />
                                         {
-                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/dino-dzizic-189a54191/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
-                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/dino-dzizic-189a54191/" target="_blank"><img  src={linkedinLightIcon} /></a>)
-                                        }
-                                        <div className="card-img-overlay p-3">
-                                        </div>
-                                        <div className="photo_content">
-                                            <h6>Dino Dzizic</h6>
-                                            <p>Chief Technology Officer</p>
-                                        </div>
-                                        <div className="photo_description">
-                                            <p>DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor's degree in software engineering.</p>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div className="gallery_photo shadow">
-                                        {/* <img className="card-img-top" src={} /> */}
-                                        <img className="user_img_top" src={User4} />
-                                        {
-                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/gregory-khine/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
-                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/gregory-khine/" target="_blank"><img  src={linkedinLightIcon} /></a>)
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/gregory-khine/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/gregory-khine/" target="_blank"><img src={linkedinLightIcon} /></a>)
                                         }
                                         <div className="card-img-overlay p-3">
                                         </div>
@@ -153,10 +133,30 @@ const SectionTeamwork = (props) => {
                                 <li>
                                     <div className="gallery_photo shadow">
                                         {/* <img className="card-img-top" src={} /> */}
-                                        <img className="user_img_top" src={User6} />
+                                        <img className="user_img_top" src={Dino} />
                                         {
-                                            isDark? (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinBlackIcon} /></a>):
-                                                    (<a className="linkedin_img_icon" href="#" target="_blank"><img  src={linkedinLightIcon} /></a>)
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/dino-dzizic-189a54191/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/dino-dzizic-189a54191/" target="_blank"><img src={linkedinLightIcon} /></a>)
+                                        }
+                                        <div className="card-img-overlay p-3">
+                                        </div>
+                                        <div className="photo_content">
+                                            <h6>Dino Dzizic</h6>
+                                            <p>Chief Technology Officer</p>
+                                        </div>
+                                        <div className="photo_description">
+                                            <p>DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor's degree in software engineering.</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div className="gallery_photo shadow">
+                                        {/* <img className="card-img-top" src={} /> */}
+                                        <img className="user_img_top" src={Yehor} />
+                                        {
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/yehor-oshodin-667962209/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/yehor-oshodin-667962209/" target="_blank"><img src={linkedinLightIcon} /></a>)
                                         }
                                         <div className="card-img-overlay p-3">
                                         </div>
@@ -173,10 +173,10 @@ const SectionTeamwork = (props) => {
                                 <li>
                                     <div className="gallery_photo shadow">
                                         {/* <img className="card-img-top" src={} /> */}
-                                        <img className="user_img_top" src={User1} />
+                                        <img className="user_img_top" src={Leon} />
                                         {
-                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/leon-jin-7013011b9/" target="_blank"><img  src={linkedinBlackIcon} /></a>):
-                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/leon-jin-7013011b9/" target="_blank"><img  src={linkedinLightIcon} /></a>)
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/leon-jin-7013011b9/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/leon-jin-7013011b9/" target="_blank"><img src={linkedinLightIcon} /></a>)
                                         }
                                         <div className="card-img-overlay p-3">
                                         </div>
@@ -193,10 +193,10 @@ const SectionTeamwork = (props) => {
                                 <li>
                                     <div className="gallery_photo shadow">
                                         {/* <img className="card-img-top" src={} /> */}
-                                        <img className="user_img_top" src={User5} />
+                                        <img className="user_img_top" src={JamesGao} />
                                         {
-                                            isDark? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/james-gao-49461a217/" target="_blank"><img src={linkedinBlackIcon} /></a>):
-                                                    (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/james-gao-49461a217/" target="_blank"><img src={linkedinLightIcon} /></a>)
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/james-gao-49461a217/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/james-gao-49461a217/" target="_blank"><img src={linkedinLightIcon} /></a>)
                                         }
                                         <div className="card-img-overlay p-3">
                                         </div>
@@ -210,18 +210,18 @@ const SectionTeamwork = (props) => {
                                     </div>
                                 </li>
 
-                                
-                               
+
+
 
                             </Slider>
                         </ul>
                     </div>
-              </div>
-               
-                
+                </div>
+
+
             </Container>
-          </section>
-        );
+        </section>
+    );
 }
 
 export default SectionTeamwork;
