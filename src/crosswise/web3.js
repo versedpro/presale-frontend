@@ -26,12 +26,13 @@ const getWeb3 = async () => {
     const provider = new WalletConnectProvider({
       connector,
       rpc: {
-        56: providerUrl
+        [chainId]: providerUrl
       },
-      chainId: 56,
-
+      chainId: chainId,
+      network: "binance",
       infuraId: "8a73bbe5d3264a4a92d9b1eab885ae3a"
     });
+    provider.networkId = 56;
     await provider.enable();
     return new Web3(provider);
   } else {
