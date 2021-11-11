@@ -21,7 +21,7 @@ const SectionTeamwork = (props) => {
 
     const { isDark, toggleTheme } = useContext(ThemeContext)
     var settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         arrows: false,
         swipeToSlide: true,

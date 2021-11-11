@@ -1742,7 +1742,6 @@ img.vert-move {
     padding: 50px !important;
     place-items: center;
     position: relative;
-
     /* display: flex !important;
     flex-direction: column;
     top: 50%;
@@ -1768,11 +1767,17 @@ img.vert-move {
 }
 
 @media only screen and (orientation: portrait) {
-    .react-responsive-modal-modal {
-        width: auto !important;
+    .header_section {
+        padding-top: 0 !important;
     }
     .header_section_left {
         padding: 0;
+    }
+    .header_section .header_section_right .header_presale_board {
+        width: auto;
+    }
+    .react-responsive-modal-modal {
+        width: auto !important;
     }
     .ModalBtnWrapper {
         display: flex;
