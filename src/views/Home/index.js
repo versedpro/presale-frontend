@@ -55,6 +55,10 @@ const Home = () => {
 
   const { isDark, toggleTheme } = useContext(ThemeContext)
 
+  const handleLogout = () => {
+    logout();
+    setShowPresaleInfo(false);
+  }
   const showPresale = () => setShowPresaleInfo(true)
   const showHome = () => setShowPresaleInfo(false)
 
@@ -162,7 +166,7 @@ const Home = () => {
                           </li>
                           {
                             <li className="nav-item">
-                              <a className="nav-link btn btn_signIN btn_primary" onClick={logout}>
+                              <a className="nav-link btn btn_signIN btn_primary" onClick={handleLogout}>
                                 Logout
                               </a>
                             </li>
