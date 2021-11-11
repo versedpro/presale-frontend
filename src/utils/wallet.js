@@ -2,6 +2,7 @@
 import detectEthereumProvider from '@metamask/detect-provider';
 import { BASE_BSC_SCAN_URL } from '../config';
 import { nodes } from './getRpcUrl';
+import { REACT_APP_CHAIN_ID } from '../config'
 
 /**
  * Prompt the user to add BSC as a network on Metamask, or switch to BSC if the wallet is on a different network
@@ -13,7 +14,7 @@ export const setupNetwork = async () => {
     provider = await detectEthereumProvider();
   }
   if (provider) {
-    const chainId = parseInt(process.env.REACT_APP_NETWORK_ID, 10);
+    const chainId = REACT_APP_CHAIN_ID;
     try {
       await provider.request({
         method: 'wallet_addEthereumChain',
@@ -27,7 +28,7 @@ export const setupNetwork = async () => {
               decimals: 18,
             },
             rpcUrls: nodes,
-            blockExplorerUrls: [`${BASE_BSC_SCAN_URL[56]}/`],
+            blockExplorerUrls: [`${BASE_BSC_SCAN_URL[chainId]}/`],
           },
         ],
       });

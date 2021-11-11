@@ -2,7 +2,7 @@ import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import Web3 from 'web3';
-import { config, connectorNames } from '../config';
+import { config, connectorNames, REACT_APP_CHAIN_ID } from '../config';
 import { connectorLocalStorageKey } from "../widgets/WalletModal/config";
 import Cookies from 'universal-cookie';
 
@@ -17,7 +17,7 @@ const connector = new WalletConnect({
 const getWeb3 = async () => {
   const cookies = new Cookies();
   const connectorId = cookies.get(connectorLocalStorageKey);
-  const chainId = parseInt(process.env.REACT_APP_NETWORK_ID, 10);
+  const chainId = REACT_APP_CHAIN_ID;
   
   if (
     connectorId === connectorNames.WalletConnect &&
@@ -32,7 +32,7 @@ const getWeb3 = async () => {
       network: "binance",
       infuraId: "8a73bbe5d3264a4a92d9b1eab885ae3a"
     });
-    provider.networkId = 56;
+    provider.networkId = chainId;
     await provider.enable();
     return new Web3(provider);
   } else {
