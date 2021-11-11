@@ -21,23 +21,24 @@ import { connectorsByName } from '../utils/web3React'
 import { setupNetwork } from '../utils/wallet'
 import { setAddress, setNetworkId } from '../redux/actions';
 
+import { connector } from '../crosswise/web3';
 
 const useAuth = () => {
   const dispatch = useDispatch()
   const { chainId, activate, deactivate } = useWeb3React()
   const cookies = new Cookies();
-  const [connector, setConnector] = useState(null);
+  // const [connector, setConnector] = useState(null);
 
   const login = useCallback(
     (connectorID) => {
       cookies.set('connectorID', connectorID, { path: '/' });
       if (connectorID === "WalletConnect") {
         // Create a connector
-        const connector = new WalletConnect({
-          bridge: "https://bridge.walletconnect.org", // Required
-          qrcodeModal: QRCodeModal,
-        });
-        setConnector(connector);
+        // const connector = new WalletConnect({
+        //   bridge: "https://bridge.walletconnect.org", // Required
+        //   qrcodeModal: QRCodeModal,
+        // });
+        // setConnector(connector);
         // Check if connection is already established
         if (!connector.connected) {
           // create new session
@@ -129,7 +130,7 @@ const useAuth = () => {
     }
   }, [deactivate, dispatch, chainId])
 
-  return { login, logout, connector }
+  return { login, logout }
 }
 
 export default useAuth
