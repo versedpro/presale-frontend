@@ -42,7 +42,7 @@ const useAuth = () => {
         // Check if connection is already established
         if (!connector.connected) {
           // create new session
-          connector.createSession();
+          connector.createSession({chainId: 56});
         } else {
           if (connector.accounts.length > 0) {
             dispatch(setAddress(Web3.utils.toChecksumAddress(
