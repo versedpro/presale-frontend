@@ -43,6 +43,13 @@ const useAuth = () => {
         if (!connector.connected) {
           // create new session
           connector.createSession();
+        } else {
+          if (connector.accounts.length > 0) {
+            dispatch(setAddress(Web3.utils.toChecksumAddress(
+              connector.accounts[0]
+            )))
+          }
+          dispatch(setNetworkId(connector.chainId));
         }
         // Subscribe to connection events
         connector.on("connect", (error, payload) => {
