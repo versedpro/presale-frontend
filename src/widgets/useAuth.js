@@ -11,7 +11,7 @@ import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
-import { connectorLocalStorageKey } from '@pancakeswap/uikit'
+import { connectorLocalStorageKey } from "./WalletModal/config";
 import { toast } from 'react-toastify';
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";

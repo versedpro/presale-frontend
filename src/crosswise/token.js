@@ -1,10 +1,6 @@
-import BigNumber from 'bignumber.js'
 import { presaleContract, tokenContract, busdContract } from './contracts'
-import {callMethod, bnDivdedByDecimals} from './utils'
 import { getWeb3 } from './web3'
 import { ethers } from 'ethers'
-import WalletConnectProvider from "@walletconnect/web3-provider"
-import { connectorLocalStorageKey } from '@pancakeswap/uikit'
 
 //Getters
 export const getBalance = async (address) => {
