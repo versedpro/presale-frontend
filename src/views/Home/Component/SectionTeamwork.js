@@ -4,13 +4,8 @@ import { Container, Input } from 'reactstrap';
 import Slider from "react-slick";
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Row, Col } from 'reactstrap';
-import classnames from 'classnames';
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
-
-import Img4 from '../../../assets/images/crosswise/content-img-12.png';
-import Img5 from '../../../assets/images/crosswise/content-img-13.png';
-import Img6 from '../../../assets/images/crosswise/image-6.png';
 
 import linkedinBlackIcon from '../../../assets/images/crosswise/linkedin-black-icon.png';
 import linkedinLightIcon from '../../../assets/images/crosswise/linkedin-white-icon.png';
