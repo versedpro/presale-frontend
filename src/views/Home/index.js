@@ -66,6 +66,11 @@ const Home = () => {
     setWallletOpen(true);
   }
 
+  const toogleToolbar = () => {
+    setShowPresaleInfo(false)
+    showHome()
+  }
+
   useEffect(() => {
     if (account) {
       dispatch(setAddress(account))
@@ -104,19 +109,19 @@ const Home = () => {
               <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <a className="nav-link" href="#about"><span>About crosswise</span></a>
+                    <a className="nav-link" href="#about" onClick={toogleToolbar}><span>About crosswise</span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#tokenomic"><span>Tokenomics </span></a>
+                    <a className="nav-link" href="#tokenomic" onClick={toogleToolbar}><span>Tokenomics </span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#roadmap"><span>Roadmap </span></a>
+                    <a className="nav-link" href="#roadmap" onClick={toogleToolbar}><span>Roadmap </span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#team"><span>Team</span></a>
+                    <a className="nav-link" href="#team" onClick={toogleToolbar}><span>Team</span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#help"><span>Socials</span></a>
+                    <a className="nav-link" href="#help" onClick={toogleToolbar}><span>Socials</span></a>
                   </li>
                   {/* <li className="nav-item ml-md-4">
                       <a className="nav-link">

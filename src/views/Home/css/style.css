@@ -1718,7 +1718,7 @@ img.vert-move {
 }
 
 .react-responsive-modal-root {
-    z-index: 1050 !important;
+    z-index: 1100 !important;
 }
 
 .react-responsive-modal-container {
