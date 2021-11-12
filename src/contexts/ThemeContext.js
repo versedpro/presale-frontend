@@ -15,6 +15,7 @@ const ThemeContextProvider = ({ children }) => {
   })
 
   const toggleTheme = () => {
+    document.getElementsByTagName('body')[0].className = isDark ? "body-light" : "body-dark";
     setIsDark((prevState) => {
       cookies.set(CACHE_KEY, JSON.stringify(!prevState), { path: '/' });
       return !prevState

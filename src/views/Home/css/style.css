@@ -1713,6 +1713,8 @@ img.vert-move {
     color: #140129;
 }
 
+/* Custom for Modal */
+
 .wallet-connect {
     width: 2rem;
 }
@@ -1753,6 +1755,25 @@ img.vert-move {
     width: 120px;
 }
 
+.wallet-modal {
+    width: 800px;
+}
+
+.modalHeading {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.modalSlug {
+    color: #616161;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
 @media only screen and (orientation: landscape) {
     .react-responsive-modal-modal {
         width: 800px !important;
@@ -1786,23 +1807,21 @@ img.vert-move {
     }
 }
 
-.wallet-modal {
-    width: 800px;
+
+.body-light .react-responsive-modal-modal {
+    background: #f9f9f9 !important;
+    border: none;
 }
 
-.modalHeading {
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
-    font-weight: bold;
+.body-light .modalHeading {
+    color: #000000;
 }
 
-.modalSlug {
-    color: #616161;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 20px;
+.body-light .ModalBtn {
+    background-color: #f9f9f9 !important;
 }
+
+/* Custom for Modal */
 
 @media only screen and (max-width:598px) {
     .footer_bar {
