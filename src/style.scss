@@ -132,14 +132,14 @@ button.navbar-toggler:focus {
 
 .dark-theme .navbar-default {
   // background: linear-gradient(93deg, rgb(66, 66, 71), rgb(55,55,61) 52%, rgba(245, 247, 250, 0) 100%);
-  background: rgba(66, 66, 71, 0.5);
+  background: #424247;
 }
 
 .navbar-fixed-top{
   position: fixed;
   right:0;
   left:0;
-  z-index: 1030;
+  z-index: 1080;
 }
 
 .nav_wrapper .theme-toggle {

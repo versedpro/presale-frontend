@@ -22,7 +22,7 @@ const SectionRoadmapV2 = (props) => {
         console.log(viewOption)
     }
     var settings = {
-        dots: false,
+        dots: true,
         infinite: false,
         arrows: false,
         swipeToSlide: true,
