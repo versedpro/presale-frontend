@@ -20,7 +20,11 @@ const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
       onClose={() => setWallletOpen(false)}
       center
       container={modalRef.current}
-      closeIcon={<img src={modalCloseBtn} />}
+      closeIcon={
+        <button className="navbar-toggler">
+          <span className="navbar-toggler-icon toogle-bar-icon"><i className="fas fa-times"></i></span>
+        </button>
+      }
       className={'wallet-modal'}
     >
       <h1 className={'modalHeading'}>CONNECT WALLET</h1>

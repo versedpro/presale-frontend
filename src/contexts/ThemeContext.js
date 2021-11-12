@@ -11,7 +11,7 @@ const ThemeContextProvider = ({ children }) => {
   const cookies = new Cookies();
   const [isDark, setIsDark] = useState(() => {
     const isDarkUserSetting = cookies.get(CACHE_KEY)
-    document.getElementsByTagName('body')[0].className = isDarkUserSetting ? "body-light" : "body-dark";
+    document.getElementsByTagName('body')[0].className = isDarkUserSetting ? "body-dark" : "body-light";
     return isDarkUserSetting ? JSON.parse(isDarkUserSetting) : false
   })
 

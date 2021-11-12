@@ -1813,12 +1813,17 @@ img.vert-move {
     border: none;
 }
 
+
 .body-light .modalHeading {
     color: #000000;
 }
 
 .body-light .ModalBtn {
     background-color: #f9f9f9 !important;
+}
+
+.body-dark .toogle-bar-icon .fa-times {
+    color: #f9f9f9 !important;
 }
 
 /* Custom for Modal */
