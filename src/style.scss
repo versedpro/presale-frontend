@@ -131,7 +131,8 @@ button.navbar-toggler:focus {
 }
 
 .dark-theme .navbar-default {
-  background: linear-gradient(93deg, rgb(66, 66, 71), rgb(55,55,61) 52%, rgba(245, 247, 250, 0) 100%);
+  // background: linear-gradient(93deg, rgb(66, 66, 71), rgb(55,55,61) 52%, rgba(245, 247, 250, 0) 100%);
+  background: rgba(66, 66, 71, 0.5);
 }
 
 .navbar-fixed-top{
