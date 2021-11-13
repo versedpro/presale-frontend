@@ -1752,7 +1752,7 @@ img.vert-move {
 }
 
 .wallet-item {
-    width: 120px;
+    width: 350px;
 }
 
 .wallet-modal {
@@ -1804,6 +1804,9 @@ img.vert-move {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .wallet-item {
+        width: 120px;
     }
 }
 

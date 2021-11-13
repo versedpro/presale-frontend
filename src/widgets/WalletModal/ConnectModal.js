@@ -25,14 +25,15 @@ const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
           <span className="navbar-toggler-icon toogle-bar-icon"><i className="fas fa-times"></i></span>
         </button>
       }
-      className={'wallet-modal'}
+      className={"wallet-modal"}
     >
-      <h1 className={'modalHeading'}>CONNECT WALLET</h1>
-      <p className={'modalSlug'}>Connect with your favorite wallet.</p>
-      <div className={`ModalBtnWrapper`}>
+      <h1 className={"modalHeading"}>CONNECT WALLET</h1>
+      <p className={"modalSlug"}>Connect with your favorite wallet.</p>
+      <div className={"ModalBtnWrapper"}>
         {isMobile ? mobileConnectors.map((entry, index) => (
           <WalletCard
             key={entry.title}
+            desc={entry.desc}
             login={login}
             walletConfig={entry}
             setWallletOpen={setWallletOpen}
@@ -41,6 +42,7 @@ const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
         )) : desktopConnectors.map((entry, index) => (
           <WalletCard
             key={entry.title}
+            desc={entry.desc}
             login={login}
             walletConfig={entry}
             setWallletOpen={setWallletOpen}
