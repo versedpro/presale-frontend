@@ -194,9 +194,10 @@ const SectionHeader = (props) => {
                   <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
                   <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">TechRate Audit</a>
                 </div>
-                <div className="button_group">
+                <div className="contract-btn-group button_group">
                   <div><a className="btn btn_primary btn_pitchdeck contract-btn" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale Contract</a></div>
                   <div><a className="btn btn_primary btn_pitchdeck contract-btn" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS Contract</a></div>
+
                 </div>
                 <div className="col-12 text-center social-icon">
                   <div className="dapp_bar shadow">

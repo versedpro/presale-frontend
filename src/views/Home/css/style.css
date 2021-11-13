@@ -1771,6 +1771,9 @@ img.vert-move {
     .contract-btn {
         margin-right: 1rem;
     }
+    .contract-btn-group {
+        justify-content: flex-start !important;
+    }
 }
 
 @media only screen and (orientation: portrait) {
