@@ -195,8 +195,8 @@ const SectionHeader = (props) => {
                   <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">TechRate Audit</a>
                 </div>
                 <div className="button_group">
-                  <div><a className="btn btn_primary btn_pitchdeck" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale Contract</a></div>
-                  <div><a className="btn btn_primary btn_pitchdeck" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS Contract</a></div>
+                  <div><a className="btn btn_primary btn_pitchdeck contract-btn" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale Contract</a></div>
+                  <div><a className="btn btn_primary btn_pitchdeck contract-btn" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS Contract</a></div>
                 </div>
                 <div className="col-12 text-center social-icon">
                   <div className="dapp_bar shadow">

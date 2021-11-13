@@ -28,7 +28,7 @@ const WalletCard = ({ login, walletConfig, setWallletOpen }) => {
       <span className="modalBtnText" onClick={handleClick}>{title}</span>
       {title === "MetaMask" ? 
         <span className="modalBtnText2">
-          The web's favorite wallet, get yours [<a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en" target="_blank">here</a>]
+          The web's favorite wallet, get yours <a href="https://metamask.io/download.html" target="_blank">here</a>
         </span>
         : <span className="modalBtnText2">{desc}</span>}
     </div>

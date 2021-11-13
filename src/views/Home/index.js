@@ -81,6 +81,14 @@ const Home = () => {
     }
   }, [chainId])
 
+  useEffect(() => {
+    document.body.addEventListener('click', () => {
+      if (window.innerHeight > window.innerWidth && document.querySelector('.collapsibleNavbar').getAttribute('aria-expanded') === 'true') {
+        document.querySelector('.collapsibleNavbar').click();
+      }
+    })
+  }, [])
+
   return (
     <Fragment>
       <ConnectModal login={login} wallletOpen={wallletOpen} setWallletOpen={setWallletOpen} />
@@ -90,7 +98,7 @@ const Home = () => {
           <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
             {/* <!-- Brand --> */}
             <div className="container">
-              <a className="navbar-brand" href="/">
+              <a className="navbar-brand header-navbar-brand" href="/">
                 {
 
                   isDark ? (<img src="assets/images/logo@3x.png" className="nav_logo" id="crosswise_logo" />) :
@@ -99,7 +107,7 @@ const Home = () => {
 
               </a>
               {/* <!-- Toggler/collapsibe Button --> */}
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <button className="navbar-toggler collapsibleNavbar" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
               </button>
 
