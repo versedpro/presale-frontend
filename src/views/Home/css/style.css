@@ -12,6 +12,10 @@
     background-color: #f5f7fa;
 }
 
+.body-light .modalBtnText2 {
+    color: black;
+}
+
 .buy-token-button {
     height: 40px;
     /* margin: 0 5px; */
