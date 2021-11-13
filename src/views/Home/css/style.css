@@ -1808,6 +1808,11 @@ img.vert-move {
     .wallet-item {
         width: 120px;
     }
+
+    .navbar-brand {
+        margin-left: 1rem !important;
+        margin-right: 0rem !important;
+    }
 }
 
 
