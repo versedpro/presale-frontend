@@ -28,6 +28,16 @@ export const desktopConnectors = [
 
 export const mobileConnectors = [
   {
+    title: 'MetaMask',
+    icon: metaMaskIcon,
+    connectorId: connectorNames.Injected,
+  },
+  {
+    title: 'TrustWallet',
+    icon: trueWalletIcon,
+    connectorId: connectorNames.Injected,
+  },
+  {
     title: 'WalletConnect',
     icon: walletConnectIcon,
     connectorId: connectorNames.WalletConnect,
