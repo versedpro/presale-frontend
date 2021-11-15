@@ -11,13 +11,13 @@ const connectorNames = {
 export const connectors = [
   {
     title: 'MetaMask',
-    desc: "The web's favorite wallet, get yours <a href='https://metamask.io/download.html' target='_blank'>here</a>",
+    desc: `The web's favorite wallet, get yours <a href='https://metamask.io/download.html' target='_blank'>here</a>`,
     icon: metaMaskIcon,
     connectorId: connectorNames.Injected,
   },
   {
     title: 'TrustWallet',
-    desc: `TrustWallet`,
+    desc: `Binance's popular mobile wallet, get yours <a href='https://trustwallet.com/' target='_blank'>here</a>`,
     icon: trueWalletIcon,
     connectorId: connectorNames.Injected,
   },
