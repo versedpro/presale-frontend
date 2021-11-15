@@ -57,9 +57,13 @@
 
 @media only screen and (max-width: 650px) {
     .presale-info {
+        text-align: center;
         margin: 20px 5px;
         padding: 24px 20px;
         width: 100%;
+    }
+    .claim_section {
+        align-items: center !important;
     }
 }
 
@@ -113,6 +117,9 @@
     line-height: 1.75;
     color: #ffffff !important;
     padding: 10px 22px 10px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px;
 }
 
 .light-theme .wallet-address {
@@ -1747,6 +1754,18 @@ img.vert-move {
 }
 
 
+.wallet-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-token-container {
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (orientation: landscape) {
     /* .react-responsive-modal-modal {
         width: 800px !important;
@@ -1766,12 +1785,6 @@ img.vert-move {
     }
 }
 
-.wallet-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 @media only screen and (orientation: portrait) {
     .header_section {
@@ -1803,6 +1816,11 @@ img.vert-move {
     .ModalBtnWrapper {
         flex-direction: column;
     }
+
+    .soft-cap {
+        margin: 15px 110px 0 50px;
+    }
+    
 }
 
 @media only screen and (max-width:598px) {
@@ -2017,7 +2035,7 @@ img.vert-move {
         margin: 0px !important;
     }
     .buy-tokens, .claim-rewards {
-        justify-content: flex-end;
+        justify-content: center;
         margin-bottom: 30px;
     }
     .wallet-address span {
