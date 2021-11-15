@@ -188,57 +188,66 @@ const SectionHeader = (props) => {
               <div className="header_section_left">
                 <h1>Cross-Chain DEX 2.0 With Built-In Tools & Gas Savings</h1>
                 <p className="desc">crosswise takes the trading experience on DEX to the next level with tighter security, a friendly interface, cross-chain transactions, gasless swaps, verified listings and the right tools, tightly integrated.</p>
-                <div className="button_group">
-                  <a className="btn btn_primary" href={pdf} target="_blank">Litepaper</a>
-                  <a className="btn btn_primary btn_pitchdeck" href={pitchdeck} target="_blank">Pitchdeck</a>
-                  <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
-                  <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">TechRate Audit</a>
-                </div>
-                <div className="contract-btn-group button_group">
-                  <div><a className="btn btn_primary btn_pitchdeck contract-btn" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale Contract</a></div>
-                  <div><a className="btn btn_primary btn_pitchdeck contract-btn" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS Contract</a></div>
-
-                </div>
-                <div className="col-12 text-center social-icon">
-                  <div className="dapp_bar shadow">
-                    <div>
-                      <p>Social Media</p>
+                <Row className="mt-3">
+                  <Col className="mt-3">
+                    <a className="btn btn_primary p-2 custom-btn" href={pdf} target="_blank">Litepaper</a>
+                  </Col>
+                  <Col className="mt-3">
+                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pitchdeck} target="_blank">Pitchdeck</a>
+                  </Col>
+                  <Col className="mt-3">
+                    <a className="btn btn_primary p-2 btn_whitelisted custom-btn" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
+                  </Col>
+                  <Col className="mt-3">
+                    <a className="btn btn_primary p-2 btn_audit custom-btn" href={audit_pdf} target="_blank">TechRate Audit</a>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm={4} xs={12}><a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn mt-3" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale Contract</a></Col>
+                  <Col sm={4} xs={12}><a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn mt-3" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS Contract</a></Col>
+                </Row>
+                <Row className="mt-3">
+                  <Col className="text-center social-icon">
+                    <div className="dapp_bar shadow">
+                      <div>
+                        <p>Social Media</p>
+                      </div>
+                      <div className="social_links">
+                        <ul className="list-group list-group-horizontal">
+                          <a href="https://discord.gg/4BuwxMz24J" target="_blank" className="list-group-item list-group-item-action">
+                            {
+                              isDark ? (<img src={Discord} alt="discord.png" />) :
+                                (<img src={DiscordLight} alt="discord.png" />)
+                            }
+                          </a>
+                          <a href="https://crosswise.medium.com/" target="_blank" className="list-group-item list-group-item-action">
+                            {isDark ? (<img src={M} alt="m.png" />) :
+                              (<img src={MLight} alt="m.png" />)
+                            }
+                          </a>
+                          <a href="https://t.me/crosswise" target="_blank" className="list-group-item list-group-item-action">
+                            {
+                              isDark ? (<img src={Paperplane} alt="paperplane.png" />) :
+                                (<img src={PaperplaneLight} alt="paperplane.png" />)
+                            }
+                          </a>
+                          <a href="https://github.com/crosswise-finance" target="_blank" className="list-group-item list-group-item-action">
+                            {
+                              isDark ? (<img src={Git} alt="git.png" />) :
+                                (<img src={GitLight} alt="git.png" />)
+                            }
+                          </a>
+                          <a href="https://twitter.com/crosswisefi" target="_blank" className="list-group-item list-group-item-action">
+                            {
+                              isDark ? (<img src={Twitter} alt="twitter.png" />) :
+                                (<img src={TwitterLight} alt="twitter.png" />)
+                            }
+                          </a>
+                        </ul>
+                      </div>
                     </div>
-                    <div className="social_links">
-                      <ul className="list-group list-group-horizontal">
-                        <a href="https://discord.gg/4BuwxMz24J" target="_blank" className="list-group-item list-group-item-action">
-                          {
-                            isDark ? (<img src={Discord} alt="discord.png" />) :
-                              (<img src={DiscordLight} alt="discord.png" />)
-                          }
-                        </a>
-                        <a href="https://crosswise.medium.com/" target="_blank" className="list-group-item list-group-item-action">
-                          {isDark ? (<img src={M} alt="m.png" />) :
-                            (<img src={MLight} alt="m.png" />)
-                          }
-                        </a>
-                        <a href="https://t.me/crosswise" target="_blank" className="list-group-item list-group-item-action">
-                          {
-                            isDark ? (<img src={Paperplane} alt="paperplane.png" />) :
-                              (<img src={PaperplaneLight} alt="paperplane.png" />)
-                          }
-                        </a>
-                        <a href="https://github.com/crosswise-finance" target="_blank" className="list-group-item list-group-item-action">
-                          {
-                            isDark ? (<img src={Git} alt="git.png" />) :
-                              (<img src={GitLight} alt="git.png" />)
-                          }
-                        </a>
-                        <a href="https://twitter.com/crosswisefi" target="_blank" className="list-group-item list-group-item-action">
-                          {
-                            isDark ? (<img src={Twitter} alt="twitter.png" />) :
-                              (<img src={TwitterLight} alt="twitter.png" />)
-                          }
-                        </a>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               </div>
             </Row>
           </div>
