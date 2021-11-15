@@ -189,7 +189,7 @@ const SectionHeader = (props) => {
                 <h1>Next Gen Cross-Chain DEX With Built-In Trading Tools & Rewards</h1>
                 <p className="desc">crosswise takes the trading experience on DEX to the next level with tighter security, a friendly interface, cross-chain transactions, gasless swaps, verified listings and the right tools, tightly integrated.</p>
                 <div className="button_group">
-                  <a className="btn btn_primary" href={pdf} target="_blank">LitePaper</a>
+                  <a className="btn btn_primary" href={pdf} target="_blank">Litepaper</a>
                   <a className="btn btn_primary btn_pitchdeck" href={pitchdeck} target="_blank">Pitchdeck</a>
                   <a className="btn btn_primary btn_whitelisted" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
                   <a className="btn btn_primary btn_audit" href={audit_pdf} target="_blank">TechRate Audit</a>
