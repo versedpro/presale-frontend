@@ -95,7 +95,7 @@ const Home = () => {
       <div className={isDark ? 'main_body' : 'main_body light-theme'}>
         <header className="nav_wrapper">
           {/** nav header starts */}
-          <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
+          <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm crosswise-nav">
             {/* <!-- Brand --> */}
             <div className="container">
               <a className="navbar-brand header-navbar-brand" href="/">
@@ -115,7 +115,7 @@ const Home = () => {
               <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <a className="nav-link" href="#about" onClick={toogleToolbar}><span>About crosswise</span></a>
+                    <a className="nav-link" href="#about" onClick={toogleToolbar}><span>About</span></a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#tokenomic" onClick={toogleToolbar}><span>Tokenomics </span></a>

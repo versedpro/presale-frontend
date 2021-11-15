@@ -1706,7 +1706,7 @@ img.vert-move {
     width: 2rem;
 }
 
-.react-responsive-modal-root {
+.navbar {
     z-index: 1100 !important;
 }
 
@@ -1778,6 +1778,14 @@ img.vert-move {
     .contract-btn-group {
         justify-content: flex-start !important;
     }
+}
+
+.crosswise-nav {
+    overflow: auto;
+}
+
+.react-responsive-modal-root {
+    z-index: 1100 !important;
 }
 
 @media only screen and (orientation: portrait) {

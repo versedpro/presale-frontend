@@ -186,7 +186,7 @@ const SectionHeader = (props) => {
           <div className="col-lg-7 col-md-12">
             <Row>
               <div className="header_section_left">
-                <h1>Next Gen Cross-Chain DEX With Built-In Trading Tools & Rewards</h1>
+                <h1>Cross-Chain DEX 2.0 With Built-In Tools & Gas Savings</h1>
                 <p className="desc">crosswise takes the trading experience on DEX to the next level with tighter security, a friendly interface, cross-chain transactions, gasless swaps, verified listings and the right tools, tightly integrated.</p>
                 <div className="button_group">
                   <a className="btn btn_primary" href={pdf} target="_blank">Litepaper</a>

@@ -26,11 +26,12 @@ const WalletCard = ({ login, walletConfig, setWallletOpen }) => {
         <img src={icon} alt="" />
       </div>
       <span className="modalBtnText" onClick={handleClick}>{title}</span>
-      {title === "MetaMask" ? 
+      {/* {title === "MetaMask" ? 
         <span className="modalBtnText2">
           The web's favorite wallet, get yours <a href="https://metamask.io/download.html" target="_blank">here</a>
         </span>
-        : <span className="modalBtnText2">{desc}</span>}
+        : <span className="modalBtnText2">{desc}</span>} */}
+        <span className="modalBtnText2">{desc}</span>
     </div>
   );
 };
