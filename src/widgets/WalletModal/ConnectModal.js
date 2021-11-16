@@ -26,7 +26,7 @@ const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
         </button>
       }
     >
-      <h1 className={"modalHeading"}>CONNECT WALLET</h1>
+      <h1 className={"modalHeading"}><b className="textBlue">CONNECT</b></h1>
       <p className={"modalSlug"}>Connect with your favorite wallet.</p>
       <Row>
         {connectors.map((entry, index) => (
