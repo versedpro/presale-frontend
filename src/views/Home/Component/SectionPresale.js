@@ -41,7 +41,7 @@ const SectionHeader = (props) => {
   const [crssAllowrance, setCrssAllowrance] = useState(web3.utils.toBN(0));
 
   useEffect(() => {
-     loadUserDetail();
+    loadUserDetail();
   }, [address, fastRefresh]);
 
   const loadUserDetail = useCallback(async () => {
@@ -51,10 +51,10 @@ const SectionHeader = (props) => {
     setCrssAllowrance(tokenAllowrance);
     // console.log("tokenAllowrance ", tokenAllowrance);
     // console.log("tokenallowrance1", crssAllowrance.toString());
-    
+
     setTotalRewardAmount(web3.utils.fromWei(web3.utils.toBN(result.totalRewardAmount)));
     setWithdrawAmount(web3.utils.fromWei(web3.utils.toBN(result.withdrawAmount)));
-    setDepositTime(new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(result.depositTime * 1000));
+    setDepositTime(new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(result.depositTime * 1000));
     // console.log(result.depositTime)
     setDepositAmount(web3.utils.fromWei(web3.utils.toBN(result.depositAmount)));
     // setCrssAllowrance(web3.utils.fromWei())
@@ -68,7 +68,7 @@ const SectionHeader = (props) => {
 
   const buyTokens = async () => {
     const checkWhitelist = await checkWhitelistMember(address);
-    if(!checkWhitelist){
+    if (!checkWhitelist) {
       alert("Before buying tokens, You must be added as a whitelist member. You can see 'Get Whitelisted' button at the header");
       return;
     }
@@ -88,85 +88,84 @@ const SectionHeader = (props) => {
     // <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
     <section className="header_section section-presale">
 
-      <Container>
-        <Row>
-          <div className="presale-wrap"> 
-            
-          <div className="presale-info">
-          <h5 className="title"> Buy Tokens</h5>
-            <p>Wallet address</p>
-            <div className="wallet-address" style={{ marginBottom: "20px" }}>
-              <span>{address}</span>
-            </div>
-            <form onSubmit={ (crssAllowrance > web3.utils.toBN(100))? handleSubmit(buyTokens): handleSubmit(approveTokens)}>
-              <p>Amount</p>
-              <div className="input-group custom-address-section">
-                <input {...register('amount', { required: true, pattern: /\d+/ })} className="form-control buy-token-amount" value={amountToDeposit} onChange={event => setAmountToDeposit(event.target.value)} />
-                <div className="input-group-append">
-                  <span className="input-group-text buy-token-currency">
-                    <p>BUSD</p>
-                    <img src="assets/images/busdsm.png" className="rounded-circle" style={{ width: "20px", height: "20px" }} />
-                  </span>
+      <Container className="buy-token-container">
+        <Row className="w-100">
+          <div className="presale-wrap w-100 mt-3">
+            <div className="presale-info">
+              <h5 className="title"> Buy Tokens</h5>
+              <p>Wallet address</p>
+              <div className="wallet-address">
+                <span>{address}</span>
+              </div>
+              <form onSubmit={(crssAllowrance > web3.utils.toBN(100)) ? handleSubmit(buyTokens) : handleSubmit(approveTokens)}>
+                <p>Amount</p>
+                <div className="input-group custom-address-section">
+                  <input {...register('amount', { required: true, pattern: /\d+/ })} className="form-control buy-token-amount" value={amountToDeposit} onChange={event => setAmountToDeposit(event.target.value)} />
+                  <div className="input-group-append">
+                    <span className="input-group-text buy-token-currency">
+                      <p>BUSD</p>
+                      <img src="assets/images/busdsm.png" className="rounded-circle" style={{ width: "20px", height: "20px" }} />
+                    </span>
+                  </div>
                 </div>
-              </div>
-              {
-                 crssAllowrance.toString() !== "0" ? (errors.amount && <p style={{ color: "red" }}>Please enter the amount of BUSD you wish to invest.</p>):
-                 (<p></p>)
-              }
-              
-              <div className="buy-tokens">
+                {
+                  crssAllowrance.toString() !== "0" ? (errors.amount && <p style={{ color: "red" }}>Please enter the amount of BUSD you wish to invest.</p>) :
+                    (<p></p>)
+                }
+
+                <div className="buy-tokens">
                   {
-                    crssAllowrance.toString() === "0" ?(  <button className="btn btn_primary" onClick={approveTokens}>
-                    Approve Contract </button>):
-                    (
-                      <button className="btn btn_primary" type="submit">
-                        Buy Tokens
-                      </button>
-                    )
+                    crssAllowrance.toString() === "0" ? (<button className="btn btn_primary" onClick={approveTokens}>
+                      Approve Contract </button>) :
+                      (
+                        <button className="btn btn_primary buy-token-btn" type="submit">
+                          Buy Tokens
+                        </button>
+                      )
                   }
-                  
-              </div>
-            </form>
-          </div>
-          <div className="presale-info mobile">
-           <h5 className="title">My Tokens</h5>
-            <div className="presale_info">
-            
+
+                </div>
+              </form>
+            </div>
+            <div className="presale-info mobile">
+              <h5 className="title">My Tokens</h5>
+              <div className="presale_info">
+
                 <div className="rectangle">
                   <p>Total Deposited</p>
                   <h6>{parseFloat(depositAmount.toString()).toFixed(2)} BUSD</h6>
                 </div>
                 <div className="rectangle">
                   <p>Total Received</p>
-                  <h6>{ parseFloat(totalRewardAmount.toString()).toFixed(2)} CRSS</h6>
+                  <h6>{parseFloat(totalRewardAmount.toString()).toFixed(2)} CRSS</h6>
                 </div>
-               
+
               </div>
               <div className="presale_info">
-              <div className="rectangle">
-                <p>Unlocked Tokens</p>
-                <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)} CRSS</h6>
-              </div>
-              <div className="rectangle">
+                <div className="rectangle">
+                  <p>Unlocked Tokens</p>
+                  <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)} CRSS</h6>
+                </div>
+                <div className="rectangle">
                   <p>Total Withdrawn</p>
-                  <h6>{ parseFloat(withdrawAmount.toString()).toFixed(2)} CRSS</h6>
-                </div>  
-            </div>
+                  <h6>{parseFloat(withdrawAmount.toString()).toFixed(2)} CRSS</h6>
+                </div>
+              </div>
 
-            {/* <div className="presale_info">
+              {/* <div className="presale_info">
             <div className="rectangle">
                 <p>Deposit Time</p>
                 <h6>{depositTime}</h6>
               </div>
             </div> */}
 
-            <div className="claim_section">
-              <button className="btn btn_primary claim-button" onClick={claimToken}>Withdraw Tokens</button>
+              <div className="claim_section">
+                <button className="btn btn_primary claim-button" onClick={claimToken}>Withdraw Tokens</button>
+              </div>
             </div>
           </div>
-          </div>
           <div className="presale-desc">
-            <p style={{fontSize: '14px'}}>All transactions are private and secure. 20% of tokens unlock every 30 days. Once unlocked, you can withdraw them to your wallet.</p>
+            <p style={{ fontSize: '14px' }}>All transactions are private and secure. 20% of tokens unlock every 30 days. Once unlocked, you can withdraw them to your wallet.</p>
           </div>
         </Row>
       </Container>

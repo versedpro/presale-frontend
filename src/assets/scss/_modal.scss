@@ -45,16 +45,21 @@
 .modalContent {
   display: grid;
   place-items: center;
-  cursor: pointer;
 }
 .modalBtnText {
-  color: #a18b3c;
+  color: #72707F;
   font-size: 16px;
+}
+.modalBtnText2 {
+  color: #72707F;
+  font-size: 13px;
+  text-align: center;
 }
 .ModalBtn {
   background: #17171a;
   padding: 12px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 .mintModal {
   max-width: 1000px;

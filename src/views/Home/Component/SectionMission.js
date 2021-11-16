@@ -216,7 +216,7 @@ const SectionMission = (props) => {
                               <img src={Dex5} />
                             </div>
                             <div className="desc">
-                             <h6>The Graph subgraph</h6>
+                             <h6>The Graph Subgraph</h6>
                             </div>
                         </div>
 
@@ -252,7 +252,7 @@ const SectionMission = (props) => {
                               <img src={Dex9} />
                             </div>
                             <div className="desc">
-                             <h6>Farms & pools upon launch</h6>
+                             <h6>Farms & Pools Upon Launch</h6>
                             </div>
                         </div>
                     </div>

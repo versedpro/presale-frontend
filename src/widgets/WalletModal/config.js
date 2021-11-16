@@ -8,37 +8,22 @@ const connectorNames = {
   WalletConnect: 'WalletConnect',
 }
 
-export const desktopConnectors = [
+export const connectors = [
   {
     title: 'MetaMask',
+    desc: `The web's favorite wallet, get yours <a href='https://metamask.io/download.html' target='_blank'><b className="textBlue">here</b></a>`,
     icon: metaMaskIcon,
     connectorId: connectorNames.Injected,
   },
   {
     title: 'TrustWallet',
+    desc: `Binance's popular mobile wallet, get yours <a href='https://trustwallet.com/' target='_blank'><b className="textBlue">here</b></a>`,
     icon: trueWalletIcon,
     connectorId: connectorNames.Injected,
   },
   {
     title: 'WalletConnect',
-    icon: walletConnectIcon,
-    connectorId: connectorNames.WalletConnect,
-  },
-];
-
-export const mobileConnectors = [
-  {
-    title: 'MetaMask',
-    icon: metaMaskIcon,
-    connectorId: connectorNames.Injected,
-  },
-  {
-    title: 'TrustWallet',
-    icon: trueWalletIcon,
-    connectorId: connectorNames.Injected,
-  },
-  {
-    title: 'WalletConnect',
+    desc: `Use Trust Wallet, Coinomi, Crypto.com & more...`,
     icon: walletConnectIcon,
     connectorId: connectorNames.WalletConnect,
   },

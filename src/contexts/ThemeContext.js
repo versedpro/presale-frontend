@@ -11,10 +11,12 @@ const ThemeContextProvider = ({ children }) => {
   const cookies = new Cookies();
   const [isDark, setIsDark] = useState(() => {
     const isDarkUserSetting = cookies.get(CACHE_KEY)
+    document.getElementsByTagName('body')[0].className = isDarkUserSetting === true || isDarkUserSetting === 'true' ? "body-dark" : "body-light";
     return isDarkUserSetting ? JSON.parse(isDarkUserSetting) : false
   })
 
   const toggleTheme = () => {
+    document.getElementsByTagName('body')[0].className = isDark ? "body-light" : "body-dark";
     setIsDark((prevState) => {
       cookies.set(CACHE_KEY, JSON.stringify(!prevState), { path: '/' });
       return !prevState

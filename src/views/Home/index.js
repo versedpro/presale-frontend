@@ -33,10 +33,8 @@ import SectionPartner from "./Component/SectionPartner";
 
 import ConnectModal from "../../widgets/WalletModal/ConnectModal";
 import { setAddress, setNetworkId } from '../../redux/actions';
-import useEagerConnect from "../../widgets/useEagerConnect";
 
 const Home = () => {
-  useEagerConnect();
 
   const address = useSelector(state => state.authUser.address)
 
@@ -66,6 +64,11 @@ const Home = () => {
     setWallletOpen(true);
   }
 
+  const toogleToolbar = () => {
+    setShowPresaleInfo(false)
+    showHome()
+  }
+
   useEffect(() => {
     if (account) {
       dispatch(setAddress(account))
@@ -78,16 +81,24 @@ const Home = () => {
     }
   }, [chainId])
 
+  useEffect(() => {
+    document.body.addEventListener('click', () => {
+      if (window.innerHeight > window.innerWidth && document.querySelector('.collapsibleNavbar').getAttribute('aria-expanded') === 'true') {
+        document.querySelector('.collapsibleNavbar').click();
+      }
+    })
+  }, [])
+
   return (
     <Fragment>
       <ConnectModal login={login} wallletOpen={wallletOpen} setWallletOpen={setWallletOpen} />
       <div className={isDark ? 'main_body' : 'main_body light-theme'}>
         <header className="nav_wrapper">
           {/** nav header starts */}
-          <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm">
+          <nav className="navbar navbar-expand-lg navbar-default navbar-fixed-top shadow-sm crosswise-nav">
             {/* <!-- Brand --> */}
             <div className="container">
-              <a className="navbar-brand" href="/">
+              <a className="navbar-brand header-navbar-brand" href="/">
                 {
 
                   isDark ? (<img src="assets/images/logo@3x.png" className="nav_logo" id="crosswise_logo" />) :
@@ -96,7 +107,7 @@ const Home = () => {
 
               </a>
               {/* <!-- Toggler/collapsibe Button --> */}
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <button className="navbar-toggler collapsibleNavbar" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
               </button>
 
@@ -104,19 +115,19 @@ const Home = () => {
               <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <a className="nav-link" href="#about"><span>About crosswise</span></a>
+                    <a className="nav-link" href="#about" onClick={toogleToolbar}><span>About</span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#tokenomic"><span>Tokenomics </span></a>
+                    <a className="nav-link" href="#tokenomic" onClick={toogleToolbar}><span>Tokenomics </span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#roadmap"><span>Roadmap </span></a>
+                    <a className="nav-link" href="#roadmap" onClick={toogleToolbar}><span>Roadmap </span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#team"><span>Team</span></a>
+                    <a className="nav-link" href="#team" onClick={toogleToolbar}><span>Team</span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#help"><span>Socials</span></a>
+                    <a className="nav-link" href="#help" onClick={toogleToolbar}><span>Socials</span></a>
                   </li>
                   {/* <li className="nav-item ml-md-4">
                       <a className="nav-link">
