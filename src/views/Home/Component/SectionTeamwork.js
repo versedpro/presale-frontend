@@ -16,6 +16,8 @@ import Dino from '../../../assets/images/crosswise/members/Dino.jpg';
 import Yehor from '../../../assets/images/crosswise/members/Yehor.jpg';
 import Leon from '../../../assets/images/crosswise/members/Leon.jpg';
 import JamesGao from '../../../assets/images/crosswise/members/JamesGao.jpg';
+import BenWeider from '../../../assets/images/crosswise/members/BenWeider.jpg';
+import JamesYin from '../../../assets/images/crosswise/members/JamesYin.jpg';
 
 const SectionTeamwork = (props) => {
 
@@ -157,7 +159,7 @@ const SectionTeamwork = (props) => {
                                         </div>
                                         <div className="photo_content">
                                             <h6>Yehor Oshodin</h6>
-                                            <p>FrontEnd Lead</p>
+                                            <p>FrontEnd Pod Lead</p>
                                         </div>
                                         <div className="photo_description">
                                             <p>I always look to add my own magical touch to any new code that I write, and would like to mention that in the past I have worked alongside some very technically able individuals in the industry. I consider myself a real team player who understands the importance of teamwork, collaboration, and open communication. </p>
@@ -205,8 +207,47 @@ const SectionTeamwork = (props) => {
                                     </div>
                                 </li>
 
+                                <li>
+                                    <div className="gallery_photo shadow">
+                                        {/* <img className="card-img-top" src={} /> */}
+                                        <img className="user_img_top" src={BenWeider} />
+                                        {
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/ben-weider-411184211/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/ben-weider-411184211/" target="_blank"><img src={linkedinLightIcon} /></a>)
+                                        }
+                                        <div className="card-img-overlay p-3">
+                                        </div>
+                                        <div className="photo_content">
+                                            <h6>Ben Weider</h6>
+                                            <p>Front-End Lead Developer</p>
+                                        </div>
+                                        <div className="photo_description">
+                                            <p>Ben is a passionate blockchain and full stack Fintech developer who likes to build solutions combining blockchain technologies and financial trading systems. With over 9 years of experience, Ben leads the front-end development team.</p>
+                                            {/* <p>Ben is a passionate blockchain and full stack Fintech developer who likes to build solutions combining blockchain technologies and financial trading systems. With over 9 years of experience, Ben leads the front-end development team. Ben has a particular talent for applying development best practices, methodologies and ensuring overall code quality. He loves to work together as part of a great team. In his free time he enjoys tennis and basketball, as well as technical trading on forex, futures and the crypto markets.</p> */}
+                                        </div>
+                                    </div>
+                                </li>
 
-
+                                <li>
+                                    <div className="gallery_photo shadow">
+                                        {/* <img className="card-img-top" src={} /> */}
+                                        <img className="user_img_top" src={JamesYin} />
+                                        {
+                                            isDark ? (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/yin-james-a303631b7/" target="_blank"><img src={linkedinBlackIcon} /></a>) :
+                                                (<a className="linkedin_img_icon" href="https://www.linkedin.com/in/yin-james-a303631b7/" target="_blank"><img src={linkedinLightIcon} /></a>)
+                                        }
+                                        <div className="card-img-overlay p-3">
+                                        </div>
+                                        <div className="photo_content">
+                                            <h6>James Yin</h6>
+                                            <p>Senior Back-End Developer</p>
+                                        </div>
+                                        <div className="photo_description">
+                                            <p>James specializes in smart contract and Dapp development at Crosswise. He is an accomplished back-end and front-end developer with over 8 years experience building web and mobile applications.</p>
+                                            {/* <p>James specializes in smart contract and Dapp development at Crosswise. He is an accomplished back-end and front-end developer with over 8 years experience building web and mobile applications. He has accumulated extensive experience in blockchain development, contributing to a wide range of DeFi projects. James is a particularly creative and innovative developer. </p> */}
+                                        </div>
+                                    </div>
+                                </li>
 
                             </Slider>
                         </ul>

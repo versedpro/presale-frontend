@@ -2050,7 +2050,6 @@ img.vert-move {
 }
 
 .claim_section {
-    margin-top: 35px;
     display: flex;
     flex-direction: column;
     align-items: end;
