@@ -1740,10 +1740,10 @@ img.vert-move {
     text-align: center;
     margin-bottom: 20px;
 }
-
+/* 
 .crosswise-nav {
     overflow: auto;
-}
+} */
 
 .react-responsive-modal-root {
     z-index: 1100 !important;
