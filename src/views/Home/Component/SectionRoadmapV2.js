@@ -170,10 +170,10 @@ const SectionRoadmapV2 = (props) => {
                                                         <img src={spinnerImg} />
                                                         <div className="content-text">Vaults for 3rd Parties</div>
                                                     </div>
-                                                    {/* <div className="content-desc">
+                                                    <div className="content-desc">
                                                         <img src={spinnerImg} />
                                                         <div className="content-text">Release on Polygon</div>
-                                                    </div> */}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
@@ -431,10 +431,10 @@ const SectionRoadmapV2 = (props) => {
                                         <img src={spinnerImg} />
                                         <div className="content-text">Front-running deterrents</div>
                                     </div>
-                                    {/* <div className="content-desc">
+                                    <div className="content-desc">
                                         <img src={spinnerImg} />
                                         <div className="content-text">Release on Polygon</div>
-                                    </div> */}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -510,10 +510,6 @@ const SectionRoadmapV2 = (props) => {
                                         <img src={spinnerImg} />
                                         <div className="content-text">Release on Solana</div>
                                     </div>
-                                    {/* <div className="content-desc">
-                                        <img src={spinnerImg} />
-                                        <div className="content-text">Release on Polygon</div>
-                                    </div> */}
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
                                         <div className="content-text">Extended Chart Features</div>

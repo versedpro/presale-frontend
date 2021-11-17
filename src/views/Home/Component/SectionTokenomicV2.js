@@ -39,21 +39,21 @@ const SectionTokenomicV2 = (props) => {
               <div className="max_supply pb-5">
                 <h5 className="topic">Maximum Supply</h5>
                 <div className="content">
-                  <h6>50,000,000<b className="textBlue"> CRSS</b></h6>
+                  <h6>50,000,000 <b className="textBlue">CRSS</b></h6>
                 </div>
               </div>
               <div className="emission_rate pb-5">
                 <h5 className="topic">Emission Rate</h5>
                 <div className="content">
-                  <h6>first 14 days<b className="textBlue"> 1.2</b></h6>
+                  <h6>first 14 days <b className="textBlue">1.2</b></h6>
                 </div>
                 <div className="content">
-                  <h6>after 14 days<b className="textBlue"> 1</b></h6>
+                  <h6>after 14 days <b className="textBlue">1</b></h6>
                 </div>
               </div>
               <div className="teamToken">
                 <h5>No VC or Team Tokens</h5>
-                <h6>share of emission going to team wallet<b className="textBlue"> 8%</b></h6>
+                <h6>share of emission going to team wallet <b className="textBlue">8%</b></h6>
               </div>
 
             </div>

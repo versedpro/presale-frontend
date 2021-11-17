@@ -10,6 +10,7 @@ const useEagerConnect = () => {
     useEffect(() => {
         const cookies = new Cookies();
         const connectorId = cookies.get(connectorLocalStorageKey);
+        console.log(connectorId);
 
         if (connectorId) {
             login(connectorId);
