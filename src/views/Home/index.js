@@ -94,7 +94,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <ConnectModal login={login} wallletOpen={wallletOpen} setWallletOpen={setWallletOpen} />
+      <ConnectModal login={login} wallletOpen={wallletOpen} setWallletOpen={setWallletOpen} setShowPresaleInfo={setShowPresaleInfo} />
       <div className={isDark ? 'main_body' : 'main_body light-theme'}>
         <header className="nav_wrapper">
           {/** nav header starts */}
