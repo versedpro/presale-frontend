@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { Component, Fragment, useState, useContext, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Container } from 'reactstrap';
+import CopyToClipboard from "react-copy-to-clipboard";
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Row, Col } from 'reactstrap';
 import BigNumber from 'bignumber.js';
-import CopyToClipboard from "react-copy-to-clipboard";
 import useRefresh from '../../../redux/useRefresh'
 import '../css/style.css'
+import { ThemeContext } from "../../../contexts/ThemeContext";
 import "react-step-progress-bar/styles.css";
 import { useForm } from "react-hook-form";
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
@@ -24,6 +25,7 @@ import {
 
 const SectionHeader = (props) => {
   const address = useSelector(state => state.authUser.address);
+  const { isDark, toggleTheme } = useContext(ThemeContext);
   const {
     register,
     handleSubmit,
@@ -84,6 +86,7 @@ const SectionHeader = (props) => {
   }
 
   return (
+    // <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
     <section className="header_section section-presale">
 
       <Container className="buy-token-container">
@@ -162,11 +165,11 @@ const SectionHeader = (props) => {
               </div>
             </div>
           </div>
-          <div className="presale-desc">
+          <div className="presale-desc w-100">
             <p style={{ fontSize: '14px' }}>
-              All transactions are anonymous and secure. Tokens are vested within <b className="textBlue">5</b> months linearly, with <b className="textBlue">20%</b> unlocked every <b className="textBlue">30</b> days, starting from time of purchase. That means every <b className="textBlue">30</b> days, <b className="textBlue">20%</b> of that batch of tokens will be unlocked. Once unlocked, you can withdraw them to your wallet.<br />
-              Please add our token address to your wallet so that you see them in your assets when you withdraw them:<br />
-              0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1
+              All transactions are anonymous and secure. Tokens are vested within <b className="textBlue">5</b> months linearly, with <b className="textBlue">20%</b> unlocked every <b className="textBlue">30</b> days, starting from time of purchase. That means every <b className="textBlue">30</b> days, <b className="textBlue">20%</b> of that batch of tokens will be unlocked. Once unlocked, you can withdraw them to your wallet.<br /><br />
+              Please add our token address to your wallet so that you see them in your assets when you withdraw them:<br /><br />
+              <b className="textBlue">0x0999ba9aEA33DcA5B615fFc9F8f<br className="br-class"></br>88D260eAB74F1</b>
               <CopyToClipboard
                 text={'0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1'}>
                 <button className="navbar-toggler">
@@ -174,7 +177,7 @@ const SectionHeader = (props) => {
                     <i className="fas fa-copy"></i>
                   </span>
                 </button>
-              </CopyToClipboard> <br />
+              </CopyToClipboard> <br /><br />
               We recommend leaving your tokens until we launch in December. At that point you can withdraw the unlocked balance and use it to farm or provide liquidity to earn more CRSS!
             </p>
           </div>

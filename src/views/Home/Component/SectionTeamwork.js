@@ -95,7 +95,6 @@ const SectionTeamwork = (props) => {
                 </Row>
                 <Row className="team_member">
                     {teamMembers.map((member, index) => {
-                        console.log(member);
                         return (
                             <Col md={3} sm={6} xs={12} className="mb-3" key={index}>
                                 <div className="gallery_photo shadow">

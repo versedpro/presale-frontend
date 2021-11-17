@@ -1202,8 +1202,8 @@ img.vert-move {
 
 .gallery_photo .linkedin_img_icon {
     position: absolute;
-    top: 24px;
-    left: 90px;
+    top: 20px;
+    left: 105px;
     cursor: pointer;
     z-index: 100;
 }
@@ -1858,7 +1858,14 @@ img.vert-move {
     text-decoration: none;
 }
 
+.br-class {
+    display: none;
+}
+
 @media only screen and (orientation: portrait) {
+    .br-class {
+        display: block;
+    }
     .header_section {
         padding-top: 0 !important;
     }
