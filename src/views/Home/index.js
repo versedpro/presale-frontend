@@ -196,10 +196,12 @@ const Home = () => {
                       )
                   }
                   <li className="nav-item">
+                    {/* <button data-tf-popup="P1zLEnZ7" className="nav-link btn btn_signIN btn_primary">How To Buy</button> */}
                     <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c" rel="noreferrer">How To Buy</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link btn btn_signIN btn_primary" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
+                    {/* <button data-tf-popup="P1zLEnZ7"  className="nav-link btn btn_signIN btn_primary">Get Whitelisted</button> */}
+                    <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
                   </li>
                 </ul>
               </div>

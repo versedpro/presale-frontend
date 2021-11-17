@@ -1736,6 +1736,7 @@ img.vert-move {
     text-align: center;
     margin-bottom: 20px;
 }
+
 /* 
 .crosswise-nav {
     overflow: auto;
@@ -1748,7 +1749,6 @@ img.vert-move {
 .custom-btn {
     width: 100% !important;
 }
-
 
 .wallet-content {
     display: flex;
@@ -1781,6 +1781,27 @@ img.vert-move {
     }
 }
 
+.get-whitelisted {
+    all: unset;
+    font-family: Helvetica, Arial, sans-serif;
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #0445AF;
+    color: #FFFFFF;
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 0 33px;
+    font-weight: bold;
+    height: 50px;
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    margin: 0;
+    text-decoration: none;
+}
 
 @media only screen and (orientation: portrait) {
     .header_section {
@@ -1803,20 +1824,16 @@ img.vert-move {
     .wallet-item {
         width: 120px;
     }
-
     .header-navbar-brand {
         margin-left: 1rem !important;
         margin-right: 0rem !important;
     }
-
     .ModalBtnWrapper {
         flex-direction: column;
     }
-
     .soft-cap {
         margin: 15px 110px 0 50px;
     }
-    
 }
 
 @media only screen and (max-width:598px) {
@@ -1867,7 +1884,6 @@ img.vert-move {
 }
 
 /* Custom for Modal */
-
 
 /**************** Tool tip ********************/
 
