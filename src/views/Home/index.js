@@ -33,8 +33,10 @@ import SectionPartner from "./Component/SectionPartner";
 
 import ConnectModal from "../../widgets/WalletModal/ConnectModal";
 import { setAddress, setNetworkId } from '../../redux/actions';
+import useEagerConnect from "../../widgets/useEagerConnect";
 
 const Home = () => {
+  useEagerConnect();
 
   const address = useSelector(state => state.authUser.address)
 
