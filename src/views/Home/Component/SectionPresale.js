@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState, useContext, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Container } from 'reactstrap';
 import 'react-accessible-accordion/dist/fancy-example.css';
@@ -7,7 +7,6 @@ import BigNumber from 'bignumber.js';
 import CopyToClipboard from "react-copy-to-clipboard";
 import useRefresh from '../../../redux/useRefresh'
 import '../css/style.css'
-import { ThemeContext } from "../../../contexts/ThemeContext";
 import "react-step-progress-bar/styles.css";
 import { useForm } from "react-hook-form";
 import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
@@ -25,7 +24,6 @@ import {
 
 const SectionHeader = (props) => {
   const address = useSelector(state => state.authUser.address);
-  const { isDark, toggleTheme } = useContext(ThemeContext);
   const {
     register,
     handleSubmit,
@@ -86,7 +84,6 @@ const SectionHeader = (props) => {
   }
 
   return (
-    // <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
     <section className="header_section section-presale">
 
       <Container className="buy-token-container">
