@@ -4,7 +4,6 @@ import { Container } from 'reactstrap';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Row, Col } from 'reactstrap';
 import BigNumber from 'bignumber.js';
-import CopyToClipboard from "react-copy-to-clipboard";
 import useRefresh from '../../../redux/useRefresh'
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
