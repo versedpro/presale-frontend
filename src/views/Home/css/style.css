@@ -1046,10 +1046,6 @@ img.vert-move {
     font-size: 20px;
 }
 
-.tokenomic_block .token_desc .max_supply, .tokenomic_block .token_desc .emission_rate {
-    padding-bottom: 40px;
-}
-
 .max_supply .content {
     padding: 10px 0px;
 }

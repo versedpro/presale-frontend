@@ -113,8 +113,7 @@ const SectionAbout = (props) => {
                           <img src={Icon4} />
                         </div>
                         <div className="desc">
-                          <h6>Trading Tools
-</h6>
+                          <h6>Integrated Tools</h6>
                         </div>
                       </div>
                   </div>
