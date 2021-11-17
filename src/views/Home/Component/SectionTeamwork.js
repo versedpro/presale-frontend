@@ -162,7 +162,8 @@ const SectionTeamwork = (props) => {
                                             <p>Senior Front-End Developer</p>
                                         </div>
                                         <div className="photo_description">
-                                            <p>Yehor is Croatian, originally from Rijeka. He is a front-end and back-end developer with over 8 years development experience. In recent years, he has spent much of time working on DeFi projects. Yehor always aims to add his own magical touch to any code, and is a natural team player, who understand the importance of open collaboration, and communication. His hobbies are as varied as his coding experience. He enjoys singing, football, volleyball, mountain climbing and ping-pong.</p>
+                                            <p>Yehor is Croatian, originally from Rijeka. In recent years, he has spent much of time working on DeFi projects. Yehor always aims to add his own magical touch to any code, and is a natural team player, who understand the importance of open collaboration, and communication. </p>
+                                            {/* <p>Yehor is Croatian, originally from Rijeka. He is a front-end and back-end developer with over 8 years development experience. In recent years, he has spent much of time working on DeFi projects. Yehor always aims to add his own magical touch to any code, and is a natural team player, who understand the importance of open collaboration, and communication. His hobbies are as varied as his coding experience. He enjoys singing, football, volleyball, mountain climbing and ping-pong.</p> */}
                                         </div>
                                     </div>
                                 </li>

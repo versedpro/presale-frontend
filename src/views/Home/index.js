@@ -58,6 +58,7 @@ const Home = () => {
   const handleLogout = () => {
     logout();
     setShowPresaleInfo(false);
+    showHome()
   }
   const showPresale = () => setShowPresaleInfo(true)
   const showHome = () => setShowPresaleInfo(false)
@@ -187,9 +188,7 @@ const Home = () => {
 
                           <li className="nav-item">
                             {/* <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens> */}
-                            {showPresaleInfo ? (
-                              <button onClick={showHome} className="btn btn_primary buy-token-button btn_signIN">Go Back</button>
-                            ) : (
+                            {showPresaleInfo ? <></> : (
                               <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN">Buy Tokens</button>
                             )}
                           </li>

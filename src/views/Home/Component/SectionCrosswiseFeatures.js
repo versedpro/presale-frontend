@@ -35,7 +35,7 @@ const SectionCrosswiseFeatures = (props) => {
                         <img src={FeatImg1} />
                     </div>
                     <div className="features_title">
-                        <h6>Launchpad & Incubator</h6>
+                        <h5 className="topic">Launchpad & Incubator</h5>
                     </div>
                     <div className="features_desc">
                     Crosswise features a launchpad coupled with an incubation program to help budding entrepreneurs launch on crosswise DEX. Support will include funding, marketing, networking, as well as technical assistance to help projects deploy to our multi-chain ecosystem.
@@ -47,7 +47,7 @@ const SectionCrosswiseFeatures = (props) => {
                         <img src={FeatImg2} />
                     </div>
                     <div className="features_title">
-                        <h6>Solid Infrastructure</h6>
+                        <h5 className="topic">Solid Infrastructure</h5>
                     </div>
                     <div className="features_desc">
                     Crosswise platform is capable of handling high user loads, during both peak trading and IDO hours. Our state-of-the-art IT infrastructure provides users with the best security, uptime, and premium tools built for a multi-chain environment.
@@ -59,7 +59,7 @@ const SectionCrosswiseFeatures = (props) => {
                         <img src={FeatImg3} />
                     </div>
                     <div className="features_title">
-                        <h6>User-Friendly DEX</h6>
+                        <h5 className="topic">User-Friendly DEX</h5>
                     </div>
                     <div className="features_desc">
                     Crosswise is tightly integrating tools such as an Order Book, Analytics, Explorer, Price Charts, Account Statistics, Affiliate Rewards with a friendly user interface for a next-gen DEX experience. We're also bringing back real support to the DEX space, to ensure accessibility and customer satisfaction.
