@@ -126,7 +126,7 @@ const SectionHeader = (props) => {
 
                 <div className="buy-tokens">
                   {
-                    crssAllowrance.toString() === "0" ? (<button className="btn btn_primary" onClick={approveTokens}>
+                    crssAllowrance.toString() === "0" ? (<button className="btn btn_primary presale-btns" onClick={approveTokens}>
                       Approve Contract </button>) :
                       (
                         <button className="btn btn_primary buy-token-btn presale-btns" type="submit">
