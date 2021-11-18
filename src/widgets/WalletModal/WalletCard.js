@@ -18,12 +18,12 @@ const WalletCard = ({ login, walletConfig, setWallletOpen, setShowPresaleInfo })
   }
 
   return (
-    <Col sm={4} xs={12} className={`wallet-content`}>
+    <Col sm={4} xs={12} className={`wallet-content h-100`}>
       <div className="ModalBtn" onClick={handleClick}>
         <img src={icon} alt="" />
       </div>
       <span className="modalBtnText" onClick={handleClick}>{title}</span>
-      <span className="modalBtnText2" dangerouslySetInnerHTML={{ __html: desc }}></span>
+      <span className="modalBtnText2 mt-2" dangerouslySetInnerHTML={{ __html: desc }}></span>
     </Col>
   );
 };

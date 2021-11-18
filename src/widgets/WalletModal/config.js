@@ -11,19 +11,19 @@ const connectorNames = {
 export const connectors = [
   {
     title: 'MetaMask',
-    desc: `Use with desktop or mobile MetaMask Dapp browser`,
+    desc: `Desktop Chrome or Mobile MetaMask Dapp browser`,
     icon: metaMaskIcon,
     connectorId: connectorNames.Injected,
   },
   {
     title: 'TrustWallet',
-    desc: `Use with TrustWallet Dapp browser only`,
+    desc: `TrustWallet Dapp browser only`,
     icon: trueWalletIcon,
     connectorId: connectorNames.Injected,
   },
   {
     title: 'WalletConnect',
-    desc: `Use with mobile chrome to connect TrustWallet, Coinomi, Crypto.com & more`,
+    desc: `Mobile Chrome with MetaMask, TrustWallet, Coinomi, & more`,
     icon: walletConnectIcon,
     connectorId: connectorNames.WalletConnect,
   },
