@@ -1878,6 +1878,10 @@ img.vert-move {
     display: none;
 }
 
+.mobile-btn {
+    display: none;
+}
+
 @media only screen and (orientation: portrait) {
     .br-class {
         display: block;
@@ -1919,6 +1923,18 @@ img.vert-move {
 
     .presale-desc {
         padding: 20px 2%;
+    }
+
+    .second-section-first {
+        margin-bottom: 1rem!important;
+    }
+
+    /* .second-section-second {
+        margin-top: 1rem!important;
+    } */
+
+    .mobile-btn {
+        display: flex;
     }
 }
 
@@ -2167,3 +2183,11 @@ img.vert-move {
     text-decoration: none;
     background-color: transparent;
     cursor: pointer; */
+
+/* Nav bar */
+
+.navbar-toggler-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -107,8 +107,18 @@ const Home = () => {
                   isDark ? (<img src="assets/images/logo@3x.png" className="nav_logo" id="crosswise_logo" />) :
                     <img src="assets/images/logo-light-theme-2.png" className="nav_logo" id="crosswise_logo" />
                 }
-
               </a>
+              {address === null ?
+                (<a className="nav-link btn btn_signIN btn_primary mobile-btn" onClick={onConnectHandle}>Connect</a>
+                ) : (
+                  <>
+                    {showPresaleInfo ? <a className="nav-link btn btn_signIN btn_primary mobile-btn" onClick={handleLogout}>
+                      Logout
+                    </a> : (
+                      <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN mobile-btn">Buy Tokens</button>
+                    )}
+                  </>
+                )}
               {/* <!-- Toggler/collapsibe Button --> */}
               <button className="navbar-toggler collapsibleNavbar" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
@@ -195,14 +205,6 @@ const Home = () => {
                         </>
                       )
                   }
-                  <li className="nav-item">
-                    {/* <button data-tf-popup="P1zLEnZ7" className="nav-link btn btn_signIN btn_primary">How To Buy</button> */}
-                    <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c" rel="noreferrer">How To Buy</a>
-                  </li>
-                  <li className="nav-item">
-                    <button data-tf-popup="P1zLEnZ7"  className="nav-link btn btn_signIN btn_primary">Get Whitelisted</button>
-                    {/* <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a> */}
-                  </li>
                 </ul>
               </div>
             </div>
