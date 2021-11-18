@@ -1285,6 +1285,8 @@ img.vert-move {
 .presale-address {
     text-align: center;
     cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .presale-sub-desc, .presale-address {
