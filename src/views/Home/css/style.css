@@ -1916,6 +1916,10 @@ img.vert-move {
     .presale-btns {
         width: 100%;
     }
+
+    .presale-desc {
+        padding: 20px 2%;
+    }
 }
 
 @media only screen and (max-width:598px) {
