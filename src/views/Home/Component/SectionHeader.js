@@ -255,7 +255,7 @@ const SectionHeader = (props) => {
             <Row>
               <div className="header_section_right">
                 <div className="header_presale_board">
-                  <h5>Pre-Sale Live</h5>
+                  <h5>Pre-Sale Sold Out</h5>
 
                   {/* <div className="presale_counter">
                     <div className="count_el">
