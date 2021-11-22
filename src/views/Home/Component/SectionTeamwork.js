@@ -65,7 +65,7 @@ const SectionTeamwork = (props) => {
             image: BenWeider,
             name: 'Ben Weider',
             linkedIn: 'https://www.linkedin.com/in/ben-weider-411184211/',
-            role: 'Front-End Lead Developer',
+            role: 'Lead Front-End Developer',
             desc: `Ben is a passionate blockchain and full stack Fintech developer who likes to build solutions combining blockchain technologies and financial trading systems. With over 9 years of experience, Ben leads the front-end development team. Ben has a particular talent for applying development best practices, methodologies and ensuring overall code quality. He loves to work together as part of a great team. In his free time he enjoys tennis and basketball, as well as technical trading on forex, futures and the crypto markets.`
         },
         {
