@@ -26,7 +26,7 @@ const SectionTokenomicV2 = (props) => {
           </div>
         </Row>
         <div className="tokenomic_content">
-          <div className="tokenomic_block">
+          <div className="tokenomic_block pb-5">
             <div className="token_avata_wrap">
               <img src={crss} className="tokenMainImg" />
               <img src={crssAvatarImg} className="tokenAvatar" />
@@ -35,40 +35,31 @@ const SectionTokenomicV2 = (props) => {
                 <div className="desc">CRSS</div>
               </div>
             </div>
-            <div className="token_desc">
-              <div className="max_supply">
+            <div className="token_desc pb-5">
+              <div className="max_supply pb-5">
                 <h5 className="topic">Maximum Supply</h5>
                 <div className="content">
-                  <h6>50,000,000</h6>
-                  <div className="special">
-                    <b className="textBlue">$CRSS</b>
-                  </div>
+                  <h6>50,000,000 <b className="textBlue">CRSS</b></h6>
                 </div>
               </div>
-              <div className="emission_rate">
+              <div className="emission_rate pb-5">
                 <h5 className="topic">Emission Rate</h5>
                 <div className="content">
-                  <h6>first 14 days</h6>
-                  <div className="special">
-                    <b className="textBlue">1.2</b>
-                  </div>
+                  <h6>first 14 days <b className="textBlue">1.2</b></h6>
                 </div>
                 <div className="content">
-                  <h6>after 14 days</h6>
-                  <div className="special">
-                    <b className="textBlue">1</b>
-                  </div>
+                  <h6>after 14 days <b className="textBlue">1</b></h6>
                 </div>
               </div>
               <div className="teamToken">
-                <h5>No Team Tokens</h5>
-                <h6>share of emission going to team wallet: <b className="textBlue">8%</b></h6>
+                <h5>No VC or Team Tokens</h5>
+                <h6>share of emission going to team wallet <b className="textBlue">8%</b></h6>
               </div>
 
             </div>
           </div>
 
-          <div className="tokenomic_block">
+          <div className="tokenomic_block pb-5">
             <div className="token_avata_wrap">
               <img src={xcrss} className="tokenMainImg" />
               <img src={xcrssAvatarImg} className="tokenAvatar" />
@@ -77,8 +68,12 @@ const SectionTokenomicV2 = (props) => {
                 <div className="desc">XCRSS</div>
               </div>
             </div>
-            <div className="token_desc">
-              <div className="desc">
+            <div className="token_desc pb-5">
+              <div className="desc pb-5">
+                <h5>Pre-Sale Tokens</h5>
+                <h6>maximum amount for sale <b className="textBlue">3M</b> or <b className="textBlue">6%</b></h6>
+              </div>
+              <div className="desc pb-5">
                 <h5>Rewards Vesting</h5>
                 <h6><b className="textBlue">50%</b> of rewards distributed in farms and pools are paid out in XCRSS token, which is linearly vested into CRSS within 5 months, with <b className="textBlue">20%</b> unlocked every 30 days.</h6>
               </div>

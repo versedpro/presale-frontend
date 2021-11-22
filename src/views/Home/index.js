@@ -93,7 +93,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <ConnectModal login={login} wallletOpen={wallletOpen} setWallletOpen={setWallletOpen} />
+      <ConnectModal login={login} wallletOpen={wallletOpen} setWallletOpen={setWallletOpen} setShowPresaleInfo={setShowPresaleInfo} />
       <div className={isDark ? 'main_body' : 'main_body light-theme'}>
         <header className="nav_wrapper">
           {/** nav header starts */}
@@ -106,8 +106,16 @@ const Home = () => {
                   isDark ? (<img src="assets/images/logo@3x.png" className="nav_logo" id="crosswise_logo" />) :
                     <img src="assets/images/logo-light-theme-2.png" className="nav_logo" id="crosswise_logo" />
                 }
-
               </a>
+              {address === null ?
+                (<a className="nav-link btn btn_signIN btn_primary mobile-btn" onClick={onConnectHandle}>Connect</a>
+                ) : (
+                  <>
+                    {!showPresaleInfo && (
+                      <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN mobile-btn">Buy Tokens</button>
+                    )}
+                  </>
+                )}
               {/* <!-- Toggler/collapsibe Button --> */}
               <button className="navbar-toggler collapsibleNavbar" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
@@ -167,7 +175,7 @@ const Home = () => {
 
                   {
                     address === null ?
-                      (<li className="nav-item">
+                      (<li className="nav-item in-menu">
                         <a className="nav-link btn btn_signIN btn_primary" onClick={onConnectHandle}>Connect</a>
                       </li>
                       ) : (
@@ -185,23 +193,14 @@ const Home = () => {
                             </li>
                           }
 
-                          <li className="nav-item">
-                            {/* <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens> */}
-                            {showPresaleInfo ? (
-                              <button onClick={showHome} className="btn btn_primary buy-token-button btn_signIN">Go Back</button>
-                            ) : (
+                          <li className="nav-item in-menu">
+                            {!showPresaleInfo && (
                               <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN">Buy Tokens</button>
                             )}
                           </li>
                         </>
                       )
                   }
-                  <li className="nav-item">
-                    <a className="nav-link btn btn_signIN btn_primary" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c" rel="noreferrer">How To Buy</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link btn btn_signIN btn_primary" href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
-                  </li>
                 </ul>
               </div>
             </div>

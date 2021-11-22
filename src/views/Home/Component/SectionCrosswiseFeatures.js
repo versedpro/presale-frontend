@@ -1,5 +1,5 @@
 import React, { Component, Fragment, useState, useContext } from "react";
-import { Container , Input} from 'reactstrap';
+import { Container, Input } from 'reactstrap';
 
 import Slider from "react-slick";
 import 'react-accessible-accordion/dist/fancy-example.css';
@@ -18,58 +18,58 @@ import FeatImg3 from '../../../assets/images/crosswise/feature/img_crosswise_f_3
 
 const SectionCrosswiseFeatures = (props) => {
 
-    const { isDark, toggleTheme } = useContext(ThemeContext)
-    
-    return (
-          <section className="crosswise_feature_section">
-            <Container>
-                <Row>
-                    <div className="title">
-                        <h1>Crosswise Features</h1>
-                    </div>
-                </Row>
-               
-              <div className="features_group">
-                  <div className="features_item">
-                    <div className="features_item_icon">
-                        <img src={FeatImg1} />
-                    </div>
-                    <div className="features_title">
-                        <h6>Launchpad & Incubator</h6>
-                    </div>
-                    <div className="features_desc">
-                    Crosswise features a launchpad coupled with an incubation program to help budding entrepreneurs launch on crosswise DEX. Support will include funding, marketing, networking, as well as technical assistance to help projects deploy to our multi-chain ecosystem.
-                    </div>
-                  </div>
+  const { isDark, toggleTheme } = useContext(ThemeContext)
 
-                  <div className="features_item">
-                    <div className="features_item_icon">
-                        <img src={FeatImg2} />
-                    </div>
-                    <div className="features_title">
-                        <h6>Solid Infrastructure</h6>
-                    </div>
-                    <div className="features_desc">
-                    Crosswise platform is capable of handling high user loads, during both peak trading and IDO hours. Our state-of-the-art IT infrastructure provides users with the best security, uptime, and premium tools built for a multi-chain environment.
-                    </div>
-                  </div>
+  return (
+    <section className="crosswise_feature_section">
+      <Container>
+        <Row>
+          <div className="title">
+            <h1>Crosswise Features</h1>
+          </div>
+        </Row>
 
-                  <div className="features_item">
-                    <div className="features_item_icon">
-                        <img src={FeatImg3} />
-                    </div>
-                    <div className="features_title">
-                        <h6>User-Friendly DEX</h6>
-                    </div>
-                    <div className="features_desc">
-                    Crosswise is tightly integrating tools such as an Order Book, Analytics, Explorer, Price Charts, Account Statistics, Affiliate Rewards with a friendly user interface for a next-gen DEX experience. We're also bringing back real support to the DEX space, to ensure accessibility and customer satisfaction.
-                    </div>
-                  </div>
+        <div className="features_group">
+          <div className="features_item">
+            <div className="features_item_icon">
+              <img src={FeatImg1} />
+            </div>
+            <div className="features_title">
+              <h5 className="topic">Launchpad & Incubator</h5>
+            </div>
+            <div className="features_desc">
+              Crosswise features a launchpad coupled with an incubation program to help budding entrepreneurs launch on crosswise DEX. Support will include funding, marketing, networking, as well as technical assistance to help projects deploy to our multi-chain ecosystem.
+            </div>
+          </div>
 
-              </div>
-            </Container>
-          </section>
-        );
+          <div className="features_item">
+            <div className="features_item_icon">
+              <img src={FeatImg2} />
+            </div>
+            <div className="features_title">
+              <h5 className="topic">Solid Infrastructure</h5>
+            </div>
+            <div className="features_desc">
+              Crosswise platform is capable of handling high user loads, during both peak trading and IDO hours. Our state-of-the-art IT infrastructure provides users with the best security, uptime, and premium tools built for a multi-chain environment.
+            </div>
+          </div>
+
+          <div className="features_item">
+            <div className="features_item_icon">
+              <img src={FeatImg3} />
+            </div>
+            <div className="features_title">
+              <h5 className="topic">User-Friendly DEX</h5>
+            </div>
+            <div className="features_desc">
+              Crosswise is tightly integrating tools such as an Order Book, Analytics, Explorer, Price Charts, Account Statistics, Affiliate Rewards with a friendly user interface for a next-gen DEX experience. We're also bringing back real support to the DEX space, to ensure accessibility and customer satisfaction.
+            </div>
+          </div>
+
+        </div>
+      </Container>
+    </section>
+  );
 }
 
 export default SectionCrosswiseFeatures;

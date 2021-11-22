@@ -187,26 +187,41 @@ const SectionHeader = (props) => {
             <Row>
               <div className="header_section_left">
                 <h1>Cross-Chain DEX 2.0 With Built-In Tools & Gas Savings</h1>
-                <p className="desc">crosswise takes the trading experience on DEX to the next level with tighter security, a friendly interface, cross-chain transactions, gasless swaps, verified listings and the right tools, tightly integrated.</p>
+                <p className="desc">Crosswise takes the DEX trading experience to the next level! Tighter security,  cross-chain transactions, gasless swaps, verified listings and the right tools. All tightly integrated and easy to use.</p>
                 <Row className="mt-3">
-                  <Col className="mt-3">
-                    <a className="btn btn_primary p-2 custom-btn" href={pdf} target="_blank">Litepaper</a>
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_whitelisted custom-btn" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank" rel="noreferrer">Get Whitelisted</a>
                   </Col>
-                  <Col className="mt-3">
-                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pitchdeck} target="_blank">Pitchdeck</a>
-                  </Col>
-                  <Col className="mt-3">
-                    <a className="btn btn_primary p-2 btn_whitelisted custom-btn" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank">Get Whitelisted</a>
-                  </Col>
-                  <Col className="mt-3">
-                    <a className="btn btn_primary p-2 btn_audit custom-btn" href={audit_pdf} target="_blank">TechRate Audit</a>
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 custom-btn" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c" rel="noreferrer">How To Buy</a>
                   </Col>
                 </Row>
-                <Row>
-                  <Col sm={4} xs={12}><a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn mt-3" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale Contract</a></Col>
-                  <Col sm={4} xs={12}><a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn mt-3" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS Contract</a></Col>
+                <Row className="mt-3">
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pdf} target="_blank" rel="noreferrer">Litepaper</a>
+                  </Col>
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pitchdeck} target="_blank" rel="noreferrer">Pitchdeck</a>
+                  </Col>
                 </Row>
                 <Row className="mt-3">
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={preSaleContract} target="_blank" rel="noreferrer">
+                      <img className="scan_img" src={bscscanImg} alt="" />Pre-Sale
+                    </a>
+                  </Col>
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={crssContract} target="_blank" rel="noreferrer">
+                      <img className="scan_img" src={bscscanImg} alt="" />CRSS
+                    </a>
+                  </Col>
+                </Row>
+                <Row className="mt-3">
+                  <Col sm={4} xs={12}>
+                    <a className="btn btn_primary p-2 btn_audit custom-btn" href={audit_pdf} target="_blank" rel="noreferrer">TechRate Audit</a>
+                  </Col>
+                </Row>
+                <Row className="mt-4">
                   <Col className="text-center social-icon">
                     <div className="dapp_bar shadow">
                       <div>

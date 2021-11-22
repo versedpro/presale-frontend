@@ -512,10 +512,6 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={spinnerImg} />
-                                        <div className="content-text">Release on Polygon</div>
-                                    </div>
-                                    <div className="content-desc">
-                                        <img src={spinnerImg} />
                                         <div className="content-text">Extended Chart Features</div>
                                     </div>
                                     <div className="content-desc">

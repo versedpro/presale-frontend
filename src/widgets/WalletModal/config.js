@@ -11,19 +11,19 @@ const connectorNames = {
 export const connectors = [
   {
     title: 'MetaMask',
-    desc: `The web's favorite wallet, get yours <a href='https://metamask.io/download.html' target='_blank'><b className="textBlue">here</b></a>`,
+    desc: `Desktop Chrome or Mobile MetaMask Dapp browser`,
     icon: metaMaskIcon,
     connectorId: connectorNames.Injected,
   },
   {
     title: 'TrustWallet',
-    desc: `Binance's popular mobile wallet, get yours <a href='https://trustwallet.com/' target='_blank'><b className="textBlue">here</b></a>`,
+    desc: `TrustWallet Dapp browser only`,
     icon: trueWalletIcon,
     connectorId: connectorNames.Injected,
   },
   {
     title: 'WalletConnect',
-    desc: `Use Trust Wallet, Coinomi, Crypto.com & more...`,
+    desc: `Mobile Chrome with MetaMask, TrustWallet, Coinomi, & more`,
     icon: walletConnectIcon,
     connectorId: connectorNames.WalletConnect,
   },

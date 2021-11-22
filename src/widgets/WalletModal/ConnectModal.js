@@ -10,7 +10,7 @@ import modalCloseBtn from "../../assets/images/modalCloseBtn.svg"
 
 import WalletCard from './WalletCard';
 import { connectors } from './config';
-const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
+const ConnectModal = ({ login, wallletOpen, setWallletOpen, setShowPresaleInfo }) => {
 
   const modalRef = useRef(null);
 
@@ -36,22 +36,11 @@ const ConnectModal = ({ login, wallletOpen, setWallletOpen }) => {
             login={login}
             walletConfig={entry}
             setWallletOpen={setWallletOpen}
+            setShowPresaleInfo={setShowPresaleInfo}
             mb={index < connectors.length - 1 ? '8px' : '0'}
           />
         ))}
       </Row>
-      {/* <div className={"ModalBtnWrapper"}>
-        {connectors.map((entry, index) => (
-          <WalletCard
-          key={entry.title}
-          desc={entry.desc}
-          login={login}
-          walletConfig={entry}
-          setWallletOpen={setWallletOpen}
-          mb={index < connectors.length - 1 ? '8px' : '0'}
-          />
-          ))}
-        </div> */}
     </Modal>
   );
 };

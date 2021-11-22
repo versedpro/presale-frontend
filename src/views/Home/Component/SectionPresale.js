@@ -1,6 +1,7 @@
 import React, { Component, Fragment, useState, useContext, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { Container } from 'reactstrap';
+import { Container, Tooltip } from 'reactstrap';
+import CopyToClipboard from "react-copy-to-clipboard";
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Row, Col } from 'reactstrap';
 import BigNumber from 'bignumber.js';
@@ -25,6 +26,8 @@ import {
 const SectionHeader = (props) => {
   const address = useSelector(state => state.authUser.address);
   const { isDark, toggleTheme } = useContext(ThemeContext);
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+  const [copyText, setCopytext] = useState('Click to copy.');
   const {
     register,
     handleSubmit,
@@ -39,6 +42,10 @@ const SectionHeader = (props) => {
   const [depositAmount, setDepositAmount] = useState(new BigNumber(0));
   const [unlockedAmount, setUnlockedAmount] = useState(new BigNumber(0));
   const [crssAllowrance, setCrssAllowrance] = useState(web3.utils.toBN(0));
+
+  const toggle = () => {
+    setTooltipOpen(!tooltipOpen);
+  }
 
   useEffect(() => {
     loadUserDetail();
@@ -86,7 +93,11 @@ const SectionHeader = (props) => {
 
   return (
     // <section className="header_section section-presale" style={isDark? {backgroundImage: 'url('+ backgroundCloud +')'}: {}}>
+
     <section className="header_section section-presale">
+      <Tooltip placement="top" isOpen={tooltipOpen} target="address-tooltip" toggle={toggle}>
+        {copyText}
+      </Tooltip>
 
       <Container className="buy-token-container">
         <Row className="w-100">
@@ -115,10 +126,10 @@ const SectionHeader = (props) => {
 
                 <div className="buy-tokens">
                   {
-                    crssAllowrance.toString() === "0" ? (<button className="btn btn_primary" onClick={approveTokens}>
+                    crssAllowrance.toString() === "0" ? (<button className="btn btn_primary presale-btns" onClick={approveTokens}>
                       Approve Contract </button>) :
                       (
-                        <button className="btn btn_primary buy-token-btn" type="submit">
+                        <button className="btn btn_primary buy-token-btn presale-btns" type="submit">
                           Buy Tokens
                         </button>
                       )
@@ -160,16 +171,33 @@ const SectionHeader = (props) => {
             </div> */}
 
               <div className="claim_section">
-                <button className="btn btn_primary claim-button" onClick={claimToken}>Withdraw Tokens</button>
+                <button className="btn btn_primary claim-button presale-btns" onClick={claimToken}>Withdraw Tokens</button>
               </div>
             </div>
           </div>
-          <div className="presale-desc">
-            <p style={{ fontSize: '14px' }}>All transactions are private and secure. 20% of tokens unlock every 30 days. Once unlocked, you can withdraw them to your wallet.</p>
+          <div className="presale-desc w-100">
+            <p className="presale-sub-desc">
+              All transactions are anonymous and secure. Tokens are vested within <b className="textBlue">5</b> months linearly, with <b className="textBlue">20%</b> unlocked every <b className="textBlue">30</b> days, starting from time of purchase. That means every <b className="textBlue">30</b> days, <b className="textBlue">20%</b> of that batch of tokens will be unlocked. Once unlocked, you can withdraw them to your wallet.Please add our token address to your wallet so that you see them in your assets when you withdraw them:
+              <p className="presale-address mt-3">
+                <CopyToClipboard
+                  text={'0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1'}
+                  id="address-tooltip"
+                  onCopy={() => {
+                    setCopytext('Copied');
+                  }}
+                  onMouseOut={() => {
+                    setCopytext('Click to copy.');
+                  }}
+                >
+                  <b className="textBlue">0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1</b>
+                </CopyToClipboard>
+              </p>
+              We recommend leaving your tokens until we launch in December. At that point you can withdraw the unlocked balance and use it to farm or provide liquidity to earn more <b className="textBlue">CRSS</b>!
+            </p>
           </div>
         </Row>
       </Container>
-    </section>
+    </section >
   );
 }
 
