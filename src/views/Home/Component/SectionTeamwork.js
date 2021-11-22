@@ -48,13 +48,6 @@ const SectionTeamwork = (props) => {
             desc: `DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor's degree in software engineering.`
         },
         {
-            image: Yehor,
-            name: 'Yehor Oshodin',
-            linkedIn: 'https://www.linkedin.com/in/yehor-oshodin-667962209/',
-            role: 'Senior Front-End Developer',
-            desc: `Yehor is Croatian, originally from Rijeka. He is a front-end and back-end developer with over 8 years development experience. In recent years, he has spent much of time working on DeFi projects. Yehor always aims to add his own magical touch to any code, and is a natural team player, who understand the importance of open collaboration, and communication. His hobbies are as varied as his coding experience. He enjoys singing, football, volleyball, mountain climbing and ping-pong.`
-        },
-        {
             image: Leon,
             name: 'Leon Jin',
             linkedIn: 'https://www.linkedin.com/in/leon-jin-7013011b9/',
