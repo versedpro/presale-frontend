@@ -195,13 +195,6 @@ const Home = () => {
                               </a>
                             </li>
                           }
-
-                          <li className="nav-item">
-                            {/* <ModalBuyTokens buttonLabel="Buy Tokens" className={isDark ? "dark-theme" : "light-theme"}></ModalBuyTokens> */}
-                            {showPresaleInfo ? <></> : (
-                              <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN">Buy Tokens</button>
-                            )}
-                          </li>
                         </>
                       )
                   }

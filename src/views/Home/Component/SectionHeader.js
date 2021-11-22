@@ -189,30 +189,36 @@ const SectionHeader = (props) => {
                 <h1>Cross-Chain DEX 2.0 With Built-In Tools & Gas Savings</h1>
                 <p className="desc">Crosswise takes the DEX trading experience to the next level! Tighter security,  cross-chain transactions, gasless swaps, verified listings and the right tools. All tightly integrated and easy to use.</p>
                 <Row className="mt-3">
-                  <Col sm={3} xs={12}>
-                    <a data-tf-popup="P1zLEnZ7" className="btn btn_primary p-2 custom-btn">Get Whitelisted</a>
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_whitelisted custom-btn" href="https://x9epe3je3fk.typeform.com/crosswise" target="_blank" rel="noreferrer">Get Whitelisted</a>
                   </Col>
-                  <Col sm={3} xs={12}>
+                  <Col sm={4} xs={6}>
                     <a className="btn btn_primary p-2 custom-btn" target="_blank" href="https://crosswise.notion.site/MetaMask-Needed-How-to-Buy-More-Details-about-the-Presale-f68a173c9b024949b6844519a537196c" rel="noreferrer">How To Buy</a>
                   </Col>
                 </Row>
-                <Row className="mt-4">
-                  <Col sm={3} xs={12} className="second-section-first">
-                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pdf} target="_blank">Litepaper</a>
+                <Row className="mt-3">
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pdf} target="_blank" rel="noreferrer">Litepaper</a>
                   </Col>
-                  <Col sm={3} xs={12} className="second-section-second">
-                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pitchdeck} target="_blank">Pitchdeck</a>
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pitchdeck} target="_blank" rel="noreferrer">Pitchdeck</a>
                   </Col>
                 </Row>
-                <Row className="mt-4">
-                  <Col sm={3} xs={12}>
-                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={preSaleContract} target="_blank"><img className="scan_img" src={bscscanImg} />Pre-Sale</a>
+                <Row className="mt-3">
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={preSaleContract} target="_blank" rel="noreferrer">
+                      <img className="scan_img" src={bscscanImg} alt="" />Pre-Sale
+                    </a>
                   </Col>
-                  <Col sm={3} xs={12}>
-                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={crssContract} target="_blank"><img className="scan_img" src={bscscanImg} />CRSS</a>
+                  <Col sm={4} xs={6}>
+                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={crssContract} target="_blank" rel="noreferrer">
+                      <img className="scan_img" src={bscscanImg} alt="" />CRSS
+                    </a>
                   </Col>
-                  <Col sm={3} xs={12}>
-                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={audit_pdf} target="_blank">TechRate Audit</a>
+                </Row>
+                <Row className="mt-3">
+                  <Col sm={4} xs={12}>
+                    <a className="btn btn_primary p-2 btn_audit custom-btn" href={audit_pdf} target="_blank" rel="noreferrer">TechRate Audit</a>
                   </Col>
                 </Row>
                 <Row className="mt-4">

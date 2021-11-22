@@ -227,7 +227,6 @@
 }
 
 .header_section .header_section_left {
-    padding-top: 40px;
     padding-bottom: 100px;
 }
 
@@ -1887,7 +1886,7 @@ img.vert-move {
         display: block;
     }
     .header_section {
-        padding-top: 0 !important;
+        padding-top: 40px !important;
     }
     .header_section_left {
         padding: 0;
