@@ -1935,6 +1935,9 @@ img.vert-move {
     .mobile-btn {
         display: flex;
     }
+    .in-menu {
+        display: none;
+    }
 }
 
 @media only screen and (max-width:598px) {

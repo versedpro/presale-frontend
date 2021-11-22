@@ -58,7 +58,6 @@ const Home = () => {
   const handleLogout = () => {
     logout();
     setShowPresaleInfo(false);
-    showHome()
   }
   const showPresale = () => setShowPresaleInfo(true)
   const showHome = () => setShowPresaleInfo(false)
@@ -176,7 +175,7 @@ const Home = () => {
 
                   {
                     address === null ?
-                      (<li className="nav-item">
+                      (<li className="nav-item in-menu">
                         <a className="nav-link btn btn_signIN btn_primary" onClick={onConnectHandle}>Connect</a>
                       </li>
                       ) : (
@@ -193,6 +192,12 @@ const Home = () => {
                               </a>
                             </li>
                           }
+
+                          <li className="nav-item in-menu">
+                            {!showPresaleInfo && (
+                              <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN">Buy Tokens</button>
+                            )}
+                          </li>
                         </>
                       )
                   }
