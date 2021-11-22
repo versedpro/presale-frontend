@@ -112,9 +112,7 @@ const Home = () => {
                 (<a className="nav-link btn btn_signIN btn_primary mobile-btn" onClick={onConnectHandle}>Connect</a>
                 ) : (
                   <>
-                    {showPresaleInfo ? <a className="nav-link btn btn_signIN btn_primary mobile-btn" onClick={handleLogout}>
-                      Logout
-                    </a> : (
+                    {!showPresaleInfo && (
                       <button onClick={showPresale} className="btn btn_primary buy-token-button btn_signIN mobile-btn">Buy Tokens</button>
                     )}
                   </>
