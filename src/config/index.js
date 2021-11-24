@@ -33,7 +33,7 @@ export const config = {
       97: '0xB824C16fcbDc74f98691E67644f492780e1BDB61'
     },
     presale2: {
-      56: '0xAd3f5A4526fbEd82A865d1BaeF14153488f86487',
+      56: '0x3DC2b7E5dc5274C2d603342E73D1d0A9DE96796A',
       97: '0xb70E68d2e908481afaE5bCfF788972ff3af7Ab25'
     },
     busd: {
