@@ -342,7 +342,7 @@ const SectionHeader = (props) => {
                           Hard Cap
                         </p>
                         <h6>
-                          775,000 BUSD
+                          750,000 BUSD
                         </h6>
                       </div>
                       <div className="presale_info_rectangle long_width">
@@ -368,7 +368,7 @@ const SectionHeader = (props) => {
 
                     <div className="presale_tips">
                       <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{parseInt(raised).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
-                      <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;775,000 BUSD</span></div>
+                      <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;750,000 BUSD</span></div>
                     </div>
 
                     <div className="presale_progress">
