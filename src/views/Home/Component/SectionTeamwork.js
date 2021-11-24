@@ -73,7 +73,7 @@ const SectionTeamwork = (props) => {
             name: 'James Yin',
             linkedIn: 'https://www.linkedin.com/in/yin-james-a303631b7/',
             role: 'Senior Back-End Developer',
-            desc: `James specializes in smart contract and Dapp development at Crosswise. He is an accomplished back-end and front-end developer with over 8 years experience building web and mobile applications. He has accumulated extensive experience in blockchain development, contributing to a wide range of DeFi projects. James is a particularly creative and innovative developer. <`
+            desc: `James specializes in smart contract and Dapp development at Crosswise. He is an accomplished back-end and front-end developer with over 8 years experience building web and mobile applications. He has accumulated extensive experience in blockchain development, contributing to a wide range of DeFi projects. James is a particularly creative and innovative developer.`
         },
     ]
 
@@ -93,8 +93,8 @@ const SectionTeamwork = (props) => {
                                 <div className="gallery_photo shadow">
                                     <img className="user_img_top" src={member.image} />
                                     {
-                                        isDark ? (<a className="linkedin_img_icon" href={member.linkedIn} target="_blank"><img src={linkedinBlackIcon} /></a>) :
-                                            (<a className="linkedin_img_icon" href={member.linkedIn} target="_blank"><img src={linkedinLightIcon} /> </a>)
+                                        isDark ? (<a className="linkedin_img_icon" href={member.linkedIn} target="_blank" rel="noreferrer"><img src={linkedinBlackIcon} /></a>) :
+                                            (<a className="linkedin_img_icon" href={member.linkedIn} target="_blank" rel="noreferrer"><img src={linkedinLightIcon} /> </a>)
                                     }
                                     <div className="card-img-overlay p-3">
                                     </div>

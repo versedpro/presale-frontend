@@ -1,10 +1,24 @@
+import sample from 'lodash/sample'
+
 require('dotenv').config();
 
-const web3Provider = process.env.REACT_APP_NETWORK_ID === '56'
-  ? process.env.REACT_APP_BSC_WEB3_PROVIDER
-  : process.env.REACT_APP_BSC_TEST_WEB3_PROVIDER
+export const REACT_APP_CHAIN_ID = parseInt(process.env.REACT_APP_NETWORK_ID, 10);
 
-// console.log(process.env.REACT_APP_NETWORK_ID)
+export const POLLING_INTERVAL = 12000
+
+export const REACT_APP_NODE_1 = process.env.REACT_APP_NODE_1;
+
+export const REACT_APP_NODE_2 = process.env.REACT_APP_NODE_2;
+
+export const REACT_APP_NODE_3 = process.env.REACT_APP_NODE_3;
+
+export const nodes = [REACT_APP_NODE_1, REACT_APP_NODE_2, REACT_APP_NODE_3]
+
+export const getRpcUrl = () => {
+  return sample(nodes)
+}
+
+const web3Provider = getRpcUrl();
 
 export const config = {
   web3Provider: web3Provider,
@@ -35,14 +49,3 @@ export const connectorNames = {
   BSC: 'bsc',
   WalletConnect: 'WalletConnect',
 }
-
-export const REACT_APP_CHAIN_ID = 56;
-
-export const POLLING_INTERVAL = 12000
-
-export const REACT_APP_NODE_1 = "https://bsc-dataseed1.ninicoin.io"
-
-export const REACT_APP_NODE_2 = "https://bsc-dataseed1.defibit.io"
-
-export const REACT_APP_NODE_3 = "https://bsc-dataseed.binance.org"
-

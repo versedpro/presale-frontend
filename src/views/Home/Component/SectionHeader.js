@@ -229,30 +229,30 @@ const SectionHeader = (props) => {
                       </div>
                       <div className="social_links">
                         <ul className="list-group list-group-horizontal">
-                          <a href="https://discord.gg/4BuwxMz24J" target="_blank" className="list-group-item list-group-item-action">
+                          <a href="https://discord.gg/4BuwxMz24J" target="_blank" className="list-group-item list-group-item-action" rel="noreferrer">
                             {
                               isDark ? (<img src={Discord} alt="discord.png" />) :
                                 (<img src={DiscordLight} alt="discord.png" />)
                             }
                           </a>
-                          <a href="https://crosswise.medium.com/" target="_blank" className="list-group-item list-group-item-action">
+                          <a href="https://crosswise.medium.com/" target="_blank" className="list-group-item list-group-item-action" rel="noreferrer">
                             {isDark ? (<img src={M} alt="m.png" />) :
                               (<img src={MLight} alt="m.png" />)
                             }
                           </a>
-                          <a href="https://t.me/crosswise" target="_blank" className="list-group-item list-group-item-action">
+                          <a href="https://t.me/crosswise" target="_blank" className="list-group-item list-group-item-action" rel="noreferrer">
                             {
                               isDark ? (<img src={Paperplane} alt="paperplane.png" />) :
                                 (<img src={PaperplaneLight} alt="paperplane.png" />)
                             }
                           </a>
-                          <a href="https://github.com/crosswise-finance" target="_blank" className="list-group-item list-group-item-action">
+                          <a href="https://github.com/crosswise-finance" target="_blank" className="list-group-item list-group-item-action" rel="noreferrer">
                             {
                               isDark ? (<img src={Git} alt="git.png" />) :
                                 (<img src={GitLight} alt="git.png" />)
                             }
                           </a>
-                          <a href="https://twitter.com/crosswisefi" target="_blank" className="list-group-item list-group-item-action">
+                          <a href="https://twitter.com/crosswisefi" target="_blank" className="list-group-item list-group-item-action" rel="noreferrer">
                             {
                               isDark ? (<img src={Twitter} alt="twitter.png" />) :
                                 (<img src={TwitterLight} alt="twitter.png" />)
@@ -270,7 +270,7 @@ const SectionHeader = (props) => {
             <Row>
               <div className="header_section_right">
                 <div className="header_presale_board">
-                  <h5>Pre-Sale Sold Out</h5>
+                  <h5>Pre-Sale Round 1: Sold Out</h5>
 
                   {/* <div className="presale_counter">
                     <div className="count_el">
@@ -362,6 +362,17 @@ const SectionHeader = (props) => {
                       <h6 className={parseFloat(web3.utils.fromWei(tokenPrice)) > 0.3 ? "highlight active" : ""}>
                         Stage 3 = 1 Million CRSS @ 0.6 BUSD
                       </h6>
+                    </div>
+
+                    {/* Anouncement for Round 2 */}
+                    <div className="presale_info_rectangle_left presale_info_rectangle">
+                      <p>Launch Price</p>
+                      <h6>0.75 BUSD</h6>
+                    </div>
+
+                    <div className="presale_info_rectangle_right presale_info_rectangle">
+                      <p>Launch Date</p>
+                      <h6>Dec 2021</h6>
                     </div>
                   </div>
 

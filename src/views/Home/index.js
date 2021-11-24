@@ -128,7 +128,7 @@ const Home = () => {
                     <a className="nav-link" href="#about" onClick={toogleToolbar}><span>About</span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#tokenomic" onClick={toogleToolbar}><span>Tokenomics </span></a>
+                    <a className="nav-link" href="#tokenomics" onClick={toogleToolbar}><span>Tokenomics </span></a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#roadmap" onClick={toogleToolbar}><span>Roadmap </span></a>

@@ -17,12 +17,12 @@ import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
 import Cookies from 'universal-cookie';
 
+import { REACT_APP_CHAIN_ID } from '../config';
+import { connector } from '../crosswise/web3';
 import { connectorsByName } from '../utils/web3React'
 import { setupNetwork } from '../utils/wallet'
 import { setAddress, setNetworkId } from '../redux/actions';
 
-import { connector } from '../crosswise/web3';
-import { REACT_APP_CHAIN_ID } from '../config';
 
 const useAuth = () => {
   const dispatch = useDispatch()

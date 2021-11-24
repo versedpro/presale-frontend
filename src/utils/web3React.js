@@ -2,11 +2,10 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import { ethers } from 'ethers'
-import getNodeUrl from './getRpcUrl'
+import { getRpcUrl, REACT_APP_CHAIN_ID, POLLING_INTERVAL, connectorNames } from '../config'
 
-import { REACT_APP_CHAIN_ID, POLLING_INTERVAL, connectorNames } from '../config'
 
-const rpcUrl = getNodeUrl()
+const rpcUrl = getRpcUrl()
 const chainId = parseInt(REACT_APP_CHAIN_ID, 10)
 
 const injected = new InjectedConnector({ supportedChainIds: [chainId] })
