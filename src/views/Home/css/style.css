@@ -201,7 +201,6 @@
 }
 
 .claim-button {
-    margin-top: 30px;
     float: right;
 }
 
@@ -220,6 +219,10 @@
 }
 
 .section-presale .presale_info.carousel-second {}
+
+.presale_round2 {
+    padding-bottom: 35px;
+}
 
 .header_section {
     background-position: center;
@@ -2247,4 +2250,21 @@ img.vert-move {
 
 .light-theme .carousel .control-next.control-arrow:hover:before {
     border-left: 8px solid #fff;
+}
+
+.carousel .control-dots .dot {
+    width: 6px !important;
+    height: 6px !important;
+    margin: 0px 16px !important;
+}
+
+.carousel .control-dots .dot {
+    background: #000 !important;
+    opacity: 0.25;
+}
+
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
+    box-shadow: 1px 1px 2px #0b8e90 !important;
+    background: #0b8e90 !important;
+    opacity: 0.75;
 }

@@ -97,16 +97,17 @@ const SectionHeader = (props) => {
   }
 
   const buyTokens = async () => {
+    if (amountToDeposit < 1) return;
     const checkWhitelist = await checkWhitelistMember2(address);
     if (!checkWhitelist) {
-      alert("Before buying tokens, You must be added as a whitelist member. You can see 'Get Whitelisted' button at the header");
+      alert("Your wallet is not yet whitelisted. Please click on \"Get Whitelisted\" on our homepage to whitelist your wallet, or wait for confirmation if you have already done so. ");
       return;
     }
     try {
       const result = await deposit2(web3.utils.toWei(amountToDeposit), address);
     } catch (error) {
       console.log(error);
-      alert('Transaction has been reverted by the EVM. Please take a look at broswer console and refresh page.');
+      alert('Transaction has been reverted by the EVM. Please take a look at browser console and refresh page.');
     }
   }
 
@@ -187,7 +188,7 @@ const SectionHeader = (props) => {
                   showStatus={false}
                   autoPlay={false}
                   showThumbs={false}
-                  showIndicators={false}
+                  showIndicators={true}
                   onChange={handleCarouselChange}
                 >
                   <div className="presale_round2">

@@ -298,7 +298,7 @@ const SectionHeader = (props) => {
                   showStatus={false}
                   autoPlay={false}
                   showThumbs={false}
-                  showIndicators={false}
+                  showIndicators={true}
                 >
                   <div className="header_presale_board_round2">
                     <h5>Pre-Sale Round 2: Open</h5>
