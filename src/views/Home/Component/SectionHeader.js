@@ -347,10 +347,10 @@ const SectionHeader = (props) => {
                       </div>
                       <div className="presale_info_rectangle long_width">
                         <h6 className={parseFloat(web3.utils.fromWei(tokenPrice2)) < 0.8 ? "highlight active" : ""}>
-                          Stage 4 = 500,000 CRSS @ 0.7 BUSD
+                          Stage 1 = 500,000 CRSS @ 0.7 BUSD
                         </h6>
                         <h6 className={parseFloat(web3.utils.fromWei(tokenPrice2)) >= 0.8 ? "highlight active" : ""}>
-                          Stage 5 = 500,000 CRSS @ 0.8 BUSD
+                          Stage 2 = 500,000 CRSS @ 0.8 BUSD
                         </h6>
                       </div>
 
