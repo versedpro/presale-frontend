@@ -93,23 +93,23 @@ const SectionRoadmapV2 = (props) => {
                                                 </div>
                                                 <div className="photo_content">
                                                     <div className="content-desc">
-                                                        <img src={checkImg} />
+                                                        <img src={checkImg} alt="" />
                                                         <div className="content-text">Web & Dapp Design</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                         <img src={checkImg} />
+                                                         <img src={checkImg} alt="" />
                                                         <div className="content-text">Presale Frontend</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                        <img src={spinnerImg} />
+                                                        <img src={checkImg} alt="" />
                                                         <div className="content-text">DAPP Frontend</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                        <img src={checkImg} />
+                                                        <img src={checkImg} alt="" />
                                                         <div className="content-text">Litepaper & Pitchdeck</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                        <img src={spinnerImg} />
+                                                        <img src={spinnerImg} alt="" />
                                                         <div className="content-text">Beta Release</div>
                                                     </div>
                                                 </div>
@@ -123,23 +123,23 @@ const SectionRoadmapV2 = (props) => {
                                                 </div>
                                                 <div className="photo_content">
                                                     <div className="content-desc">
-                                                        <img src={spinnerImg} />
+                                                        <img src={spinnerImg} alt="" />
                                                         <div className="content-text">V1 Release on BSC</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                        <img src={spinnerImg} />
+                                                        <img src={spinnerImg} alt="" />
                                                         <div className="content-text">Limit Orders</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                        <img src={spinnerImg} />
+                                                        <img src={spinnerImg} alt="" />
                                                         <div className="content-text">Statistics / Account Area</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                        <img src={spinnerImg} />
+                                                        <img src={spinnerImg} alt="" />
                                                         <div className="content-text">Explorer</div>
                                                     </div>
                                                     <div className="content-desc">
-                                                        <img src={spinnerImg} />
+                                                        <img src={spinnerImg} alt="" />
                                                         <div className="content-text">Anti Bot Features</div>
                                                     </div>
                                                 </div>
