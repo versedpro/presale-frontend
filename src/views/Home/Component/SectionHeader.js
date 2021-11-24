@@ -333,7 +333,7 @@ const SectionHeader = (props) => {
                           Soft Cap
                         </p>
                         <h6>
-                          0 BUSD
+                          1 BUSD
                         </h6>
                       </div>
 
