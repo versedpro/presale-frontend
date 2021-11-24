@@ -90,13 +90,13 @@ const SectionPresaleBottom = (props) => {
                     <div className="presale_stages">
                         <div className="s_diagram size_md round2">
                             <div className="stage_item">
-                                <div className="item_title">Stage 4</div>
+                                <div className="item_title">Stage 1</div>
                                 <h6 className="item_desc pt-30">Price <b>0.7 BUSD</b></h6>
                                 <h6 className="item_desc">0.5M Tokens = 350K BUSD</h6>
                             </div>
                             <img src={arrow1} alt="" />
                             <div className="stage_item">
-                                <div className="item_title">Stage 5</div>
+                                <div className="item_title">Stage 2</div>
                                 <h6 className="item_desc pt-30">Price <b>0.8 BUSD</b></h6>
                                 <h6 className="item_desc">0.5M Tokens = 400K BUSD</h6>
                             </div>
@@ -104,13 +104,13 @@ const SectionPresaleBottom = (props) => {
 
                         <div className="s_diagram size_sm">
                             <div className="stage_item">
-                                <div className="item_title">Stage 4</div>
+                                <div className="item_title">Stage 1</div>
                                 <h6 className="item_desc  pt-30">Price <b>0.7 BUSD</b></h6>
                                 <h6 className="item_desc">0.5M Tokens = 350K BUSD</h6>
                             </div>
                             <img src={arrow2} className="mt-30" alt="" />
                             <div className="stage_item mt-30">
-                                <div className="item_title">Stage 5</div>
+                                <div className="item_title">Stage 2</div>
                                 <h6 className="item_desc pt-30">Price <b>0.8 BUSD</b></h6>
                                 <h6 className="item_desc">0.5M Tokens = 400K BUSD</h6>
                             </div>
