@@ -70,7 +70,7 @@ const CombinedShape = styled.div`
     content: " ";
     position: absolute;
     bottom: 100%;  /* At the top of the tooltip */
-    left: 50%;
+    left: 18%;
     margin-left: -13px;
     border-width: 8px;
     border-style: solid;

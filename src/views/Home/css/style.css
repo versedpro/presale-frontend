@@ -316,7 +316,7 @@
 
 .header_section .header_section_right .header_presale_board {
     width: 383px;
-    height: 620px;
+    height: 625px;
     /* margin: 0 0 41px 122px; */
     padding: 24px 11px 24px 11px;
     border-radius: 12px;
@@ -350,6 +350,7 @@
 .header_section_right .header_presale_board p {
     font-size: 13px;
     text-align: center;
+    margin-bottom: 3px;
 }
 
 .header_section_right .presale_info {
@@ -361,7 +362,7 @@
 
 .header_section_right .presale_info_rectangle {
     width: 174px;
-    height: 76px;
+    height: 66px;
     /* margin: 24px 25px 24px 0; */
     margin-top: 8px;
     padding: 12px 10px 12px 10px;
@@ -378,7 +379,7 @@
 
 .header_section_right .presale_info_rectangle.token_price {
     width: 100% !important;
-    height: 90px !important;
+    height: 70px !important;
 }
 
 .light-theme .header_section_right .presale_info_rectangle {
@@ -520,7 +521,7 @@ div.presale_progress>div>div:nth-child(3) {
 }
 
 .soft-cap2 {
-    margin: 15px 0px 0 200px;
+    margin: 15px 185px 0 15px;
 }
 
 .hard-cap {
