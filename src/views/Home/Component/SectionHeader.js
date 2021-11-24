@@ -367,7 +367,7 @@ const SectionHeader = (props) => {
                     </div>
 
                     <div className="presale_tips">
-                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{parseInt(raised).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
+                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{parseInt(raised2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
                       <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;750,000 BUSD</span></div>
                     </div>
 
