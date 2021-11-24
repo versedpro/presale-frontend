@@ -134,7 +134,7 @@ const SectionHeader = (props) => {
       const percent = parseFloat((web3.utils.fromWei(tempSoftCap)).toString()) / 1100000 * 100;
       setRaised(web3.utils.fromWei(tempSoftCap));
       setSoftCap(percent);
-      const percent2 = parseFloat((web3.utils.fromWei(tempSoftCap2)).toString()) / 1100000 * 100;
+      const percent2 = parseFloat((web3.utils.fromWei(tempSoftCap2)).toString()) / 750000 * 100;
       setRaised2(web3.utils.fromWei(tempSoftCap2));
       setSoftCap2(percent2);
     }
