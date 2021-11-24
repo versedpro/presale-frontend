@@ -8,8 +8,8 @@ import "react-responsive-modal/styles.css";
 import modalCloseBtn from "../../assets/images/modalCloseBtn.svg"
 
 
-import WalletCard from './WalletCard';
 import { connectors } from './config';
+import WalletCard from './WalletCard';
 const ConnectModal = ({ login, wallletOpen, setWallletOpen, setShowPresaleInfo }) => {
 
   const modalRef = useRef(null);

@@ -1,8 +1,7 @@
 // Set of helper functions to facilitate wallet setup
 import detectEthereumProvider from '@metamask/detect-provider';
-import { BASE_BSC_SCAN_URL } from '../config';
-import { nodes } from './getRpcUrl';
-import { REACT_APP_CHAIN_ID } from '../config'
+import { BASE_BSC_SCAN_URL, REACT_APP_CHAIN_ID } from '../config';
+import { nodes } from '../config';
 
 /**
  * Prompt the user to add BSC as a network on Metamask, or switch to BSC if the wallet is on a different network
