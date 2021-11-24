@@ -333,7 +333,7 @@ const SectionHeader = (props) => {
                           Soft Cap
                         </p>
                         <h6>
-                          375,000 BUSD
+                          0 BUSD
                         </h6>
                       </div>
 
@@ -357,7 +357,7 @@ const SectionHeader = (props) => {
                       {/* Anouncement for Round 2 */}
                       <div className="presale_info_rectangle_left presale_info_rectangle">
                         <p>Launch Price</p>
-                        <h6>0.75 BUSD</h6>
+                        <h6>0.95 BUSD</h6>
                       </div>
 
                       <div className="presale_info_rectangle_right presale_info_rectangle">
@@ -509,7 +509,7 @@ const SectionHeader = (props) => {
                       {/* Anouncement for Round 2 */}
                       <div className="presale_info_rectangle_left presale_info_rectangle">
                         <p>Launch Price</p>
-                        <h6>0.75 BUSD</h6>
+                        <h6>0.95 BUSD</h6>
                       </div>
 
                       <div className="presale_info_rectangle_right presale_info_rectangle">

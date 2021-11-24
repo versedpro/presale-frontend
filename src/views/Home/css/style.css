@@ -205,6 +205,10 @@
     float: right;
 }
 
+.claim-button.disabled {
+    background-image: linear-gradient(178deg, #212429 50%, #141029 100%);
+}
+
 .section-presale .presale_info {
     margin-top: 20px;
     display: flex;
@@ -516,7 +520,7 @@ div.presale_progress>div>div:nth-child(3) {
 }
 
 .soft-cap2 {
-    margin: 15px 40px 0 160px;
+    margin: 15px 0px 0 200px;
 }
 
 .hard-cap {
