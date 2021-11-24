@@ -1,26 +1,29 @@
-import React, { Component, Fragment, useState, useContext, useEffect, useCallback } from "react";
+import React, { useState, useContext, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Container, Tooltip } from 'reactstrap';
 import CopyToClipboard from "react-copy-to-clipboard";
 import 'react-accessible-accordion/dist/fancy-example.css';
-import { Row, Col } from 'reactstrap';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import { Row } from 'reactstrap';
 import BigNumber from 'bignumber.js';
 import useRefresh from '../../../redux/useRefresh'
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
 import "react-step-progress-bar/styles.css";
 import { useForm } from "react-hook-form";
-import backgroundCloud from '../../../assets/images/crosswise/backgroud-could.png';
-import Planet8 from '../../../assets/images/crosswise/planet-8.png';
 import { web3 } from "../../../crosswise/web3";
 import {
   getUserDetail,
+  getUserDetail2,
   getAmountUnlocked,
-  deposit,
+  getAmountUnlocked2,
+  deposit2,
   withdrawToken,
-  checkAllowanceBusd,
-  approveBusd,
-  checkWhitelistMember
+  withdrawToken2,
+  checkAllowanceBusd2,
+  approveBusd2,
+  checkWhitelistMember2
 } from "../../../crosswise/token";
 
 const SectionHeader = (props) => {
@@ -35,13 +38,20 @@ const SectionHeader = (props) => {
   } = useForm();
   const { fastRefresh } = useRefresh()
   const [amountToDeposit, setAmountToDeposit] = useState();
-
-  const [totalRewardAmount, setTotalRewardAmount] = useState(new BigNumber(0));
-  const [withdrawAmount, setWithdrawAmount] = useState(new BigNumber(0));
+  const [crssAllowrance, setCrssAllowrance] = useState(web3.utils.toBN(0));
+  
   const [depositTime, setDepositTime] = useState();
   const [depositAmount, setDepositAmount] = useState(new BigNumber(0));
   const [unlockedAmount, setUnlockedAmount] = useState(new BigNumber(0));
-  const [crssAllowrance, setCrssAllowrance] = useState(web3.utils.toBN(0));
+  const [totalRewardAmount, setTotalRewardAmount] = useState(new BigNumber(0));
+  const [withdrawAmount, setWithdrawAmount] = useState(new BigNumber(0));
+
+  const [depositAmount2, setDepositAmount2] = useState(new BigNumber(0));
+  const [unlockedAmount2, setUnlockedAmount2] = useState(new BigNumber(0));
+  const [totalRewardAmount2, setTotalRewardAmount2] = useState(new BigNumber(0));
+  const [withdrawAmount2, setWithdrawAmount2] = useState(new BigNumber(0));
+
+  const [round, setRound] = useState(2); // current is Round 2
 
   const toggle = () => {
     setTooltipOpen(!tooltipOpen);
@@ -49,38 +59,51 @@ const SectionHeader = (props) => {
 
   useEffect(() => {
     loadUserDetail();
-  }, [address, fastRefresh]);
+  }, [address, round, fastRefresh]);
 
   const loadUserDetail = useCallback(async () => {
-    const result = await getUserDetail(address);
-    const tokenAllowrance = await checkAllowanceBusd(address);
-    // console.log("tokenAllowrance", tokenAllowrance.toString());
+    const result = round === 1
+      ? await getUserDetail(address)
+      : await getUserDetail2(address);
+    const tokenAllowrance = await checkAllowanceBusd2(address);
+    const amountUnlocked = round === 1
+      ? await getAmountUnlocked(address)
+      : await getAmountUnlocked2(address);
+      
     setCrssAllowrance(tokenAllowrance);
-    // console.log("tokenAllowrance ", tokenAllowrance);
-    // console.log("tokenallowrance1", crssAllowrance.toString());
-
-    setTotalRewardAmount(web3.utils.fromWei(web3.utils.toBN(result.totalRewardAmount)));
-    setWithdrawAmount(web3.utils.fromWei(web3.utils.toBN(result.withdrawAmount)));
-    setDepositTime(new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(result.depositTime * 1000));
-    // console.log(result.depositTime)
-    setDepositAmount(web3.utils.fromWei(web3.utils.toBN(result.depositAmount)));
-    // setCrssAllowrance(web3.utils.fromWei())
-    const amountUnlocked = await getAmountUnlocked(address);
-    setUnlockedAmount(web3.utils.fromWei(amountUnlocked));
-  });
+    if (round === 1) {
+      setTotalRewardAmount(web3.utils.fromWei(web3.utils.toBN(result.totalRewardAmount)));
+      setWithdrawAmount(web3.utils.fromWei(web3.utils.toBN(result.withdrawAmount)));
+      setDepositAmount(web3.utils.fromWei(web3.utils.toBN(result.depositAmount)));
+      setUnlockedAmount(web3.utils.fromWei(amountUnlocked));
+    } else {
+      setTotalRewardAmount2(web3.utils.fromWei(web3.utils.toBN(result.totalRewardAmount)));
+      setWithdrawAmount2(web3.utils.fromWei(web3.utils.toBN(result.withdrawAmount)));
+      setDepositAmount2(web3.utils.fromWei(web3.utils.toBN(result.depositAmount))); 
+      setUnlockedAmount2(web3.utils.fromWei(amountUnlocked));
+    }
+    setDepositTime(new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }).format(result.depositTime * 1000));
+  }, [round, address]);
 
   const approveTokens = async () => {
-    await approveBusd(address);
+    await approveBusd2(address);
   }
 
   const buyTokens = async () => {
-    const checkWhitelist = await checkWhitelistMember(address);
+    const checkWhitelist = await checkWhitelistMember2(address);
     if (!checkWhitelist) {
       alert("Before buying tokens, You must be added as a whitelist member. You can see 'Get Whitelisted' button at the header");
       return;
     }
     try {
-      const result = await deposit(web3.utils.toWei(amountToDeposit), address);
+      const result = await deposit2(web3.utils.toWei(amountToDeposit), address);
     } catch (error) {
       console.log(error);
       alert('Transaction has been reverted by the EVM. Please take a look at broswer console and refresh page.');
@@ -88,7 +111,23 @@ const SectionHeader = (props) => {
   }
 
   const claimToken = async () => {
-    const result = await withdrawToken(unlockedAmount, address);
+    if ((round === 1 && parseFloat(unlockedAmount.toString()) < 1) ||
+      (round === 2 && parseFloat(unlockedAmount2.toString()) < 1)) {
+      alert('You currently do not have any unlocked tokens to withdraw.');
+      return;
+    }
+
+    const result = round === 1
+      ? await withdrawToken(unlockedAmount, address)
+      : await withdrawToken2(unlockedAmount2, address);
+  }
+
+  const handleCarouselChange = (index) => {
+    if (index === 0) { // round 2
+      setRound(2);
+    } else { // round 1
+      setRound(1);
+    }
   }
 
   return (
@@ -103,7 +142,7 @@ const SectionHeader = (props) => {
         <Row className="w-100">
           <div className="presale-wrap w-100 mt-3">
             <div className="presale-info">
-              <h5 className="title"> Buy Tokens</h5>
+              <h5 className="title"> Buy Tokens (Round 2)</h5>
               <p>Wallet address</p>
               <div className="wallet-address">
                 <span>{address}</span>
@@ -139,39 +178,83 @@ const SectionHeader = (props) => {
               </form>
             </div>
             <div className="presale-info mobile">
-              <h5 className="title">My Tokens</h5>
-              <div className="presale_info">
+              <h5 className="title">
+                {`My Tokens (Round ${round})`}
+              </h5>
+              <div class="presale-carousel" style={{ paddingTop: '20px'}}>
+                <Carousel
+                  showArrows={true}
+                  showStatus={false}
+                  autoPlay={false}
+                  showThumbs={false}
+                  showIndicators={false}
+                  onChange={handleCarouselChange}
+                >
+                  <div className="presale_round2">
+                    <div className="presale_info carousel-first">
+                      <div className="rectangle">
+                        <p>Total Deposited</p>
+                        <h6>{parseFloat(depositAmount2.toString()).toFixed(2)} BUSD</h6>
+                      </div>
+                      <div className="rectangle">
+                        <p>Total Received</p>
+                        <h6>{parseFloat(totalRewardAmount2.toString()).toFixed(2)} CRSS</h6>
+                      </div>
+                    </div>
 
-                <div className="rectangle">
-                  <p>Total Deposited</p>
-                  <h6>{parseFloat(depositAmount.toString()).toFixed(2)} BUSD</h6>
-                </div>
-                <div className="rectangle">
-                  <p>Total Received</p>
-                  <h6>{parseFloat(totalRewardAmount.toString()).toFixed(2)} CRSS</h6>
-                </div>
+                    <div className="presale_info carousel-second">
+                      <div className="rectangle">
+                        <p>Unlocked Tokens</p>
+                        <h6>{parseFloat(unlockedAmount2.toString()).toFixed(2)} CRSS</h6>
+                      </div>
+                      <div className="rectangle">
+                        <p>Total Withdrawn</p>
+                        <h6>{parseFloat(withdrawAmount2.toString()).toFixed(2)} CRSS</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="presale_round1">
+                    <div className="presale_info carousel-first">
+                      <div className="rectangle">
+                        <p>Total Deposited</p>
+                        <h6>{parseFloat(depositAmount.toString()).toFixed(2)} BUSD</h6>
+                      </div>
+                      <div className="rectangle">
+                        <p>Total Received</p>
+                        <h6>{parseFloat(totalRewardAmount.toString()).toFixed(2)} CRSS</h6>
+                      </div>
+                    </div>
 
-              </div>
-              <div className="presale_info">
-                <div className="rectangle">
-                  <p>Unlocked Tokens</p>
-                  <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)} CRSS</h6>
-                </div>
-                <div className="rectangle">
-                  <p>Total Withdrawn</p>
-                  <h6>{parseFloat(withdrawAmount.toString()).toFixed(2)} CRSS</h6>
-                </div>
+                    <div className="presale_info carousel-second">
+                      <div className="rectangle">
+                        <p>Unlocked Tokens</p>
+                        <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)} CRSS</h6>
+                      </div>
+                      <div className="rectangle">
+                        <p>Total Withdrawn</p>
+                        <h6>{parseFloat(withdrawAmount.toString()).toFixed(2)} CRSS</h6>
+                      </div>
+                    </div>
+                  </div>
+                </Carousel>
               </div>
 
               {/* <div className="presale_info">
-            <div className="rectangle">
-                <p>Deposit Time</p>
-                <h6>{depositTime}</h6>
-              </div>
-            </div> */}
+                <div className="rectangle">
+                    <p>Deposit Time</p>
+                    <h6>{depositTime}</h6>
+                  </div>
+                </div> */}
 
               <div className="claim_section">
-                <button className="btn btn_primary claim-button presale-btns" onClick={claimToken}>Withdraw Tokens</button>
+                <button
+                  className={`btn btn_primary claim-button presale-btns
+                    ${(round === 1 && parseFloat(unlockedAmount.toString()) < 1) ||
+                    (round === 2 && parseFloat(unlockedAmount2.toString()) < 1) ? 'disabled' : ''}`}
+                  onClick={claimToken}
+                >
+                  Withdraw Tokens
+                </button>
               </div>
             </div>
           </div>

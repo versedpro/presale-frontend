@@ -12,6 +12,8 @@ const ITokenContract = new web3.eth.Contract(tokenJSON.abi, tokenContractAddress
 
 const presaleContractAddress = config.contractAddress.presale[networkId];
 const IPresaleContractAddress = new web3.eth.Contract(presaleContractJSON.abi, presaleContractAddress);
+const presale2ContractAddress = config.contractAddress.presale2[networkId];
+const IPresale2ContractAddress = new web3.eth.Contract(presaleContractJSON.abi, presale2ContractAddress);
 
 const busdContractAddress = config.contractAddress.busd[networkId];
 const IBusdContractAddress = new web3.eth.Contract(busdJSON, busdContractAddress);
@@ -29,6 +31,12 @@ const presaleContract = {
     contract: IPresaleContractAddress,
 }
 
+const presale2Contract = {
+    address: presale2ContractAddress,
+    abi: presaleContractJSON.abi,
+    contract: IPresale2ContractAddress,
+}
+
 const busdContract = {
     address: busdContractAddress,
     abi: busdJSON,
@@ -40,5 +48,6 @@ export {
     networkId,
     tokenContract,
     presaleContract,
+    presale2Contract,
     busdContract
 }

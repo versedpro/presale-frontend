@@ -211,6 +211,12 @@
     justify-content: space-between;
 }
 
+.section-presale .presale_info.carousel-first {
+    margin-top: 0px !important;
+}
+
+.section-presale .presale_info.carousel-second {}
+
 .header_section {
     background-position: center;
     background-size: cover;
@@ -507,6 +513,10 @@ div.presale_progress>div>div:nth-child(3) {
 
 .soft-cap {
     margin: 15px 150px 0 50px;
+}
+
+.soft-cap2 {
+    margin: 15px 40px 0 160px;
 }
 
 .hard-cap {
@@ -1355,6 +1365,13 @@ img.vert-move {
     margin: auto;
 }
 
+.s_diagram.size_md.round2 {
+    justify-content: center;
+    width: 800px;
+    align-items: baseline;
+    margin: auto;
+}
+
 .s_diagram.size_sm {
     flex-direction: column;
     align-items: center;
@@ -2192,4 +2209,13 @@ img.vert-move {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Horizontal Carousel */
+.carousel.carousel-slider .control-arrow:hover {
+    background: unset;
+}
+
+.carousel .slide img {
+    width: unset !important;
 }
