@@ -531,13 +531,13 @@ div.presale_progress>div>div:nth-child(3) {
     left: 92% !important;
 }
 
-.light-theme .soft-cap, .light-theme .hard-cap {
+.light-theme .soft-cap, .light-theme .soft-cap2, .light-theme .hard-cap {
     border: none;
     box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.06), -4px -4px 8px 0 rgba(255, 255, 255, 0.4), 0 1px 1px 0 rgba(9, 13, 20, 0.06), inset 0 -2px 1px 0 rgba(9, 14, 20, 0.06);
     background-image: linear-gradient(to bottom, #ffffff, #fafbfc 52%, #f5f7fa);
 }
 
-.light-theme .soft-cap::after, .light-theme .hard-cap::after {
+.light-theme .soft-cap::after, .light-theme .soft-cap2::after, .light-theme .hard-cap::after {
     border-color: transparent transparent white transparent;
 }
 
@@ -2218,4 +2218,28 @@ img.vert-move {
 
 .carousel .slide img {
     width: unset !important;
+}
+
+.light-theme .carousel.carousel-slider .control-arrow {
+    background-color: none;
+}
+
+.light-theme .carousel.carousel-slider .control-arrow:hover {
+    background-color: #0fa;
+}
+
+.light-theme .carousel .control-prev.control-arrow:before {
+    border-right: 8px solid #0fa;
+}
+
+.light-theme .carousel .control-prev.control-arrow:hover:before {
+    border-right: 8px solid #fff;
+}
+
+.light-theme .carousel .control-next.control-arrow:before {
+    border-left: 8px solid #0fa;
+}
+
+.light-theme .carousel .control-next.control-arrow:hover:before {
+    border-left: 8px solid #fff;
 }
