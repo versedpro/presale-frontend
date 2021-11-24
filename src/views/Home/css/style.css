@@ -201,14 +201,27 @@
 }
 
 .claim-button {
-    margin-top: 30px;
     float: right;
+}
+
+.claim-button.disabled {
+    background-image: linear-gradient(178deg, #212429 50%, #141029 100%);
 }
 
 .section-presale .presale_info {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+.section-presale .presale_info.carousel-first {
+    margin-top: 0px !important;
+}
+
+.section-presale .presale_info.carousel-second {}
+
+.presale_round2 {
+    padding-bottom: 35px;
 }
 
 .header_section {
@@ -306,7 +319,7 @@
 
 .header_section .header_section_right .header_presale_board {
     width: 383px;
-    height: 620px;
+    height: 625px;
     /* margin: 0 0 41px 122px; */
     padding: 24px 11px 24px 11px;
     border-radius: 12px;
@@ -340,6 +353,7 @@
 .header_section_right .header_presale_board p {
     font-size: 13px;
     text-align: center;
+    margin-bottom: 3px;
 }
 
 .header_section_right .presale_info {
@@ -351,7 +365,7 @@
 
 .header_section_right .presale_info_rectangle {
     width: 174px;
-    height: 76px;
+    height: 66px;
     /* margin: 24px 25px 24px 0; */
     margin-top: 8px;
     padding: 12px 10px 12px 10px;
@@ -368,7 +382,7 @@
 
 .header_section_right .presale_info_rectangle.token_price {
     width: 100% !important;
-    height: 90px !important;
+    height: 70px !important;
 }
 
 .light-theme .header_section_right .presale_info_rectangle {
@@ -509,6 +523,10 @@ div.presale_progress>div>div:nth-child(3) {
     margin: 15px 150px 0 50px;
 }
 
+.soft-cap2 {
+    margin: 15px 185px 0 15px;
+}
+
 .hard-cap {
     margin: 15px 0;
 }
@@ -521,13 +539,13 @@ div.presale_progress>div>div:nth-child(3) {
     left: 92% !important;
 }
 
-.light-theme .soft-cap, .light-theme .hard-cap {
+.light-theme .soft-cap, .light-theme .soft-cap2, .light-theme .hard-cap {
     border: none;
     box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.06), -4px -4px 8px 0 rgba(255, 255, 255, 0.4), 0 1px 1px 0 rgba(9, 13, 20, 0.06), inset 0 -2px 1px 0 rgba(9, 14, 20, 0.06);
     background-image: linear-gradient(to bottom, #ffffff, #fafbfc 52%, #f5f7fa);
 }
 
-.light-theme .soft-cap::after, .light-theme .hard-cap::after {
+.light-theme .soft-cap::after, .light-theme .soft-cap2::after, .light-theme .hard-cap::after {
     border-color: transparent transparent white transparent;
 }
 
@@ -1350,6 +1368,13 @@ img.vert-move {
 
 .s_diagram.size_md {
     justify-content: space-between;
+    width: 800px;
+    align-items: baseline;
+    margin: auto;
+}
+
+.s_diagram.size_md.round2 {
+    justify-content: center;
     width: 800px;
     align-items: baseline;
     margin: auto;
@@ -2192,4 +2217,54 @@ img.vert-move {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Horizontal Carousel */
+.carousel.carousel-slider .control-arrow:hover {
+    background: unset;
+}
+
+.carousel .slide img {
+    width: unset !important;
+}
+
+.light-theme .carousel.carousel-slider .control-arrow {
+    background-color: none;
+}
+
+.light-theme .carousel.carousel-slider .control-arrow:hover {
+    background-color: #0fa;
+}
+
+.light-theme .carousel .control-prev.control-arrow:before {
+    border-right: 8px solid #0fa;
+}
+
+.light-theme .carousel .control-prev.control-arrow:hover:before {
+    border-right: 8px solid #fff;
+}
+
+.light-theme .carousel .control-next.control-arrow:before {
+    border-left: 8px solid #0fa;
+}
+
+.light-theme .carousel .control-next.control-arrow:hover:before {
+    border-left: 8px solid #fff;
+}
+
+.carousel .control-dots .dot {
+    width: 6px !important;
+    height: 6px !important;
+    margin: 0px 16px !important;
+}
+
+.carousel .control-dots .dot {
+    background: #000 !important;
+    opacity: 0.25;
+}
+
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
+    box-shadow: 1px 1px 2px #0b8e90 !important;
+    background: #0b8e90 !important;
+    opacity: 0.75;
 }

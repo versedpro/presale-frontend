@@ -61,17 +61,17 @@ const SectionTokenomicV2 = (props) => {
 
           <div className="tokenomic_block pb-5">
             <div className="token_avata_wrap">
-              <img src={xcrss} className="tokenMainImg" />
-              <img src={xcrssAvatarImg} className="tokenAvatar" />
+              <img src={xcrss} className="tokenMainImg" alt="" />
+              <img src={xcrssAvatarImg} className="tokenAvatar" alt="" />
               <div className="tokenName">
-                <img src={gradientCircle} />
+                <img src={gradientCircle} alt="" />
                 <div className="desc">XCRSS</div>
               </div>
             </div>
             <div className="token_desc pb-5">
               <div className="desc pb-5">
                 <h5>Pre-Sale Tokens</h5>
-                <h6>maximum amount for sale <b className="textBlue">3M</b> or <b className="textBlue">6%</b></h6>
+                <h6>maximum amount for sale <b className="textBlue">4M</b> or <b className="textBlue">8%</b></h6>
               </div>
               <div className="desc pb-5">
                 <h5>Rewards Vesting</h5>

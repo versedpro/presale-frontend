@@ -277,75 +277,75 @@ const SectionRoadmapV2 = (props) => {
                             </div>
                                 <div className="photo_content">
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Website & Dapp Design</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">DEX Smart Contracts</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">CRSS & XCRSS Smart Contracts</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Presale Contract</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Presale Frontend</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Litepaper & Pitchdeck</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Locked LP Vesting contracts</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Anti Whale Router</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Mass Harvest and Mass Stake</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Lockup feature</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Trading Fee on DEX</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Vesting/Immediate Claim</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={checkImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Referral</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">DAPP Frontend</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Beta Release</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Integrate Subgraph</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={checkImg} alt="" />
                                         <div className="content-text">Integrate Price Oracle</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Orderbook</div>
                                     </div>
                                 </div>
@@ -354,46 +354,46 @@ const SectionRoadmapV2 = (props) => {
                        
         
                         <div className="roadmap_item">
-                            <img src={imgToken} className="tokenImage" />
+                            <img src={imgToken} className="tokenImage" alt="" />
                             <div className="gallery_photo shadow space_img">
                                 <div className="gradient-box">Q4/2021</div>
                                 <div className="card-img-overlay p-3">
                                 </div>
                                 <div className="photo_content">
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">V1 Release on BSC</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Limit Orders</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Statistics / Account Area</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Explorer</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Anti Bot Features</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Own API</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">User Notifications</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Gasless Feature</div>
                                     </div>
                                     <div className="content-desc">
-                                        <img src={spinnerImg} />
+                                        <img src={spinnerImg} alt="" />
                                         <div className="content-text">Voting/ Snapshot</div>
                                     </div>
                                 </div>
