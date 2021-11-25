@@ -39,7 +39,7 @@ import bscscanImg from '../../../assets/images/bscscan.png';
 
 const audit_pdf = 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf'
 
-const preSaleContract = `https://bscscan.com/address/0xad3f5a4526fbed82a865d1baef14153488f86487`
+const preSale2Contract = `https://bscscan.com/address/0x3DC2b7E5dc5274C2d603342E73D1d0A9DE96796A`
 const crssContract = `https://bscscan.com/address/0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1`
 
 const Oval = styled.div`
@@ -230,8 +230,8 @@ const SectionHeader = (props) => {
                 </Row>
                 <Row className="mt-3">
                   <Col sm={4} xs={6}>
-                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={preSaleContract} target="_blank" rel="noreferrer">
-                      <img className="scan_img" src={bscscanImg} alt="" />Pre-Sale
+                    <a className="btn btn_primary p-2 btn_pitchdeck contract-btn custom-btn" href={preSale2Contract} target="_blank" rel="noreferrer">
+                      <img className="scan_img" src={bscscanImg} alt="" />Pre-Sale V2
                     </a>
                   </Col>
                   <Col sm={4} xs={6}>
