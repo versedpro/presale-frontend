@@ -213,6 +213,16 @@ const SectionHeader = (props) => {
                         <h6>{parseFloat(withdrawAmount2.toString()).toFixed(2)} CRSS</h6>
                       </div>
                     </div>
+
+                    <div className="claim_section">
+                      <button
+                        className={`btn btn_primary claim-button presale-btns
+                          ${parseFloat(unlockedAmount2.toString()) < 1 ? 'disabled' : ''}`}
+                        onClick={claimToken}
+                      >
+                        Withdraw Tokens
+                      </button>
+                    </div>
                   </div>
                   <div className="presale_round1">
                     <div className="presale_info carousel-first">
@@ -236,6 +246,16 @@ const SectionHeader = (props) => {
                         <h6>{parseFloat(withdrawAmount.toString()).toFixed(2)} CRSS</h6>
                       </div>
                     </div>
+
+                    <div className="claim_section">
+                      <button
+                        className={`btn btn_primary claim-button presale-btns
+                          ${parseFloat(unlockedAmount.toString()) < 1 ? 'disabled' : ''}`}
+                        onClick={claimToken}
+                      >
+                        Withdraw Tokens
+                      </button>
+                    </div>
                   </div>
                 </Carousel>
               </div>
@@ -246,17 +266,6 @@ const SectionHeader = (props) => {
                     <h6>{depositTime}</h6>
                   </div>
                 </div> */}
-
-              <div className="claim_section">
-                <button
-                  className={`btn btn_primary claim-button presale-btns
-                    ${(round === 1 && parseFloat(unlockedAmount.toString()) < 1) ||
-                    (round === 2 && parseFloat(unlockedAmount2.toString()) < 1) ? 'disabled' : ''}`}
-                  onClick={claimToken}
-                >
-                  Withdraw Tokens
-                </button>
-              </div>
             </div>
           </div>
           <div className="presale-desc w-100">
