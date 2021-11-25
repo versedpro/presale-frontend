@@ -85,7 +85,7 @@ const SectionPresaleBottom = (props) => {
                         <div className="info_desc pt-50">Max Amount Per Wallet</div>
                         <div className="info_desc t_b pt-30">25,000 BUSD</div>
                         <div className="info_desc pt-50">Vesting</div>
-                        <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days</div>
+                        <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days after purchase</div>
                     </div>
                     <div className="presale_stages">
                         <div className="s_diagram size_md round2">
@@ -205,7 +205,7 @@ const SectionPresaleBottom = (props) => {
                         <div className="stage_step">
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
-                                <div className="step_desc">Total of 1.1 million BUSD hard cap, 200K soft cap</div>
+                                <div className="step_desc">Total of 1.85 million BUSD hard cap, 200K soft cap</div>
                             </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
@@ -217,11 +217,11 @@ const SectionPresaleBottom = (props) => {
                             </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
-                                <div className="step_desc">Maximum total of 3 million tokens at pre-sale (6% of max supply)</div>
+                                <div className="step_desc">Maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
                             </div>
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
-                                <div className="step_desc">Base price 0.75 BUSD after pre-sale</div>
+                                <div className="step_desc">Base price 0.95 BUSD after pre-sale</div>
                             </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />

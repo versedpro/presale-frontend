@@ -221,7 +221,7 @@
 .section-presale .presale_info.carousel-second {}
 
 .presale_round2 {
-    padding-bottom: 35px;
+    padding-bottom: 40px;
 }
 
 .header_section {
@@ -2191,6 +2191,7 @@ img.vert-move {
 }
 
 .claim_section {
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: end;
