@@ -22,8 +22,37 @@
 }
 
 .presale-desc {
-    margin: auto;
-    padding: 20px 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 15% 20px 15%;
+}
+
+.presale-vesting {
+    margin: 0px;
+    width: 100%;
+}
+
+.presale-vesting p {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+}
+
+.presale-vesting h6 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.presale-vesting .presale-vesting-rectangle {
+    margin: 5px;
+    padding: 12px 10px 12px 10px;
+    background-image: linear-gradient(127deg, rgba(245, 247, 250, 0.12), rgba(245, 247, 250, 0.06) 52%, rgba(245, 247, 250, 0));
+    border-radius: 6px;
+    border: 1px solid #0fa;
+    height: 110px;
 }
 
 .light-theme .presale-wrap {
@@ -41,6 +70,17 @@
     box-shadow: 8px 8px 24px 0 rgba(9, 13, 20, 0.4), -4px -4px 8px 0 rgba(224, 224, 255, 0.04), 0 1px 1px 0 rgba(9, 13, 20, 0.4);
     background-image: linear-gradient(127deg, rgba(245, 247, 250, 0.12), rgba(245, 247, 250, 0.06) 52%, rgba(245, 247, 250, 0));
     /* border-radius: 12px; */
+}
+
+.presale-wrap-token {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.presale-column {
+    width: 605px;
 }
 
 .presale-info {
@@ -1306,7 +1346,15 @@ img.vert-move {
     text-overflow: ellipsis;
 }
 
-.presale-sub-desc, .presale-address {
+.presale-sub-desc {
+    width: 565px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.presale-sub-desc p, .presale-address {
     font-size: 14px;
 }
 
@@ -1960,7 +2008,7 @@ img.vert-move {
     }
 
     .presale-desc {
-        padding: 20px 2%;
+        padding: 0px 2% 20px 2%;
     }
 
     .second-section-first {
