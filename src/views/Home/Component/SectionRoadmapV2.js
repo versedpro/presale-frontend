@@ -98,7 +98,7 @@ const SectionRoadmapV2 = (props) => {
                                                     </div>
                                                     <div className="content-desc">
                                                          <img src={checkImg} alt="" />
-                                                        <div className="content-text">Presale Frontend</div>
+                                                        <div className="content-text">Pre-Sale Frontend</div>
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={checkImg} alt="" />
@@ -290,11 +290,11 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={checkImg} alt="" />
-                                        <div className="content-text">Presale Contract</div>
+                                        <div className="content-text">Pre-Sale Contract</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={checkImg} alt="" />
-                                        <div className="content-text">Presale Frontend</div>
+                                        <div className="content-text">Pre-Sale Frontend</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={checkImg} alt="" />

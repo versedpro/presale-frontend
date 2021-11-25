@@ -78,13 +78,13 @@ const SectionPresaleBottom = (props) => {
                 <Container style={{ paddingBottom: '40px' }}>
                     <Row>
                         <div className="title">
-                            <h1>Presale Round 2 Live</h1>
+                            <h1>Pre-Sale Round 2 Live</h1>
                         </div>
                     </Row>
                     <div className="presale_info">
                         <div className="info_desc pt-50">Max Amount Per Wallet</div>
                         <div className="info_desc t_b pt-30">25,000 BUSD</div>
-                        <div className="info_desc pt-50">Vesting</div>
+                        <div className="info_desc pt-50">Vesting Schedule</div>
                         <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days after purchase</div>
                     </div>
                     <div className="presale_stages">
@@ -119,7 +119,7 @@ const SectionPresaleBottom = (props) => {
                         <div className="stage_step">
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
-                                <div className="step_desc">Total of 1.85 million BUSD hard cap, 200K soft cap</div>
+                                <div className="step_desc">Combined total of 1.85 million BUSD hard cap, 200K soft cap</div>
                             </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
@@ -131,7 +131,7 @@ const SectionPresaleBottom = (props) => {
                             </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
-                                <div className="step_desc">Maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
+                                <div className="step_desc">Combined maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
                             </div>
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
@@ -152,13 +152,13 @@ const SectionPresaleBottom = (props) => {
                 <Container style={{ paddingBottom: '40px' }}>
                     <Row>
                         <div className="title">
-                            <h1>Presale Round 1 Closed</h1>
+                            <h1>Pre-Sale Round 1 Closed</h1>
                         </div>
                     </Row>
                     <div className="presale_info">
                         <div className="info_desc pt-50">Max Amount Per Wallet</div>
                         <div className="info_desc t_b pt-30">25,000 BUSD</div>
-                        <div className="info_desc pt-50">Vesting</div>
+                        <div className="info_desc pt-50">Vesting Schedule</div>
                         <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days</div>
                     </div>
                     <div className="presale_stages">
@@ -205,7 +205,7 @@ const SectionPresaleBottom = (props) => {
                         <div className="stage_step">
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
-                                <div className="step_desc">Total of 1.85 million BUSD hard cap, 200K soft cap</div>
+                                <div className="step_desc">Combined total of 1.85 million BUSD hard cap, 200K soft cap</div>
                             </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
@@ -217,7 +217,7 @@ const SectionPresaleBottom = (props) => {
                             </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
-                                <div className="step_desc">Maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
+                                <div className="step_desc">Combined maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
                             </div>
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />

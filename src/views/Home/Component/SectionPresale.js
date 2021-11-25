@@ -270,7 +270,7 @@ const SectionHeader = (props) => {
           </div>
           <div className="presale-desc w-100">
             <p className="presale-sub-desc">
-              All transactions are anonymous and secure. Tokens are vested within <b className="textBlue">5</b> months linearly, with <b className="textBlue">20%</b> unlocked every <b className="textBlue">30</b> days, starting from time of purchase. That means every <b className="textBlue">30</b> days, <b className="textBlue">20%</b> of that batch of tokens will be unlocked. Once unlocked, you can withdraw them to your wallet.Please add our token address to your wallet so that you see them in your assets when you withdraw them:
+              Transactions are anonymous and secure. Tokens are vested within <b className="textBlue">5</b> months linearly, with <b className="textBlue">20%</b> unlocked every <b className="textBlue">30</b> days, starting from time of purchase. That means every <b className="textBlue">30</b> days, <b className="textBlue">20%</b> of that batch of tokens will be unlocked and ready to withdraw to your wallet. Please add our token address to your wallet so that your tokens are visible in your assets when you withdraw them:
               <p className="presale-address mt-3">
                 <CopyToClipboard
                   text={'0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1'}
