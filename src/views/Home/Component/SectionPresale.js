@@ -59,51 +59,51 @@ const SectionHeader = (props) => {
   const [rewardAmount2, setRewardAmount2] = useState(new BN(0));
   const [withdrawAmount2, setWithdrawAmount2] = useState(new BN(0));
 
-  const secondsRemaining = useCountDown(depositTime + 2629800 * 5);
-  const { days: days11, hours: hours11 } = getDayHourPeriods(
-    Math.max(secondsRemaining - 2629800 * 4, 0)
-  );
-  const { days: days12, hours: hours12 } = getDayHourPeriods(
-    Math.max(secondsRemaining - 2629800 * 3, 0)
-  );
-  const { days: days13, hours: hours13 } = getDayHourPeriods(
-    Math.max(secondsRemaining - 2629800 * 2, 0)
-  );
-  const { days: days14, hours: hours14 } = getDayHourPeriods(
-    Math.max(secondsRemaining - 2629800, 0)
-  );
-  const { days: days15, hours: hours15 } = getDayHourPeriods(secondsRemaining);
+  // const secondsRemaining = useCountDown(depositTime + 2629800 * 5);
+  // const { days: days11, hours: hours11 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining - 2629800 * 4, 0)
+  // );
+  // const { days: days12, hours: hours12 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining - 2629800 * 3, 0)
+  // );
+  // const { days: days13, hours: hours13 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining - 2629800 * 2, 0)
+  // );
+  // const { days: days14, hours: hours14 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining - 2629800, 0)
+  // );
+  // const { days: days15, hours: hours15 } = getDayHourPeriods(secondsRemaining);
 
-  const remains1 = [
-    [days11, hours11],
-    [days12, hours12],
-    [days13, hours13],
-    [days14, hours14],
-    [days15, hours15],
-  ];
+  // const remains1 = [
+  //   [days11, hours11],
+  //   [days12, hours12],
+  //   [days13, hours13],
+  //   [days14, hours14],
+  //   [days15, hours15],
+  // ];
   
-  const secondsRemaining2 = useCountDown(depositTime2 + 2629800 * 5);
-  const { days: days21, hours: hours21 } = getDayHourPeriods(
-    Math.max(secondsRemaining2 - 2629800 * 4, 0)
-  );
-  const { days: days22, hours: hours22 } = getDayHourPeriods(
-    Math.max(secondsRemaining2 - 2629800 * 3, 0)
-  );
-  const { days: days23, hours: hours23 } = getDayHourPeriods(
-    Math.max(secondsRemaining2 - 2629800 * 2, 0)
-  );
-  const { days: days24, hours: hours24 } = getDayHourPeriods(
-    Math.max(secondsRemaining2 - 2629800, 0)
-  );
-  const { days: days25, hours: hours25 } = getDayHourPeriods(secondsRemaining2);
+  // const secondsRemaining2 = useCountDown(depositTime2 + 2629800 * 5);
+  // const { days: days21, hours: hours21 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining2 - 2629800 * 4, 0)
+  // );
+  // const { days: days22, hours: hours22 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining2 - 2629800 * 3, 0)
+  // );
+  // const { days: days23, hours: hours23 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining2 - 2629800 * 2, 0)
+  // );
+  // const { days: days24, hours: hours24 } = getDayHourPeriods(
+  //   Math.max(secondsRemaining2 - 2629800, 0)
+  // );
+  // const { days: days25, hours: hours25 } = getDayHourPeriods(secondsRemaining2);
 
-  const remains2 = [
-    [days21, hours21],
-    [days22, hours22],
-    [days23, hours23],
-    [days24, hours24],
-    [days25, hours25],
-  ];
+  // const remains2 = [
+  //   [days21, hours21],
+  //   [days22, hours22],
+  //   [days23, hours23],
+  //   [days24, hours24],
+  //   [days25, hours25],
+  // ];
 
   const toggle = () => {
     setTooltipOpen(!tooltipOpen);
@@ -293,7 +293,7 @@ const SectionHeader = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="presale-vesting mb-3">
+              {/* <div className="presale-vesting mb-3">
                 <Table>
                   <thead>
                     <tr>
@@ -335,7 +335,7 @@ const SectionHeader = (props) => {
                     })}
                   </tbody>
                 </Table>
-              </div>
+              </div> */}
             </div>
 
             <div className="d-flex flex-column align-items-center presale-column">
@@ -377,7 +377,7 @@ const SectionHeader = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="presale-vesting mb-3">
+              {/* <div className="presale-vesting mb-3">
                 <Table>
                   <thead>
                     <tr>
@@ -419,7 +419,7 @@ const SectionHeader = (props) => {
                     })}
                   </tbody>
                 </Table>
-              </div>
+              </div> */}
             </div>
           </div>
         </Row>
