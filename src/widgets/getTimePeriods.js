@@ -50,4 +50,26 @@ const getTimePeriods = (seconds) => {
   return timeLeft;
 };
 
+export const getDayHourPeriods = (seconds) => {
+  let delta = Math.abs(seconds);
+  const timeLeft = {
+    days: 0,
+    hours: 0,
+  };
+
+  if (delta >= DAY_IN_SECONDS) {
+    timeLeft.days = Math.floor(delta / DAY_IN_SECONDS);
+    delta -= timeLeft.days * DAY_IN_SECONDS;
+  }
+
+  if (delta >= HOUR_IN_SECONDS) {
+    timeLeft.hours = Math.floor(delta / HOUR_IN_SECONDS);
+    delta -= timeLeft.hours * HOUR_IN_SECONDS;
+  }
+
+  timeLeft.seconds = delta;
+
+  return timeLeft;
+};
+
 export default getTimePeriods;

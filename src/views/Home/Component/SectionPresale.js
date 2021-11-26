@@ -1,17 +1,18 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
 import { format } from 'date-fns';
 import { useSelector } from "react-redux";
-import { Container, Tooltip } from 'reactstrap';
+import { Container, Table, Tooltip } from 'reactstrap';
 import CopyToClipboard from "react-copy-to-clipboard";
 import 'react-accessible-accordion/dist/fancy-example.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Row, Col } from 'reactstrap';
-import BigNumber from 'bignumber.js';
+import { BN } from 'web3-utils';
 import useRefresh from '../../../redux/useRefresh'
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
 import "react-step-progress-bar/styles.css";
 import { useForm } from "react-hook-form";
+import { getFullDisplayBalance, getBalanceNumber } from '../../../crosswise/bn';
 import { web3 } from "../../../crosswise/web3";
 import {
   getUserDetail,
@@ -29,7 +30,7 @@ import {
   approveBusd2,
   checkWhitelistMember2,
 } from "../../../crosswise/token";
-import getTimePeriods from "../../../widgets/getTimePeriods";
+import { getDayHourPeriods } from "../../../widgets/getTimePeriods";
 import useCountDown from "../../../widgets/useCountDown";
 
 const SectionHeader = (props) => {
@@ -47,26 +48,62 @@ const SectionHeader = (props) => {
   const [crssAllowrance, setCrssAllowrance] = useState(web3.utils.toBN(0));
   
   const [depositTime, setDepositTime] = useState(0);
-  const [depositAmount, setDepositAmount] = useState(new BigNumber(0));
-  const [unlockedAmount, setUnlockedAmount] = useState(new BigNumber(0));
-  const [rewardAmount, setRewardAmount] = useState(new BigNumber(0));
-  const [withdrawAmount, setWithdrawAmount] = useState(new BigNumber(0));
-  const [totalDepositedBusdBalance, setTotalDepositedBusdBalance] = useState(new BigNumber(0));
-  const [totalRewardAmount, setTotalRewardAmount] = useState(new BigNumber(0));
+  const [depositAmount, setDepositAmount] = useState(new BN(0));
+  const [unlockedAmount, setUnlockedAmount] = useState(new BN(0));
+  const [rewardAmount, setRewardAmount] = useState(new BN(0));
+  const [withdrawAmount, setWithdrawAmount] = useState(new BN(0));
 
   const [depositTime2, setDepositTime2] = useState(0);
-  const [depositAmount2, setDepositAmount2] = useState(new BigNumber(0));
-  const [unlockedAmount2, setUnlockedAmount2] = useState(new BigNumber(0));
-  const [rewardAmount2, setRewardAmount2] = useState(new BigNumber(0));
-  const [withdrawAmount2, setWithdrawAmount2] = useState(new BigNumber(0));
-  const [totalDepositedBusdBalance2, setTotalDepositedBusdBalance2] = useState(new BigNumber(0));
-  const [totalRewardAmount2, setTotalRewardAmount2] = useState(new BigNumber(0));
+  const [depositAmount2, setDepositAmount2] = useState(new BN(0));
+  const [unlockedAmount2, setUnlockedAmount2] = useState(new BN(0));
+  const [rewardAmount2, setRewardAmount2] = useState(new BN(0));
+  const [withdrawAmount2, setWithdrawAmount2] = useState(new BN(0));
 
-  const secondsRemaining = useCountDown(depositTime + 2629800);
-  const { days, hours } = getTimePeriods(secondsRemaining);
+  const secondsRemaining = useCountDown(depositTime + 2629800 * 5);
+  const { days: days11, hours: hours11 } = getDayHourPeriods(
+    Math.max(secondsRemaining - 2629800 * 4, 0)
+  );
+  const { days: days12, hours: hours12 } = getDayHourPeriods(
+    Math.max(secondsRemaining - 2629800 * 3, 0)
+  );
+  const { days: days13, hours: hours13 } = getDayHourPeriods(
+    Math.max(secondsRemaining - 2629800 * 2, 0)
+  );
+  const { days: days14, hours: hours14 } = getDayHourPeriods(
+    Math.max(secondsRemaining - 2629800, 0)
+  );
+  const { days: days15, hours: hours15 } = getDayHourPeriods(secondsRemaining);
+
+  const remains1 = [
+    [days11, hours11],
+    [days12, hours12],
+    [days13, hours13],
+    [days14, hours14],
+    [days15, hours15],
+  ];
   
-  const secondsRemaining2 = useCountDown(depositTime2 + 2629800);
-  const { days: days2, hours: hours2 } = getTimePeriods(secondsRemaining2);
+  const secondsRemaining2 = useCountDown(depositTime2 + 2629800 * 5);
+  const { days: days21, hours: hours21 } = getDayHourPeriods(
+    Math.max(secondsRemaining2 - 2629800 * 4, 0)
+  );
+  const { days: days22, hours: hours22 } = getDayHourPeriods(
+    Math.max(secondsRemaining2 - 2629800 * 3, 0)
+  );
+  const { days: days23, hours: hours23 } = getDayHourPeriods(
+    Math.max(secondsRemaining2 - 2629800 * 2, 0)
+  );
+  const { days: days24, hours: hours24 } = getDayHourPeriods(
+    Math.max(secondsRemaining2 - 2629800, 0)
+  );
+  const { days: days25, hours: hours25 } = getDayHourPeriods(secondsRemaining2);
+
+  const remains2 = [
+    [days21, hours21],
+    [days22, hours22],
+    [days23, hours23],
+    [days24, hours24],
+    [days25, hours25],
+  ];
 
   const toggle = () => {
     setTooltipOpen(!tooltipOpen);
@@ -83,23 +120,19 @@ const SectionHeader = (props) => {
     
     const result = await getUserDetail(address);
     const amountUnlocked = await getAmountUnlocked(address);
-    setRewardAmount(web3.utils.fromWei(web3.utils.toBN(result.totalRewardAmount)));
-    setWithdrawAmount(web3.utils.fromWei(web3.utils.toBN(result.withdrawAmount)));
-    setDepositAmount(web3.utils.fromWei(web3.utils.toBN(result.depositAmount)));
-    setUnlockedAmount(web3.utils.fromWei(amountUnlocked));
+    setRewardAmount(web3.utils.toBN(result.totalRewardAmount));
+    setWithdrawAmount(web3.utils.toBN(result.withdrawAmount));
+    setDepositAmount(web3.utils.toBN(result.depositAmount));
+    setUnlockedAmount(amountUnlocked);
     setDepositTime(parseInt(result.depositTime, 10));
-    setTotalDepositedBusdBalance(web3.utils.fromWei(web3.utils.toBN(await getTotalDepositedAmount())));
-    setTotalRewardAmount(web3.utils.fromWei(web3.utils.toBN(await getTotalRewardAmount())));
 
     const result2 = await getUserDetail2(address);
     const amountUnlocked2 = await getAmountUnlocked2(address);
-    setRewardAmount2(web3.utils.fromWei(web3.utils.toBN(result2.totalRewardAmount)));
-    setWithdrawAmount2(web3.utils.fromWei(web3.utils.toBN(result2.withdrawAmount)));
-    setDepositAmount2(web3.utils.fromWei(web3.utils.toBN(result2.depositAmount))); 
-    setUnlockedAmount2(web3.utils.fromWei(amountUnlocked2));
+    setRewardAmount2(web3.utils.toBN(result2.totalRewardAmount));
+    setWithdrawAmount2(web3.utils.toBN(result2.withdrawAmount));
+    setDepositAmount2(web3.utils.toBN(result2.depositAmount)); 
+    setUnlockedAmount2(amountUnlocked2);
     setDepositTime2(parseInt(result2.depositTime, 10));
-    setTotalDepositedBusdBalance2(web3.utils.fromWei(web3.utils.toBN(await getTotalDepositedAmount2())));
-    setTotalRewardAmount2(web3.utils.fromWei(web3.utils.toBN(await getTotalRewardAmount2())));
   }, [address]);
 
   const approveTokens = async () => {
@@ -230,29 +263,29 @@ const SectionHeader = (props) => {
                   <div className="presale_info carousel-first">
                     <div className="rectangle">
                       <p>Total Deposited</p>
-                      <h6>{parseFloat(depositAmount2.toString()).toFixed(2)} BUSD</h6>
+                      <h6>{getFullDisplayBalance(depositAmount2, 18, 2)} BUSD</h6>
                     </div>
                     <div className="rectangle">
                       <p>Total Received</p>
-                      <h6>{parseFloat(rewardAmount2.toString()).toFixed(2)} CRSS</h6>
+                      <h6>{getFullDisplayBalance(rewardAmount2, 18, 2)} CRSS</h6>
                     </div>
                   </div>
 
                   <div className="presale_info carousel-second">
                     <div className="rectangle">
                       <p>Unlocked Tokens</p>
-                      <h6>{parseFloat(unlockedAmount2.toString()).toFixed(2)} CRSS</h6>
+                      <h6>{getFullDisplayBalance(unlockedAmount2, 18, 2)} CRSS</h6>
                     </div>
                     <div className="rectangle">
                       <p>Total Withdrawn</p>
-                      <h6>{parseFloat(withdrawAmount2.toString()).toFixed(2)} CRSS</h6>
+                      <h6>{getFullDisplayBalance(withdrawAmount2, 18, 2)} CRSS</h6>
                     </div>
                   </div>
 
                   <div className="claim_section">
                     <button
                       className={`btn btn_primary claim-button presale-btns
-                        ${parseFloat(unlockedAmount2.toString()) < 1 ? 'disabled' : ''}`}
+                        ${getBalanceNumber(unlockedAmount2, 18) < 1 ? 'disabled' : ''}`}
                       onClick={claimToken2}
                     >
                       Withdraw Tokens
@@ -261,32 +294,47 @@ const SectionHeader = (props) => {
                 </div>
               </div>
               <div className="presale-vesting mb-3">
-                <Row className="mt-3 no-gutters">
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Date</p>
-                      <h6>{depositTime2 > 0 ? `${format(depositTime2 * 1000, 'dd MMM yyyy HH:mm')} UTC` : '---'}</h6>
-                    </div>
-                  </Col>
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Deposited</p>
-                      <h6>{parseFloat(totalDepositedBusdBalance2.toString()).toFixed(2)} BUSD</h6>
-                    </div>
-                  </Col>
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Received</p>
-                      <h6>{parseFloat(totalRewardAmount2.toString()).toFixed(2)} CRSS</h6>
-                    </div>
-                  </Col>
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Unlocks In</p>
-                      <h6>{days2 ? days2 : 0} days {hours2 ? hours2 : 0} hours</h6>
-                    </div>
-                  </Col>
-                </Row>
+                <Table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Deposited</th>
+                      <th>Received</th>
+                      <th>Unlocks In</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {remains2.map((pair, index) => {
+                      if (pair[0] < 1 && pair[1] < 1) return null;
+                      return (
+                        <tr key={`${index}th`}>
+                          <td>
+                            <h6>{
+                              depositTime2 > 0 ? `${format(depositTime2 * 1000, 'dd MMM yyyy HH:mm')} UTC` : '---'
+                            }</h6>
+                          </td>
+                          <td>
+                            <h6>{
+                              getFullDisplayBalance(
+                                depositAmount2.mul(new BN(index + 1)).div(new BN(5)), 18, 2
+                              )
+                            } BUSD</h6>
+                          </td>
+                          <td>
+                            <h6>{
+                              getFullDisplayBalance(
+                                rewardAmount2.mul(new BN(index + 1)).div(new BN(5)), 18, 2
+                              )
+                            } CRSS</h6>
+                          </td>
+                          <td>
+                            <h6>{pair[0] ? pair[0] : 0} days {pair[1] ? pair[1] : 0} hours</h6>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </Table>
               </div>
             </div>
 
@@ -299,29 +347,29 @@ const SectionHeader = (props) => {
                   <div className="presale_info carousel-first">
                     <div className="rectangle">
                       <p>Total Deposited</p>
-                      <h6>{parseFloat(depositAmount.toString()).toFixed(2)} BUSD</h6>
+                      <h6>{getFullDisplayBalance(depositAmount, 18, 2)} BUSD</h6>
                     </div>
                     <div className="rectangle">
                       <p>Total Received</p>
-                      <h6>{parseFloat(rewardAmount.toString()).toFixed(2)} CRSS</h6>
+                      <h6>{getFullDisplayBalance(rewardAmount, 18, 2)} CRSS</h6>
                     </div>
                   </div>
 
                   <div className="presale_info carousel-second">
                     <div className="rectangle">
                       <p>Unlocked Tokens</p>
-                      <h6>{parseFloat(unlockedAmount.toString()).toFixed(2)} CRSS</h6>
+                      <h6>{getFullDisplayBalance(unlockedAmount, 18, 2)} CRSS</h6>
                     </div>
                     <div className="rectangle">
                       <p>Total Withdrawn</p>
-                      <h6>{parseFloat(withdrawAmount.toString()).toFixed(2)} CRSS</h6>
+                      <h6>{getFullDisplayBalance(withdrawAmount, 18, 2)} CRSS</h6>
                     </div>
                   </div>
 
                   <div className="claim_section">
                     <button
                       className={`btn btn_primary claim-button presale-btns
-                        ${parseFloat(unlockedAmount.toString()) < 1 ? 'disabled' : ''}`}
+                        ${getBalanceNumber(unlockedAmount, 18, 2) < 1 ? 'disabled' : ''}`}
                       onClick={claimToken}
                     >
                       Withdraw Tokens
@@ -330,32 +378,47 @@ const SectionHeader = (props) => {
                 </div>
               </div>
               <div className="presale-vesting mb-3">
-                <Row className="mt-3 no-gutters">
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Date</p>
-                      <h6>{depositTime > 0 ? `${format(depositTime * 1000, 'dd MMM yyyy HH:mm')} UTC` : '---'}</h6>
-                    </div>
-                  </Col>
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Deposited</p>
-                      <h6>{parseFloat(totalDepositedBusdBalance.toString()).toFixed(2)} BUSD</h6>
-                    </div>
-                  </Col>
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Received</p>
-                      <h6>{parseFloat(totalRewardAmount.toString()).toFixed(2)} CRSS</h6>
-                    </div>
-                  </Col>
-                  <Col sm={3} xs={12}>
-                    <div className="text-center presale-vesting-rectangle vesting-date">
-                      <p>Unlocks In</p>
-                      <h6>{days ? days : 0} days {hours ? hours : 0} hours</h6>
-                    </div>
-                  </Col>
-                </Row>
+                <Table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Deposited</th>
+                      <th>Received</th>
+                      <th>Unlocks In</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {remains1.map((pair, index) => {
+                      if (pair[0] < 1 && pair[1] < 1) return null;
+                      return (
+                        <tr key={`${index}th`}>
+                          <td>
+                            <h6>{
+                              depositTime > 0 ? `${format(depositTime * 1000, 'dd MMM yyyy HH:mm')} UTC` : '---'
+                            }</h6>
+                          </td>
+                          <td>
+                            <h6>{
+                              getFullDisplayBalance(
+                                depositAmount.mul(new BN(index + 1)).div(new BN(5)), 18, 2
+                              )
+                            } BUSD</h6>
+                          </td>
+                          <td>
+                            <h6>{
+                              getFullDisplayBalance(
+                                rewardAmount.mul(new BN(index + 1)).div(new BN(5)), 18, 2
+                              )
+                            } CRSS</h6>
+                          </td>
+                          <td>
+                            <h6>{pair[0] ? pair[0] : 0} days {pair[1] ? pair[1] : 0} hours</h6>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </Table>
               </div>
             </div>
           </div>
