@@ -33,7 +33,7 @@ const SectionPartner = (props) => {
   
     return (
         
-          <section className="about_section grey_background first-about-section" id="about">
+          <section className="about_section odd_background" id="about">
             <Container>
               <Row>
                   <div className="about_section_sub">

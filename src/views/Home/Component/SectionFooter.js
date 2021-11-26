@@ -12,7 +12,7 @@ const SectionFooter = (props) => {
     const { isDark, toggleTheme } = useContext(ThemeContext)
     return (
         
-          <section className="footer_section">
+          <section className="footer_section even_background">
             <Container>
               <div className="footer_bar">
                   <div className="footer_bar_icon">
@@ -44,8 +44,8 @@ const SectionFooter = (props) => {
                         MEDIA
                       </div>
                       <div className="links">
-                          <a className="link-item" href={pdf} target="_blank">Litepaper</a>
-                          <a className="link-item" href={pitchdeck} target="_blank">Pitchdeck</a>
+                          <a className="link-item" href={pdf} target="_blank" rel="noreferrer">Litepaper</a>
+                          <a className="link-item" href={pitchdeck} target="_blank" rel="noreferrer">Pitchdeck</a>
                       </div>
                     </div>
                     <div className="group_links">
@@ -53,9 +53,9 @@ const SectionFooter = (props) => {
                         LEARN
                       </div>
                       <div className="links">
-                          <a className="link-item" href="https://crosswise.gitbook.io/crosswise/" target="_blank">Gitbook</a>
-                          <a className="link-item" href="https://intercom.help/crosswise-f/en" target="_blank">Support </a>
-                          <a className="link-item" href="https://crosswise.notion.site/Crosswise-ICO-Affiliate-Program-221dc5555eb8422b8210c03c952d1673" target="_blank">Affiliate Program</a>
+                          <a className="link-item" href="https://crosswise.gitbook.io/crosswise/" target="_blank" rel="noreferrer">Gitbook</a>
+                          <a className="link-item" href="https://intercom.help/crosswise-f/en" target="_blank" rel="noreferrer">Support </a>
+                          <a className="link-item" href="https://crosswise.notion.site/Crosswise-ICO-Affiliate-Program-221dc5555eb8422b8210c03c952d1673" target="_blank" rel="noreferrer">Affiliate Program</a>
                       </div>
                     </div>
                     <div className="group_links">
@@ -63,11 +63,11 @@ const SectionFooter = (props) => {
                         FOLLOW
                       </div>
                       <div className="links">
-                      <a className="link-item" href="https://t.me/crosswise" target="_blank">Telegram</a>
-                      <a className="link-item" href="https://discord.gg/4BuwxMz24J" target="_blank" >Discord</a>
-                          <a className="link-item" href="https://twitter.com/crosswisefi" target="_blank">Twitter</a>
-                          <a className="link-item" href="https://crosswise.medium.com/" target="_blank">Medium</a>
-                          <a className="link-item" href="https://www.instagram.com/crosswisedefi/" target="_blank" >Instagram</a>
+                      <a className="link-item" href="https://t.me/crosswise" target="_blank" rel="noreferrer">Telegram</a>
+                      <a className="link-item" href="https://discord.gg/4BuwxMz24J" target="_blank" rel="noreferrer" >Discord</a>
+                          <a className="link-item" href="https://twitter.com/crosswisefi" target="_blank" rel="noreferrer">Twitter</a>
+                          <a className="link-item" href="https://crosswise.medium.com/" target="_blank" rel="noreferrer">Medium</a>
+                          <a className="link-item" href="https://www.instagram.com/crosswisedefi/" target="_blank" rel="noreferrer" >Instagram</a>
                       </div>
                     </div>
 

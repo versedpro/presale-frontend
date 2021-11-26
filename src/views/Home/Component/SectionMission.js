@@ -38,7 +38,7 @@ const SectionMission = (props) => {
     const { isDark, toggleTheme } = useContext(ThemeContext)
     return (
         
-          <section className="mission_section">
+          <section className="mission_section odd_background">
             <Container>
                 <Row>
                     <div className="mission_item">

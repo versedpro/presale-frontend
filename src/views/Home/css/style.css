@@ -400,7 +400,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .header_section_right .presale_info_rectangle {
@@ -595,18 +595,28 @@ div.presale_progress>div>div:nth-child(3) {
 
 /***************About section*******************/
 
-.about_section {
+.even_background {
+    background-color: #212429;
+}
+
+.light-theme .even_background {
+    background-color: white;
+}
+
+.odd_background {
     background-color: #282a2e;
+}
+
+.light-theme .odd_background {
+    background-color: #f5f7fa;
+}
+
+.about_section {
     padding-top: 72px;
     padding-bottom: 72px;
 }
 
-.first-about-section {
-    background-color: #212429;
-}
-
 .light-theme .about_section {
-    background-color: white;
 }
 
 .about_section .about_section_sub {
@@ -691,13 +701,11 @@ div.presale_progress>div>div:nth-child(3) {
 /********************* Mission Section ***********************/
 
 .light-theme .mission_section {
-    background-color: #f5f7fa;
 }
 
 .mission_section {
     padding-top: 72px;
     padding-bottom: 72px;
-    background-color: #212429;
 }
 
 .mission_section .mission_item {
@@ -851,11 +859,9 @@ img.vert-move {
 /********** Fees ********************/
 
 .light-theme .fee_section {
-    background: white;
 }
 
 .fee_section {
-    background-color: #282a2e;
     padding: 72px 0px;
 }
 
@@ -907,11 +913,9 @@ img.vert-move {
 /********** Crosswise Feature *******/
 
 .light-theme .crosswise_feature_section {
-    background-color: white;
 }
 
 .crosswise_feature_section {
-    background-color: #282a2e;
     padding-top: 72px;
     padding-bottom: 72px;
 }
@@ -958,7 +962,6 @@ img.vert-move {
 /*********** Roadmap v2 *************/
 
 .light-theme .roadmap_section_v2 {
-    background: none;
 }
 
 .roadmap_section_v2 {
@@ -1059,11 +1062,9 @@ img.vert-move {
 /*********** Tokenomic v2 ***********/
 
 .tokenomic_section {
-    background-color: #282A2E;
 }
 
 .light-theme .tokenomic_section {
-    background-color: white;
     padding: 60px 0px;
 }
 
@@ -1224,12 +1225,10 @@ img.vert-move {
 /********** Teamwork ******************/
 
 .teamwork_section {
-    background-color: #282a2e;
     padding: 72px 0px;
 }
 
 .light-theme .teamwork_section {
-    background-color: white;
 }
 
 .teamwork_section .title {
@@ -1293,7 +1292,6 @@ img.vert-move {
 }
 
 .teamwork_section {
-    background-color: #282a2e;
     padding-top: 72px;
     padding-bottom: 72px;
 }
@@ -1380,8 +1378,16 @@ img.vert-move {
     padding-top: 50px;
 }
 
+.pb-50 {
+    padding-bottom: 50px;
+}
+
 .pt-30 {
     padding-top: 30px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
 }
 
 .p-15 {
@@ -1416,14 +1422,14 @@ img.vert-move {
 
 .s_diagram.size_md {
     justify-content: space-between;
-    width: 800px;
+    max-width: 800px;
     align-items: baseline;
     margin: auto;
 }
 
 .s_diagram.size_md.round2 {
     justify-content: center;
-    width: 800px;
+    max-width: 800px;
     align-items: baseline;
     margin: auto;
 }
@@ -1742,11 +1748,9 @@ img.vert-move {
 /************** Footer section ************************/
 
 .footer_section {
-    background-color: #282a2e;
 }
 
 .light-theme .footer_section {
-    background-color: white;
 }
 
 .footer_bar {

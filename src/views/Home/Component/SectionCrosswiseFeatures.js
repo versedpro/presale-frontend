@@ -21,7 +21,7 @@ const SectionCrosswiseFeatures = (props) => {
   const { isDark, toggleTheme } = useContext(ThemeContext)
 
   return (
-    <section className="crosswise_feature_section">
+    <section className="crosswise_feature_section even_background">
       <Container>
         <Row>
           <div className="title">

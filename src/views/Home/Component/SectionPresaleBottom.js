@@ -68,7 +68,7 @@ const SectionPresaleBottom = (props) => {
     }, [counter]);
 
     return (
-        <section className="presale_bottom_section">
+        <section className="presale_bottom_section even_background">
             <Carousel
                 showArrows={true}
                 showStatus={false}
@@ -82,12 +82,13 @@ const SectionPresaleBottom = (props) => {
                         </div>
                     </Row>
                     <div className="presale_info">
-                        <div className="info_desc pt-50">Max Amount Per Wallet</div>
-                        <div className="info_desc t_b pt-30">25,000 BUSD</div>
+                        {/* <div className="info_desc pt-50">Max Amount Per Wallet</div>
+                        <div className="info_desc t_b pt-30">25,000 BUSD</div> */}
                         <div className="info_desc pt-50">Vesting Schedule</div>
                         <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days after purchase</div>
                     </div>
                     <div className="presale_stages">
+                        <div className="info_desc pb-30">Pre-Sale Stages</div>
                         <div className="s_diagram size_md round2">
                             <div className="stage_item">
                                 <div className="item_title">Stage 1</div>
@@ -119,27 +120,31 @@ const SectionPresaleBottom = (props) => {
                         <div className="stage_step">
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
+                                <div className="step_desc">Maximum 25K BUSD per wallet</div>
+                            </div>
+                            <div className="step_item">
+                                <img src={stepImg2} alt="" />
                                 <div className="step_desc">Combined total of 1.85 million BUSD hard cap, 200K soft cap</div>
                             </div>
-                            <div className="step_item">
-                                <img src={stepImg2} alt="" />
+                            <div className="step_item b_green">
+                                <img src={stepImg1} alt="" />
                                 <div className="step_desc">70% of presale amount for development and marketing</div>
                             </div>
-                            <div className="step_item b_green">
-                                <img src={stepImg1} alt="" />
+                            <div className="step_item">
+                                <img src={stepImg2} alt="" />
                                 <div className="step_desc">30% for initial CRSS/BNB and CRSS/BUSD liquidity</div>
                             </div>
+                            <div className="step_item b_green">
+                                <img src={stepImg1} alt="" />
+                                <div className="step_desc">Combined maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
+                            </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
-                                <div className="step_desc">Combined maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
+                                <div className="step_desc">Base price 0.95 BUSD after pre-sale</div>
                             </div>
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
-                                <div className="step_desc">Base price 0.95 BUSD after pre-sale</div>
-                            </div>
-                            <div className="step_item">
-                                <img src={stepImg2} alt="" />
-                                <div className="step_desc">Minimum buy 1 BUSD</div>
+                                <div className="step_desc">Launching December 2021</div>
                             </div>
                         </div>
                     </div>
@@ -156,12 +161,13 @@ const SectionPresaleBottom = (props) => {
                         </div>
                     </Row>
                     <div className="presale_info">
-                        <div className="info_desc pt-50">Max Amount Per Wallet</div>
-                        <div className="info_desc t_b pt-30">25,000 BUSD</div>
+                        {/* <div className="info_desc pt-50">Max Amount Per Wallet</div>
+                        <div className="info_desc t_b pt-30">25,000 BUSD</div> */}
                         <div className="info_desc pt-50">Vesting Schedule</div>
                         <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days after purchase</div>
                     </div>
                     <div className="presale_stages">
+                        <div className="info_desc pb-30">Pre-Sale Stages</div>
                         <div className="s_diagram size_md">
                             <div className="stage_item">
                                 <div className="item_title">Stage 1</div>
@@ -202,30 +208,35 @@ const SectionPresaleBottom = (props) => {
                                 <h6 className="item_desc">1M Tokens = 600K BUSD</h6>
                             </div>
                         </div>
+                        
                         <div className="stage_step">
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
+                                <div className="step_desc">Maximum 25K BUSD per wallet</div>
+                            </div>
+                            <div className="step_item">
+                                <img src={stepImg2} alt="" />
                                 <div className="step_desc">Combined total of 1.85 million BUSD hard cap, 200K soft cap</div>
                             </div>
-                            <div className="step_item">
-                                <img src={stepImg2} alt="" />
+                            <div className="step_item b_green">
+                                <img src={stepImg1} alt="" />
                                 <div className="step_desc">70% of presale amount for development and marketing</div>
                             </div>
-                            <div className="step_item b_green">
-                                <img src={stepImg1} alt="" />
+                            <div className="step_item">
+                                <img src={stepImg2} alt="" />
                                 <div className="step_desc">30% for initial CRSS/BNB and CRSS/BUSD liquidity</div>
                             </div>
+                            <div className="step_item b_green">
+                                <img src={stepImg1} alt="" />
+                                <div className="step_desc">Combined maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
+                            </div>
                             <div className="step_item">
                                 <img src={stepImg2} alt="" />
-                                <div className="step_desc">Combined maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
+                                <div className="step_desc">Base price 0.95 BUSD after pre-sale</div>
                             </div>
                             <div className="step_item b_green">
                                 <img src={stepImg1} alt="" />
-                                <div className="step_desc">Base price 0.95 BUSD after pre-sale</div>
-                            </div>
-                            <div className="step_item">
-                                <img src={stepImg2} alt="" />
-                                <div className="step_desc">Minimum buy 1 BUSD</div>
+                                <div className="step_desc">Launching December 2021</div>
                             </div>
                         </div>
                     </div>
