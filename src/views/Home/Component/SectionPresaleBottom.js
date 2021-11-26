@@ -27,6 +27,8 @@ const SectionPresaleBottom = (props) => {
     const [day, setDay] = useState('00');
     const [hour, setHour] = useState('00');
 
+    const [carouselIndex, setCarouselIndex] = useState(0);
+
     useEffect(() => {
         const currentTime = Date.now();
         // console.log("currentTime", currentTime);
@@ -74,13 +76,20 @@ const SectionPresaleBottom = (props) => {
                 showStatus={false}
                 autoPlay={false}
                 showThumbs={false}
+                selectedItem={carouselIndex}
             >
                 <Container style={{ paddingBottom: '40px' }}>
-                    <Row>
-                        <div className="title">
-                            <h1>Pre-Sale Round 2 Live</h1>
-                        </div>
-                    </Row>
+                    <div className="title">
+                        <h1>Pre-Sale Round 2 Live</h1>
+                    </div>
+                    <div className="d-flex flex-row justify-content-center pt-30">
+                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(1)}>
+                            Round 1
+                        </a>
+                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(0)}>
+                            Round 2
+                        </a>
+                    </div>
                     <div className="presale_info">
                         {/* <div className="info_desc pt-50">Max Amount Per Wallet</div>
                         <div className="info_desc t_b pt-30">25,000 BUSD</div> */}
@@ -155,11 +164,17 @@ const SectionPresaleBottom = (props) => {
                 </Container>
                 
                 <Container style={{ paddingBottom: '40px' }}>
-                    <Row>
-                        <div className="title">
-                            <h1>Pre-Sale Round 1 Closed</h1>
-                        </div>
-                    </Row>
+                    <div className="title">
+                        <h1>Pre-Sale Round 1 Closed</h1>
+                    </div>
+                    <div className="d-flex flex-row justify-content-center pt-30">
+                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(1)}>
+                            Round 1
+                        </a>
+                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(0)}>
+                            Round 2
+                        </a>
+                    </div>
                     <div className="presale_info">
                         {/* <div className="info_desc pt-50">Max Amount Per Wallet</div>
                         <div className="info_desc t_b pt-30">25,000 BUSD</div> */}

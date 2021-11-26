@@ -1394,6 +1394,12 @@ img.vert-move {
     padding: 15px;
 }
 
+.presale_round_button {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 20px;
+}
+
 .presale_info {
     text-align: center;
     width: 100%;
