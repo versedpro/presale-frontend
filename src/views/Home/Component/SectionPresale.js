@@ -119,8 +119,8 @@ const SectionHeader = (props) => {
     }
 
     const result = round === 1
-      ? await withdrawToken(unlockedAmount, address)
-      : await withdrawToken2(unlockedAmount2, address);
+      ? await withdrawToken(web3.utils.toWei(unlockedAmount), address)
+      : await withdrawToken2(web3.utils.toWei(unlockedAmount2), address);
   }
 
   const handleCarouselChange = (index) => {
