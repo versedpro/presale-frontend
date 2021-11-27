@@ -215,10 +215,15 @@ const SectionHeader = (props) => {
                     </div>
 
                     <div className="claim_section">
-                      <button
+                      {/* <button
                         className={`btn btn_primary claim-button presale-btns
                           ${parseFloat(unlockedAmount2.toString()) < 1 ? 'disabled' : ''}`}
                         onClick={claimToken}
+                      >
+                        Withdraw Tokens
+                      </button> */}
+                      <button
+                        className="btn btn_primary claim-button presale-btns disabled"
                       >
                         Withdraw Tokens
                       </button>
@@ -248,10 +253,15 @@ const SectionHeader = (props) => {
                     </div>
 
                     <div className="claim_section">
-                      <button
+                      {/* <button
                         className={`btn btn_primary claim-button presale-btns
                           ${parseFloat(unlockedAmount.toString()) < 1 ? 'disabled' : ''}`}
                         onClick={claimToken}
+                      >
+                        Withdraw Tokens
+                      </button> */}
+                      <button
+                        className="btn btn_primary claim-button presale-btns disabled"
                       >
                         Withdraw Tokens
                       </button>
