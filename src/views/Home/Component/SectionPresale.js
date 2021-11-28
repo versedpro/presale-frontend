@@ -215,18 +215,18 @@ const SectionHeader = (props) => {
                     </div>
 
                     <div className="claim_section">
-                      {/* <button
+                      <button
                         className={`btn btn_primary claim-button presale-btns
                           ${parseFloat(unlockedAmount2.toString()) < 1 ? 'disabled' : ''}`}
                         onClick={claimToken}
                       >
                         Withdraw Tokens
-                      </button> */}
-                      <button
+                      </button>
+                      {/* <button
                         className="btn btn_primary claim-button presale-btns disabled"
                       >
                         Withdraw Tokens
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                   <div className="presale_round1">
@@ -253,18 +253,18 @@ const SectionHeader = (props) => {
                     </div>
 
                     <div className="claim_section">
-                      {/* <button
+                      <button
                         className={`btn btn_primary claim-button presale-btns
                           ${parseFloat(unlockedAmount.toString()) < 1 ? 'disabled' : ''}`}
                         onClick={claimToken}
                       >
                         Withdraw Tokens
-                      </button> */}
-                      <button
+                      </button>
+                      {/* <button
                         className="btn btn_primary claim-button presale-btns disabled"
                       >
                         Withdraw Tokens
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </Carousel>
