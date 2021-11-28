@@ -125,7 +125,8 @@ export const withdrawToken = async (amount, address) => {
         presaleContract.abi,
         presaleContract.address, {from: address}
     );
-    return await contract.methods.withdrawToken(amount).send({ from: address });
+    const estimateGas = await contract.methods.withdrawToken(amount).estimateGas();
+    return await contract.methods.withdrawToken(amount).send({ from: address, gas: estimateGas });
 }
 
 export const withdrawToken2 = async (amount, address) => {
@@ -134,5 +135,6 @@ export const withdrawToken2 = async (amount, address) => {
         presale2Contract.abi,
         presale2Contract.address, {from: address}
     );
-    return await contract.methods.withdrawToken(amount).send({ from: address });
+    const estimateGas = await contract.methods.withdrawToken(amount).estimateGas();
+    return await contract.methods.withdrawToken(amount).send({ from: address, gas: estimateGas });
 }
