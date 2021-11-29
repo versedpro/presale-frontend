@@ -227,7 +227,6 @@ const Home = () => {
             <SectionTeamwork />
             {/* <SectionTokenomic /> */}
             <SectionTokenomicV2 />
-            <SectionFees />
             {/* <SectionNews/> */}
             <SectionHelp />
             <SectionFooter />
