@@ -30,7 +30,6 @@ import SectionTokenomicV2 from "./Component/SectionTokenomicV2";
 import SectionPresale from "./Component/SectionPresale";
 import SectionCrosswiseFeature from "./Component/SectionCrosswiseFeatures";
 import SectionPresaleBottom from "./Component/SectionPresaleBottom";
-import SectionFees from "./Component/SectionFees";
 import SectionPartner from "./Component/SectionPartner";
 
 import ConnectModal from "../../widgets/WalletModal/ConnectModal";
