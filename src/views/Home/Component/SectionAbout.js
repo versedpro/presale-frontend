@@ -32,7 +32,7 @@ const SectionAbout = (props) => {
   
     return (
         
-          <section className="about_section" id="about">
+          <section className="about_section section_padding even_background" id="about">
             <Container>
               <Row>
                   <div className="about_section_sub">
@@ -40,7 +40,7 @@ const SectionAbout = (props) => {
                         <h1>About Crosswise</h1>
                     </div>
                     <div className="desc">
-                        <p>Next-gen cross-chain Decentralized Exchange (DEX) building a seamless DeFi user experience. Crosswise bridges the gap between centralized and decentralized exchanges, aiming to bring together the best of both worlds. Crosswise is committed to it's users and brings back customers service and support to the DeFi space.</p>
+                        <p>Next-gen cross-chain Decentralized Exchange (DEX) building a seamless DeFi user experience. Crosswise bridges the gap between centralized and decentralized exchanges, aiming to bring together the best of both worlds. Crosswise is committed to it's users and brings back customer service and support to the DeFi space.</p>
                     </div>
                   </div>
                 </Row>

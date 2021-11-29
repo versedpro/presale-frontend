@@ -37,7 +37,7 @@ const SectionHelp = (props) => {
     const { isDark, toggleTheme } = useContext(ThemeContext)
     return (
         
-          <section className="help_section" id="help">
+          <section className="help_section section_padding odd_background" id="help">
             <Container>
               <div className="help_section_group">
               <div className="help_section_left">
@@ -54,11 +54,11 @@ const SectionHelp = (props) => {
                 </div>
                 
                 <div className="social_link_btn">
-                  <a className="social_link" href="https://twitter.com/crosswisefi" target="_blank" ><img src={twitter_icon} /></a>
-                  <a className="social_link" href="https://crosswise.medium.com/" target="_blank"><img src={medium_icon} /></a>
+                  <a className="social_link" href="https://twitter.com/crosswisefi" target="_blank" rel="noreferrer" ><img src={twitter_icon} /></a>
+                  <a className="social_link" href="https://crosswise.medium.com/" target="_blank" rel="noreferrer"><img src={medium_icon} /></a>
                   <a className="social_link" ><img src={reddit_icon} /></a>
-                  <a className="social_link" href="https://t.me/crosswise_a" target="_blank" ><img src={tel_plan_icon} /></a>
-                  <a className="social_link" href="https://t.me/crosswise" target="_blank"><img src={tel_icon} /></a>
+                  <a className="social_link" href="https://t.me/crosswise_a" target="_blank" rel="noreferrer" ><img src={tel_plan_icon} /></a>
+                  <a className="social_link" href="https://t.me/crosswise" target="_blank" rel="noreferrer"><img src={tel_icon} /></a>
                 </div>
               </div>
               </div>

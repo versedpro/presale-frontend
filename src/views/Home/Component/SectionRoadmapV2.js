@@ -72,7 +72,7 @@ const SectionRoadmapV2 = (props) => {
     ]
       };
     return (
-          <section className="roadmap_section_v2" id="roadmap">
+          <section className="roadmap_section_v2 section_padding even_background" id="roadmap">
             <Container>
                 <Row>
                     <div className="title">

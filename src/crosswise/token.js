@@ -77,6 +77,18 @@ export const getTotalDepositedAmount2 = async () => {
     return new web3.utils.toBN(result);
 }
 
+export const getTotalRewardAmount = async () => {
+    const web3 = await getWeb3();
+    const result  = await presaleContract.contract.methods.totalRewardAmount().call();
+    return new web3.utils.toBN(result);
+}
+
+export const getTotalRewardAmount2 = async () => {
+    const web3 = await getWeb3();
+    const result  = await presale2Contract.contract.methods.totalRewardAmount().call();
+    return new web3.utils.toBN(result);
+}
+
 //Setters
 export const approveBusd = async (address) => {
     const web3 = await getWeb3();

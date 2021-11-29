@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext, useEffect, useRef } from "react"
 import { Container } from 'reactstrap'
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Row, Col } from 'reactstrap'
@@ -121,8 +121,21 @@ const SectionHeader = (props) => {
   const [tokenPrice, setTokenPrice] = useState(web3.utils.toBN(0));
   const [tokenPrice2, setTokenPrice2] = useState(web3.utils.toBN(0));
 
+  const mountedRef = useRef(true);
+
   useEffect(() => {
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    mountedRef.current = true;
     const fetchDataFromContract = async () => {
+      if (!mountedRef.current) {
+        return;
+      }
+      
       setTokenPrice(await getPresaleTokenPrice());
       setTokenPrice2(await getPresaleTokenPrice2());
 
