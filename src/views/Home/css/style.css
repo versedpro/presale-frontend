@@ -619,9 +619,13 @@ div.presale_progress>div>div:nth-child(3) {
     background-color: #f5f7fa;
 }
 
+.section_padding {
+    padding: 72px 0;
+}
+
 .about_section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    /* padding-top: 72px;
+    padding-bottom: 72px; */
 }
 
 .light-theme .about_section {
@@ -712,8 +716,8 @@ div.presale_progress>div>div:nth-child(3) {
 }
 
 .mission_section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    /* padding-top: 72px;
+    padding-bottom: 72px; */
 }
 
 .mission_section .mission_item {
@@ -721,7 +725,6 @@ div.presale_progress>div>div:nth-child(3) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
 }
 
 .mission_section .feature_item {
@@ -778,7 +781,6 @@ img.vert-move {
 
 .mission_section .title {
     text-align: center;
-    padding-top: 50px;
 }
 
 .mission_item .item_img {
@@ -870,7 +872,6 @@ img.vert-move {
 }
 
 .fee_section {
-    padding: 72px 0px;
 }
 
 .fee_section .title {
@@ -924,8 +925,8 @@ img.vert-move {
 }
 
 .crosswise_feature_section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    /* padding-top: 72px;
+    padding-bottom: 72px; */
 }
 
 .crosswise_feature_section .title {
@@ -973,7 +974,7 @@ img.vert-move {
 }
 
 .roadmap_section_v2 {
-    padding: 50px 0px;
+    /* padding: 50px 0px; */
 }
 
 .roadmap_section_v2 .title {
@@ -1073,7 +1074,7 @@ img.vert-move {
 }
 
 .light-theme .tokenomic_section {
-    padding: 60px 0px;
+    /* padding: 60px 0px; */
 }
 
 .tokenomic_section .title {
@@ -1233,7 +1234,7 @@ img.vert-move {
 /********** Teamwork ******************/
 
 .teamwork_section {
-    padding: 72px 0px;
+    /* padding: 72px 0px; */
 }
 
 .light-theme .teamwork_section {
@@ -1300,8 +1301,8 @@ img.vert-move {
 }
 
 .teamwork_section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    /* padding-top: 72px;
+    padding-bottom: 72px; */
 }
 
 .teamwork_section .title {
@@ -1365,7 +1366,7 @@ img.vert-move {
 }
 
 .presale_bottom_section {
-    padding: 80px 0px;
+    /* padding: 80px 0px; */
 }
 
 .presale_bottom_section .title {

@@ -16,7 +16,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import SectionHeader from "./Component/SectionHeader";
 import SectionAbout from "./Component/SectionAbout";
 import SectionMission from "./Component/SectionMission";
-import SectionExchange from "./Component/SectionExchange";
+import SectionPlatformFeatures from "./Component/SectionPlatformFeatures";
+import SectionLaunchpad from "./Component/SectionLaunchpad";
+import SectionDexMechanics from "./Component/SectionDexMechanics";
 import SectionTeamwork from "./Component/SectionTeamwork";
 import SectionNews from "./Component/SectionNews";
 import SectionHelp from "./Component/SectionHelp";
@@ -215,6 +217,9 @@ const Home = () => {
             <SectionPartner />
             <SectionAbout />
             <SectionMission />
+            <SectionPlatformFeatures />
+            <SectionLaunchpad />
+            <SectionDexMechanics />
             {/* <SectionExchange></SectionExchange> */}
             <SectionCrosswiseFeature />
             {/* <SectionRoadmap></SectionRoadmap> */}

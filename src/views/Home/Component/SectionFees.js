@@ -12,7 +12,7 @@ const SectionFees = (props) => {
     const { isDark, toggleTheme } = useContext(ThemeContext)
     
     return (
-          <section className="fee_section even_background">
+          <section className="fee_section section_padding even_background">
             <Container>
                 <Row>
                     <div className="title">

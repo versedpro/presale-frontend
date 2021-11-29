@@ -79,7 +79,7 @@ const SectionTeamwork = (props) => {
 
     return (
 
-        <section className="teamwork_section even_background" id="team">
+        <section className="teamwork_section section_padding odd_background" id="team">
             <Container>
                 <Row>
                     <div className="title">

@@ -37,7 +37,7 @@ const SectionHelp = (props) => {
     const { isDark, toggleTheme } = useContext(ThemeContext)
     return (
         
-          <section className="help_section odd_background" id="help">
+          <section className="help_section section_padding odd_background" id="help">
             <Container>
               <div className="help_section_group">
               <div className="help_section_left">

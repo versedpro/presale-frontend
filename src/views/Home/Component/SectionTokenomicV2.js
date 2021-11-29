@@ -18,7 +18,7 @@ const SectionTokenomicV2 = (props) => {
   const { isDark, toggleTheme } = useContext(ThemeContext)
 
   return (
-    <section className="tokenomic_section odd_background" id="tokenomics">
+    <section className="tokenomic_section section_padding even_background" id="tokenomics">
       <Container>
         <Row>
           <div className="title">

@@ -33,7 +33,7 @@ import Dex9 from '../../../assets/images/crosswise/dex/dex-mech-02.png';
 
 import pointerImg from '../../../assets/images/crosswise/pointer.png';
 
-const SectionMission = (props) => {
+const SectionLaunchpad = (props) => {
 
     const { isDark, toggleTheme } = useContext(ThemeContext)
     return (
@@ -41,19 +41,52 @@ const SectionMission = (props) => {
           <section className="mission_section section_padding odd_background">
             <Container>
                 <Row>
-                    <div className="mission_item">
-                        <div className="item_img">
-                            <img src={Img1} alt="" />
+                   <div className="launchpad_features">
+                    <div className="title">
+                        <h1>Launchpad</h1>
+                    </div>
+                    <div className="feature_item_group">
+                        <div className="feature_item">
+                            <div className="feature_item_icon">
+                              <img src={Lan1} alt="" />
+                            </div>
+                            <div className="desc">
+                             <h6>Verified Projects Launchpad</h6>
+                            </div>
                         </div>
-                        <div className="item_content">
-                            <h1>Why Crosswise?</h1>
-                            <p>DeFi is relatively new and packed with untapped utility. Crosswise is extending DEX functionality, tightening security and vetting, adding trading and portfolio tracking tools, as well as bringing back customers support, to enhance the overall DEX experience. Our native CRSS token has been carefully designed with sustainability in mind, benefitting from ample deflationary mechanisms to ensure price stability.</p>
+
+                        <div className="feature_item">
+                            <div className="feature_item_icon">
+                              <img src={Lan2} alt="" />
+                            </div>
+                            <div className="desc">
+                             <h6>Native & Cross-Chain Token Pools</h6>
+                            </div>
+                        </div>
+
+                        <div className="feature_item">
+                            <div className="feature_item_icon">
+                              <img src={Lan3} alt="" />
+                            </div>
+                            <div className="desc">
+                             <h6>Token Owners Area</h6>
+                            </div>
+                        </div>
+
+                        <div className="feature_item">
+                            <div className="feature_item_icon">
+                              <img src={Lan4} alt="" />
+                            </div>
+                            <div className="desc">
+                             <h6>Incubation Program for Ecosystem Growth & Development</h6>
+                            </div>
                         </div>
                     </div>
+                   </div>
                 </Row>
             </Container>
           </section>
         );
 }
 
-export default SectionMission;
+export default SectionLaunchpad;

@@ -70,7 +70,7 @@ const SectionPresaleBottom = (props) => {
     }, [counter]);
 
     return (
-        <section className="presale_bottom_section even_background">
+        <section className="presale_bottom_section section_padding even_background">
             <Carousel
                 showArrows={true}
                 showStatus={false}
