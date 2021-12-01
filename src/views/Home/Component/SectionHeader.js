@@ -1,10 +1,15 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
 import { Container } from 'reactstrap'
 import 'react-accessible-accordion/dist/fancy-example.css';
-import { Row, Col } from 'reactstrap'
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-import '../css/style.css'
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  Row,
+  Col
+} from 'reactstrap';
+import '../css/style.css';
 import { ThemeContext } from "../../../contexts/ThemeContext"
 import styled from "styled-components"
 import useRefresh from '../../../redux/useRefresh'
@@ -93,14 +98,6 @@ const PresaleTextTip = styled.div`
 `;
 
 const SectionHeader = (props) => {
-
-  const [sideMenu, setsideMenu] = useState(false);
-  const [sideMenuIndex, setsideMenuIndex] = useState(0);
-
-  const expandCollapseMenu = () => {
-    setsideMenu(!sideMenu)
-  }
-
   const { isDark, toggleTheme } = useContext(ThemeContext)
   const { fastRefresh } = useRefresh()
 
@@ -120,6 +117,9 @@ const SectionHeader = (props) => {
 
   const [tokenPrice, setTokenPrice] = useState(web3.utils.toBN(0));
   const [tokenPrice2, setTokenPrice2] = useState(web3.utils.toBN(0));
+
+  const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
   const mountedRef = useRef(true);
 
@@ -211,6 +211,205 @@ const SectionHeader = (props) => {
     // console.log(counter)
     return () => clearInterval(intervalId);
   }, [counter]);
+
+  const carouselItems = [
+    {
+      key: 1,
+      title: 'Pre-Sale Round 2: Open',
+      tokenPrice: tokenPrice2,
+      softCap: '1 BUSD',
+      hardCap: '750,000 BUSD',
+      stages: [
+        {
+          title: 'Stage 1 = 500,000 CRSS @ 0.7 BUSD',
+          price: 0.7
+        },
+        {
+          title: 'Stage 2 = 500,000 CRSS @ 0.8 BUSD',
+          price: 0.8
+        }
+      ],
+      raised: raised2,
+      percent: softCap2
+    },
+    {
+      key: 2,
+      title: 'Pre-Sale Round 1: Sold Out',
+      tokenPrice: tokenPrice,
+      softCap: '200,000 BUSD',
+      hardCap: '1,100,000 BUSD',
+      stages: [
+        {
+          title: 'Stage 1 = 1 Million CRSS @ 0.2 BUSD',
+          price: 0.2
+        },
+        {
+          title: 'Stage 2 = 1 Million CRSS @ 0.3 BUSD',
+          price: 0.3
+        },
+        {
+          title: 'Stage 3 = 1 Million CRSS @ 0.6 BUSD',
+          price: 0.6
+        }
+      ],
+      raised: raised,
+      percent: softCap
+    }
+  ];
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeCarouselIndex === carouselItems.length - 1 ? 0 : activeCarouselIndex + 1;
+    setActiveCarouselIndex(nextIndex);
+  };
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeCarouselIndex === 0 ? carouselItems.length - 1 : activeCarouselIndex - 1;
+    setActiveCarouselIndex(nextIndex);
+  };
+  const goToIndex = newIndex => {
+    if (animating) return;
+    setActiveCarouselIndex(newIndex);
+  };
+
+  const slides = carouselItems.map((item) => {
+    return (
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.key}
+      >
+        <div className="header_presale_board_round2">
+          <h5>{item.title}</h5>
+
+          <div className="presale_info">
+            <div className="presale_info_rectangle token_price">
+              <p>
+                Token Price
+              </p>
+              <h5>
+                1 CRSS = {web3.utils.fromWei(item.tokenPrice)} BUSD
+              </h5>
+            </div>
+            <div className="presale_info_rectangle_left presale_info_rectangle">
+              <p>
+                Min Purchase
+              </p>
+              <h6>
+                1 BUSD
+              </h6>
+            </div>
+            <div className="presale_info_rectangle_right presale_info_rectangle">
+              <p>
+                Max Purchase
+              </p>
+              <h6>
+                25,000 BUSD
+              </h6>
+            </div>
+            <div className="presale_info_rectangle_left presale_info_rectangle">
+              <p>
+                Soft Cap
+              </p>
+              <h6>
+                {item.softCap}
+              </h6>
+            </div>
+
+            <div className="presale_info_rectangle_right presale_info_rectangle">
+              <p>
+                Hard Cap
+              </p>
+              <h6>
+                {item.hardCap}
+              </h6>
+            </div>
+            <div className="presale_info_rectangle long_width">
+              {item.stages.map((stage, index) => {
+                return <h6
+                  className={
+                    (
+                      index < item.stages.length - 1 &&
+                      parseFloat(web3.utils.fromWei(item.tokenPrice)) < item.stages[index + 1].price &&
+                      parseFloat(web3.utils.fromWei(item.tokenPrice)) >= stage.price
+                    ) ||
+                    (
+                      index >= item.stages.length - 1 &&
+                      parseFloat(web3.utils.fromWei(item.tokenPrice)) >= item.stages[index].price
+                    )
+                    ? "highlight active"
+                    : ""
+                  }
+                >
+                  {stage.title}
+                </h6>
+              })}
+            </div>
+
+            <div className="presale_info_rectangle_left presale_info_rectangle">
+              <p>Launch Price</p>
+              <h6>0.95 BUSD</h6>
+            </div>
+
+            <div className="presale_info_rectangle_right presale_info_rectangle">
+              <p>Launch Date</p>
+              <h6>Dec 2021</h6>
+            </div>
+          </div>
+
+          <div className="presale_tips">
+            <div className="tips_item">
+              <p>Raised: </p>
+              <span>&nbsp;&nbsp;{parseInt(item.raised).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span>
+            </div>
+            <div className="tips_item">
+              <p>Target: </p>
+              <span> &nbsp;&nbsp;{item.hardCap}</span>
+            </div>
+          </div>
+
+          <div className="presale_progress">
+            <ProgressBar
+              percent={item.softCap}
+              fillBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+            >
+              <Step transition="scale">
+                {() => (
+                  <Oval
+                    width="30"
+                  />
+                )}
+              </Step>
+              <Step transition="scale">
+                {() => (
+                  <Oval
+                    width="30"
+                  />
+                )}
+              </Step>
+              <Step transition="scale">
+                {() => (
+                  <Oval
+                    width="30"
+                  />
+                )}
+              </Step>
+            </ProgressBar>
+            <Row>
+              <CombinedShape className="soft-cap2">
+                <PresaleTextTip className="presale-text-cap">
+                  Soft Cap
+                </PresaleTextTip>
+              </CombinedShape>
+              <CombinedShape className="hard-cap">
+                <PresaleTextTip className="presale-text-cap">Hard Cap</PresaleTextTip>
+              </CombinedShape>
+            </Row>
+          </div>
+        </div>
+      </CarouselItem>
+    );
+  });
 
   return (
     <Section
@@ -307,273 +506,27 @@ const SectionHeader = (props) => {
             <div className="header_section_right">
               <div className="header_presale_board">
                 <Carousel
-                  showArrows={true}
-                  showStatus={false}
-                  autoPlay={false}
-                  showThumbs={false}
-                  showIndicators={true}
+                  activeIndex={activeCarouselIndex}
+                  next={next}
+                  previous={previous}
+                  interval={200000}
                 >
-                  <div className="header_presale_board_round2">
-                    <h5>Pre-Sale Round 2: Open</h5>
-
-                    <div className="presale_info">
-                      <div className="presale_info_rectangle token_price">
-                        <p>
-                          Token Price
-                        </p>
-                        <h5>
-                          1 CRSS = {web3.utils.fromWei(tokenPrice2)} BUSD
-                        </h5>
-                      </div>
-                      <div className="presale_info_rectangle_left presale_info_rectangle">
-                        <p>
-                          Min Purchase
-                        </p>
-                        <h6>
-                          1 BUSD
-                        </h6>
-                      </div>
-                      <div className="presale_info_rectangle_right presale_info_rectangle">
-                        <p>
-                          Max Purchase
-                        </p>
-                        <h6>
-                          25,000 BUSD
-                        </h6>
-                      </div>
-                      <div className="presale_info_rectangle_left presale_info_rectangle">
-                        <p>
-                          Soft Cap
-                        </p>
-                        <h6>
-                          1 BUSD
-                        </h6>
-                      </div>
-
-                      <div className="presale_info_rectangle_right presale_info_rectangle">
-                        <p>
-                          Hard Cap
-                        </p>
-                        <h6>
-                          750,000 BUSD
-                        </h6>
-                      </div>
-                      <div className="presale_info_rectangle long_width">
-                        <h6 className={parseFloat(web3.utils.fromWei(tokenPrice2)) < 0.8 ? "highlight active" : ""}>
-                          Stage 1 = 500,000 CRSS @ 0.7 BUSD
-                        </h6>
-                        <h6 className={parseFloat(web3.utils.fromWei(tokenPrice2)) >= 0.8 ? "highlight active" : ""}>
-                          Stage 2 = 500,000 CRSS @ 0.8 BUSD
-                        </h6>
-                      </div>
-
-                      {/* Anouncement for Round 2 */}
-                      <div className="presale_info_rectangle_left presale_info_rectangle">
-                        <p>Launch Price</p>
-                        <h6>0.95 BUSD</h6>
-                      </div>
-
-                      <div className="presale_info_rectangle_right presale_info_rectangle">
-                        <p>Launch Date</p>
-                        <h6>Dec 2021</h6>
-                      </div>
-                    </div>
-
-                    <div className="presale_tips">
-                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{parseInt(raised2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
-                      <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;750,000 BUSD</span></div>
-                    </div>
-
-                    <div className="presale_progress">
-                      <ProgressBar
-                        percent={softCap2}
-                        fillBackground="linear-gradient(to right, #fefb72, #f0bb31)"
-                      >
-                        <Step transition="scale">
-                          {() => (
-                            <Oval
-                              width="30"
-                            />
-                          )}
-                        </Step>
-                        <Step transition="scale">
-                          {() => (
-                            <Oval
-                              width="30"
-                            />
-                          )}
-                        </Step>
-                        <Step transition="scale">
-                          {() => (
-                            <Oval
-                              width="30"
-                            />
-                          )}
-                        </Step>
-                      </ProgressBar>
-                      <Row>
-                        <CombinedShape className="soft-cap2">
-                          <PresaleTextTip className="presale-text-cap">
-                            Soft Cap
-                          </PresaleTextTip>
-                        </CombinedShape>
-                        <CombinedShape className="hard-cap">
-                          <PresaleTextTip className="presale-text-cap">Hard Cap</PresaleTextTip>
-                        </CombinedShape>
-                      </Row>
-                    </div>
-                  </div>
-
-                  <div className="header_presale_board_round1">
-                    <h5>Pre-Sale Round 1: Sold Out</h5>
-
-                    {/* <div className="presale_counter">
-                      <div className="count_el">
-                        <div className="count_el_digits">
-                          <h3>{day}</h3>              
-                        </div>
-                        <div className="count_el_text">
-                          <p>DAY</p>
-                        </div>
-                      </div>
-
-                      <div className="count_el">
-                        <div className="count_el_digits">
-                          <h3>{hour}</h3>              
-                        </div>
-                        <div className="count_el_text">
-                          <p>HOUR</p>
-                        </div>
-                      </div>
-
-                      <div className="count_el">
-                        <div className="count_el_digits">
-                          <h3>{minute}</h3>              
-                        </div>
-                        <div className="count_el_text">
-                          <p>MIN</p>
-                        </div>
-                      </div>
-
-                      <div className="count_el">
-                        <div className="count_el_digits">
-                          <h3>{second}</h3>              
-                        </div>
-                        <div className="count_el_text">
-                          <p>SEC</p>
-                        </div>
-                      </div>
-                    </div> */}
-
-                    <div className="presale_info">
-                      <div className="presale_info_rectangle token_price">
-                        <p>
-                          Token Price
-                        </p>
-                        <h5>
-                          1 CRSS = {web3.utils.fromWei(tokenPrice)} BUSD
-                        </h5>
-                      </div>
-                      <div className="presale_info_rectangle_left presale_info_rectangle">
-                        <p>
-                          Min Purchase
-                        </p>
-                        <h6>
-                          1 BUSD
-                        </h6>
-                      </div>
-                      <div className="presale_info_rectangle_right presale_info_rectangle">
-                        <p>
-                          Max Purchase
-                        </p>
-                        <h6>
-                          25,000 BUSD
-                        </h6>
-                      </div>
-                      <div className="presale_info_rectangle_left presale_info_rectangle">
-                        <p>
-                          Soft Cap
-                        </p>
-                        <h6>
-                          200,000 BUSD
-                        </h6>
-                      </div>
-
-                      <div className="presale_info_rectangle_right presale_info_rectangle">
-                        <p>
-                          Hard Cap
-                        </p>
-                        <h6>
-                          1,100,000 BUSD
-                        </h6>
-                      </div>
-                      <div className="presale_info_rectangle long_width">
-                        <h6 className={parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.2 ? "highlight active" : ""}>
-                          Stage 1 = 1 Million CRSS @ 0.2 BUSD
-                        </h6>
-                        <h6 className={parseFloat(web3.utils.fromWei(tokenPrice)) > 0.2 && parseFloat(web3.utils.fromWei(tokenPrice)) <= 0.3 ? "highlight active" : ""}>
-                          Stage 2 = 1 Million CRSS @ 0.3 BUSD
-                        </h6>
-                        <h6 className={parseFloat(web3.utils.fromWei(tokenPrice)) > 0.3 ? "highlight active" : ""}>
-                          Stage 3 = 1 Million CRSS @ 0.6 BUSD
-                        </h6>
-                      </div>
-
-                      {/* Anouncement for Round 2 */}
-                      <div className="presale_info_rectangle_left presale_info_rectangle">
-                        <p>Launch Price</p>
-                        <h6>0.95 BUSD</h6>
-                      </div>
-
-                      <div className="presale_info_rectangle_right presale_info_rectangle">
-                        <p>Launch Date</p>
-                        <h6>Dec 2021</h6>
-                      </div>
-                    </div>
-
-                    <div className="presale_tips">
-                      <div className="tips_item"><p>Raised: </p> <span>&nbsp;&nbsp;{parseInt(raised).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} BUSD</span></div>
-                      <div className="tips_item"><p>Target: </p> <span> &nbsp;&nbsp;1,100,000 BUSD</span></div>
-                    </div>
-
-                    <div className="presale_progress">
-                      <ProgressBar
-                        percent={softCap}
-                        fillBackground="linear-gradient(to right, #fefb72, #f0bb31)"
-                      >
-                        <Step transition="scale">
-                          {() => (
-                            <Oval
-                              width="30"
-                            />
-                          )}
-                        </Step>
-                        <Step transition="scale">
-                          {() => (
-                            <Oval
-                              width="30"
-                            />
-                          )}
-                        </Step>
-                        <Step transition="scale">
-                          {() => (
-                            <Oval
-                              width="30"
-                            />
-                          )}
-                        </Step>
-                      </ProgressBar>
-                      <Row>
-                        <CombinedShape className="soft-cap">
-                          <PresaleTextTip className="presale-text-cap">
-                            Soft Cap</PresaleTextTip>
-                        </CombinedShape>
-                        <CombinedShape className="hard-cap">
-                          <PresaleTextTip className="presale-text-cap">Hard Cap</PresaleTextTip>
-                        </CombinedShape>
-                      </Row>
-                    </div>
-                  </div>
+                  <CarouselIndicators
+                    items={carouselItems}
+                    activeIndex={activeCarouselIndex}
+                    onClickHandler={goToIndex}
+                  />
+                  {slides}
+                  <CarouselControl
+                    direction="prev"
+                    directionText=" "
+                    onClickHandler={previous}
+                  />
+                  <CarouselControl
+                    direction="next"
+                    directionText=" "
+                    onClickHandler={next}
+                  />
                 </Carousel>
               </div>
             </div>

@@ -2,10 +2,12 @@ import React, { useState, useContext, useEffect } from "react";
 import { Container } from 'reactstrap';
 
 import 'react-accessible-accordion/dist/fancy-example.css';
-import { Row, Col } from 'reactstrap';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-import classnames from 'classnames';
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+  } from 'reactstrap';
 
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
@@ -27,7 +29,8 @@ const SectionPresaleBottom = (props) => {
     const [day, setDay] = useState('00');
     const [hour, setHour] = useState('00');
 
-    const [carouselIndex, setCarouselIndex] = useState(0);
+    const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
 
     useEffect(() => {
         const currentTime = Date.now();
@@ -54,76 +57,135 @@ const SectionPresaleBottom = (props) => {
             setHour('00');
             setSecond('00');
             if(counter === 0){
-            setDay('00');
-            setMinute('00');
-            setHour('00');
-            setSecond('00');
-            clearInterval(intervalId);
-            return;
+                setDay('00');
+                setMinute('00');
+                setHour('00');
+                setSecond('00');
+                clearInterval(intervalId);
+                return;
             }
             if(counter > 0){
-            setCounter(counter - 1);
+                setCounter(counter - 1);
             }
             
         }, 1000);
         return () => clearInterval(intervalId);
     }, [counter]);
 
-    return (
-        <section className="presale_bottom_section section_padding even_background">
-            <Carousel
-                showArrows={true}
-                showStatus={false}
-                autoPlay={false}
-                showThumbs={false}
-                selectedItem={carouselIndex}
+    const carouselItems = [
+        {
+            key: 1,
+            title: "Pre-Sale Round 2 Live",
+            stages: [
+                {
+                    title: "Stage 1",
+                    price: "0.7 BUSD",
+                    desc: "0.5M Tokens = 350K BUSD"
+                },
+                {
+                    title: "Stage 2",
+                    price: "0.8 BUSD",
+                    desc: "0.5M Tokens = 400K BUSD"
+                }
+            ]
+        },
+        {
+            key: 2,
+            title: "Pre-Sale Round 1 Closed",
+            stages: [
+                {
+                    title: "Stage 1",
+                    price: "0.2 BUSD",
+                    desc: "1M Tokens = 200K BUSD"
+                },
+                {
+                    title: "Stage 2",
+                    price: "0.3 BUSD",
+                    desc: "1M Tokens = 300K BUSD"
+                },
+                {
+                    title: "Stage 3",
+                    price: "0.6 BUSD",
+                    desc: "1M Tokens = 600K BUSD"
+                }
+            ]
+        }
+    ];
+
+    const next = () => {
+        if (animating) return;
+        const nextIndex = activeCarouselIndex === carouselItems.length - 1 ? 0 : activeCarouselIndex + 1;
+        setActiveCarouselIndex(nextIndex);
+    };
+    const previous = () => {
+        if (animating) return;
+        const nextIndex = activeCarouselIndex === 0 ? carouselItems.length - 1 : activeCarouselIndex - 1;
+        setActiveCarouselIndex(nextIndex);
+    };
+    const goToIndex = newIndex => {
+        if (animating) return;
+        setActiveCarouselIndex(newIndex);
+    };
+
+    const slides = carouselItems.map((item) => {
+        return (
+            <CarouselItem
+                onExiting={() => setAnimating(true)}
+                onExited={() => setAnimating(false)}
+                key={item.key}
             >
                 <Container style={{ paddingBottom: '40px' }}>
                     <div className="title">
-                        <h1>Pre-Sale Round 2 Live</h1>
+                        <h1>{item.title}</h1>
                     </div>
                     <div className="d-flex flex-row justify-content-center pt-30">
-                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(1)}>
+                        <a
+                            className="btn btn_primary maxContent presale_round_button"
+                            onClick={() => setActiveCarouselIndex(1)}
+                        >
                             Round 1
                         </a>
-                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(0)}>
+                        <a
+                            className="btn btn_primary maxContent presale_round_button"
+                            onClick={() => setActiveCarouselIndex(0)}
+                        >
                             Round 2
                         </a>
                     </div>
                     <div className="presale_info">
-                        {/* <div className="info_desc pt-50">Max Amount Per Wallet</div>
-                        <div className="info_desc t_b pt-30">25,000 BUSD</div> */}
                         <div className="info_desc pt-50">Vesting Schedule</div>
                         <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days after purchase</div>
                     </div>
                     <div className="presale_stages">
-                        <div className="info_desc pb-30">Pre-Sale Stages</div>
+                        <div className="info_desc">Pre-Sale Stages</div>
                         <div className="s_diagram size_md round2">
-                            <div className="stage_item">
-                                <div className="item_title">Stage 1</div>
-                                <h6 className="item_desc pt-30">Price <b>0.7 BUSD</b></h6>
-                                <h6 className="item_desc">0.5M Tokens = 350K BUSD</h6>
-                            </div>
-                            <img src={arrow1} alt="" />
-                            <div className="stage_item">
-                                <div className="item_title">Stage 2</div>
-                                <h6 className="item_desc pt-30">Price <b>0.8 BUSD</b></h6>
-                                <h6 className="item_desc">0.5M Tokens = 400K BUSD</h6>
-                            </div>
+                            {item.stages.map((stage, index) => {
+                                return (
+                                    <>
+                                        {index > 0 ? <img src={arrow1} alt="" /> : null}
+                                        <div className="stage_item">
+                                            <div className="item_title">{stage.title}</div>
+                                            <h6 className="item_desc pt-30">Price <b>{stage.price}</b></h6>
+                                            <h6 className="item_desc">{stage.desc}</h6>
+                                        </div>
+                                    </>
+                                )
+                            })}
                         </div>
 
                         <div className="s_diagram size_sm">
-                            <div className="stage_item">
-                                <div className="item_title">Stage 1</div>
-                                <h6 className="item_desc  pt-30">Price <b>0.7 BUSD</b></h6>
-                                <h6 className="item_desc">0.5M Tokens = 350K BUSD</h6>
-                            </div>
-                            <img src={arrow2} className="mt-30" alt="" />
-                            <div className="stage_item mt-30">
-                                <div className="item_title">Stage 2</div>
-                                <h6 className="item_desc pt-30">Price <b>0.8 BUSD</b></h6>
-                                <h6 className="item_desc">0.5M Tokens = 400K BUSD</h6>
-                            </div>
+                            {item.stages.map((stage, index) => {
+                                return (
+                                    <>
+                                        {index > 0 ? <img src={arrow2} className="mt-30" alt="" /> : null}
+                                        <div className="stage_item">
+                                            <div className="item_title">{stage.title}</div>
+                                            <h6 className="item_desc  pt-30">Price <b>{stage.price}</b></h6>
+                                            <h6 className="item_desc">{stage.desc}</h6>
+                                        </div>
+                                    </>
+                                )
+                            })}
                         </div>
 
                         <div className="stage_step">
@@ -162,104 +224,34 @@ const SectionPresaleBottom = (props) => {
                         <a className="btn btn_primary btn_whitelisted m-auto p-15 maxContent"  href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
                     </div>
                 </Container>
-                
-                <Container style={{ paddingBottom: '40px' }}>
-                    <div className="title">
-                        <h1>Pre-Sale Round 1 Closed</h1>
-                    </div>
-                    <div className="d-flex flex-row justify-content-center pt-30">
-                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(1)}>
-                            Round 1
-                        </a>
-                        <a className="btn btn_primary maxContent presale_round_button" onClick={() => setCarouselIndex(0)}>
-                            Round 2
-                        </a>
-                    </div>
-                    <div className="presale_info">
-                        {/* <div className="info_desc pt-50">Max Amount Per Wallet</div>
-                        <div className="info_desc t_b pt-30">25,000 BUSD</div> */}
-                        <div className="info_desc pt-50">Vesting Schedule</div>
-                        <div className="info_desc t_b pt-30">5 months linearly with 20% unlock every 30 days after purchase</div>
-                    </div>
-                    <div className="presale_stages">
-                        <div className="info_desc pb-30">Pre-Sale Stages</div>
-                        <div className="s_diagram size_md">
-                            <div className="stage_item">
-                                <div className="item_title">Stage 1</div>
-                                <h6 className="item_desc pt-30">Price <b>0.2 BUSD</b></h6>
-                                <h6 className="item_desc">1M Tokens = 200K BUSD</h6>
-                            </div>
-                            <img src={arrow1} alt="" />
-                            <div className="stage_item">
-                                <div className="item_title">Stage 2</div>
-                                <h6 className="item_desc pt-30">Price <b>0.3 BUSD</b></h6>
-                                <h6 className="item_desc">1M Tokens = 300K BUSD</h6>
-                            </div>
-                            <img src={arrow1} alt="" />
-                            <div className="stage_item">
-                                <div className="item_title">Stage 3</div>
-                                <h6 className="item_desc pt-30">Price <b>0.6 BUSD</b></h6>
-                                <h6 className="item_desc">1M Tokens = 600K BUSD</h6>
-                            </div>
-                        </div>
+            </CarouselItem>
+        );
+    });
 
-
-                        <div className="s_diagram size_sm">
-                            <div className="stage_item">
-                                <div className="item_title">Stage 1</div>
-                                <h6 className="item_desc  pt-30">Price <b>0.2 BUSD</b></h6>
-                                <h6 className="item_desc">1M Tokens = 200K BUSD</h6>
-                            </div>
-                            <img src={arrow2} className="mt-30" alt="" />
-                            <div className="stage_item mt-30">
-                                <div className="item_title">Stage 2</div>
-                                <h6 className="item_desc pt-30">Price <b>0.3 BUSD</b></h6>
-                                <h6 className="item_desc">1M Tokens = 300K BUSD</h6>
-                            </div>
-                            <img src={arrow2} className="mt-30" alt="" />
-                            <div className="stage_item mt-30">
-                                <div className="item_title">Stage 3</div>
-                                <h6 className="item_desc pt-30">Price <b>0.6 BUSD</b></h6>
-                                <h6 className="item_desc">1M Tokens = 600K BUSD</h6>
-                            </div>
-                        </div>
-                        
-                        <div className="stage_step">
-                            <div className="step_item b_green">
-                                <img src={stepImg1} alt="" />
-                                <div className="step_desc">Maximum 25K BUSD per wallet</div>
-                            </div>
-                            <div className="step_item">
-                                <img src={stepImg2} alt="" />
-                                <div className="step_desc">Combined total of 1.85 million BUSD hard cap, 200K soft cap</div>
-                            </div>
-                            <div className="step_item b_green">
-                                <img src={stepImg1} alt="" />
-                                <div className="step_desc">70% of presale amount for development and marketing</div>
-                            </div>
-                            <div className="step_item">
-                                <img src={stepImg2} alt="" />
-                                <div className="step_desc">30% for initial CRSS/BNB and CRSS/BUSD liquidity</div>
-                            </div>
-                            <div className="step_item b_green">
-                                <img src={stepImg1} alt="" />
-                                <div className="step_desc">Combined maximum total of 4 million tokens at pre-sale (8% of max supply)</div>
-                            </div>
-                            <div className="step_item">
-                                <img src={stepImg2} alt="" />
-                                <div className="step_desc">Base price 0.95 BUSD after pre-sale</div>
-                            </div>
-                            <div className="step_item b_green">
-                                <img src={stepImg1} alt="" />
-                                <div className="step_desc">Launching December 2021</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="see_full_roadmap">
-                        <a className="btn btn_primary btn_whitelisted m-auto p-15 maxContent"  href="https://x9epe3je3fk.typeform.com/crosswise">Get Whitelisted</a>
-                    </div>
-                </Container>
+    return (
+        <section className="presale_bottom_section section_padding even_background">
+            <Carousel
+                activeIndex={activeCarouselIndex}
+                next={next}
+                previous={previous}
+                interval={200000}
+            >
+                <CarouselIndicators
+                    items={carouselItems}
+                    activeIndex={activeCarouselIndex}
+                    onClickHandler={goToIndex}
+                />
+                {slides}
+                <CarouselControl
+                    direction="prev"
+                    directionText=" "
+                    onClickHandler={previous}
+                />
+                <CarouselControl
+                    direction="next"
+                    directionText=" "
+                    onClickHandler={next}
+                />
             </Carousel>
         </section>
     );

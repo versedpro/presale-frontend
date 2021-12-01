@@ -1419,6 +1419,7 @@ img.vert-move {
 .info_desc {
     font-size: 25px;
     color: white;
+    text-align: center;
 }
 
 .t_b {
@@ -1426,7 +1427,7 @@ img.vert-move {
 }
 
 .presale_stages {
-    padding: 50px 0px;
+    padding: 30px 0px;
 }
 
 .presale_stages .s_diagram {
@@ -1460,6 +1461,7 @@ img.vert-move {
     border-radius: 5px;
     width: 150px;
     margin: auto;
+    margin-top: 30px;
 }
 
 .stage_item .item_desc {
@@ -2303,52 +2305,23 @@ img.vert-move {
     align-items: center;
 }
 
-/* Horizontal Carousel */
-.carousel.carousel-slider .control-arrow:hover {
-    background: unset;
-}
-
-.carousel .slide img {
+.carousel img {
     width: unset !important;
 }
 
-.light-theme .carousel.carousel-slider .control-arrow {
-    background-color: none;
-}
-
-.light-theme .carousel.carousel-slider .control-arrow:hover {
-    background-color: #0fa;
-}
-
-.light-theme .carousel .control-prev.control-arrow:before {
-    border-right: 8px solid #0fa;
-}
-
-.light-theme .carousel .control-prev.control-arrow:hover:before {
-    border-right: 8px solid #fff;
-}
-
-.light-theme .carousel .control-next.control-arrow:before {
-    border-left: 8px solid #0fa;
-}
-
-.light-theme .carousel .control-next.control-arrow:hover:before {
-    border-left: 8px solid #fff;
-}
-
-.carousel .control-dots .dot {
-    width: 6px !important;
-    height: 6px !important;
-    margin: 0px 16px !important;
-}
-
-.carousel .control-dots .dot {
-    background: #000 !important;
+.carousel-indicators button {
+    margin: 0px 15px;
+    padding: 0;
+    border: 0;
+    background-color: #000;
     opacity: 0.25;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transition: opacity .25s ease-in;
 }
 
-.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
-    box-shadow: 1px 1px 2px #0b8e90 !important;
-    background: #0b8e90 !important;
+.carousel-indicators button.active {
+    background-color: #0b8e90;
     opacity: 0.75;
 }

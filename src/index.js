@@ -14,9 +14,7 @@ ReactDOM.render(
     <Provider store={configureStore()}>
       <ThemeContextProvider>
         <RefreshContextProvider>
-          <React.StrictMode>
-            <App />
-          </React.StrictMode>
+          <App />
         </RefreshContextProvider>
       </ThemeContextProvider>
     </Provider>
