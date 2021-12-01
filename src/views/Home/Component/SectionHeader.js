@@ -370,7 +370,7 @@ const SectionHeader = (props) => {
 
           <div className="presale_progress">
             <ProgressBar
-              percent={item.softCap}
+              percent={item.percent}
               fillBackground="linear-gradient(to right, #fefb72, #f0bb31)"
             >
               <Step transition="scale">
