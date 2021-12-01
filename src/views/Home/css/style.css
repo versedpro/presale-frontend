@@ -85,7 +85,7 @@
 
 .presale-info {
     width: 565px;
-    height: 430px;
+    height: 370px;
     padding: 48px 47px 40px 48px;
     margin: 20px;
     border-radius: 12px;
@@ -261,7 +261,7 @@
 .section-presale .presale_info.carousel-second {}
 
 .presale_round2 {
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
 }
 
 .header_section {
@@ -2218,6 +2218,14 @@ img.vert-move {
     width: max-content;
 }
 
+.section-presale .desktop {
+    display: flex;
+}
+
+.section-presale .mobile {
+    display: none;
+}
+
 @media only screen and (max-width: 500px) and (min-width: 450px) {
     .presale-info {
         width: 100%;
@@ -2228,15 +2236,21 @@ img.vert-move {
 @media only screen and (max-width: 450px) {
     .presale-info {
         width: 100%;
-        padding: 28px 5px 88px 5px;
+        height: auto;
+        padding: 28px 5px 28px 5px;
     }
     .section-presale .presale_info {
+        height: auto;
         margin-top: 0px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .section-presale .presale-info.mobile {
-        height: auto;
+    .section-presale .desktop {
+        display: none;
+    }
+    .section-presale .mobile {
+        display: flex;
+        flex-direction: column;
     }
     .presale-info .rectangle {
         margin: 5px 0px;

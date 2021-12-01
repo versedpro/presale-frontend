@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
-import { format } from 'date-fns';
 import { useSelector } from "react-redux";
 import { Container, Table, Tooltip } from 'reactstrap';
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -58,52 +57,6 @@ const SectionHeader = (props) => {
   const [unlockedAmount2, setUnlockedAmount2] = useState(new BN(0));
   const [rewardAmount2, setRewardAmount2] = useState(new BN(0));
   const [withdrawAmount2, setWithdrawAmount2] = useState(new BN(0));
-
-  // const secondsRemaining = useCountDown(depositTime + 2629800 * 5);
-  // const { days: days11, hours: hours11 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining - 2629800 * 4, 0)
-  // );
-  // const { days: days12, hours: hours12 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining - 2629800 * 3, 0)
-  // );
-  // const { days: days13, hours: hours13 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining - 2629800 * 2, 0)
-  // );
-  // const { days: days14, hours: hours14 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining - 2629800, 0)
-  // );
-  // const { days: days15, hours: hours15 } = getDayHourPeriods(secondsRemaining);
-
-  // const remains1 = [
-  //   [days11, hours11],
-  //   [days12, hours12],
-  //   [days13, hours13],
-  //   [days14, hours14],
-  //   [days15, hours15],
-  // ];
-  
-  // const secondsRemaining2 = useCountDown(depositTime2 + 2629800 * 5);
-  // const { days: days21, hours: hours21 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining2 - 2629800 * 4, 0)
-  // );
-  // const { days: days22, hours: hours22 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining2 - 2629800 * 3, 0)
-  // );
-  // const { days: days23, hours: hours23 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining2 - 2629800 * 2, 0)
-  // );
-  // const { days: days24, hours: hours24 } = getDayHourPeriods(
-  //   Math.max(secondsRemaining2 - 2629800, 0)
-  // );
-  // const { days: days25, hours: hours25 } = getDayHourPeriods(secondsRemaining2);
-
-  // const remains2 = [
-  //   [days21, hours21],
-  //   [days22, hours22],
-  //   [days23, hours23],
-  //   [days24, hours24],
-  //   [days25, hours25],
-  // ];
 
   const toggle = () => {
     setTooltipOpen(!tooltipOpen);
@@ -172,6 +125,139 @@ const SectionHeader = (props) => {
     await withdrawToken(unlockedAmount, address);
   }
 
+  const renderRound2 = () => {
+    return (
+      <div className="d-flex flex-column align-items-center presale-column">
+        <div className="presale-info">
+          <h5 className="title">
+            {`My Round 2 Tokens`}
+          </h5>
+          <div className="presale_round2">
+            <div className="presale_info carousel-first">
+              <div className="rectangle">
+                <p>Total Deposited</p>
+                <h6>{getFullDisplayBalance(depositAmount2, 18, 2)} BUSD</h6>
+              </div>
+              <div className="rectangle">
+                <p>Total Received</p>
+                <h6>{getFullDisplayBalance(rewardAmount2, 18, 2)} CRSS</h6>
+              </div>
+            </div>
+
+            <div className="presale_info carousel-second">
+              <div className="rectangle">
+                <p>Unlocked Tokens</p>
+                <h6>{getFullDisplayBalance(unlockedAmount2, 18, 2)} CRSS</h6>
+              </div>
+              <div className="rectangle">
+                <p>Total Withdrawn</p>
+                <h6>{getFullDisplayBalance(withdrawAmount2, 18, 2)} CRSS</h6>
+              </div>
+            </div>
+
+            <div className="claim_section">
+              <button
+                className={`btn btn_primary claim-button presale-btns
+                  ${getBalanceNumber(unlockedAmount2, 18) < 1 ? 'disabled' : ''}`}
+                onClick={claimToken2}
+              >
+                Withdraw Tokens
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const renderRound1 = () => {
+    return (
+      <div className="d-flex flex-column align-items-center presale-column">
+        <div className="presale-info">
+          <h5 className="title">
+            {`My Round 1 Tokens`}
+          </h5>
+          <div className="presale_round1">
+            <div className="presale_info carousel-first">
+              <div className="rectangle">
+                <p>Total Deposited</p>
+                <h6>{getFullDisplayBalance(depositAmount, 18, 2)} BUSD</h6>
+              </div>
+              <div className="rectangle">
+                <p>Total Received</p>
+                <h6>{getFullDisplayBalance(rewardAmount, 18, 2)} CRSS</h6>
+              </div>
+            </div>
+
+            <div className="presale_info carousel-second">
+              <div className="rectangle">
+                <p>Unlocked Tokens</p>
+                <h6>{getFullDisplayBalance(unlockedAmount, 18, 2)} CRSS</h6>
+              </div>
+              <div className="rectangle">
+                <p>Total Withdrawn</p>
+                <h6>{getFullDisplayBalance(withdrawAmount, 18, 2)} CRSS</h6>
+              </div>
+            </div>
+
+            <div className="claim_section">
+              <button
+                className={`btn btn_primary claim-button presale-btns
+                  ${getBalanceNumber(unlockedAmount, 18, 2) < 1 ? 'disabled' : ''}`}
+                onClick={claimToken}
+              >
+                Withdraw Tokens
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* <div className="presale-vesting mb-3">
+          <Table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Deposited</th>
+                <th>Received</th>
+                <th>Unlocks In</th>
+              </tr>
+            </thead>
+            <tbody>
+              {remains1.map((pair, index) => {
+                if (pair[0] < 1 && pair[1] < 1) return null;
+                return (
+                  <tr key={`${index}th`}>
+                    <td>
+                      <h6>{
+                        depositTime > 0 ? `${format(depositTime * 1000, 'dd MMM yyyy HH:mm')} UTC` : '---'
+                      }</h6>
+                    </td>
+                    <td>
+                      <h6>{
+                        getFullDisplayBalance(
+                          depositAmount.mul(new BN(index + 1)).div(new BN(5)), 18, 2
+                        )
+                      } BUSD</h6>
+                    </td>
+                    <td>
+                      <h6>{
+                        getFullDisplayBalance(
+                          rewardAmount.mul(new BN(index + 1)).div(new BN(5)), 18, 2
+                        )
+                      } CRSS</h6>
+                    </td>
+                    <td>
+                      <h6>{pair[0] ? pair[0] : 0} days {pair[1] ? pair[1] : 0} hours</h6>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        </div> */}
+      </div>
+    );
+  }
+
   return (
     <section className="header_section section-presale h-100">
       <Tooltip placement="top" isOpen={tooltipOpen} target="address-tooltip" toggle={toggle}>
@@ -182,7 +268,7 @@ const SectionHeader = (props) => {
         <Row className="w-100">
           <div className="presale-wrap w-100 mt-3">
             <div className="presale-info">
-              <h5 className="title"> Buy Tokens (Round 2)</h5>
+              <h5 className="title"> Buy Round 2 Tokens</h5>
               <p>Wallet address</p>
               <div className="wallet-address">
                 <span>{address}</span>
@@ -231,10 +317,11 @@ const SectionHeader = (props) => {
             </div>
 
             <div className="presale-sub-desc">
+              <h5 className="info_desc mx-auto pb-30">Token Vesting</h5>
               <p>
-                Transactions are anonymous and secure. Tokens are vested within <b className="textBlue">5</b> months linearly, with <b className="textBlue">20%</b> unlocked every <b className="textBlue">30</b> days, starting from time of purchase. That means every <b className="textBlue">30</b> days, <b className="textBlue">20%</b> of that batch of tokens will be unlocked and ready to withdraw to your wallet. Please add our token address to your wallet so that your tokens are visible in your assets when you withdraw them:
+                Tokens are vested within <b className="textBlue">5 months</b> linearly, with <b className="textBlue">20%</b> unlocked every <b className="textBlue">30 days</b>, from time of purchase. That means every 30 days, 20% of that batch of tokens will be unlocked and ready to withdraw to your wallet. Please add the CRSS token address to your wallet so that your tokens are visible in your assets once you withdraw them:
               </p>
-              <p className="presale-address mt-3">
+              <p className="presale-address">
                 <CopyToClipboard
                   text={'0x0999ba9aEA33DcA5B615fFc9F8f88D260eAB74F1'}
                   id="address-tooltip"
@@ -249,177 +336,20 @@ const SectionHeader = (props) => {
                 </CopyToClipboard>
               </p>
               <p>
-                We recommend leaving your tokens until we launch in December. At that point you can withdraw the unlocked balance and use it to farm or provide liquidity to earn more <b className="textBlue">CRSS</b>!
+                You can leave your tokens until we launch in December. At that point you can withdraw the unlocked balance, to farm or provide liquidity to earn more CRSS!
               </p>
             </div>
           </div>
-          <div className="d-flex flex-row justify-content-center flex-wrap w-100">
-            <div className="d-flex flex-column align-items-center presale-column">
-              <div className="presale-info mobile">
-                <h5 className="title">
-                  {`My Tokens (Round 2)`}
-                </h5>
-                <div className="presale_round2">
-                  <div className="presale_info carousel-first">
-                    <div className="rectangle">
-                      <p>Total Deposited</p>
-                      <h6>{getFullDisplayBalance(depositAmount2, 18, 2)} BUSD</h6>
-                    </div>
-                    <div className="rectangle">
-                      <p>Total Received</p>
-                      <h6>{getFullDisplayBalance(rewardAmount2, 18, 2)} CRSS</h6>
-                    </div>
-                  </div>
-
-                  <div className="presale_info carousel-second">
-                    <div className="rectangle">
-                      <p>Unlocked Tokens</p>
-                      <h6>{getFullDisplayBalance(unlockedAmount2, 18, 2)} CRSS</h6>
-                    </div>
-                    <div className="rectangle">
-                      <p>Total Withdrawn</p>
-                      <h6>{getFullDisplayBalance(withdrawAmount2, 18, 2)} CRSS</h6>
-                    </div>
-                  </div>
-
-                  <div className="claim_section">
-                    <button
-                      className={`btn btn_primary claim-button presale-btns
-                        ${getBalanceNumber(unlockedAmount2, 18) < 1 ? 'disabled' : ''}`}
-                      onClick={claimToken2}
-                    >
-                      Withdraw Tokens
-                    </button>
-                  </div>
-                </div>
-              </div>
-              {/* <div className="presale-vesting mb-3">
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Deposited</th>
-                      <th>Received</th>
-                      <th>Unlocks In</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {remains2.map((pair, index) => {
-                      if (pair[0] < 1 && pair[1] < 1) return null;
-                      return (
-                        <tr key={`${index}th`}>
-                          <td>
-                            <h6>{
-                              depositTime2 > 0 ? `${format(depositTime2 * 1000, 'dd MMM yyyy HH:mm')} UTC` : '---'
-                            }</h6>
-                          </td>
-                          <td>
-                            <h6>{
-                              getFullDisplayBalance(
-                                depositAmount2.mul(new BN(index + 1)).div(new BN(5)), 18, 2
-                              )
-                            } BUSD</h6>
-                          </td>
-                          <td>
-                            <h6>{
-                              getFullDisplayBalance(
-                                rewardAmount2.mul(new BN(index + 1)).div(new BN(5)), 18, 2
-                              )
-                            } CRSS</h6>
-                          </td>
-                          <td>
-                            <h6>{pair[0] ? pair[0] : 0} days {pair[1] ? pair[1] : 0} hours</h6>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </Table>
-              </div> */}
+          <div className="w-100 mobile">
+            <div className="d-flex flex-row justify-content-center flex-wrap w-100">
+              {renderRound2()}
+              {renderRound1()}            
             </div>
-
-            <div className="d-flex flex-column align-items-center presale-column">
-              <div className="presale-info mobile">
-                <h5 className="title">
-                  {`My Tokens (Round 1)`}
-                </h5>
-                <div className="presale_round1">
-                  <div className="presale_info carousel-first">
-                    <div className="rectangle">
-                      <p>Total Deposited</p>
-                      <h6>{getFullDisplayBalance(depositAmount, 18, 2)} BUSD</h6>
-                    </div>
-                    <div className="rectangle">
-                      <p>Total Received</p>
-                      <h6>{getFullDisplayBalance(rewardAmount, 18, 2)} CRSS</h6>
-                    </div>
-                  </div>
-
-                  <div className="presale_info carousel-second">
-                    <div className="rectangle">
-                      <p>Unlocked Tokens</p>
-                      <h6>{getFullDisplayBalance(unlockedAmount, 18, 2)} CRSS</h6>
-                    </div>
-                    <div className="rectangle">
-                      <p>Total Withdrawn</p>
-                      <h6>{getFullDisplayBalance(withdrawAmount, 18, 2)} CRSS</h6>
-                    </div>
-                  </div>
-
-                  <div className="claim_section">
-                    <button
-                      className={`btn btn_primary claim-button presale-btns
-                        ${getBalanceNumber(unlockedAmount, 18, 2) < 1 ? 'disabled' : ''}`}
-                      onClick={claimToken}
-                    >
-                      Withdraw Tokens
-                    </button>
-                  </div>
-                </div>
-              </div>
-              {/* <div className="presale-vesting mb-3">
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Deposited</th>
-                      <th>Received</th>
-                      <th>Unlocks In</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {remains1.map((pair, index) => {
-                      if (pair[0] < 1 && pair[1] < 1) return null;
-                      return (
-                        <tr key={`${index}th`}>
-                          <td>
-                            <h6>{
-                              depositTime > 0 ? `${format(depositTime * 1000, 'dd MMM yyyy HH:mm')} UTC` : '---'
-                            }</h6>
-                          </td>
-                          <td>
-                            <h6>{
-                              getFullDisplayBalance(
-                                depositAmount.mul(new BN(index + 1)).div(new BN(5)), 18, 2
-                              )
-                            } BUSD</h6>
-                          </td>
-                          <td>
-                            <h6>{
-                              getFullDisplayBalance(
-                                rewardAmount.mul(new BN(index + 1)).div(new BN(5)), 18, 2
-                              )
-                            } CRSS</h6>
-                          </td>
-                          <td>
-                            <h6>{pair[0] ? pair[0] : 0} days {pair[1] ? pair[1] : 0} hours</h6>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </Table>
-              </div> */}
+          </div>
+          <div className="w-100 desktop">
+            <div className="d-flex flex-row justify-content-center flex-wrap w-100">
+              {renderRound1()}
+              {renderRound2()}            
             </div>
           </div>
         </Row>

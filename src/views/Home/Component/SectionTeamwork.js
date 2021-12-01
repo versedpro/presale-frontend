@@ -1,7 +1,6 @@
-import React, { Component, Fragment, useState, useContext } from "react";
-import { Container, Input } from 'reactstrap';
+import React, { useContext } from "react";
+import { Container } from 'reactstrap';
 
-import Slider from "react-slick";
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Row, Col } from 'reactstrap';
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -15,7 +14,7 @@ import linkedinLightIcon from '../../../assets/images/crosswise/linkedin-white-i
 import Freddy from '../../../assets/images/crosswise/members/Freddy.png';
 import Greg from '../../../assets/images/crosswise/members/Greg.png';
 import Dino from '../../../assets/images/crosswise/members/Dino.jpg';
-import Yehor from '../../../assets/images/crosswise/members/Yehor.jpg';
+import Harry from '../../../assets/images/crosswise/members/Harry.jpg';
 import Leon from '../../../assets/images/crosswise/members/Leon.jpg';
 import JamesGao from '../../../assets/images/crosswise/members/JamesGao.jpg';
 import BenWeider from '../../../assets/images/crosswise/members/BenWeider.jpg';
@@ -74,6 +73,14 @@ const SectionTeamwork = (props) => {
             linkedIn: 'https://www.linkedin.com/in/yin-james-a303631b7/',
             role: 'Senior Back-End Developer',
             desc: `James specializes in smart contract and Dapp development at Crosswise. He is an accomplished back-end and front-end developer with over 8 years experience building web and mobile applications. He has accumulated extensive experience in blockchain development, contributing to a wide range of DeFi projects. James is a particularly creative and innovative developer.`
+        },
+        {
+            image: Harry,
+            name: 'Harry Liu',
+            linkedIn: 'https://www.linkedin.com/in/harry-liu-192510191/',
+            role: 'Senior Smart Contract Developer',
+            desc: `Harry is a software engineer with strong background in decentralized 
+            application architecture. He's a certified blockchain developer with expertise in smart contracts and decentralized applications development. He is most proficient in Solidity, C++, Golang and Rust programming languages. Harry has worked on numerous blockchain projects as a developer, lead and consultant. Harry earned a Bachelor's degree in Computer Software Engineering at the Hebei University of Technology. He is based in Canada. but is originally from China. In his free time, he enjoys swimming and as well as playing billiards and the piano.`
         },
     ]
 
