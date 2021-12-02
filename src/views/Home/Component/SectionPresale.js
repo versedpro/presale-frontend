@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Container, Table, Tooltip } from 'reactstrap';
 import CopyToClipboard from "react-copy-to-clipboard";
 import 'react-accessible-accordion/dist/fancy-example.css';
-import { Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { BN } from 'web3-utils';
 import useRefresh from '../../../redux/useRefresh'
 import '../css/style.css'
