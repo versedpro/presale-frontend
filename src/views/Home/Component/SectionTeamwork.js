@@ -47,6 +47,14 @@ const SectionTeamwork = (props) => {
             desc: `DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor's degree in software engineering.`
         },
         {
+            image: Harry,
+            name: 'Harry Liu',
+            linkedIn: 'https://www.linkedin.com/in/harry-liu-192510191/',
+            role: 'Senior Smart Contract Developer',
+            desc: `Harry is a software engineer with strong background in decentralized 
+            application architecture. He's a certified blockchain developer with expertise in smart contracts and decentralized applications development. He is most proficient in Solidity, C++, Golang and Rust programming languages. Harry has worked on numerous blockchain projects as a developer, lead and consultant. Harry earned a Bachelor's degree in Computer Software Engineering at the Hebei University of Technology. He is based in Canada. but is originally from China. In his free time, he enjoys swimming and as well as playing billiards and the piano.`
+        },
+        {
             image: Leon,
             name: 'Leon Jin',
             linkedIn: 'https://www.linkedin.com/in/leon-jin-7013011b9/',
@@ -61,13 +69,6 @@ const SectionTeamwork = (props) => {
             desc: `James holds a bachelor's degree in computer science and has a profound understanding of software engineering. He is a full stack developer who has contributed to several well-known DeFi projects.`
         },
         {
-            image: BenWeider,
-            name: 'Ben Weider',
-            linkedIn: 'https://www.linkedin.com/in/ben-weider-411184211/',
-            role: 'Lead Front-End Developer',
-            desc: `Ben is a passionate blockchain and full stack Fintech developer who likes to build solutions combining blockchain technologies and financial trading systems. With over 9 years of experience, Ben leads the front-end development team. Ben has a particular talent for applying development best practices, methodologies and ensuring overall code quality. He loves to work together as part of a great team. In his free time he enjoys tennis and basketball, as well as technical trading on forex, futures and the crypto markets.`
-        },
-        {
             image: JamesYin,
             name: 'James Yin',
             linkedIn: 'https://www.linkedin.com/in/yin-james-a303631b7/',
@@ -75,12 +76,11 @@ const SectionTeamwork = (props) => {
             desc: `James specializes in smart contract and Dapp development at Crosswise. He is an accomplished back-end and front-end developer with over 8 years experience building web and mobile applications. He has accumulated extensive experience in blockchain development, contributing to a wide range of DeFi projects. James is a particularly creative and innovative developer.`
         },
         {
-            image: Harry,
-            name: 'Harry Liu',
-            linkedIn: 'https://www.linkedin.com/in/harry-liu-192510191/',
-            role: 'Senior Smart Contract Developer',
-            desc: `Harry is a software engineer with strong background in decentralized 
-            application architecture. He's a certified blockchain developer with expertise in smart contracts and decentralized applications development. He is most proficient in Solidity, C++, Golang and Rust programming languages. Harry has worked on numerous blockchain projects as a developer, lead and consultant. Harry earned a Bachelor's degree in Computer Software Engineering at the Hebei University of Technology. He is based in Canada. but is originally from China. In his free time, he enjoys swimming and as well as playing billiards and the piano.`
+            image: BenWeider,
+            name: 'Ben Weider',
+            linkedIn: 'https://www.linkedin.com/in/ben-weider-411184211/',
+            role: 'Lead Front-End Developer',
+            desc: `Ben is a passionate blockchain and full stack Fintech developer who likes to build solutions combining blockchain technologies and financial trading systems. With over 9 years of experience, Ben leads the front-end development team. Ben has a particular talent for applying development best practices, methodologies and ensuring overall code quality. He loves to work together as part of a great team. In his free time he enjoys tennis and basketball, as well as technical trading on forex, futures and the crypto markets.`
         },
     ]
 
