@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 import { useDispatch } from 'react-redux';
 import Web3 from 'web3';
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
