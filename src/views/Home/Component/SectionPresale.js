@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { Container, Table, Tooltip } from 'reactstrap';
 import CopyToClipboard from "react-copy-to-clipboard";
 import 'react-accessible-accordion/dist/fancy-example.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Row, Col } from 'reactstrap';
 import { BN } from 'web3-utils';
 import useRefresh from '../../../redux/useRefresh'
