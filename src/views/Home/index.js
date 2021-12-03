@@ -28,6 +28,7 @@ import SectionRoadmapV2 from "./Component/SectionRoadmapV2";
 import SectionTokenomic from "./Component/SectionTokenomic";
 import SectionTokenomicV2 from "./Component/SectionTokenomicV2";
 import SectionPresale from "./Component/SectionPresale";
+import SectionJobBoard from "./Component/SectionJobBoard";
 import SectionCrosswiseFeature from "./Component/SectionCrosswiseFeatures";
 import SectionPresaleBottom from "./Component/SectionPresaleBottom";
 import SectionPartner from "./Component/SectionPartner";
@@ -43,6 +44,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const [showPresaleInfo, setShowPresaleInfo] = useState(false)
+  const [showJobBoard, setShowJobBoard] = useState(0)
   const [wallletOpen, setWallletOpen] = useState(false)
 
   const { account, chainId } = useActiveWeb3React()
@@ -59,16 +61,38 @@ const Home = () => {
   const handleLogout = () => {
     logout();
     setShowPresaleInfo(false);
+    setShowJobBoard(false);
   }
-  const showPresale = () => setShowPresaleInfo(true)
-  const showHome = () => setShowPresaleInfo(false)
+  const showPresale = () => {
+    setShowPresaleInfo(true)
+    setShowJobBoard(0)
+    
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+  const handleShowJobBoard = () => {
+    setShowJobBoard(1)
+    setShowPresaleInfo(false)
+    
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+  const showHome = () => {
+    setShowPresaleInfo(false)
+    setShowJobBoard(0)
+  }
 
   const onConnectHandle = () => {
     setWallletOpen(true);
   }
 
   const toogleToolbar = () => {
-    setShowPresaleInfo(false)
     showHome()
   }
 
@@ -140,6 +164,12 @@ const Home = () => {
                   <li className="nav-item">
                     <a className="nav-link" href="#help" onClick={toogleToolbar}><span>Socials</span></a>
                   </li>
+                  <li className="nav-item" style={{ margin: "0.5rem 1rem" }}>
+                    <a className="nav-link hiring btn" onClick={handleShowJobBoard}>
+                      <i className="fas fa-bullhorn"></i>
+                      <span>&nbsp;We're hiring!</span>
+                    </a>
+                  </li>
                   {/* <li className="nav-item ml-md-4">
                       <a className="nav-link">
                         <div className="input-group">
@@ -209,6 +239,8 @@ const Home = () => {
         </header>
         {address && showPresaleInfo ? (
           <SectionPresale></SectionPresale>
+        ) : showJobBoard > 0 ? (
+          <SectionJobBoard parentIndex={showJobBoard} setParentIndex={setShowJobBoard}></SectionJobBoard>
         ) : (
           <>
             <SectionHeader />
