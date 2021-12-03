@@ -39,12 +39,12 @@ const SectionJobBoard = (props) => {
                 return (
                   <div
                     key={`${index}th-position`}
-                    className="position d-flex justify-content-between align-items-center"
+                    className="position d-flex justify-content-between align-items-center flex-nowrap"
                     onClick={() => openPosition(index)}
                   >
                     <div className="title">
                       <h6>{position.title}</h6>
-                      <div className="d-flex">
+                      <div className="d-flex flex-wrap">
                         <p>{position.department}</p>
                         <p>&nbsp;/&nbsp;</p>
                         <p>{position.contract}</p>
