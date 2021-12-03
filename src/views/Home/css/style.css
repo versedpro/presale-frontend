@@ -1812,6 +1812,8 @@ img.vert-move {
 
 .section-job-board,
 .section-position-board {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .job-board-container,

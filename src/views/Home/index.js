@@ -164,7 +164,7 @@ const Home = () => {
                   <li className="nav-item">
                     <a className="nav-link" href="#help" onClick={toogleToolbar}><span>Socials</span></a>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item" style={{ margin: "0.5rem 1rem" }}>
                     <a className="nav-link hiring btn" onClick={handleShowJobBoard}>
                       <i className="fas fa-bullhorn"></i>
                       <span>&nbsp;We're hiring!</span>

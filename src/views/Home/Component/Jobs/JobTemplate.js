@@ -24,32 +24,32 @@ const JobTemplate = (props) => {
         </div>
         <Row className="brief d-flex flex-column mt-5">
           <Row className="item d-flex flex-row">
-            <Col xs={6} sm={3}>
+            <Col xs={5} sm={3}>
               <p>
                 <i className="fa fa-clock mr-3"></i>
                 Posted
               </p>
               </Col>
-            <Col xs={6} sm={9}>
+            <Col xs={7} sm={9}>
               <p>{posted}</p>
             </Col>
           </Row>
           <Row className="item d-flex flex-row">
-            <Col xs={6} sm={3}>
+            <Col xs={5} sm={3}>
               <p>
                 <i className="fa fa-map-marker-alt mr-3"></i>
                 Location
               </p>
             </Col>
-            <Col xs={6} sm={9}><p>{location}</p></Col>
+            <Col xs={7} sm={9}><p>{location}</p></Col>
           </Row>
           <Row className="item d-flex flex-row">
-            <Col xs={6} sm={3}>
+            <Col xs={5} sm={3}>
               <p>
                 <i className="fa fa-coins mr-3"></i>
                 Wage
               </p></Col>
-            <Col xs={6} sm={9}><p>{wage}</p></Col>
+            <Col xs={7} sm={9}><p>{wage}</p></Col>
           </Row>
         </Row>
         <Row className="mission d-flex flex-column mt-5">
