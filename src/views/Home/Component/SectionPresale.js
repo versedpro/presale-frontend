@@ -31,7 +31,7 @@ import {
 import { getDayHourPeriods } from "../../../widgets/getTimePeriods";
 import useCountDown from "../../../widgets/useCountDown";
 
-const SectionHeader = (props) => {
+const SectionPresale = (props) => {
   const address = useSelector(state => state.authUser.address);
   const { isDark, toggleTheme } = useContext(ThemeContext);
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -357,4 +357,4 @@ const SectionHeader = (props) => {
   );
 }
 
-export default SectionHeader;
+export default SectionPresale;
