@@ -240,12 +240,12 @@ const Home = () => {
         {address && showPresaleInfo ? (
           <>
             <SectionPresale></SectionPresale>
-            <SectionFooter />
+            <SectionFooter className="footer_section odd_background" />
           </>
         ) : showJobBoard > 0 ? (
           <>
             <SectionJobBoard parentIndex={showJobBoard} setParentIndex={setShowJobBoard}></SectionJobBoard>
-            <SectionFooter />
+            <SectionFooter className="footer_section odd_background" />
           </>
         ) : (
           <>

@@ -12,7 +12,7 @@ const SectionFooter = (props) => {
     const { isDark, toggleTheme } = useContext(ThemeContext)
     return (
         
-          <section className="footer_section even_background">
+          <section className="footer_section even_background" {...props}>
             <Container>
               <div className="footer_bar">
                   <div className="footer_bar_icon">
