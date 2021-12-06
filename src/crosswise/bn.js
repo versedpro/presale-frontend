@@ -11,7 +11,10 @@ export const getFullDisplayBalance = (
   decimals,
   displayDecimals
 ) => {
-  return getBalanceNumber(balance, decimals).toFixed(displayDecimals);
+  return (
+    getBalanceNumber(balance, decimals - displayDecimals)
+    / Math.pow(10, displayDecimals)
+  ).toFixed(displayDecimals);
 };
 
 export const getBalanceAmount = (amount, decimals) => {
