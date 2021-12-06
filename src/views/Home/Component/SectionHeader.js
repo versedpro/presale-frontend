@@ -509,7 +509,7 @@ const SectionHeader = (props) => {
                   activeIndex={activeCarouselIndex}
                   next={next}
                   previous={previous}
-                  interval={200000}
+                  interval={false}
                 >
                   <CarouselIndicators
                     items={carouselItems}

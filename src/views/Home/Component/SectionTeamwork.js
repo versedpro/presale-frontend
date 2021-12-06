@@ -29,8 +29,8 @@ const SectionTeamwork = (props) => {
             image: Freddy,
             name: 'Frederic Beeg',
             linkedIn: 'https://www.linkedin.com/in/fbeeg/',
-            role: 'CEO/Founder',
-            desc: `Focused on building crypto and e-commerce platforms. Living on Koh Phangan, Thailand and Canggu, Bali, Indonesia. Built an industry-leading digital marketplace for video game distribution, and created several successful brands on Amazon.`
+            role: 'CEO & Founder',
+            desc: `Freddy is a long-time entrepreneur. He set up the leading European gaming marketplace for video game distribution in 2013, at the age of 19, which he later sold to a major competitor. In recent years he has focused on investing in crypto, building e-commerce platforms, and launching several brands on Amazon. He spends most of his time between Koh Phangan, Thailand and Canggu, Bali, Indonesia. Freddy is also an avid tennis player.`
         },
         {
             image: Greg,
@@ -44,7 +44,7 @@ const SectionTeamwork = (props) => {
             name: 'Dino Dzizic',
             linkedIn: 'https://www.linkedin.com/in/dino-dzizic-189a54191/',
             role: 'Chief Technology Officer',
-            desc: `DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor's degree in software engineering.`
+            desc: `DeFi/Dapp/NFT specialist with a passion for blockchain technology. Dino has lead the crosswise development team since it's inception. He has over 5 years experience developing blockchain technology, including high-profile projects, and holds a Bachelor's degree in software engineering. In his free time he enjoys playing tennis and is a big fan of fellow Serbian Novak Djokovic.`
         },
         {
             image: Harry,
@@ -65,8 +65,8 @@ const SectionTeamwork = (props) => {
             image: JamesGao,
             name: 'James Gao',
             linkedIn: 'https://www.linkedin.com/in/james-gao-49461a217/',
-            role: 'Lead Developer',
-            desc: `James holds a bachelor's degree in computer science and has a profound understanding of software engineering. He is a full stack developer who has contributed to several well-known DeFi projects.`
+            role: 'Senior Smart Contract Developer',
+            desc: `James is from Xiangtan, Hunan, China. He holds bachelor's degree in computer science and has a profound understanding of software engineering. He is a full stack developer who has contributed to several well-known DeFi projects. James also manages our servers. In his spare time he is an avid climber and has a particular interest in architecture.`
         },
         {
             image: JamesYin,
