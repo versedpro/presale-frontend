@@ -238,9 +238,15 @@ const Home = () => {
           </nav>
         </header>
         {address && showPresaleInfo ? (
-          <SectionPresale></SectionPresale>
+          <>
+            <SectionPresale></SectionPresale>
+            <SectionFooter />
+          </>
         ) : showJobBoard > 0 ? (
-          <SectionJobBoard parentIndex={showJobBoard} setParentIndex={setShowJobBoard}></SectionJobBoard>
+          <>
+            <SectionJobBoard parentIndex={showJobBoard} setParentIndex={setShowJobBoard}></SectionJobBoard>
+            <SectionFooter />
+          </>
         ) : (
           <>
             <SectionHeader />
