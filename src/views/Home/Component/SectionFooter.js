@@ -4,7 +4,7 @@ import { Container , Input} from 'reactstrap';
 import { Row, Col } from 'reactstrap';
 import '../css/style.css'
 import { ThemeContext } from "../../../contexts/ThemeContext";
-import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
+// import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
 import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck_1.2.pdf'
 
 const SectionFooter = (props) => {
@@ -44,8 +44,8 @@ const SectionFooter = (props) => {
                         MEDIA
                       </div>
                       <div className="links">
-                          <a className="link-item" href={pdf} target="_blank" rel="noreferrer">Litepaper</a>
                           <a className="link-item" href={pitchdeck} target="_blank" rel="noreferrer">Pitchdeck</a>
+                          <a className="link-item" href="https://crosswise.gitbook.io/crosswise-litepaper/" target="_blank" rel="noreferrer">Litepaper</a>
                       </div>
                     </div>
                     <div className="group_links">

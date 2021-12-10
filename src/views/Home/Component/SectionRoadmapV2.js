@@ -106,7 +106,7 @@ const SectionRoadmapV2 = (props) => {
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={checkImg} alt="" />
-                                                        <div className="content-text">Litepaper & Pitchdeck</div>
+                                                        <div className="content-text">Pitchdeck & Litepaper</div>
                                                     </div>
                                                     <div className="content-desc">
                                                         <img src={spinnerImg} alt="" />
@@ -298,7 +298,7 @@ const SectionRoadmapV2 = (props) => {
                                     </div>
                                     <div className="content-desc">
                                         <img src={checkImg} alt="" />
-                                        <div className="content-text">Litepaper & Pitchdeck</div>
+                                        <div className="content-text">Pitchdeck & Litepaper</div>
                                     </div>
                                     <div className="content-desc">
                                         <img src={checkImg} alt="" />
