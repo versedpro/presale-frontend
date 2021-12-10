@@ -30,7 +30,7 @@ const SectionTeamwork = (props) => {
             name: 'Frederic Beeg',
             linkedIn: 'https://www.linkedin.com/in/fbeeg/',
             role: 'CEO & Founder',
-            desc: `Freddy is a long-time entrepreneur. He set up the leading European gaming marketplace for video game distribution in 2013, at the age of 19, which he later sold to a major competitor. In recent years he has focused on investing in crypto, building e-commerce platforms, and launching several brands on Amazon. He spends most of his time between Koh Phangan, Thailand and Canggu, Bali, Indonesia. Freddy is also an avid tennis player.`
+            desc: `Freddy is a long-time entrepreneur. At the age of 19, he set up what became  the leading European marketplace for video game distribution in 2013, which he later sold to a major competitor. In recent years he has focused on investing in crypto, building e-commerce platforms, and launching several brands on Amazon. He spends most of his time between Koh Phangan, Thailand and Canggu, Bali, Indonesia. Freddy is also an avid tennis player.`
         },
         {
             image: Greg,
@@ -58,8 +58,8 @@ const SectionTeamwork = (props) => {
             image: Leon,
             name: 'Leon Jin',
             linkedIn: 'https://www.linkedin.com/in/leon-jin-7013011b9/',
-            role: 'Lead Developer',
-            desc: `In recent years Leon has focused on developing blockchain projects. He has an in-depth understanding of blockchain technology, with a particular focus on building decentralized applications, yield farming methods, and new proof methods.`
+            role: 'Senior Smart Contract Developer',
+            desc: `In recent years Leon has focused on developing blockchain projects. He has an in-depth understanding of blockchain technology, with a particular focus on building decentralized applications, yield farming, and new proof methods. Leon is from Liaoning, China. In his spare time he enjoys playing football.`
         },
         {
             image: JamesGao,
