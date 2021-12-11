@@ -37,7 +37,7 @@ import TwitterLight from '../../../assets/images/crosswise/twitter-light.png'
 import DiscordLight from '../../../assets/images/crosswise/discord-light.png'
 
 import Planet8 from '../../../assets/images/crosswise/planet-8.png';
-import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
+// import pdf from '../../../assets/images/crosswise/litepaper/Crosswise_Litepaper_Final.pdf'
 import pitchdeck from '../../../assets/images/crosswise/pitchdeck/Crosswise_Pitch_Deck_1.2.pdf'
 
 import bscscanImg from '../../../assets/images/bscscan.png';
@@ -434,7 +434,7 @@ const SectionHeader = (props) => {
                 </Row>
                 <Row className="mt-3">
                   <Col sm={4} xs={6}>
-                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pdf} target="_blank" rel="noreferrer">Litepaper</a>
+                    <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href="https://crosswise.gitbook.io/crosswise-litepaper/" target="_blank" rel="noreferrer">Litepaper</a>
                   </Col>
                   <Col sm={4} xs={6}>
                     <a className="btn btn_primary p-2 btn_pitchdeck custom-btn" href={pitchdeck} target="_blank" rel="noreferrer">Pitchdeck</a>
