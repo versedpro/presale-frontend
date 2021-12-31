@@ -215,7 +215,7 @@ const SectionHeader = (props) => {
   const carouselItems = [
     {
       key: 1,
-      title: 'Pre-Sale Round 2: Open',
+      title: 'Pre-Sale Round 2: Finished',
       tokenPrice: tokenPrice2,
       softCap: '1 BUSD',
       hardCap: '750,000 BUSD',

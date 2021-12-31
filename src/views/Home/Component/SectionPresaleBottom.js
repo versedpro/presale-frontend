@@ -75,7 +75,7 @@ const SectionPresaleBottom = (props) => {
     const carouselItems = [
         {
             key: 1,
-            title: "Pre-Sale Round 2 Live",
+            title: "Pre-Sale Round 2 End",
             stages: [
                 {
                     title: "Stage 1",

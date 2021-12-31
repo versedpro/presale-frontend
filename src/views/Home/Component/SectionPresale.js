@@ -303,10 +303,10 @@ const SectionPresale = (props) => {
                     ) : (<p></p>)}
                 <div className="buy-tokens">
                   {
-                    crssAllowrance.toString() === "0" ? (<button className="btn btn_primary presale-btns" onClick={approveTokens}>
+                    crssAllowrance.toString() === "0" ? (<button className="btn btn_primary presale-btns" onClick={approveTokens} disabled={true}>
                       Approve Contract </button>) :
                       (
-                        <button className="btn btn_primary buy-token-btn presale-btns" type="submit">
+                        <button className="btn btn_primary buy-token-btn presale-btns" type="submit" disabled={true}>
                           Buy Tokens
                         </button>
                       )
